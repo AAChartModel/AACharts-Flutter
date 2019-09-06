@@ -7,6 +7,7 @@ import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAGradientColor
 import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAAnimation.dart';
 import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAChart.dart';
 import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAColumn.dart';
+import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AACrosshair.dart';
 import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAItemStyle.dart';
 import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AALabel.dart';
@@ -1000,12 +1001,6 @@ class ChartOptionsComposer {
         .yAxisMaxSet(50)
         .yAxisGridLineWidthSet(0)
         .legendEnabledSet(false)
-//      .xAxisCrosshairWidthSet(1.5)
-//      .xAxisCrosshairColorSet(AAColor.gray)
-//      .xAxisCrosshairDashStyleTypeSet(AALineDashStyleType.longDashDotDot)
-//      .yAxisCrosshairWidthSet(1.5)
-//      .yAxisCrosshairColorSet(AAColor.gray)
-//      .yAxisCrosshairDashStyleTypeSet(AALineDashStyleType.longDashDotDot)
         .seriesSet([
       AASeriesElement()
           .nameSet("2017")
@@ -1016,6 +1011,17 @@ class ChartOptionsComposer {
     );
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AACrosshair aaCrosshair = AACrosshair()
+        .widthSet(1.5)
+        .colorSet(AAColor.gray)
+        .dashStyleSet(AALineDashStyleType.longDashDotDot);
+
+    AAXAxis aaxAxis = aaOptions.xAxis;
+    aaxAxis.crosshairSet(aaCrosshair);
+
+    AAYAxis aaYAxis = aaOptions.yAxis;
+    aaYAxis.crosshairSet(aaCrosshair);
+
     List aaPlotBandsArr = [
       AAPlotBandsElement()
           .fromSet(0)
@@ -1041,7 +1047,6 @@ class ChartOptionsComposer {
           .fromSet(25)
           .toSet(50)
           .colorSet("#acf08f"),];
-    AAYAxis aaYAxis = aaOptions.yAxis;
     aaYAxis.plotBands = aaPlotBandsArr;
     return aaOptions;
   }
@@ -1126,9 +1131,6 @@ class ChartOptionsComposer {
         .yAxisLineWidthSet(0)
         .yAxisTitleSet("")
         .legendEnabledSet(false)
-//      .xAxisCrosshairWidthSet(1)
-//      .xAxisCrosshairDashStyleTypeSet(AALineDashStyleType.longDashDot)
-//      .xAxisCrosshairColorSet(AAColor.gray)
         .tooltipEnabledSet(false)
         .categoriesSet([
       "10-01","10-02","10-03","10-04","10-05","10-06","10-07","10-08","10-09",
@@ -1143,6 +1145,14 @@ class ChartOptionsComposer {
     );
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    aaOptions.xAxis.crosshairSet(
+        AACrosshair()
+            .widthSet(1)
+            .dashStyleSet(AALineDashStyleType.longDashDot)
+            .colorSet(AAColor.gray)
+    );
+
+
     AAYAxis aayAxis = aaOptions.yAxis;
     aayAxis.gridLineDashStyle = AALineDashStyleType.longDash;//设置Y轴的网格线样式为 AALineDashStyleType.longDash
     AADataLabels aaDatalabels = aaOptions.plotOptions.spline.dataLabels;
@@ -1303,9 +1313,10 @@ class ChartOptionsComposer {
         .yAxisVisibleSet(false)
         .categoriesSet(categories)
         .markerRadiusSet(0)
-        .seriesSet([AASeriesElement()
+        .seriesSet([
+          AASeriesElement()
         .nameSet("Berlin Hot")
-        .colorSet([AAGradientColor.deepSeaColor])
+        .colorSet(AAGradientColor.deepSeaColor)
         .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ]
     );
@@ -1340,7 +1351,8 @@ class ChartOptionsComposer {
         .yAxisTitleSet("")
         .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"])
         .markerRadiusSet(0)
-        .seriesSet([AASeriesElement()
+        .seriesSet([
+          AASeriesElement()
         .nameSet("Berlin Hot")
         .colorSet(AAColor.white)
         .lineWidthSet(7)
@@ -1357,7 +1369,7 @@ class ChartOptionsComposer {
         .styleSet(AAStyle()
         .colorSet(AAColor.white)
         .fontSizeSet(14)
-//      .fontWeightSet(AAChartFontWeightTypeThin)
+        .fontWeightSet(AAChartFontWeightType.thin)
         .textOutlineSet("0px 0px contrast")//文字轮廓描边
     ))
     ;
@@ -1377,16 +1389,9 @@ class ChartOptionsComposer {
         .labels.style.colorSet(AAColor.white)//X轴文字颜色
         ;
 
-    //设定图例项的CSS样式。只支持有关文本的CSS样式设定。
-//  /默认是：{
-//  "color": "#333333",
-//  "cursor": "pointer",
-//  "fontSize": "12px",
-//  "fontWeight": "bold"
-//  }
-//  /
     aaOptions.legend
-        .itemStyleSet(AAItemStyle()
+        .itemStyleSet(
+        AAItemStyle()
         .colorSet(AAColor.white)//字体颜色
         .fontSizeSet(13)//字体大小
         .fontWeightSet(AAChartFontWeightType.thin)//字体为细体字
