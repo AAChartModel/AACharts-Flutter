@@ -9,7 +9,7 @@ import 'AADataLabels.dart';
     double startAngle;
     double endAngle;
     double depth;
-    double center;
+    List center;
 
      AAPie dataLabelsSet(AADataLabels prop) {
         dataLabels = prop;
@@ -51,7 +51,7 @@ import 'AADataLabels.dart';
         return this;
     }
 
-     AAPie centerSet(double prop) {
+     AAPie centerSet(List prop) {
         center = prop;
         return this;
     }

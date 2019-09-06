@@ -13,7 +13,7 @@ import 'AALegend.dart';
      AATitle title;
      AASubtitle subtitle;
      AAXAxis xAxis;
-     AAYAxis yAxis;
+     Object yAxis;
      AATooltip tooltip;
      AAPlotOptions plotOptions;
      List series;
@@ -41,7 +41,7 @@ import 'AALegend.dart';
         return this;
     }
 
-     AAOptions yAxisSet(AAYAxis prop) {
+     AAOptions yAxisSet(Object prop) {
         yAxis = prop;
         return this;
     }

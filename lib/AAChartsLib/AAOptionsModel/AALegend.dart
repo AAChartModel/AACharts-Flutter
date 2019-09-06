@@ -3,9 +3,9 @@ import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAChartModel.da
 import 'AAItemStyle.dart';
 
  class AALegend {
-    AAChartLayoutType layout; //图例数据项的布局。布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
-    AAChartAlignType align; //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
-    AAChartVerticalAlignType verticalAlign; //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
+    String layout; //图例数据项的布局。布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
+    String align; //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
+    String verticalAlign; //设定图例在图表区中的垂直对齐方式，合法值有 top，middle 和 bottom。垂直位置可以通过 y 选项做进一步设定。
     bool enabled;
     String borderColor;
     double borderWidth;
@@ -14,17 +14,17 @@ import 'AAItemStyle.dart';
     double x;
     double y;
 
-     AALegend layoutSet(AAChartLayoutType prop) {
+     AALegend layoutSet(String prop) {
         layout = prop;
         return this;
     }
 
-     AALegend alignSet(AAChartAlignType prop) {
+     AALegend alignSet(String prop) {
         align = prop;
         return this;
     }
 
-     AALegend verticalAlignSet(AAChartVerticalAlignType prop) {
+     AALegend verticalAlignSet(String prop) {
         verticalAlign = prop;
         return this;
     }
@@ -39,7 +39,7 @@ import 'AAItemStyle.dart';
         return this;
     }
 
-     AALegend BorderWidthSet(double prop) {
+     AALegend borderWidthSet(double prop) {
         borderWidth = prop;
         return this;
     }

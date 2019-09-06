@@ -42,7 +42,7 @@ import 'AAStyle.dart';
         return this;
     }
 
-     AALabels FormatSet(String prop) {
+     AALabels formatSet(String prop) {
         format = prop;
         return this;
     }

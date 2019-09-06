@@ -1,15 +1,17 @@
 
 
- class AAAnimation {
+ import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAChartModel.dart';
+
+class AAAnimation {
     int duration;
-    String easing;
+    AAChartAnimationType easing;
 
      AAAnimation durationSet(int prop) {
         duration = prop;
         return this;
     }
 
-     AAAnimation easingSet(String prop) {
+     AAAnimation easingSet(AAChartAnimationType prop) {
         easing = prop;
         return this;
     }

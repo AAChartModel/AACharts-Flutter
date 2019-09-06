@@ -5,11 +5,11 @@ import 'AAStyle.dart';
  class AATitle {
     String text;
     AAStyle style;
-    AAChartAlignType align;
-    AAChartVerticalAlignType verticalAlign;
+    String align;
+    String verticalAlign;
     double x;
     double y;
-    bool userHTML;
+    bool useHTML;
 
      AATitle textSet(String prop) {
         text = prop;
@@ -21,12 +21,12 @@ import 'AAStyle.dart';
         return this;
     }
 
-     AATitle alignSet(AAChartAlignType prop) {
+     AATitle alignSet(String prop) {
         align = prop;
         return this;
     }
 
-     AATitle verticalAlignSet(AAChartVerticalAlignType prop) {
+     AATitle verticalAlignSet(String prop) {
         verticalAlign = prop;
         return this;
     }
@@ -41,8 +41,8 @@ import 'AAStyle.dart';
         return this;
     }
 
-     AATitle userHTMLSet(bool prop) {
-        userHTML = prop;
+     AATitle useHTMLSet(bool prop) {
+        useHTML = prop;
         return this;
     }
 }

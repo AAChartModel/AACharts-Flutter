@@ -56,12 +56,6 @@ abstract class AAChartType {
    static const polygon = "polygon";
 }
 
-abstract class AAChartSubtitleAlignType {
-   static const left = "left";
-   static const center = "center";
-   static const right = "right";
-}
-
 abstract class AAChartZoomType {
    static const none = "none";
    static const x = "x";
@@ -120,6 +114,11 @@ abstract class AALineDashStyleType {
    static const longDashDotDot = "LongDashDotDot";
 }
 
+abstract class AAChartFontWeightType {
+   static const thin = "thin";
+   static const regular = "regular";
+   static const bold = "bold";
+}
 
 
 
