@@ -24,6 +24,7 @@ class AASeriesElement {
   String innerSize;           //内部圆环半径大小占比(内部圆环半径/扇形图半径)
   AAShadow shadow;
   List zones;
+  String stack;
 
   AASeriesElement typeSet(String prop) {
     type = prop;
@@ -127,6 +128,11 @@ class AASeriesElement {
 
   AASeriesElement zonesSet(List prop) {
     zones = prop;
+    return this;
+  }
+
+  AASeriesElement stackSet(String prop) {
+    stack = prop;
     return this;
   }
 

@@ -93,7 +93,7 @@ class ChartOptionsComposer {
         .plotOptionsSet(AAPlotOptions()
         .seriesSet(AASeries()
         .animationSet(AAAnimation()
-      .easingSet(AAChartAnimationType.bounce)
+        .easingSet(AAChartAnimationType.bounce)
         .durationSet(1000)
     )
     )
@@ -118,8 +118,7 @@ class ChartOptionsComposer {
 //      .sizeSet(240)//环形图的半径大小
           .innerSizeSet("65%")//内部圆环半径大小占比
           .allowPointSelectSet(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
-          .dataSet(
-          [
+          .dataSet([
             ["Firefox",   3336.2],
             ["IE",        26.8],
             ["Safari",    88.5],
@@ -150,14 +149,14 @@ class ChartOptionsComposer {
 //      .sizeSet(200)//环形图的半径大小
           .innerSizeSet("60%")//内部圆环半径大小占比
           .allowPointSelectSet(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
-          .dataLabelsSet(AADataLabels()
+          .dataLabelsSet(
+          AADataLabels()
           .enabledSet(true)
           .useHTMLSet(true)
           .distanceSet(10)
           .formatSet("<span style=""color:#A9A9A9;font-weight:thin;font-size:10px"">{point.name}</span> <span style=""color:#1E90FF;font-weight:bold;font-size:15px"">{point.percentage:.1f}</span><span style=""color:#1E90FF;font-weight:thin;font-size:10px"">%</span>")
       )
-          .dataSet(
-          [
+          .dataSet([
             ["Firefox",   150],
             ["Opera",      15],
             ["Others",     35]

@@ -3,7 +3,7 @@ import 'package:flutter_app_learning/AAChartsLib/AATools/AAEasyTool.dart';
 import 'AAStyle.dart';
 
  class AATooltip {
-    String backgroundColor;
+    Object backgroundColor;
     String borderColor;
     double borderRadius;
     double borderWidth;
@@ -19,7 +19,7 @@ import 'AAStyle.dart';
     bool crosshairs;
     String valueSuffix;
 
-     AATooltip backgroundColorSet(String prop) {
+     AATooltip backgroundColorSet(Object prop) {
         backgroundColor = prop;
         return this;
     }
