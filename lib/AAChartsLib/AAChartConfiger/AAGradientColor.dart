@@ -205,22 +205,6 @@ class AAGradientColor {
     return linearGradient1(AALinearGradientDirection.toTop, "#93278F", "#00A99D");
   }
 
-
-   static  Map<String,Object> configureGradientColor(String startColor, String endColor) {
-    return {
-      "linearGradient": {
-        "x1": 0,
-        "y1": 0,
-        "x2": 0,
-        "y2": 1
-      },
-      "stops": {
-      [0,"$startColor"],
-      [1,"$endColor"]
-      }//颜色字符串设置支持十六进制类型和 rgba 类型
-    };
-  }
-
   static Map<String,Object> linearGradient0(
       String startColor,
       String endColor

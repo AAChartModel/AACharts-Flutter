@@ -146,7 +146,8 @@ class CustomStyleChartComposer {
         .chartTypeSet(AAChartType.line)
         .titleSet("")
         .subtitleSet("虚拟数据")
-        .categoriesSet(["Java","Swift","Python","Ruby", "PHP","Go","C","C#","C++","Perl","R","MATLAB","SQL"])
+        .categoriesSet(["Java","Swift","Python","Ruby", "PHP","Go","C","C#",
+      "C++","Perl","R","MATLAB","SQL"])
         .yAxisTitleSet("摄氏度")
         .dataLabelsEnabledSet(true)
         .seriesSet([
@@ -173,7 +174,8 @@ class CustomStyleChartComposer {
         .chartTypeSet(AAChartType.column)
         .titleSet("Colorful Column Chart")
         .subtitleSet("single data array colorful column chart")
-        .colorsThemeSet(["#eb2100", "#eb3600", "#d0570e", "#d0a00e", "#34da62", "#00e9db", "#00c0e9", "#0096f3", "#33CCFF", "#33FFCC"])
+        .colorsThemeSet(["#eb2100", "#eb3600", "#d0570e", "#d0a00e", "#34da62",
+      "#00e9db", "#00c0e9", "#0096f3", "#33CCFF", "#33FFCC"])
         .seriesSet([
       AASeriesElement()
           .nameSet("ElementOne")
@@ -209,7 +211,8 @@ class CustomStyleChartComposer {
         .markerRadiusSet(0)//设置折线连接点宽度为0,即是隐藏连接点
         .subtitleSet("横屏查看效果更佳")
         .yAxisGridLineWidthSet(0)
-        .categoriesSet(["Java","Swift","Python","Ruby", "PHP","Go","C","C#","C++","HTML","CSS","Perl","R","MATLAB","SQL"])
+        .categoriesSet(["Java","Swift","Python","Ruby", "PHP","Go","C","C#",
+      "C++","HTML","CSS","Perl","R","MATLAB","SQL"])
         .yAxisTitleSet("")
         .colorsThemeSet(["#49C1B6", "#FDC20A", "#F78320", "#068E81", "#EA007B"])
         .seriesSet([
@@ -293,7 +296,8 @@ class CustomStyleChartComposer {
         .xAxisVisibleSet(true)//是否显示最外一层圆环
         .yAxisVisibleSet(false)//是否显示中间的多个圆环
         .legendEnabledSet(false)//隐藏图例(底部可点按的小圆点)
-        .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"])
+        .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月", "七月",
+      "八月", "九月", "十月", "十一月", "十二月"])
         .dataLabelsEnabledSet(true)
         .polarSet(true)//极地化图形
         .seriesSet([
@@ -308,13 +312,13 @@ class CustomStyleChartComposer {
         .ySet(1.25)
         .dataLabelsSet(AADataLabels()
         .enabledSet(true)
-        .verticalAlignSet(AAChartLegendVerticalAlignType.middle)
+        .verticalAlignSet(AAChartVerticalAlignType.middle)
         .formatSet("{y} 美元🇺🇸💲")
         .xSet(3)
         .styleSet(AAStyle()
         .fontSizeSet(20)
         .fontWeightSet("bold")
-        .colorSet(AAColor.red())
+        .colorSet(AAColor.red)
         .textOutlineSet("1px 1px contrast")
     )
     );
@@ -327,9 +331,7 @@ class CustomStyleChartComposer {
       AASeriesElement()
           .nameSet("货币")
           .dataSet([0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, aaDataElement, 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67]),
-    ]
-    )
-    ;
+    ]);
   }
 
   static AAChartModel configureChartWithShadowStyle() {
@@ -339,7 +341,8 @@ class CustomStyleChartComposer {
         .yAxisVisibleSet(false)
         .chartTypeSet(AAChartType.spline)
         .legendEnabledSet(false)//隐藏图例(底部可点按的小圆点)
-        .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"])
+        .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月", "七月",
+      "八月", "九月", "十月", "十一月", "十二月"])
         .markerSymbolStyleSet(AAChartSymbolStyleType.innerBlank)
         .markerRadiusSet(8)
         .seriesSet([
@@ -353,7 +356,7 @@ class CustomStyleChartComposer {
               .offsetYSet(15.0)
               .opacitySet(0.2)
               .widthSet(8.0)
-              .colorSet(AAColor.red())
+              .colorSet(AAColor.red)
       )]);
   }
 
@@ -372,7 +375,8 @@ class CustomStyleChartComposer {
         .chartTypeSet(AAChartType.areaspline)
         .titleSet("")
         .subtitleSet("")
-        .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"])
+        .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月", "七月",
+      "八月", "九月", "十月", "十一月", "十二月"])
         .yAxisTitleSet("")
         .backgroundColorSet("#FFFFFF")
         .markerRadiusSet(0)

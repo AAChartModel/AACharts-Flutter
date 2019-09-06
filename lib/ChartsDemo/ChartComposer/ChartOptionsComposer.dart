@@ -13,9 +13,11 @@ class ChartOptionsComposer {
      AASeriesElement()
         .nameSet("Tokyo")
         .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6])
-        .colorSet(AAColor.white())
+        .colorSet(AAColor.white)
         .lineWidthSet(10.0),
     ]);
+
+
 
     Map aaOptions = AAOptionsConstructor.configureChartOptions(aaChartModel);
     return aaOptions;

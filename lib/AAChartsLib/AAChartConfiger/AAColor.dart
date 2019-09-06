@@ -1,63 +1,63 @@
 
 class AAColor {
 
-  static String black() {
+  static String get black {
     return "black";
   }
 
-  static String darkGray() {
+  static String get darkGray {
     return "darkGray";
   }
 
-  static String lightGray() {
+  static String get lightGray {
     return "lightGray";
   }
 
-  static String white() {
+  static String get white {
     return "white";
   }
 
-  static String gray() {
+  static String get gray {
     return "gray";
   }
 
-  static String red() {
+  static String get red {
     return "red";
   }
 
-  static String green() {
+  static String get green {
     return "green";
   }
 
-  static String blue() {
+  static String get blue {
     return "blue";
   }
 
-  static String cyan() {
+  static String get cyan {
     return "cyan";
   }
 
-  static String yellow() {
+  static String get yellow {
     return "yellow";
   }
 
-  static String magenta() {
+  static String get magenta {
     return "magenta";
   }
 
-  static String orange() {
+  static String get orange {
     return "orange";
   }
 
-  static String purple() {
+  static String get purple {
     return "purple";
   }
 
-  static String brown() {
+  static String get brown {
     return "brown";
   }
 
-  static String clear() {
+  static String get clear {
     return "clear";
   }
 

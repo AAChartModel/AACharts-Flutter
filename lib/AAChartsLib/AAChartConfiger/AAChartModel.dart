@@ -89,18 +89,18 @@ abstract class AAChartSymbolStyleType {
    static const borderBlank = "borderBlank";
 }
 
-abstract class AAChartLegendLayoutType {
+abstract class AAChartLayoutType {
    static const horizontal = "horizontal";
    static const vertical = "vertical";
 }
 
-abstract class AAChartLegendAlignType {
+abstract class AAChartAlignType {
    static const left = "left";
    static const center = "center";
    static const right = "right";
 }
 
-abstract class AAChartLegendVerticalAlignType {
+abstract class AAChartVerticalAlignType {
    static const top = "top";
    static const middle = "middle";
    static const bottom = "bottom";
@@ -461,9 +461,9 @@ class AAChartModel {
      yAxisLineWidth        = 0;
      yAxisGridLineWidth    = 0.6;
      legendEnabled         = true;
-     legendLayout          = AAChartLegendLayoutType.horizontal;
-     legendAlign           = AAChartLegendAlignType.center;
-     legendVerticalAlign   = AAChartLegendVerticalAlignType.bottom;
+     legendLayout          = AAChartLayoutType.horizontal;
+     legendAlign           = AAChartAlignType.center;
+     legendVerticalAlign   = AAChartVerticalAlignType.bottom;
      borderRadius          = 0; //柱状图长条图头部圆角半径可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
      markerRadius          = 5; //折线连接点的半径长度,如果设置默认值为0,那么这样就相当于不显示了
      titleFontColor        = "#000000";//标题字体颜色为黑色

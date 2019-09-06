@@ -1,0 +1,35 @@
+
+
+ class AAShadow {
+    String color;
+    double offsetX;
+    double offsetY;
+    double opacity;
+    double width;
+
+     AAShadow colorSet(String prop) {
+        color = prop;
+        return this;
+    }
+
+     AAShadow offsetXSet(double prop) {
+        offsetX = prop;
+        return this;
+    }
+
+     AAShadow offsetYSet(double prop) {
+        offsetY = prop;
+        return this;
+    }
+
+     AAShadow opacitySet(double prop) {
+        opacity = prop;
+        return this;
+    }
+
+     AAShadow widthSet(double prop) {
+        width = prop;
+        return this;
+    }
+
+}
