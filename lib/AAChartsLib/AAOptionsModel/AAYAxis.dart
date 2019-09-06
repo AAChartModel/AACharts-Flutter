@@ -1,15 +1,18 @@
 import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAPlotBandsElement.dart';
 import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAPlotLinesElement.dart';
+import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AATitle.dart';
 import 'AALabels.dart';
 import 'AACrosshair.dart';
 
  class AAYAxis {
+   AATitle title;
    List<AAPlotBandsElement> plotBands;
    List<AAPlotLinesElement> plotLines;
    List<String> categories;
    bool reversed;
    double lineWidth; //x轴轴线宽度
    String lineColor; //x轴轴线线颜色
+   bool allowDecimals;
    double max; //x轴最大值
    double min;//x轴最小值（设置为0就不会有负数）
    String tickColor; //x轴轴线下方刻度线颜色
@@ -27,6 +30,10 @@ import 'AACrosshair.dart';
    double tickLength;//坐标轴刻度线的长度。 默认是：10.
    String tickPosition; //刻度线相对于轴线的位置，可用的值有 inside 和 outside，分别表示在轴线的内部和外部。 默认是：outside.
 
+   AAYAxis titleSet(AATitle prop) {
+     title = prop;
+     return this;
+   }
 
    AAYAxis plotBandsSet(List<AAPlotBandsElement> prop) {
    plotBands = prop;
@@ -56,6 +63,11 @@ import 'AACrosshair.dart';
    AAYAxis lineColorSet(String prop) {
    lineColor = prop;
    return this;
+   }
+
+   AAYAxis allowDecimalsSet(bool prop) {
+     allowDecimals = prop;
+     return this;
    }
 
    AAYAxis maxSet(double prop) {
