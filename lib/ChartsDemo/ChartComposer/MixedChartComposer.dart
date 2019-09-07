@@ -620,12 +620,13 @@ class MixedChartComposer {
         [176.5, 71.8], [164.4, 55.5], [160.7, 48.6], [174.0, 66.4], [163.8, 67.3],
       ])
           .colorSet("#0088ff")
-          .markerSet(AAMarker()
-          .radiusSet(7)//曲线连接点半径，默认是4
-          .symbolSet(AAChartSymbolType.circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
-          .fillColorSet("#ffffff")//点的填充色(用来设置折线连接点的填充色)
-          .lineWidthSet(2)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
-          .lineColorSet("")//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+          .markerSet(
+          AAMarker()
+              .radiusSet(7)//曲线连接点半径，默认是4
+              .symbolSet(AAChartSymbolType.circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+              .fillColorSet("#ffffff")//点的填充色(用来设置折线连接点的填充色)
+              .lineWidthSet(2)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+              .lineColorSet("")//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
       ),
     ]);
   }

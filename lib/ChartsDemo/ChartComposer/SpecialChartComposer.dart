@@ -247,8 +247,7 @@ class SpecialChartComposer {
         .yAxisTitleSet("摄氏度")
         .xAxisVisibleSet(false)
         .dataLabelsEnabledSet(false)
-        .seriesSet(
-        [
+        .seriesSet([
           AASeriesElement()
               .nameSet("2020")
               .typeSet(AAChartType.arearange)
@@ -645,8 +644,7 @@ class SpecialChartComposer {
         .yAxisTitleSet("摄氏度")
         .xAxisVisibleSet(false)
         .dataLabelsEnabledSet(false)
-        .seriesSet(
-        [
+        .seriesSet([
           AASeriesElement()
               .nameSet("2020")
               .typeSet(AAChartType.areasplinerange)
@@ -745,8 +743,7 @@ class SpecialChartComposer {
         .subtitleSet("virtual data")
         .yAxisTitleSet("℃")
         .yAxisVisibleSet(true)
-        .seriesSet(
-        [
+        .seriesSet([
           AASeriesElement()
               .nameSet("Observed Data")
               .lineWidthSet(1.8)
@@ -769,8 +766,7 @@ class SpecialChartComposer {
         .subtitleSet("virtual data")
         .yAxisVisibleSet(true)
         .yAxisTitleSet("💲")
-        .seriesSet(
-        [{
+        .seriesSet([{
           "upColor":"#9b43b4",
           "color": "#ef476f",
           "borderWidth":0,
@@ -807,8 +803,7 @@ class SpecialChartComposer {
         .titleSet("编程语言热度")
         .subtitleSet("横屏查看效果更佳")
         .yAxisTitleSet("摄氏度")
-        .seriesSet(
-        [
+        .seriesSet([
           AASeriesElement()
               .nameSet("2020")
               .dataSet([
