@@ -1,5 +1,5 @@
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AADataLabels.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAMarker.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
 
 class AASeriesElement {
 

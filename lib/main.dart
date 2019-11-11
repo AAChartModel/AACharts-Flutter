@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAChartModel.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAOptionsConstructor.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAOptionsConstructor.dart';
 
 void main() => runApp(Application());
 

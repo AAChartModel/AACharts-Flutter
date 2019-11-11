@@ -1,6 +1,6 @@
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAChartModel.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAGradientColor.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAGradientColor.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
 
 
 class SpecialChartComposer {

@@ -1,17 +1,17 @@
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAMarker.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAOptions.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
 
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAChartModel.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAColor.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAOptionsComposer.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAGradientColor.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAColumn.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AACrosshair.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AASeries.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAStyle.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AATooltip.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAYAxis.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAColor.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAOptionsComposer.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAGradientColor.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAColumn.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AACrosshair.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AASeries.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATooltip.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
 
 class JSFormatterFunctionComposer {
 

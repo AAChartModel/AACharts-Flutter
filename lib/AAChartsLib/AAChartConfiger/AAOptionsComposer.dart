@@ -1,30 +1,31 @@
 
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAChartModel.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAAnimation.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAArea.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAArearange.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAAreaspline.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AABar.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAChart.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAColumn.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAColumnrange.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AADataLabels.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAItemStyle.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AALabels.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AALine.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAMarker.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAOptions.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAPie.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AASeries.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AASpline.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAStyle.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AATitle.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AASubtitle.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAXAxis.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAYAxis.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AATooltip.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAPlotOptions.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AALegend.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAnimation.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAArea.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAArearange.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAreaspline.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AABar.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAChart.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAColumn.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAColumnrange.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAItemStyle.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AALabels.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AALine.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPie.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AASeries.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AASpline.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATitle.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AASubtitle.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAXAxis.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATooltip.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPlotOptions.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AALegend.dart';
+
 
 abstract class AAOptionsComposer {
   static AAOptions configureChartOptions(AAChartModel aaChartModel) {

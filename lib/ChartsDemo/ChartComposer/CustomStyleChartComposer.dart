@@ -1,10 +1,10 @@
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAChartModel.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAColor.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAGradientColor.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAMarker.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AADataLabels.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAStyle.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAColor.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAGradientColor.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 
 
 class CustomStyleChartComposer {
