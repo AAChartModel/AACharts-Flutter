@@ -1,4 +1,4 @@
-import 'package:flutter_app_learning/AAChartsLib/AATools/AAEasyTool.dart';
+import 'package:aacharts_flutter/AAChartsLib/AATools/AAEasyTool.dart';
 
 import 'AAStyle.dart';
 

@@ -1,6 +1,6 @@
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAPlotBandsElement.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AAPlotLinesElement.dart';
-import 'package:flutter_app_learning/AAChartsLib/AAOptionsModel/AATitle.dart';
+import 'AAPlotBandsElement.dart';
+import 'AAPlotLinesElement.dart';
+import 'AATitle.dart';
 import 'AALabels.dart';
 import 'AACrosshair.dart';
 

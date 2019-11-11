@@ -1,4 +1,4 @@
-import 'package:flutter_app_learning/AAChartsLib/AAChartConfiger/AAChartModel.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
 
 import 'AAStyle.dart';
 
