@@ -98,4 +98,25 @@ import 'AAStyle.dart';
         shape = prop;
         return this;
     }
+
+    Map<String, dynamic> toJson() {
+    return {
+      "enabled": this.enabled,
+      "style": this.style.toJson(),
+      "format": this.format,
+      "rotation": this.rotation,
+      "allowOverlap": this.allowOverlap,
+      "useHTML": this.useHTML,
+      "distance": this.distance,
+      "verticalAlign": this.verticalAlign,
+      "x": this.x,
+      "y": this.y,
+      "color": this.color,
+      "backgroundColor": this.backgroundColor,
+      "borderColor": this.borderColor,
+      "borderRadius": this.borderRadius,
+      "borderWidth": this.borderWidth,
+      "shape": this.shape,
+    };
+  }
 }

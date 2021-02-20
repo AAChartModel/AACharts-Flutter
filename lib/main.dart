@@ -1,3 +1,6 @@
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAColor.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 import 'package:flutter/material.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
@@ -92,6 +95,8 @@ class _MyAppState extends State<Application> {
   String url = "";
   double progress = 0;
 
+
+
   @override
   void initState() {
     super.initState();
@@ -104,6 +109,19 @@ class _MyAppState extends State<Application> {
 
   @override
   Widget build(BuildContext context) {
+
+    AADataLabels aaDataLabels = AADataLabels()
+        .borderColorSet(AAColor.black)
+        .borderRadiusSet(3)
+        .styleSet(
+        AAStyle()
+            .colorSet(AAColor.red)
+            .fontSizeSet(15)
+    );
+
+    var testJson = aaDataLabels.toJson();
+
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(

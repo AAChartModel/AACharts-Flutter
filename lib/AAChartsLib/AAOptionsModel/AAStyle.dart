@@ -27,4 +27,12 @@
         return this;
     }
 
+    Map<String, dynamic> toJson() {
+    return {
+      "color": this.color,
+      "fontSize": this.fontSize,
+      "fontWeight": this.fontWeight,
+      "textOutLine": this.textOutLine,
+    };
+  }
 }
