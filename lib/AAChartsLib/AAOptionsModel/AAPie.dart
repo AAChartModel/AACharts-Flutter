@@ -56,4 +56,17 @@ import 'AADataLabels.dart';
         return this;
     }
 
+    Map<String, dynamic> toJson() {
+    return {
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
+      "size": this.size,
+      "allowPointSelect": this.allowPointSelect,
+      "cursor": this.cursor,
+      "showInLegend": this.showInLegend,
+      "startAngle": this.startAngle,
+      "endAngle": this.endAngle,
+      "depth": this.depth,
+      "center": this.center,
+    };
+  }
 }

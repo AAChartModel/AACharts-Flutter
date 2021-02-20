@@ -91,4 +91,24 @@ import 'AAStyle.dart';
         useHTML = prop;
         return this;
     }
+
+    Map<String, dynamic> toJson() {
+    return {
+      "align": this.align,
+      "autoRotation": this.autoRotation,
+      "autoRotationLimit": this.autoRotationLimit,
+      "distance": this.distance,
+      "enabled": this.enabled,
+      "format": this.format,
+      "formatter": this.formatter,
+      "padding": this.padding,
+      "rotation": this.rotation,
+      "staggerLines": this.staggerLines,
+      "step": this.step,
+      "style": this.style == null ? null : this.style.toJson(),
+      "x": this.x,
+      "y": this.y,
+      "useHTML": this.useHTML,
+    };
+  }
 }

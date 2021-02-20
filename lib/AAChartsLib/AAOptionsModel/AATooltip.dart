@@ -96,13 +96,29 @@ import 'AAStyle.dart';
         return this;
     }
 
-     AATooltipSet() {
+     AATooltip() {
         enabled = true;
         shared = true;
         crosshairs = true;
     }
 
-
-    
-  
+    Map<String, dynamic> toJson() {
+    return {
+      "backgroundColor": this.backgroundColor,
+      "borderColor": this.borderColor,
+      "borderRadius": this.borderRadius,
+      "borderWidth": this.borderWidth,
+      "style": this.style == null ? null : this.style.toJson(),
+      "enabled": this.enabled,
+      "useHTML": this.useHTML,
+      "formatter": this.formatter,
+      "headerFormat": this.headerFormat,
+      "pointFormat": this.pointFormat,
+      "footerFormat": this.footerFormat,
+      "valueDecimals": this.valueDecimals,
+      "shared": this.shared,
+      "crosshairs": this.crosshairs,
+      "valueSuffix": this.valueSuffix,
+    };
+  }
 }

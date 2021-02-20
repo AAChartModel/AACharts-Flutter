@@ -32,4 +32,14 @@ class AADataElement {
         marker = prop;
         return this;
     }
+
+    Map<String, dynamic> toJson() {
+    return {
+      "name": this.name,
+      "y": this.y,
+      "color": this.color,
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
+      "marker": this.marker == null ? null : this.marker.toJson(),
+    };
+  }
 }

@@ -58,4 +58,17 @@ import 'AAShadow.dart';
         return this;
     }
 
+    Map<String, dynamic> toJson() {
+    return {
+      "borderRadius": this.borderRadius,
+      "marker": this.marker == null ? null : this.marker.toJson(),
+      "stacking": this.stacking,
+      "animation": this.animation,
+      "keys": this.keys,
+      "colorByPoint": this.colorByPoint,
+      "connectNulls": this.connectNulls,
+      "events": this.events,
+      "shadow": this.shadow == null ? null : this.shadow.toJson(),
+    };
+  }
 }

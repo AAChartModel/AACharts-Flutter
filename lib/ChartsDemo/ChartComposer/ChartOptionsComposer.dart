@@ -507,7 +507,7 @@ class ChartOptionsComposer {
     AAOptions aaOptions = AAOptions();
     aaOptions.title = aaTitle;
     aaOptions.xAxis = aaXAxis;
-    aaOptions.yAxis = aaYAxisArr;
+    // aaOptions.yAxis = aaYAxisArr;
     aaOptions.tooltip = aaTooltip;
     aaOptions.series = aaSeries;
     return aaOptions;
@@ -1021,7 +1021,7 @@ class ChartOptionsComposer {
     AAYAxis aaYAxis = aaOptions.yAxis;
     aaYAxis.crosshairSet(aaCrosshair);
 
-    List aaPlotBandsArr = [
+    List<AAPlotBandsElement> aaPlotBandsArr = [
       AAPlotBandsElement()
           .fromSet(0)
           .toSet(5)
@@ -1078,7 +1078,7 @@ class ChartOptionsComposer {
     );
 //    ["#1e90ff","#ef476f","#ffd066","#04d69f","#25547c",]
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
-    List aaPlotLinesArr = [
+    List<AAPlotLinesElement> aaPlotLinesArr = [
       AAPlotLinesElement()
           .colorSet("#1e90ff")//颜色值(16进制)
           .dashStyleSet(AALineDashStyleType.longDashDot)//样式：Dash,Dot,Solid等,默认Solid
@@ -1344,7 +1344,7 @@ class ChartOptionsComposer {
         .chartTypeSet(AAChartType.areaspline)
         .titleSet("")
         .subtitleSet("")
-        .backgroundColorSet(backgroundColorGradientColor)
+        // .backgroundColorSet(backgroundColorGradientColor)
         .stackingSet(AAChartStackingType.normal)
         .yAxisVisibleSet(true)
         .yAxisTitleSet("")

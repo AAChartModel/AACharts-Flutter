@@ -20,4 +20,12 @@ class AAColumnrange {
         dataLabels = prop;
         return this;
     }
+
+    Map<String, dynamic> toJson() {
+    return {
+      "borderRadius": this.borderRadius,
+      "borderWidth": this.borderWidth,
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
+    };
+  }
 }

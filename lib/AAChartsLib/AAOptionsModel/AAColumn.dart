@@ -80,4 +80,21 @@ import 'AADataLabels.dart';
         return this;
     }
 
+    Map<String, dynamic> toJson() {
+    return {
+      "name": this.name,
+      "data": this.data,
+      "color": this.color,
+      "grouping": this.grouping,
+      "pointPadding": this.pointPadding,
+      "pointPlacement": this.pointPlacement,
+      "groupPadding": this.groupPadding,
+      "borderWidth": this.borderWidth,
+      "colorByPoint": this.colorByPoint,
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
+      "stacking": this.stacking,
+      "borderRadius": this.borderRadius,
+      "yAxis": this.yAxis,
+    };
+  }
 }

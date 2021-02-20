@@ -102,7 +102,7 @@ import 'AAStyle.dart';
     Map<String, dynamic> toJson() {
     return {
       "enabled": this.enabled,
-      "style": this.style.toJson(),
+      "style": this.style == null ? null : this.style.toJson(),
       "format": this.format,
       "rotation": this.rotation,
       "allowOverlap": this.allowOverlap,

@@ -1,6 +1,7 @@
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
+import 'package:aacharts_flutter/ChartsDemo/ChartComposer/ChartOptionsComposer.dart';
 import 'package:flutter/material.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
@@ -120,6 +121,14 @@ class _MyAppState extends State<Application> {
     );
 
     var testJson = aaDataLabels.toJson();
+
+    var testOptionsJson1 = ChartOptionsComposer.configure_DataLabels_XAXis_YAxis_Legend_Style().toJson();
+    var testOptionsJson2 = ChartOptionsComposer.configureAAPlotBandsForChart().toJson();
+    var testOptionsJson3 = ChartOptionsComposer.configureAAPlotLinesForChart().toJson();
+
+    print(testOptionsJson1.toString());
+    print(testOptionsJson2.toString());
+    print(testOptionsJson3.toString());
 
 
     return MaterialApp(

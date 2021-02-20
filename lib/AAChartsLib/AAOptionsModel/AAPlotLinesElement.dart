@@ -39,8 +39,16 @@ import 'AALabel.dart';
         return this;
     }
 
-
-
+    Map<String, dynamic> toJson() {
+    return {
+      "color": this.color,
+      "dashStyle": this.dashStyle,
+      "width": this.width,
+      "value": this.value,
+      "zIndex": this.zIndex,
+      "label": this.label == null ? null : this.label.toJson(),
+    };
+  }
 }
 
 

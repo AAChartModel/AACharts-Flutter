@@ -32,4 +32,14 @@
         this.fontWeight = prop;
         return this;
     }
+
+    Map<String, dynamic> toJson() {
+    return {
+      "color": this.color,
+      "cursor": this.cursor,
+      "pointer": this.pointer,
+      "fontSize": this.fontSize,
+      "fontWeight": this.fontWeight,
+    };
+  }
 }

@@ -15,4 +15,11 @@ class AAAnimation {
         easing = prop;
         return this;
     }
+
+    Map<String, dynamic> toJson() {
+    return {
+      "duration": this.duration,
+      "easing": this.easing,
+    };
+  }
 }

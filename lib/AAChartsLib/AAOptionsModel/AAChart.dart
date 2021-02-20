@@ -69,4 +69,19 @@ class AAChart {
         return this;
     }
 
+    Map<String, dynamic> toJson() {
+    return {
+      "type": this.type,
+      "backgroundColor": this.backgroundColor,
+      "plotBackgroundImage": this.plotBackgroundImage,
+      "pinchType": this.pinchType,
+      "panning": this.panning,
+      "panKey": this.panKey,
+      "polar": this.polar,
+      "animation": this.animation == null ? null : this.animation.toJson(),
+      "inverted": this.inverted,
+      "marginLeft": this.marginLeft,
+      "marginRight": this.marginRight,
+    };
+  }
 }

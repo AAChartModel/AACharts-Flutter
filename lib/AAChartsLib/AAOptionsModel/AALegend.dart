@@ -63,4 +63,18 @@ import 'AAItemStyle.dart';
         return this;
     }
 
+    Map<String, dynamic> toJson() {
+    return {
+      "layout": this.layout,
+      "align": this.align,
+      "verticalAlign": this.verticalAlign,
+      "enabled": this.enabled,
+      "borderColor": this.borderColor,
+      "borderWidth": this.borderWidth,
+      "itemMarginTop": this.itemMarginTop,
+      "itemStyle": this.itemStyle == null ? null : this.itemStyle.toJson(),
+      "x": this.x,
+      "y": this.y,
+    };
+  }
 }

@@ -33,4 +33,13 @@
         return this;
     }
 
+    Map<String, dynamic> toJson() {
+    return {
+      "radius": this.radius,
+      "symbol": this.symbol,
+      "fillColor": this.fillColor,
+      "lineWidth": this.lineWidth,
+      "lineColor": this.lineColor,
+    };
+  }
 }

@@ -1,3 +1,5 @@
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
+
 import 'AAChart.dart';
 import 'AATitle.dart';
 import 'AASubtitle.dart';
@@ -13,10 +15,10 @@ import 'AALegend.dart';
      AATitle title;
      AASubtitle subtitle;
      AAXAxis xAxis;
-     Object yAxis;
+     AAYAxis yAxis;
      AATooltip tooltip;
      AAPlotOptions plotOptions;
-     List series;
+     List<AASeriesElement> series;
      AALegend legend;
      List colors;
      bool touchEventEnabled;
@@ -56,7 +58,7 @@ import 'AALegend.dart';
         return this;
     }
 
-     AAOptions seriesSet(List prop) {
+     AAOptions seriesSet(List<AASeriesElement> prop) {
         series = prop;
         return this;
     }
@@ -76,4 +78,19 @@ import 'AALegend.dart';
         return this;
     }
 
+     Map<String, dynamic> toJson() {
+    return {
+      "chart": this.chart == null ? null : this.chart.toJson(),
+      "title": this.title == null ? null : this.title.toJson(),
+      "subtitle": this.subtitle == null ? null : this.subtitle.toJson(),
+      "xAxis": this.xAxis == null ? null : this.xAxis.toJson(),
+      "yAxis": this.yAxis == null ? null : this.yAxis.toJson(),
+      "tooltip": this.tooltip == null ? null : this.tooltip.toJson(),
+      "plotOptions": this.plotOptions == null ? null : this.plotOptions.toJson(),
+      "series": this.series == null ? null : this.series,
+      "legend": this.legend == null ? null : this.legend.toJson(),
+      "colors": this.colors == null ? null : this.colors,
+      "touchEventEnabled": this.touchEventEnabled,
+    };
+  }
 }

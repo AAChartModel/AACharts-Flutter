@@ -32,4 +32,13 @@
         return this;
     }
 
+    Map<String, dynamic> toJson() {
+    return {
+      "color": this.color,
+      "offsetX": this.offsetX,
+      "offsetY": this.offsetY,
+      "opacity": this.opacity,
+      "width": this.width,
+    };
+  }
 }

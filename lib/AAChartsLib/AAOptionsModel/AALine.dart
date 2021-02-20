@@ -6,4 +6,10 @@ import 'AADataLabels.dart';
         dataLabels = prop;
         return this;
     }
+
+     Map<String, dynamic> toJson() {
+    return {
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
+    };
+  }
 }

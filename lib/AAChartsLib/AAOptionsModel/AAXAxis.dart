@@ -137,4 +137,31 @@ class AAXAxis {
         tickPosition = prop;
         return this;
     }
+
+     Map<String, dynamic> toJson() {
+    return {
+      "plotBands": this.plotBands,
+      "plotLines": this.plotLines,
+      "categories": this.categories,
+      "reversed": this.reversed,
+      "lineWidth": this.lineWidth,
+      "lineColor": this.lineColor,
+      "max": this.max,
+      "min": this.min,
+      "tickColor": this.tickColor,
+      "gridLineWidth": this.gridLineWidth,
+      "gridLineColor": this.gridLineColor,
+      "gridLineDashStyle": this.gridLineDashStyle,
+      "off": this.off,
+      "labels": this.labels == null ? null : this.labels.toJson(),
+      "visible": this.visible,
+      "startOnTick": this.startOnTick,
+      "tickInterval": this.tickInterval,
+      "crosshair": this.crosshair == null ? null : this.crosshair.toJson(),
+      "tickmarkPlacement": this.tickmarkPlacement,
+      "tickWidth": this.tickWidth,
+      "tickLength": this.tickLength,
+      "tickPosition": this.tickPosition,
+    };
+  }
 }

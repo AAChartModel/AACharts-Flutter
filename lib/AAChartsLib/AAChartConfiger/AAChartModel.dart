@@ -1,3 +1,5 @@
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
+
 enum AAChartAnimationType {
    linear,
    easeInQuad,
@@ -155,7 +157,7 @@ class AAChartModel {
    String  dataLabelsFontWeight;
    bool xAxisLabelsEnabled;    //x 轴是否显示数据
    int xAxisTickInterval;
-   List categories;             //x 轴是否显示数据
+   List<String> categories;             //x 轴是否显示数据
    double xAxisGridLineWidth;  //x 轴网格线的宽度
    bool xAxisVisible;          //x 轴是否显示
    bool yAxisVisible;          //y 轴是否显示
@@ -170,7 +172,7 @@ class AAChartModel {
    String tooltipValueSuffix;  //浮动提示框单位后缀
    bool tooltipCrosshairs;     //是否显示准星线(默认显示)
    List colorsTheme;            //图表主题颜色数组
-   List series;                 //图表的数据数组
+   List<AASeriesElement> series;                 //图表的数据数组
    bool legendEnabled;         //是否显示图例
    String legendLayout;        //图例数据项的布局。布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
    String legendAlign;         //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
@@ -349,7 +351,7 @@ class AAChartModel {
       return this;
    }
 
-   AAChartModel categoriesSet(List prop) {
+   AAChartModel categoriesSet(List<String> prop) {
    categories = prop;
    return this;
    }
@@ -430,7 +432,7 @@ class AAChartModel {
       return this;
    }
 
-   AAChartModel seriesSet(List prop) {
+   AAChartModel seriesSet(List<AASeriesElement> prop) {
    series = prop;
    return this;
    }
@@ -440,7 +442,7 @@ class AAChartModel {
       return this;
    }
 
-  AAChartModelSet() {
+  AAChartModel() {
      backgroundColor       = "#ffffff";
      titleColor            = "#000000";
      axisColor             = "#000000";

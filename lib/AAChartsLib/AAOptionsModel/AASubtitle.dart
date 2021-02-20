@@ -45,4 +45,16 @@ import 'AAStyle.dart';
         userHTML = prop;
         return this;
     }
+
+    Map<String, dynamic> toJson() {
+    return {
+      "text": this.text,
+      "style": this.style,
+      "align": this.align,
+      "verticalAlign": this.verticalAlign,
+      "x": this.x,
+      "y": this.y,
+      "userHTML": this.userHTML,
+    };
+  }
 }

@@ -19,4 +19,12 @@
         dashStyle = prop;
         return this;
     }
+
+    Map<String, dynamic> toJson() {
+    return {
+      "width": this.width,
+      "color": this.color,
+      "dashStyle": this.dashStyle,
+    };
+  }
 }
