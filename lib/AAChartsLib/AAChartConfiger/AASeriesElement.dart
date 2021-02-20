@@ -1,5 +1,6 @@
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAShadow.dart';
 
 class AASeriesElement {
 
@@ -136,6 +137,32 @@ class AASeriesElement {
     return this;
   }
 
+  Map<String, dynamic> toJson() {
+    return {
+      "type": this.type,
+      "name": this.name,
+      "data": this.data,
+      "color": this.color,
+      "lineWidth": this.lineWidth,
+      "borderWidth": this.borderWidth,
+      "borderColor": this.borderColor,
+      "fillColor": this.fillColor,
+      "fillOpacity": this.fillOpacity,
+      "threshold": this.threshold,
+      "negativeColor": this.negativeColor,
+      "dashStyle": this.dashStyle,
+      "dataLabels": this.dataLabels,
+      "marker": this.marker,
+      "step": this.step,
+      "colorByPoint": this.colorByPoint,
+      "allowPointSelect": this.allowPointSelect,
+      "zIndex": this.zIndex,
+      "innerSize": this.innerSize,
+      "shadow": this.shadow,
+      "zones": this.zones,
+      "stack": this.stack,
+    };
+  }
 }
 
 class AADataElement {
@@ -169,39 +196,14 @@ class AADataElement {
     marker = prop;
     return this;
   }
-}
 
-
-class AAShadow {
-  String color;
-  double offsetX;
-  double offsetY;
-  double opacity;
-  double width;
-
-  AAShadow colorSet(String prop) {
-    color = prop;
-    return this;
+  Map<String, dynamic> toJson() {
+    return {
+      "name": this.name,
+      "y": this.y,
+      "color": this.color,
+      "dataLabels": this.dataLabels.toJson(),
+      "marker": this.marker.toJson(),
+    };
   }
-
-  AAShadow offsetXSet(double prop) {
-    offsetX = prop;
-    return this;
-  }
-
-  AAShadow offsetYSet(double prop) {
-    offsetY = prop;
-    return this;
-  }
-
-  AAShadow opacitySet(double prop) {
-    opacity = prop;
-    return this;
-  }
-
-  AAShadow widthSet(double prop) {
-    width = prop;
-    return this;
-  }
-
 }

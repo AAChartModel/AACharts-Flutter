@@ -4,6 +4,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAGradientColor.dar
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAShadow.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 
 

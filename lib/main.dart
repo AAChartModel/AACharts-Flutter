@@ -7,6 +7,8 @@ import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAOptionsConstructor.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'dart:convert' as convert;
+
 
 void main() => runApp(Application());
 
@@ -122,9 +124,11 @@ class _MyAppState extends State<Application> {
 
     var testJson = aaDataLabels.toJson();
 
-    var testOptionsJson1 = ChartOptionsComposer.configure_DataLabels_XAXis_YAxis_Legend_Style().toJson();
+    var testOptionsJson1 = ChartOptionsComposer.configureTheAAOptionsOfAreaChart().toJson();
     var testOptionsJson2 = ChartOptionsComposer.configureAAPlotBandsForChart().toJson();
     var testOptionsJson3 = ChartOptionsComposer.configureAAPlotLinesForChart().toJson();
+    String jsonString = convert.jsonEncode(testOptionsJson1);
+
 
     print(testOptionsJson1.toString());
     print(testOptionsJson2.toString());

@@ -79,6 +79,17 @@ import 'AALegend.dart';
     }
 
      Map<String, dynamic> toJson() {
+
+       List<Map<String, dynamic>> seriesList;
+       if (this.series == null) {
+         seriesList = null;
+       } else {
+         seriesList = List<Map<String, dynamic>>();
+         this.series.forEach((element) {
+           seriesList.add(element.toJson());
+         });
+       }
+
     return {
       "chart": this.chart == null ? null : this.chart.toJson(),
       "title": this.title == null ? null : this.title.toJson(),
@@ -87,7 +98,7 @@ import 'AALegend.dart';
       "yAxis": this.yAxis == null ? null : this.yAxis.toJson(),
       "tooltip": this.tooltip == null ? null : this.tooltip.toJson(),
       "plotOptions": this.plotOptions == null ? null : this.plotOptions.toJson(),
-      "series": this.series == null ? null : this.series,
+      "series": seriesList,
       "legend": this.legend == null ? null : this.legend.toJson(),
       "colors": this.colors == null ? null : this.colors,
       "touchEventEnabled": this.touchEventEnabled,
