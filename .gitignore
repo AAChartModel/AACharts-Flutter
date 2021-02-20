@@ -15,3 +15,70 @@ android/.gradle/4.10.2/fileHashes/fileHashes.bin
 android/.gradle/4.10.2/fileHashes/fileHashes.lock
 android/.gradle/4.10.2/taskHistory/taskHistory.lock
 android/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.flutter-plugins
+.flutter-plugins-dependencies
+ios/Podfile
+ios/Podfile.lock
+ios/.symlinks/plugins/flutter_inappwebview
+ios/Flutter/.last_build_id
+ios/Flutter/Flutter.podspec
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/App.framework/App
+ios/Flutter/App.framework/Info.plist
+ios/Flutter/App.framework/flutter_assets/AssetManifest.json
+ios/Flutter/App.framework/flutter_assets/FontManifest.json
+ios/Flutter/App.framework/flutter_assets/isolate_snapshot_data
+ios/Flutter/App.framework/flutter_assets/kernel_blob.bin
+ios/Flutter/App.framework/flutter_assets/NOTICES
+ios/Flutter/App.framework/flutter_assets/vm_snapshot_data
+ios/Flutter/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf
+ios/Flutter/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+ios/Flutter/App.framework/flutter_assets/packages/flutter_inappwebview/t_rex_runner/t-rex.css
+ios/Flutter/App.framework/flutter_assets/packages/flutter_inappwebview/t_rex_runner/t-rex.html
+ios/Flutter/Flutter.framework/Flutter
+ios/Flutter/Flutter.framework/icudtl.dat
+ios/Flutter/Flutter.framework/Info.plist
+ios/Flutter/Flutter.framework/_CodeSignature/CodeResources
+ios/Flutter/Flutter.framework/Headers/Flutter.h
+ios/Flutter/Flutter.framework/Headers/FlutterAppDelegate.h
+ios/Flutter/Flutter.framework/Headers/FlutterBinaryMessenger.h
+ios/Flutter/Flutter.framework/Headers/FlutterCallbackCache.h
+ios/Flutter/Flutter.framework/Headers/FlutterChannels.h
+ios/Flutter/Flutter.framework/Headers/FlutterCodecs.h
+ios/Flutter/Flutter.framework/Headers/FlutterDartProject.h
+ios/Flutter/Flutter.framework/Headers/FlutterEngine.h
+ios/Flutter/Flutter.framework/Headers/FlutterHeadlessDartRunner.h
+ios/Flutter/Flutter.framework/Headers/FlutterMacros.h
+ios/Flutter/Flutter.framework/Headers/FlutterPlatformViews.h
+ios/Flutter/Flutter.framework/Headers/FlutterPlugin.h
+ios/Flutter/Flutter.framework/Headers/FlutterPluginAppLifeCycleDelegate.h
+ios/Flutter/Flutter.framework/Headers/FlutterTexture.h
+ios/Flutter/Flutter.framework/Headers/FlutterViewController.h
+ios/Flutter/Flutter.framework/Modules/module.modulemap
+ios/Pods/Manifest.lock
+ios/Pods/Local Podspecs/Flutter.podspec.json
+ios/Pods/Local Podspecs/flutter_inappwebview.podspec.json
+ios/Pods/Pods.xcodeproj/project.pbxproj
+ios/Pods/Pods.xcodeproj/xcuserdata/anan.xcuserdatad/xcschemes/Flutter.xcscheme
+ios/Pods/Pods.xcodeproj/xcuserdata/anan.xcuserdatad/xcschemes/flutter_inappwebview.xcscheme
+ios/Pods/Pods.xcodeproj/xcuserdata/anan.xcuserdatad/xcschemes/Pods-Runner.xcscheme
+ios/Pods/Target Support Files/Flutter/Flutter.debug.xcconfig
+ios/Pods/Target Support Files/Flutter/Flutter.release.xcconfig
+ios/Pods/Target Support Files/flutter_inappwebview/flutter_inappwebview-dummy.m
+ios/Pods/Target Support Files/flutter_inappwebview/flutter_inappwebview-Info.plist
+ios/Pods/Target Support Files/flutter_inappwebview/flutter_inappwebview-prefix.pch
+ios/Pods/Target Support Files/flutter_inappwebview/flutter_inappwebview-umbrella.h
+ios/Pods/Target Support Files/flutter_inappwebview/flutter_inappwebview.debug.xcconfig
+ios/Pods/Target Support Files/flutter_inappwebview/flutter_inappwebview.modulemap
+ios/Pods/Target Support Files/flutter_inappwebview/flutter_inappwebview.release.xcconfig
+ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.markdown
+ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.plist
+ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-dummy.m
+ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh
+ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-Info.plist
+ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-resources.sh
+ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-umbrella.h
+ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig
+ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.modulemap
+ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig
+ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig
