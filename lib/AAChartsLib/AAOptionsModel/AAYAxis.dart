@@ -192,4 +192,15 @@ import 'AACrosshair.dart';
       "tickPosition": this.tickPosition,
     };
   }
+
+   Map<String, dynamic> toPureJson() {
+     Map<String, dynamic> json = this.toJson();
+
+     json.forEach((key, value) {
+       if (value == null) {
+         json.remove(key);
+       }
+     });
+     return json;
+   }
 }
