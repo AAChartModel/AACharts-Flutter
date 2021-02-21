@@ -5,7 +5,6 @@ import 'package:aacharts_flutter/ChartsDemo/ChartComposer/ChartOptionsComposer.d
 import 'package:flutter/material.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAOptionsConstructor.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'dart:convert' as convert;
 
