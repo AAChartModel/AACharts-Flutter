@@ -17,14 +17,14 @@ abstract class AAOptionsConstructor {
     var aaTitle = Map<String,Object>();
     aaTitle["text"] = aaChartModel.title;//标题文本内容
     var aaTitleStyle = Map<String,Object>();
-    aaTitleStyle["color"] = aaChartModel.titleColor;//标题文字颜色
+    // aaTitleStyle["color"] = aaChartModel.titleColor;//标题文字颜色
     aaTitleStyle["fontSize"] = "12px";//标题文字大小
     aaTitle["style"] = aaTitleStyle;
 
     var aaSubtitle = Map<String,Object>();
     aaSubtitle["text"] = aaChartModel.subtitle;//富标题文本内容
     var aaSubtitleStyle = Map<String,Object>();
-    aaSubtitleStyle["color"] = aaChartModel.subTitleColor;//副标题文字颜色
+    // aaSubtitleStyle["color"] = aaChartModel.subTitleColor;//副标题文字颜色
     aaSubtitleStyle["fontSize"] = "9px";//副标题文字大小
     aaSubtitle["style"] = aaSubtitleStyle;
 

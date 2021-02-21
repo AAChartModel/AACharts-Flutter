@@ -711,7 +711,6 @@ class SpecialChartComposer {
         .invertedSet(true)
         .backgroundColorSet("#4b2b7f")
         .dataLabelsEnabledSet(true)
-        .dataLabelsFontColorSet("#ffffff")
         .seriesSet([
       AASeriesElement()
           .nameSet("温度")

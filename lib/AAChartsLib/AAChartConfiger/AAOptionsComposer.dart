@@ -42,21 +42,13 @@ abstract class AAOptionsComposer {
 
     AATitle aaTitle = new AATitle()
         .textSet(aaChartModel.title) //标题文本内容
-        .styleSet(new AAStyle()
-        .colorSet(aaChartModel.titleFontColor) //Title font color
-        .fontSizeSet(aaChartModel.titleFontSize) //Title font size
-        .fontWeightSet(aaChartModel.titleFontWeight) //Title font weight
-    )
+        .styleSet(aaChartModel.titleStyle)
     ;
 
     AASubtitle aaSubtitle = new AASubtitle()
         .textSet(aaChartModel.subtitle) //副标题内容
         .alignSet(aaChartModel.subtitleAlign) //图表副标题文本水平对齐方式。可选的值有 “left”，”center“和“right”。 默认是：center.
-        .styleSet(new AAStyle()
-        .colorSet(aaChartModel.subtitleFontColor) //Subtitle font color
-        .fontSizeSet(aaChartModel.subtitleFontSize) //Subtitle font size
-        .fontWeightSet(aaChartModel.subtitleFontWeight) //Subtitle font weight
-    )
+        .styleSet(aaChartModel.subtitleStyle)
     ;
 
     AATooltip aaTooltip = new AATooltip()
@@ -143,11 +135,7 @@ abstract class AAOptionsComposer {
         .enabledSet(aaChartModel.dataLabelsEnabled);
     if (aaChartModel.dataLabelsEnabled) {
       aaDataLabels = aaDataLabels
-          .styleSet(new AAStyle()
-          .colorSet(aaChartModel.dataLabelsFontColor)
-          .fontSizeSet(aaChartModel.dataLabelsFontSize)
-          .fontWeightSet(aaChartModel.dataLabelsFontWeight)
-      );
+          .styleSet(aaChartModel.dataLabelsStyle);
     }
 
     switch (chartType) {

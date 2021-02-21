@@ -1,4 +1,5 @@
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 
 enum AAChartAnimationType {
   linear,
@@ -126,14 +127,10 @@ class AAChartModel {
   var animationType; //动画类型
   int animationDuration; //动画时间
   String title; //标题内容
-  String titleFontColor; //标题字体颜色
-  double titleFontSize; //标题字体大小
-  String titleFontWeight; //标题字体粗细
+  AAStyle titleStyle;
   String subtitle; //副标题内容
   String subtitleAlign;
-  String subtitleFontColor; //副标题字体颜色
-  double subtitleFontSize; //副标题字体大小
-  String subtitleFontWeight; //副标题字体粗细
+  AAStyle subtitleStyle;
   String axesTextColor; //x 轴和 y 轴文字颜色
   String chartType; //图表类型
   String stacking; //堆积样式
@@ -149,9 +146,7 @@ class AAChartModel {
   double marginLeft; //图表左边距
   double marginRight; //图表右边距
   bool dataLabelsEnabled; //是否显示数据
-  String dataLabelsFontColor;
-  double dataLabelsFontSize;
-  String dataLabelsFontWeight;
+  AAStyle dataLabelsStyle;
   bool xAxisLabelsEnabled; //x 轴是否显示数据
   int xAxisTickInterval;
   List<String> categories; //x 轴是否显示数据
@@ -177,8 +172,8 @@ class AAChartModel {
   String backgroundColor; //图表背景色
   double borderRadius; //柱状图长条图头部圆角半径(可用于设置头部的形状,仅对条形图,柱状图有效)
   double markerRadius; //折线连接点的半径长度
-  String titleColor; //标题颜色
-  String subTitleColor; //副标题颜色
+  // String titleColor; //标题颜色
+  // String subTitleColor; //副标题颜色
   String axisColor; //x 轴和 y 轴文字颜色
   bool touchEventEnabled; //是否支持用户触摸事件
 
@@ -197,18 +192,8 @@ class AAChartModel {
     return this;
   }
 
-  AAChartModel titleFontColorSet(String prop) {
-    titleFontColor = prop;
-    return this;
-  }
-
-  AAChartModel titleFontSizeSet(double prop) {
-    titleFontSize = prop;
-    return this;
-  }
-
-  AAChartModel titleFontWeightSet(String prop) {
-    titleFontWeight = prop;
+  AAChartModel titleStyleSet(AAStyle prop) {
+    titleStyle = prop;
     return this;
   }
 
@@ -222,18 +207,8 @@ class AAChartModel {
     return this;
   }
 
-  AAChartModel subtitleFontColorSet(String prop) {
-    subtitleFontColor = prop;
-    return this;
-  }
-
-  AAChartModel subtitleFontSizeSet(double prop) {
-    subtitleFontSize = prop;
-    return this;
-  }
-
-  AAChartModel subtitleFontWeightSet(String prop) {
-    subtitleFontWeight = prop;
+  AAChartModel subtitleStyleSet(AAStyle prop) {
+    subtitleStyle = prop;
     return this;
   }
 
@@ -317,18 +292,8 @@ class AAChartModel {
     return this;
   }
 
-  AAChartModel dataLabelsFontColorSet(String prop) {
-    dataLabelsFontColor = prop;
-    return this;
-  }
-
-  AAChartModel dataLabelsFontSizeSet(double prop) {
-    dataLabelsFontSize = prop;
-    return this;
-  }
-
-  AAChartModel dataLabelsFontWeightSet(String prop) {
-    dataLabelsFontWeight = prop;
+  AAChartModel dataLabelsStyleSet(AAStyle prop) {
+    dataLabelsStyle = prop;
     return this;
   }
 
@@ -434,7 +399,6 @@ class AAChartModel {
 
   AAChartModel() {
      backgroundColor       = "#ffffff";
-     titleColor            = "#000000";
      axisColor             = "#000000";
 //     animationType         = AAChartAnimationType.bounce as int;
      animationDuration     = 800;//以毫秒为单位
@@ -457,14 +421,5 @@ class AAChartModel {
      legendVerticalAlign   = AAChartVerticalAlignType.bottom;
      borderRadius          = 0; //柱状图长条图头部圆角半径可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
      markerRadius          = 5; //折线连接点的半径长度,如果设置默认值为0,那么这样就相当于不显示了
-     titleFontColor        = "#000000";//标题字体颜色为黑色
-     titleFontWeight       = "regular";//常规字体
-     titleFontSize         = 11;
-     subtitleFontColor     = "#000000";//副标题字体颜色为黑色
-     subtitleFontWeight    = "regular";//常规字体
-     subtitleFontSize      = 9;
-     dataLabelsFontColor   = "#000000";//数据标签默认颜色为黑色
-     dataLabelsFontWeight  = "bold";//图表的数据字体为粗体
-     dataLabelsFontSize    = 10;
   }
 }
