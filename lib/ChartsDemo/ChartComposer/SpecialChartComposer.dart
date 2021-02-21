@@ -10,8 +10,6 @@ class SpecialChartComposer {
         .polarSet(true)
         .dataLabelsEnabledSet(false)
         .categoriesSet(["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"])
-        .marginLeftSet(50)
-        .marginRightSet(30)
         .seriesSet([
       AASeriesElement()
           .nameSet("2018")
