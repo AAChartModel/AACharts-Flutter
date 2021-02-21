@@ -1,7 +1,6 @@
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAOptionsComposer.dart';
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAOptionsConstructor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAGradientColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAnimation.dart';
