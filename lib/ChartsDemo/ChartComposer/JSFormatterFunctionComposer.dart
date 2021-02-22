@@ -3,7 +3,6 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
 
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAColor.dart';
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAOptionsComposer.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAGradientColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAColumn.dart';
@@ -41,20 +40,19 @@ class JSFormatterFunctionComposer {
           .fillOpacitySet(0.4)
           .nameSet("2018")
           .dataSet([
-            1.51, 6.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
-            4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.51, 12.7, 0.94, 1.44,
-            18.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46,
-            3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.33, 4.68, 1.31, 1.10, 13.9, 1.10, 1.16, 1.67,
-            2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05,
-            2.18, 3.24,3.23, 3.15, 2.90, 1.81, 2.11, 2.43, 5.59, 3.09, 4.09, 6.14, 5.33, 6.05,
-            5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.48])
+        1.51, 6.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
+        4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.51, 12.7, 0.94, 1.44,
+        18.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46,
+        3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.33, 4.68, 1.31, 1.10, 13.9, 1.10, 1.16, 1.67,
+        2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05,
+        2.18, 3.24,3.23, 3.15, 2.90, 1.81, 2.11, 2.43, 5.59, 3.09, 4.09, 6.14, 5.33, 6.05,
+        5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.48])
     ]);
 
 
     //Custom Tooltip Style --- 自定义图表浮动提示框样式及内容/
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
-    AATooltip tooltip = aaOptions.tooltip;
-    tooltip
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
+    aaOptions.tooltip
         .useHTMLSet(true)
         .formatterSet("""
   function () {
@@ -110,10 +108,9 @@ class JSFormatterFunctionComposer {
           .colorSet(gradientColorDic2)
           .nameSet("🌲树木")
           .dataSet([24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]),
-    ]
-    );
+    ]);
 //Custom Tooltip Style --- 自定义图表浮动提示框样式及内容/
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
         .useHTMLSet(true)
         .formatterSet("""
@@ -158,7 +155,7 @@ function () {
           .dataSet([3,5,2]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
     aaOptions.xAxis.crosshairSet(
         AACrosshair()
@@ -224,7 +221,7 @@ function () {
           .dataSet([0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68, 0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
         .useHTMLSet(true)
         .formatterSet("""
@@ -283,7 +280,7 @@ function () {
             + "最小值: {point.low}<br/>"
     );
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
         .useHTMLSet(true)
         .headerFormatSet("<em>实验号码： {point.key}</em><br/>")
@@ -317,7 +314,7 @@ function () {
           .dataSet( [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     AAYAxis aayAxis = aaOptions.yAxis;
     aayAxis.labels
         .formatterSet("""
@@ -370,7 +367,7 @@ function () {
           .dataSet([3,0,4, 4,3,])
           .stackSet("male")
       ,]);
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
         .sharedSet(false)
         .formatterSet("""
@@ -421,7 +418,7 @@ function () {
           .dataSet( [29.9, 71.5, 106.4, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 129.2, 144.0, 176.0,]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.xAxis
         .lineWidthSet(1)
         .lineColorSet("rgba(255,255,255,0.3)")
@@ -497,7 +494,7 @@ function () {
           .dataSet( [ 148.5, 216.4, 194.1, 95.6, 54.4, 129.2, 144.0, 176.0,29.9, 71.5, 106.4, 135.6,]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.xAxis
         .lineWidthSet(1)
         .lineColorSet("rgba(255,255,255,0.3)")
@@ -573,7 +570,7 @@ function () {
           .dataSet([0,0,0,0,0,0,0,0,0,0,0,0,]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.xAxis
         .lineWidthSet(1)
         .lineColorSet("rgba(255,255,255,0.3)")
@@ -642,7 +639,7 @@ function () {
           .dataSet([9.9,null, 9.9,null,9.9, null, ]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.xAxis.lineWidth = 0.0;//避免多边形外环之外有额外套了一层无用的外环
     AAYAxis aayAxis = aaOptions.yAxis;
 //    aayAxis.gridLineInterpolation = AAYAxisGridLineInterpolationPolygon;

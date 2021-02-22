@@ -1,6 +1,5 @@
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAColor.dart';
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAOptionsComposer.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAGradientColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAnimation.dart';
@@ -53,7 +52,7 @@ class ChartOptionsComposer {
           .dataSet([0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68, 0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
     aaOptions.legend
         .enabledSet(true)
@@ -275,7 +274,7 @@ class ChartOptionsComposer {
           .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.xAxis.visible = false;//避免多边形外环之外有额外套了一层无用的外环
  // aaOptions.yAxis.gridLineInterpolation = AAYAxisGridLineInterpolationPolygon;
     return aaOptions;
@@ -299,7 +298,7 @@ class ChartOptionsComposer {
           .dataSet([3.9, 4.2, 5.7, 8.5, 11.9, 15.2,]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
     //      关于 `pointPadding`
     //https://api.highcharts.com.cn/highcharts#plotOptions.column.groupPadding
@@ -357,7 +356,7 @@ class ChartOptionsComposer {
     ]);
 
     //Custom Tooltip Style --- 自定义图表浮动提示框样式及内容/
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
         .useHTMLSet(true)
         .headerFormatSet("{series.name}-<b>{point.key}</b> &nbsp12:00<br>")
@@ -388,7 +387,7 @@ class ChartOptionsComposer {
           .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.chart.marginLeft = 70;
     aaOptions.chart.marginRight = 70;
     return aaOptions;
@@ -418,7 +417,7 @@ class ChartOptionsComposer {
         ]),
         ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.chart.plotBackgroundImage = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2859216016,2109779587&fm=27&gp=0.jpg";
     return aaOptions;
   }
@@ -527,7 +526,7 @@ class ChartOptionsComposer {
     //数值格式化字符串是采用了 C 语言浮点型格式化的子集，格式化字符是在大括号内，变量之后，用冒号（:）分隔的内容。
     //默认情况下点号（.）表示小数点，空格（ ）代表千分符，当然这两个符号可以在 语言文字 选项集里中来设定。
     //具体参见 https://www.hcharts.cn/docs/basic-labels-string-formatting#h2-1
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip.valueDecimals = 9;//设置tooltip取值精确到小数点后9位
     aaOptions.plotOptions.area.dataLabels.format = "{point.y:.9f}";//设置dataLabels取值精确到小数点后9位
     return aaOptions;
@@ -546,7 +545,7 @@ class ChartOptionsComposer {
           .dataSet([211,183,157,133,111]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     AAColumn aaColumn = aaOptions.plotOptions.column;
     aaColumn.groupPadding = 0.05;
     aaColumn.colorByPoint = true;
@@ -722,7 +721,7 @@ class ChartOptionsComposer {
 //        .stepSet(true)
 //        .dataSet([
 //    ]);
-//    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+//    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 //  Map xAxisDic = {
 //  "type": "datetime",
 //  "dateTimeLabelFormats": {
@@ -743,7 +742,7 @@ class ChartOptionsComposer {
           .nameSet("2018")
           .dataSet([0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]),
     ]);
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.plotOptions.series.animation = false;//禁用图表的渲染动画效果
     AAYAxis aayAxis = aaOptions.yAxis;
     aayAxis.gridLineDashStyle = AALineDashStyleType.longDash;//设置Y轴的网格线样式为 AALineDashStyleType.longDash
@@ -772,7 +771,7 @@ class ChartOptionsComposer {
           .dataSet([3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
     //设定图例项的CSS样式。只支持有关文本的CSS样式设定。
 //  /默认是：{
@@ -889,7 +888,7 @@ class ChartOptionsComposer {
           .dataSet([3.9, 4.2, 5.7, 8.5, 11.9, 15.2,]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     AAColumn aaColumn = aaOptions.plotOptions.column;
     aaColumn.groupPadding = 0.02;
     //是否将坐标轴显示在对立面，默认情况下 x 轴是在图表的下方显示，y 轴是在左方，
@@ -994,7 +993,7 @@ class ChartOptionsComposer {
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     AACrosshair aaCrosshair = AACrosshair()
         .widthSet(1.5)
         .colorSet(AAColor.gray)
@@ -1061,7 +1060,7 @@ class ChartOptionsComposer {
       ]),
     ]);
 //    ["#1e90ff","#ef476f","#ffd066","#04d69f","#25547c",]
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     List<AAPlotLinesElement> aaPlotLinesArr = [
       AAPlotLinesElement()
           .colorSet("#1e90ff")//颜色值(16进制)
@@ -1126,7 +1125,7 @@ class ChartOptionsComposer {
         4.17, 3.85, 4.17, 3.46, 3.46, 3.55,]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.xAxis.crosshairSet(
         AACrosshair()
             .widthSet(1)
@@ -1206,7 +1205,7 @@ class ChartOptionsComposer {
       ]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.plotOptions.pie.dataLabels.allowOverlap = true;
 
     aaOptions.yAxis.gridLineDashStyle = AALineDashStyleType.longDash;//设置Y轴的网格线样式为 AALineDashStyleType.longDash
@@ -1256,7 +1255,7 @@ class ChartOptionsComposer {
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     AAYAxis aayAxis = aaOptions.yAxis;
     aayAxis.labels.format = "{value} %";//给y轴添加单位
     aaOptions.xAxis.labels.useHTML = true;
@@ -1294,7 +1293,7 @@ class ChartOptionsComposer {
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     AAYAxis aayAxis = aaOptions.yAxis;
     aayAxis.labels.format = "{value} %";//给y轴添加单位
     aaOptions.xAxis.labels.useHTML = true;
@@ -1333,7 +1332,7 @@ class ChartOptionsComposer {
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
     aaOptions.plotOptions.areaspline
         .dataLabelsSet(AADataLabels()
@@ -1397,7 +1396,7 @@ class ChartOptionsComposer {
           .colorSet("#25547c")
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ]);
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     //  refer to https://api.highcharts.com.cn/highcharts#xAxis.plotBands
     List aaPlotBandsArr = [
       AAPlotBandsElement()
@@ -1443,7 +1442,7 @@ class ChartOptionsComposer {
       ,
     ]);
 
-    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     //通过设置 crop 为 false 及 overflow 为"none" 可以让数据标签显示在绘图区的外面
     //参见:https://api.highcharts.com.cn/highcharts#plotOptions.column.dataLabels.overflow
     aaOptions.plotOptions.column.dataLabels
