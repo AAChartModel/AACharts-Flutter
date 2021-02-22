@@ -205,7 +205,7 @@ class ChartOptionsComposer {
         AASeries()
             .animationSet(
             AAAnimation()
-//      .easingSet(AAChartAnimationType.bounce)
+                .easingSet(AAChartAnimationType.bounce)
                 .durationSet(1000)))
         .columnSet(
         AAColumn()
@@ -277,7 +277,7 @@ class ChartOptionsComposer {
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.xAxis.visible = false;//避免多边形外环之外有额外套了一层无用的外环
-//  aaOptions.yAxis.gridLineInterpolation = AAYAxisGridLineInterpolationPolygon;
+ // aaOptions.yAxis.gridLineInterpolation = AAYAxisGridLineInterpolationPolygon;
     return aaOptions;
   }
 
@@ -358,8 +358,7 @@ class ChartOptionsComposer {
 
     //Custom Tooltip Style --- 自定义图表浮动提示框样式及内容/
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
-    AATooltip tooltip = aaOptions.tooltip;
-    tooltip
+    aaOptions.tooltip
         .useHTMLSet(true)
         .headerFormatSet("{series.name}-<b>{point.key}</b> &nbsp12:00<br>")
         .pointFormatSet("<b>{point.y}</b>&nbsp元/克")
@@ -569,15 +568,15 @@ class ChartOptionsComposer {
     AAYAxis aaYAxis = AAYAxis()
         .visibleSet(true)
         .minSet(0)
-        .titleSet(AATitle()
-        .textSet("Total fruit consumption"))
+        .titleSet(
+        AATitle()
+            .textSet("Total fruit consumption"))
         .stackLabelsSet(
         AALabels()
             .enabledSet(true)
-            .styleSet(AAStyle().
-        fontWeightSet(AAChartFontWeightType.bold)
-        )
-    );
+            .styleSet(
+            AAStyle().
+            fontWeightSet(AAChartFontWeightType.bold)));
 
     AALegend aaLegend = AALegend()
         .enabledSet(true)
@@ -1135,11 +1134,8 @@ class ChartOptionsComposer {
             .colorSet(AAColor.gray)
     );
 
-
-    AAYAxis aayAxis = aaOptions.yAxis;
-    aayAxis.gridLineDashStyle = AALineDashStyleType.longDash;//设置Y轴的网格线样式为 AALineDashStyleType.longDash
-    AADataLabels aaDatalabels = aaOptions.plotOptions.spline.dataLabels;
-    aaDatalabels
+    aaOptions.yAxis.gridLineDashStyle = AALineDashStyleType.longDash;//设置Y轴的网格线样式为 AALineDashStyleType.longDash
+    aaOptions.plotOptions.spline.dataLabels
         .ySet(-10)
         .formatSet("{y}美元")
         .colorSet(AAColor.red)// blue color
@@ -1213,10 +1209,8 @@ class ChartOptionsComposer {
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.plotOptions.pie.dataLabels.allowOverlap = true;
 
-    AAYAxis aayAxis = aaOptions.yAxis;
-    aayAxis.gridLineDashStyle = AALineDashStyleType.longDash;//设置Y轴的网格线样式为 AALineDashStyleType.longDash
-    AADataLabels aaDatalabels = aaOptions.plotOptions.areaspline.dataLabels;
-    aaDatalabels
+    aaOptions.yAxis.gridLineDashStyle = AALineDashStyleType.longDash;//设置Y轴的网格线样式为 AALineDashStyleType.longDash
+    aaOptions.plotOptions.areaspline.dataLabels
         .xSet(3).ySet(-20)
         .verticalAlignSet(AAChartVerticalAlignType.middle)
         .styleSet(
@@ -1352,9 +1346,7 @@ class ChartOptionsComposer {
             .textOutlineSet("0px 0px contrast")//文字轮廓描边
     ));
 
-    AAYAxis aayAxis = aaOptions.yAxis;
-
-    aayAxis
+    aaOptions.yAxis
         .lineWidthSet(1.5)//Y轴轴线颜色
         .lineColorSet(AAColor.white)//Y轴轴线颜色
         .gridLineWidthSet(0)//Y轴网格线宽度
@@ -1452,11 +1444,9 @@ class ChartOptionsComposer {
     ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
-    AADataLabels aaDataLabels = aaOptions.plotOptions.column.dataLabels;
-
     //通过设置 crop 为 false 及 overflow 为"none" 可以让数据标签显示在绘图区的外面
     //参见:https://api.highcharts.com.cn/highcharts#plotOptions.column.dataLabels.overflow
-    aaDataLabels
+    aaOptions.plotOptions.column.dataLabels
         .enabledSet(true)
         .allowOverlapSet(true)
 //      .cropSet(false)
