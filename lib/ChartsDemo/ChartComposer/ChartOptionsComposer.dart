@@ -182,7 +182,9 @@ class ChartOptionsComposer {
         .tickLengthSet(10)
         .tickPositionSet("outside")
         .lineWidthSet(3)
-        .titleSet(AATitle().textSet("雇员"));
+        .titleSet(
+        AATitle()
+            .textSet("雇员"));
 
     AAYAxis aaYAxis2 = AAYAxis()
         .visibleSet(true)
@@ -314,9 +316,10 @@ class ChartOptionsComposer {
         .formatSet(" {y} 美元 ")
         .backgroundColorSet("rgba(0, 0, 0, 0.75)")
         .shapeSet("callout")
-        .styleSet(AAStyle()
-        .colorSet(AAColor.white)
-        .textOutlineSet("none"));
+        .styleSet(
+        AAStyle()
+            .colorSet(AAColor.white)
+            .textOutlineSet("none"));
     return aaOptions;
   }
 
