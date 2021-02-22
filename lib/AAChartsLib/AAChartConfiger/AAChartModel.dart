@@ -1,4 +1,6 @@
+import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAOptionsComposer.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 
 enum AAChartAnimationType {
@@ -395,6 +397,10 @@ class AAChartModel {
   AAChartModel touchEventEnabledSet(bool prop) {
     touchEventEnabled = prop;
     return this;
+  }
+
+  AAOptions aa_toAAOptions() {
+    return AAOptionsComposer.configureChartOptions(this);
   }
 
   AAChartModel() {
