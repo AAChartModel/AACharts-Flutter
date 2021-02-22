@@ -77,18 +77,19 @@ class ChartOptionsComposer {
         .marginLeftSet(0)
         .marginRightSet(0)
     )
-        .titleSet(AATitle()
-        .textSet("渠道销售额<br/>占比")//标题文本内容
-        .alignSet(AAChartAlignType.center)//标题水平居中
-        .verticalAlignSet(AAChartVerticalAlignType.middle)//标题垂直居中
+        .titleSet(
+        AATitle()
+            .textSet("渠道销售额<br/>占比")//标题文本内容
+            .alignSet(AAChartAlignType.center)//标题水平居中
+            .verticalAlignSet(AAChartVerticalAlignType.middle)//标题垂直居中
 //      .xSet((-xOffSet))
-        .ySet((-5))
-        .styleSet(AAStyle()
-        .colorSet("#000000")//Title font color
-        .fontSizeSet(14)//Title font size
-        .fontWeightSet("bold")//Title font weight
-    )
-    )
+            .ySet((-5))
+            .styleSet(
+            AAStyle()
+                .colorSet("#000000")//Title font color
+                .fontSizeSet(14)//Title font size
+                .fontWeightSet("bold")//Title font weight
+        ))
         .plotOptionsSet(AAPlotOptions()
         .seriesSet(AASeries()
         .animationSet(AAAnimation()
@@ -118,12 +119,12 @@ class ChartOptionsComposer {
           .innerSizeSet("65%")//内部圆环半径大小占比
           .allowPointSelectSet(false)//是否允许在点击数据点标记(扇形图点击选中的块发生位移)
           .dataSet([
-            ["Firefox",   3336.2],
-            ["IE",        26.8],
-            ["Safari",    88.5],
-            ["Opera",     46.0],
-            ["Others",    223]
-          ]
+        ["Firefox",   3336.2],
+        ["IE",        26.8],
+        ["Safari",    88.5],
+        ["Opera",     46.0],
+        ["Others",    223]
+      ]
       ),
     ])
         .colorsSet(["#1e90ff","#ef476f","#ffd066","#04d69f","#25547c",]);//设置颜色主题
@@ -482,7 +483,9 @@ class ChartOptionsComposer {
       yAxisTwo // Secondary yAxis
     ];
 
-    AATooltip aaTooltip = AATooltip().enabledSet(true).sharedSet(true);
+    AATooltip aaTooltip = AATooltip()
+    .enabledSet(true)
+    .sharedSet(true);
 
     List aaSeries = [
       AASeriesElement()

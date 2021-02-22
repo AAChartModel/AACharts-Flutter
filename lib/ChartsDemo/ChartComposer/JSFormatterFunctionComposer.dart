@@ -40,16 +40,15 @@ class JSFormatterFunctionComposer {
           .lineWidthSet(1.5)
           .fillOpacitySet(0.4)
           .nameSet("2018")
-          .dataSet(
-          [1.51, 6.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
+          .dataSet([
+            1.51, 6.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
             4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.51, 12.7, 0.94, 1.44,
             18.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46,
             3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.33, 4.68, 1.31, 1.10, 13.9, 1.10, 1.16, 1.67,
             2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05,
             2.18, 3.24,3.23, 3.15, 2.90, 1.81, 2.11, 2.43, 5.59, 3.09, 4.09, 6.14, 5.33, 6.05,
             5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.48])
-    ]
-    );
+    ]);
 
 
     //Custom Tooltip Style --- 自定义图表浮动提示框样式及内容/
@@ -71,11 +70,10 @@ class JSFormatterFunctionComposer {
         .valueDecimalsSet(2)//设置取值精确到小数点后几位
         .backgroundColorSet("#000000")
         .borderColorSet("#000000")
-        .styleSet(AAStyle()
-        .colorSet("#FFD700")
-        .fontSizeSet(12)
-    )
-    ;
+        .styleSet(
+        AAStyle()
+            .colorSet("#FFD700")
+            .fontSizeSet(12));
     return aaOptions;
   }
 
@@ -158,8 +156,7 @@ function () {
       AASeriesElement()
           .nameSet("进行中")
           .dataSet([3,5,2]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
 
@@ -272,8 +269,7 @@ function () {
         [724, 802, 806, 871, 950],
         [834, 836, 864, 882, 910]
       ]),
-    ]
-    );
+    ]);
 
 //    https://jshare.com.cn/demos/hhhhiQ
 //    https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/tooltip/footerformat/
@@ -295,10 +291,10 @@ function () {
         .valueDecimalsSet(2)//设置取值精确到小数点后几位
         .backgroundColorSet("#000000")
         .borderColorSet("#000000")
-        .styleSet(AAStyle()
-        .colorSet("#1e90ff")
-        .fontSizeSet(12)
-    );
+        .styleSet(
+        AAStyle()
+            .colorSet("#1e90ff")
+            .fontSizeSet(12));
 
     return aaOptions;
   }
@@ -319,8 +315,7 @@ function () {
           .lineWidthSet(5.0)
           .fillOpacitySet(0.4)
           .dataSet( [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     AAYAxis aayAxis = aaOptions.yAxis;
@@ -340,8 +335,7 @@ function () {
             return "一般";
         }
     }
-""")
-    ;
+""");
     return aaOptions;
   }
 
@@ -375,8 +369,7 @@ function () {
           .nameSet("Janet")
           .dataSet([3,0,4, 4,3,])
           .stackSet("male")
-      ,]
-    );
+      ,]);
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.tooltip
         .sharedSet(false)
@@ -410,8 +403,6 @@ function () {
         .titleSet("")//图表主标题
         .subtitleSet("")//图表副标题
         .backgroundColorSet("#111c4e")
-//    .xAxisLabelsFontSizeSet(9)
-//    .xAxisLabelsFontWeightSet(AAChartFontWeightType.bold)
         .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月",
       "七月", "八月", "九月", "十月", "十一月", "十二月"])
         .yAxisMaxSet(250.0)
@@ -428,8 +419,7 @@ function () {
           .nameSet("Berlin Hot")
           .colorSet(gradientColorDic1)
           .dataSet( [29.9, 71.5, 106.4, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 129.2, 144.0, 176.0,]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.xAxis
@@ -442,23 +432,22 @@ function () {
         .lineColorSet("rgba(255,255,255,0.3)");
 
     aaOptions.plotOptions
-        .seriesSet(AASeries()
-        .animationSet(false)
-    )
-        .columnSet(AAColumn()
-        .groupingSet(false)
-        .borderWidthSet(0)
-        .borderRadiusSet(8)
-    )
-    ;
+        .seriesSet(
+        AASeries()
+            .animationSet(false))
+        .columnSet(
+        AAColumn()
+            .groupingSet(false)
+            .borderWidthSet(0)
+            .borderRadiusSet(8));
 
     aaOptions.tooltip
         .sharedSet(false)
         .backgroundColorSet(gradientColorDic1)
-        .styleSet(AAStyle()
-        .colorSet("#FFFFFF")
-        .fontSizeSet(12)
-    )
+        .styleSet(
+        AAStyle()
+            .colorSet("#FFFFFF")
+            .fontSizeSet(12))
         .formatterSet("""
 function () {
   return '<b>'
@@ -473,9 +462,11 @@ function () {
   }
 
   static AAOptions everySingleColumnHasWhiteEmptyBorderLineBackground() {
-    List stopsArr = [[0.0, "#00feff"],//颜色字符串设置支持十六进制类型和 rgba 类型
+    List stopsArr = [
+      [0.0, "#00feff"],//颜色字符串设置支持十六进制类型和 rgba 类型
       [0.5, "#027eff"],
-      [1.0, "#0286ff"]];
+      [1.0, "#0286ff"]
+    ];
     Map gradientColorDic1 = AAGradientColor.linearGradient2(
         AALinearGradientDirection.toBottom,
         stopsArr
@@ -486,8 +477,6 @@ function () {
         .titleSet("")//图表主标题
         .subtitleSet("")//图表副标题
         .backgroundColorSet("#111c4e")
-//    .xAxisLabelsFontSizeSet(9)
-//    .xAxisLabelsFontWeightSet(AAChartFontWeightType.bold)
         .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月",
       "七月", "八月", "九月", "十月", "十一月", "十二月"])
         .yAxisMaxSet(250.0)
@@ -506,8 +495,7 @@ function () {
           .nameSet("Berlin Hot")
           .colorSet(gradientColorDic1)
           .dataSet( [ 148.5, 216.4, 194.1, 95.6, 54.4, 129.2, 144.0, 176.0,29.9, 71.5, 106.4, 135.6,]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.xAxis
@@ -521,8 +509,7 @@ function () {
     aaOptions.plotOptions
         .seriesSet(
         AASeries()
-            .animationSet(false)
-    )
+            .animationSet(false))
         .columnSet(
         AAColumn()
             .groupingSet(false)
@@ -559,8 +546,6 @@ function () {
         .subtitleSet("")//图表副标题
         .backgroundColorSet("#111c4e")
         .colorsThemeSet(["#eb2100", "#eb3600", "#d0570e", "#d0a00e", "#34da62", "#00e9db", "#00c0e9", "#0096f3", "#33CCFF", "#33FFCC"])
-//    .xAxisLabelsFontSizeSet(9)
-//    .xAxisLabelsFontWeightSet(AAChartFontWeightType.bold)
         .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月",
       "七月", "八月", "九月", "十月", "十一月", "十二月"])
         .yAxisMaxSet(250.0)
@@ -579,18 +564,15 @@ function () {
       AASeriesElement()
           .nameSet("Berlin Hot")
           .colorByPointSet(true)
-          .dataSet( [ 148.5, 216.4, 194.1, 95.6, 54.4, 129.2, 144.0, 176.0,29.9, 71.5, 106.4, 135.6,]),
+          .dataSet( [148.5, 216.4, 194.1, 95.6, 54.4, 129.2, 144.0, 176.0,29.9, 71.5, 106.4, 135.6,]),
       AASeriesElement()
           .typeSet(AAChartType.scatter)
           .colorByPointSet(true)
           .markerSet(
           AAMarker()
-              .radiusSet(21)
-      )
-          .dataSet([0,0,0,0,0,0,0,0,0,0,0,0,]
-      ),
-    ]
-    );
+              .radiusSet(21))
+          .dataSet([0,0,0,0,0,0,0,0,0,0,0,0,]),
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.xAxis
@@ -603,23 +585,23 @@ function () {
         .lineColorSet("rgba(255,255,255,0.3)");
 
     aaOptions.plotOptions
-        .seriesSet(AASeries()
-        .animationSet(false)
-    )
-        .columnSet(AAColumn()
-        .groupingSet(false)
-        .borderWidthSet(0)
-        .borderRadiusSet(8)
-    )
+        .seriesSet(
+        AASeries()
+            .animationSet(false))
+        .columnSet(
+        AAColumn()
+            .groupingSet(false)
+            .borderWidthSet(0)
+            .borderRadiusSet(8))
     ;
 
     aaOptions.tooltip
         .sharedSet(false)
         .backgroundColorSet(AAColor.darkGray)
-        .styleSet(AAStyle()
-        .colorSet("#FFD700")
-        .fontSizeSet(12)
-    )
+        .styleSet(
+        AAStyle()
+            .colorSet("#FFD700")
+            .fontSizeSet(12))
         .formatterSet("""
 function () {
   return '<b>'
@@ -636,7 +618,6 @@ function () {
   static AAOptions configureSpecialStyleTrianglePolarChart() {
     AAChartModel aaChartModel = AAChartModel()
         .chartTypeSet(AAChartType.area)
-//    .connectNullsSet(true)
         .titleSet("")
         .subtitleSet("")
         .yAxisTitleSet("")
@@ -660,9 +641,7 @@ function () {
           .nameSet("2020")
           .colorSet(AAGradientColor.deepSeaColor)
           .dataSet([9.9,null, 9.9,null,9.9, null, ]),
-    ]
-    )
-    ;
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.xAxis.lineWidth = 0.0;//避免多边形外环之外有额外套了一层无用的外环
@@ -710,10 +689,10 @@ function () {
         .valueDecimalsSet(2)//设置取值精确到小数点后几位
         .backgroundColorSet("#000000")
         .borderColorSet("#000000")
-        .styleSet(AAStyle()
-        .colorSet("#1e90ff")
-        .fontSizeSet(12)
-    );
+        .styleSet(
+        AAStyle()
+            .colorSet("#1e90ff")
+            .fontSizeSet(12));
 
     return aaOptions;
   }
