@@ -1,10 +1,8 @@
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAColor.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 import 'package:aacharts_flutter/ChartsDemo/ChartComposer/ChartOptionsComposer.dart';
 import 'package:flutter/material.dart';
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'dart:convert' as convert;
 

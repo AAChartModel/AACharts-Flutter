@@ -1,4 +1,4 @@
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AASeriesElement.dart';
 
 import 'AAChart.dart';
 import 'AATitle.dart';

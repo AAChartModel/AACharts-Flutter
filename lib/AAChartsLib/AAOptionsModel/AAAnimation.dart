@@ -1,6 +1,6 @@
 
 
- import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
+ import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
 
 class AAAnimation {
     int duration;

@@ -1,5 +1,5 @@
 
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAnimation.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAArea.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAArearange.dart';

@@ -1,7 +1,7 @@
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAChartModel.dart';
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAColor.dart';
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AAGradientColor.dart';
-import 'package:aacharts_flutter/AAChartsLib/AAChartConfiger/AASeriesElement.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAColor.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAGradientColor.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AASeriesElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAShadow.dart';

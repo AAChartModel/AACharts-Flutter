@@ -21,6 +21,12 @@
       <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_inappwebview/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_inappwebview/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_inappwebview/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_inappwebview/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_inappwebview/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_inappwebview/example/build" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
