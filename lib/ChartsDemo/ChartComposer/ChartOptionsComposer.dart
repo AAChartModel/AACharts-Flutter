@@ -1071,34 +1071,40 @@ class ChartOptionsComposer {
           .widthSet((1)) //标示线粗细
           .valueSet((12)) //所在位置
           .zIndexSet((1)) //层叠,标示线在图表中显示的层叠级别，值越大，显示越向前
-          .labelSet(AALabel()
-          .textSet("PLOT LINES ONE")
-          .styleSet(AAStyle()
-          .colorSet("#1e90ff")
-          .fontWeightSet(AAChartFontWeightType.bold)
-      ))
+          .labelSet(
+          AALabel()
+              .textSet("PLOT LINES ONE")
+              .styleSet(
+              AAStyle()
+                  .colorSet("#1e90ff")
+                  .fontWeightSet(AAChartFontWeightType.bold)
+          ))
       ,AAPlotLinesElement()
           .colorSet("#ef476f")
           .dashStyleSet(AALineDashStyleType.longDashDot)
           .widthSet((1))
           .valueSet((24))
-          .labelSet(AALabel()
-          .textSet("PLOT LINES TWO")
-          .styleSet(AAStyle()
-          .colorSet("#ef476f")
-          .fontWeightSet(AAChartFontWeightType.bold)
-      ))
+          .labelSet(
+          AALabel()
+              .textSet("PLOT LINES TWO")
+              .styleSet(
+              AAStyle()
+                  .colorSet("#ef476f")
+                  .fontWeightSet(AAChartFontWeightType.bold)
+          ))
       ,AAPlotLinesElement()
           .colorSet("#04d69f")
           .dashStyleSet(AALineDashStyleType.longDashDot)
           .widthSet((1))
           .valueSet((36))
-          .labelSet(AALabel()
-          .textSet("PLOT LINES THREE")
-          .styleSet(AAStyle()
-          .colorSet("#04d69f")
-          .fontWeightSet(AAChartFontWeightType.bold)
-      ))
+          .labelSet(
+          AALabel()
+              .textSet("PLOT LINES THREE")
+              .styleSet(
+              AAStyle()
+                  .colorSet("#04d69f")
+                  .fontWeightSet(AAChartFontWeightType.bold)
+          ))
     ];
     AAYAxis aaYAxis = aaOptions.yAxis;
     aaYAxis.plotLines = aaPlotLinesArr;
