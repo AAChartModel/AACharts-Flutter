@@ -32,10 +32,10 @@ class ChartOptionsComposer {
         .stackingSet(AAChartStackingType.normal)
         .markerRadiusSet(0)
         .colorsThemeSet([
-      AAGradientColor.oceanBlueColor,
-      AAGradientColor.sanguineColor,
-      AAGradientColor.lusciousLimeColor,
-      AAGradientColor.mysticMauveColor,
+      AAGradientColor.oceanBlue,
+      AAGradientColor.sanguine,
+      AAGradientColor.lusciousLime,
+      AAGradientColor.mysticMauve,
     ])
         .seriesSet([
       AASeriesElement()
