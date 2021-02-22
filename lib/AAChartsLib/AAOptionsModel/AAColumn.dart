@@ -92,7 +92,7 @@ import 'AADataLabels.dart';
       "groupPadding": this.groupPadding,
       "borderWidth": this.borderWidth,
       "colorByPoint": this.colorByPoint,
-      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toPureJson(),
       "stacking": this.stacking,
       "borderRadius": this.borderRadius,
       "yAxis": this.yAxis,

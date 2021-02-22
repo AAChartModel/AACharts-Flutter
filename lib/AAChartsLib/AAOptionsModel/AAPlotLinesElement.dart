@@ -47,7 +47,7 @@ import 'AALabel.dart';
       "width": this.width,
       "value": this.value,
       "zIndex": this.zIndex,
-      "label": this.label == null ? null : this.label.toJson(),
+      "label": this.label == null ? null : this.label.toPureJson(),
     };
   }
 }

@@ -106,7 +106,7 @@ import 'AAStyle.dart';
       "rotation": this.rotation,
       "staggerLines": this.staggerLines,
       "step": this.step,
-      "style": this.style == null ? null : this.style.toJson(),
+      "style": this.style == null ? null : this.style.toPureJson(),
       "x": this.x,
       "y": this.y,
       "useHTML": this.useHTML,

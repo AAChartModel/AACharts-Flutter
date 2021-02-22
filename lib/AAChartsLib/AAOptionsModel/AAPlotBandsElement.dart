@@ -59,7 +59,7 @@ import 'AALabel.dart';
       "borderColor": this.borderColor,
       "borderWidth": this.borderWidth,
       "className": this.className,
-      "label": this.label == null ? null : this.label.toJson(),
+      "label": this.label == null ? null : this.label.toPureJson(),
       "zIndex": this.zIndex,
     };
   }

@@ -59,7 +59,7 @@ import 'AADataLabels.dart';
 
     Map<String, dynamic> toJson() {
     return {
-      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toPureJson(),
       "size": this.size,
       "allowPointSelect": this.allowPointSelect,
       "cursor": this.cursor,

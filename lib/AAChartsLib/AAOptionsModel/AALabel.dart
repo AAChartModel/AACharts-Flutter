@@ -18,7 +18,7 @@ class AALabel extends AAObject  {
     Map<String, dynamic> toJson() {
     return {
       "text": this.text,
-      "style": this.style == null ? null : this.style.toJson(),
+      "style": this.style == null ? null : this.style.toPureJson(),
     };
   }
 }

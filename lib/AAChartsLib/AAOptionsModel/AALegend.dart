@@ -72,7 +72,7 @@ import 'AAItemStyle.dart';
       "borderColor": this.borderColor,
       "borderWidth": this.borderWidth,
       "itemMarginTop": this.itemMarginTop,
-      "itemStyle": this.itemStyle == null ? null : this.itemStyle.toJson(),
+      "itemStyle": this.itemStyle == null ? null : this.itemStyle.toPureJson(),
       "x": this.x,
       "y": this.y,
     };

@@ -1,8 +1,9 @@
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAObject.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAShadow.dart';
 
-class AASeriesElement {
+class AASeriesElement extends AAObject {
 
   String type;               //A chart type series. If the type option is not specified, it is inherited from `chart.type`.
   String name;               //The name of the series as shown in the legend, tooltip etc.
@@ -165,7 +166,7 @@ class AASeriesElement {
   }
 }
 
-class AADataElement {
+class AADataElement extends AAObject {
   String name;
   double y;
   Object color;

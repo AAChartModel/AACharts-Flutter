@@ -11,7 +11,7 @@ class AAArearange extends AAObject  {
 
     Map<String, dynamic> toJson() {
     return {
-      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toPureJson(),
     };
   }
 }

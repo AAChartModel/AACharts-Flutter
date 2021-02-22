@@ -48,7 +48,7 @@ import 'AAStyle.dart';
     Map<String, dynamic> toJson() {
     return {
       "text": this.text,
-      "style": this.style == null ? null : this.style.toJson(),
+      "style": this.style == null ? null : this.style.toPureJson(),
       "align": this.align,
       "verticalAlign": this.verticalAlign,
       "x": this.x,

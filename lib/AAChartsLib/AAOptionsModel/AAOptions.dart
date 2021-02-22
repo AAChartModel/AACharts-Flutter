@@ -86,22 +86,22 @@ import 'AALegend.dart';
        } else {
          seriesList = List<Map<String, dynamic>>();
          this.series.forEach((element) {
-           seriesList.add(element.toJson());
+           seriesList.add(element.toPureJson());
          });
        }
 
        var testMap = {
-         "chart": this.chart == null ? null : this.chart.toJson(),
-         "title": this.title == null ? null : this.title.toJson(),
-         "subtitle": this.subtitle == null ? null : this.subtitle.toJson(),
-         "xAxis": this.xAxis == null ? null : this.xAxis.toJson(),
-         "yAxis": this.yAxis == null ? null : this.yAxis.toJson(),
-         "tooltip": this.tooltip == null ? null : this.tooltip.toJson(),
-         "plotOptions": this.plotOptions == null ? null : this.plotOptions.toJson(),
+         "chart": this.chart == null ? null : this.chart.toPureJson(),
+         "title": this.title == null ? null : this.title.toPureJson(),
+         "subtitle": this.subtitle == null ? null : this.subtitle.toPureJson(),
+         "xAxis": this.xAxis == null ? null : this.xAxis.toPureJson(),
+         "yAxis": this.yAxis == null ? null : this.yAxis.toPureJson(),
+         "tooltip": this.tooltip == null ? null : this.tooltip.toPureJson(),
+         "plotOptions": this.plotOptions == null ? null : this.plotOptions.toPureJson(),
          "series": seriesList,
-         "legend": this.legend == null ? null : this.legend.toJson(),
+         "legend": this.legend == null ? null : this.legend.toPureJson(),
          "colors": this.colors == null ? null : this.colors,
-         "touchEventEnabled": this.touchEventEnabled,
+         "touchEventEnabled": this.touchEventEnabled == null ? null : this.touchEventEnabled,
        };
 
     return testMap;

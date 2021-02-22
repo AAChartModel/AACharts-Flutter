@@ -26,7 +26,7 @@ class AAColumnrange extends AAObject  {
     return {
       "borderRadius": this.borderRadius,
       "borderWidth": this.borderWidth,
-      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toPureJson(),
     };
   }
 }

@@ -39,8 +39,8 @@ class AADataElement extends AAObject  {
       "name": this.name,
       "y": this.y,
       "color": this.color,
-      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
-      "marker": this.marker == null ? null : this.marker.toJson(),
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toPureJson(),
+      "marker": this.marker == null ? null : this.marker.toPureJson(),
     };
   }
 }

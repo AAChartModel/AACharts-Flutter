@@ -96,7 +96,7 @@ class AAChart extends AAObject  {
       "panning": this.panning,
       "panKey": this.panKey,
       "polar": this.polar,
-      "animation": this.animation == null ? null : this.animation.toJson(),
+      "animation": this.animation == null ? null : this.animation.toPureJson(),
       "inverted": this.inverted,
       "marginLeft": this.marginLeft,
       "marginRight": this.marginRight,

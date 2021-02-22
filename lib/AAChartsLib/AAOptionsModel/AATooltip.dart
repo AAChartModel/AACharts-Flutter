@@ -109,7 +109,7 @@ import 'AAStyle.dart';
       "borderColor": this.borderColor,
       "borderRadius": this.borderRadius,
       "borderWidth": this.borderWidth,
-      "style": this.style == null ? null : this.style.toJson(),
+      "style": this.style == null ? null : this.style.toPureJson(),
       "enabled": this.enabled,
       "useHTML": this.useHTML,
       "formatter": this.formatter,

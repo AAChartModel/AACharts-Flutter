@@ -165,7 +165,7 @@ import 'AACrosshair.dart';
 
    Map<String, dynamic> toJson() {
     return {
-      "title": this.title,
+      "title": this.title == null ? null : this.title.toPureJson(),
       "plotBands": this.plotBands,
       "plotLines": this.plotLines,
       "categories": this.categories,
@@ -180,13 +180,13 @@ import 'AACrosshair.dart';
       "gridLineColor": this.gridLineColor,
       "gridLineDashStyle": this.gridLineDashStyle,
       "off": this.off,
-      "labels": this.labels == null ? null : this.labels.toJson(),
+      "labels": this.labels == null ? null : this.labels.toPureJson(),
       "visible": this.visible,
       "opposite": this.opposite,
       "startOnTick": this.startOnTick,
       "tickInterval": this.tickInterval,
       "crosshair": this.crosshair,
-      "stackLabels": this.stackLabels == null ? null : this.stackLabels.toJson(),
+      "stackLabels": this.stackLabels == null ? null : this.stackLabels.toPureJson(),
       "tickmarkPlacement": this.tickmarkPlacement,
       "tickWidth": this.tickWidth,
       "tickLength": this.tickLength,
