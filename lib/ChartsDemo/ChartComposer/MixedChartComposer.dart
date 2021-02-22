@@ -266,8 +266,8 @@ class MixedChartComposer {
         -6.4, -5.2, -3.0, 0.2, 2.3, 5.5, 8.4, 8.3, 5.1, 0.9, -1.1, -4.0,
         -6.4, -5.2, -3.0, 0.2, 2.3, 5.5, 8.4, 8.3, 5.1, 0.9, -1.1, -4.0,
       ])
-          .colorSet(AAGradientColor.pixieDustColor)
-          .negativeColorSet(AAGradientColor.springGreensColor)
+          .colorSet(AAGradientColor.pixieDust)
+          .negativeColorSet(AAGradientColor.springGreens)
           .thresholdSet(4)//default:0
       ,
     ]);
@@ -490,7 +490,7 @@ class MixedChartComposer {
         [0.014, 3.078],
         [0.969, 4.655]
       ])
-          .colorSet(AAGradientColor.sanguineColor)
+          .colorSet(AAGradientColor.sanguine)
           .lineWidthSet(4)
           .markerSet(
           AAMarker()
