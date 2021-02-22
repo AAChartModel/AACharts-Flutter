@@ -9,7 +9,6 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAColumn.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AACrosshair.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AASeries.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
-import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATooltip.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
 
 class JSFormatterFunctionComposer {
@@ -124,8 +123,7 @@ function () {
   return s;
 }
       """
-    )
-    ;
+    );
     return aaOptions;
   }
 
