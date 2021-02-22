@@ -1,7 +1,7 @@
-
+import 'AAObject.dart';
 import 'AAStyle.dart';
 
- class AATitle {
+ class AATitle extends AAObject  {
     String text;
     AAStyle style;
     String align;

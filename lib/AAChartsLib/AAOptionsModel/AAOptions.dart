@@ -1,5 +1,5 @@
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AASeriesElement.dart';
-
+import 'AAObject.dart';
 import 'AAChart.dart';
 import 'AATitle.dart';
 import 'AASubtitle.dart';
@@ -10,7 +10,7 @@ import 'AAPlotOptions.dart';
 import 'AALegend.dart';
 
 
- class AAOptions {
+ class AAOptions extends AAObject  {
      AAChart chart;
      AATitle title;
      AASubtitle subtitle;
@@ -90,18 +90,20 @@ import 'AALegend.dart';
          });
        }
 
-    return {
-      "chart": this.chart == null ? null : this.chart.toJson(),
-      "title": this.title == null ? null : this.title.toJson(),
-      "subtitle": this.subtitle == null ? null : this.subtitle.toJson(),
-      "xAxis": this.xAxis == null ? null : this.xAxis.toJson(),
-      "yAxis": this.yAxis == null ? null : this.yAxis.toJson(),
-      "tooltip": this.tooltip == null ? null : this.tooltip.toJson(),
-      "plotOptions": this.plotOptions == null ? null : this.plotOptions.toJson(),
-      "series": seriesList,
-      "legend": this.legend == null ? null : this.legend.toJson(),
-      "colors": this.colors == null ? null : this.colors,
-      "touchEventEnabled": this.touchEventEnabled,
-    };
+       var testMap = {
+         "chart": this.chart == null ? null : this.chart.toJson(),
+         "title": this.title == null ? null : this.title.toJson(),
+         "subtitle": this.subtitle == null ? null : this.subtitle.toJson(),
+         "xAxis": this.xAxis == null ? null : this.xAxis.toJson(),
+         "yAxis": this.yAxis == null ? null : this.yAxis.toJson(),
+         "tooltip": this.tooltip == null ? null : this.tooltip.toJson(),
+         "plotOptions": this.plotOptions == null ? null : this.plotOptions.toJson(),
+         "series": seriesList,
+         "legend": this.legend == null ? null : this.legend.toJson(),
+         "colors": this.colors == null ? null : this.colors,
+         "touchEventEnabled": this.touchEventEnabled,
+       };
+
+    return testMap;
   }
 }

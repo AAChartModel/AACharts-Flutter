@@ -2,7 +2,9 @@
 
  import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
 
-class AAAnimation {
+import 'AAObject.dart';
+
+class AAAnimation extends AAObject  {
     int duration;
     AAChartAnimationType easing;
 

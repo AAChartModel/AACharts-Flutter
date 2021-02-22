@@ -1,8 +1,8 @@
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
-
+import 'AAObject.dart';
 import 'AAStyle.dart';
 
- class AASubtitle {
+ class AASubtitle extends AAObject  {
     String text;
     AAStyle style;
     String align;

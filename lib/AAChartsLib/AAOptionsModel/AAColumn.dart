@@ -1,6 +1,7 @@
+import 'AAObject.dart';
 import 'AADataLabels.dart';
 
- class AAColumn {
+ class AAColumn extends AAObject  {
     String name;
     List data;
     String color;

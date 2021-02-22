@@ -1,7 +1,8 @@
+import 'AAObject.dart';
 import 'AADataLabels.dart';
 
 
-class AAColumnrange {
+class AAColumnrange extends AAObject  {
     double borderRadius;
     double borderWidth;
     AADataLabels dataLabels;

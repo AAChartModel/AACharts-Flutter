@@ -1,6 +1,7 @@
+import 'AAObject.dart';
 import 'AADataLabels.dart';
 
-class AABar {
+class AABar extends AAObject  {
     String name;
     List data;
     String color;

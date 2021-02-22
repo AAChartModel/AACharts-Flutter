@@ -1,6 +1,6 @@
+import 'AAObject.dart';
 
-
- class AAShadow {
+ class AAShadow extends AAObject  {
     String color;
     double offsetX;
     double offsetY;

@@ -1,10 +1,11 @@
+import 'AAObject.dart';
 import 'AAPlotBandsElement.dart';
 import 'AAPlotLinesElement.dart';
 import 'AATitle.dart';
 import 'AALabels.dart';
 import 'AACrosshair.dart';
 
- class AAYAxis {
+ class AAYAxis extends AAObject {
    AATitle title;
    List<AAPlotBandsElement> plotBands;
    List<AAPlotLinesElement> plotLines;
@@ -193,14 +194,5 @@ import 'AACrosshair.dart';
     };
   }
 
-   Map<String, dynamic> toPureJson() {
-     Map<String, dynamic> json = this.toJson();
 
-     json.forEach((key, value) {
-       if (value == null) {
-         json.remove(key);
-       }
-     });
-     return json;
-   }
 }

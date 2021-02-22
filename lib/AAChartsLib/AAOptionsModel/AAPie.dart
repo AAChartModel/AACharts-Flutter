@@ -1,6 +1,7 @@
+import 'AAObject.dart';
 import 'AADataLabels.dart';
 
- class AAPie {
+ class AAPie extends AAObject  {
     AADataLabels dataLabels;
     double size;
     bool allowPointSelect;

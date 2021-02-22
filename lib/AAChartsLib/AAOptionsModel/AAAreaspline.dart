@@ -1,6 +1,7 @@
+import 'AAObject.dart';
 import 'AADataLabels.dart';
 
-class AAAreaspline {
+class AAAreaspline extends AAObject  {
      AADataLabels dataLabels;
 
      AAAreaspline dataLabelsSet(AADataLabels prop) {

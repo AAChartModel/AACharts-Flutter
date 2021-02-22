@@ -1,8 +1,9 @@
+import 'AAObject.dart';
 import 'AAMarker.dart';
 import 'AAAnimation.dart';
 import 'AAShadow.dart';
 
- class AASeries {
+ class AASeries extends AAObject  {
     double borderRadius;
     AAMarker marker;
     String stacking;

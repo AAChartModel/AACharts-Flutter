@@ -1,6 +1,6 @@
+import 'AAObject.dart';
 
-
- class AACrosshair {
+ class AACrosshair extends AAObject  {
     double width;
     String color;
     String dashStyle;

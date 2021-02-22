@@ -1,6 +1,7 @@
+import 'AAObject.dart';
 import 'AAStyle.dart';
 
- class AADataLabels {
+ class AADataLabels extends AAObject  {
     bool enabled;
     AAStyle style;
     String format;

@@ -1,9 +1,10 @@
+import 'AAObject.dart';
 import 'AAPlotBandsElement.dart';
 import 'AAPlotLinesElement.dart';
 import 'AALabels.dart';
 import 'AACrosshair.dart';
 
-class AAXAxis {
+class AAXAxis extends AAObject {
      List<AAPlotBandsElement> plotBands;
      List<AAPlotLinesElement> plotLines;
      List<String> categories;

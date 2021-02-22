@@ -1,6 +1,6 @@
+import 'AAObject.dart';
 
-
- class AAMarker {
+ class AAMarker extends AAObject  {
     double radius;
     String symbol;
     String fillColor;//点的填充色Set(用来设置折线连接点的填充色)

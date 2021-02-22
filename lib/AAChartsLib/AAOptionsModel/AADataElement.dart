@@ -1,7 +1,8 @@
+import 'AAObject.dart';
 import 'AADataLabels.dart';
 import 'AAMarker.dart';
 
-class AADataElement {
+class AADataElement extends AAObject  {
     String name;
     double y;
     Object color;

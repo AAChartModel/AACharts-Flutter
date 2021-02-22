@@ -1,8 +1,7 @@
+import 'AAObject.dart';
+ import 'AAStyle.dart';
 
-
- import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
-
-class AALabel {
+class AALabel extends AAObject  {
     String text;
     AAStyle style;
 

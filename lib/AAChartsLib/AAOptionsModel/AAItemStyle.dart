@@ -1,6 +1,6 @@
+import 'AAObject.dart';
 
-
- class AAItemStyle {
+ class AAItemStyle extends AAObject  {
     String color;
     String cursor;
     String pointer;

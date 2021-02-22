@@ -1,6 +1,7 @@
+import 'AAObject.dart';
 import 'AALabel.dart';
 
- class AAPlotLinesElement {
+ class AAPlotLinesElement extends AAObject  {
 
     Object color;
     String dashStyle;

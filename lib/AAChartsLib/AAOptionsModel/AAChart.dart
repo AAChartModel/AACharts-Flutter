@@ -1,6 +1,7 @@
+import 'AAObject.dart';
 import 'AAAnimation.dart';
 
-class AAChart {
+class AAChart extends AAObject  {
   String type;
   Object backgroundColor;
   String plotBackgroundImage;

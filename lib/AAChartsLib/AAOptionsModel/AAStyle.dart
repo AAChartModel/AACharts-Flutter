@@ -1,6 +1,6 @@
+import 'AAObject.dart';
 
-
- class AAStyle {
+ class AAStyle extends AAObject  {
 
     String color;
     String fontSize;

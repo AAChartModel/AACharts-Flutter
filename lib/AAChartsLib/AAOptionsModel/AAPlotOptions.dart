@@ -1,3 +1,4 @@
+import 'AAObject.dart';
 import 'AAColumn.dart';
 import 'AALine.dart';
 import 'AAPie.dart';
@@ -9,7 +10,7 @@ import 'AAColumnrange.dart';
 import 'AAArearange.dart';
 import 'AASeries.dart';
 
- class AAPlotOptions {
+ class AAPlotOptions extends AAObject  {
      AAColumn column;
      AALine line;
      AAPie pie;

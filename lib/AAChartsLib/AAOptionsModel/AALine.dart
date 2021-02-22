@@ -1,6 +1,7 @@
+import 'AAObject.dart';
 import 'AADataLabels.dart';
 
- class AALine {
+ class AALine extends AAObject  {
      AADataLabels dataLabels;
      AALine dataLabelsSet(AADataLabels prop) {
         dataLabels = prop;

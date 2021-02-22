@@ -1,6 +1,7 @@
+import 'AAObject.dart';
 import 'AALabel.dart';
 
- class AAPlotBandsElement {
+ class AAPlotBandsElement extends AAObject  {
     double from;
     double to;
     Object color;

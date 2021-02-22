@@ -1,8 +1,9 @@
 import 'package:aacharts_flutter/AAChartsLib/AATools/AAEasyTool.dart';
 
+import 'AAObject.dart';
 import 'AAStyle.dart';
 
- class AATooltip {
+ class AATooltip extends AAObject  {
     Object backgroundColor;
     String borderColor;
     double borderRadius;
