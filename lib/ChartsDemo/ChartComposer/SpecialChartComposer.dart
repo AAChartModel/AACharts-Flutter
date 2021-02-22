@@ -59,8 +59,7 @@ class SpecialChartComposer {
         .seriesSet([
           AASeriesElement()
               .nameSet("2017")
-              .dataSet(
-              [
+              .dataSet([
                 [97, 36, 79],
                 [94, 74, 60],
                 [68, 76, 58],

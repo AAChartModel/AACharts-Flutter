@@ -523,8 +523,7 @@ function () {
         .styleSet(
         AAStyle()
             .colorSet("#FFD700")
-            .fontSizeSet(12)
-    )
+            .fontSizeSet(12))
         .formatterSet("""
 function () {
   return '<b>'

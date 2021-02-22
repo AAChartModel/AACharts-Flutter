@@ -51,8 +51,7 @@ class ChartOptionsComposer {
       AASeriesElement()
           .nameSet("NewYork Hot")
           .dataSet([0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68, 0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
 
@@ -75,8 +74,7 @@ class ChartOptionsComposer {
         .chartSet(AAChart()
         .typeSet(AAChartType.pie)
         .marginLeftSet(0)
-        .marginRightSet(0)
-    )
+        .marginRightSet(0))
         .titleSet(
         AATitle()
             .textSet("渠道销售额<br/>占比")//标题文本内容
@@ -91,27 +89,26 @@ class ChartOptionsComposer {
                 .fontWeightSet("bold")//Title font weight
         ))
         .plotOptionsSet(AAPlotOptions()
-        .seriesSet(AASeries()
-        .animationSet(AAAnimation()
-        .easingSet(AAChartAnimationType.bounce)
-        .durationSet(1000)
-    )
-    )
-        .pieSet(AAPie()
-        .showInLegendSet(true)
-        .centerSet(["40%","50%"])
-        .dataLabelsSet(AADataLabels()
-        .enabledSet(false)
-        .formatSet("{point.percentage:.1f}%")
-    )
-    )
-    )
-        .legendSet(AALegend()
-        .enabledSet(true)
-        .alignSet(AAChartAlignType.right)
-        .layoutSet(AAChartLayoutType.vertical)
-        .verticalAlignSet(AAChartVerticalAlignType.middle)
-    )
+        .seriesSet(
+        AASeries()
+            .animationSet(
+            AAAnimation()
+                .easingSet(AAChartAnimationType.bounce)
+                .durationSet(1000)))
+        .pieSet(
+        AAPie()
+            .showInLegendSet(true)
+            .centerSet(["40%","50%"])
+            .dataLabelsSet(
+            AADataLabels()
+                .enabledSet(false)
+                .formatSet("{point.percentage:.1f}%"))))
+        .legendSet(
+        AALegend()
+            .enabledSet(true)
+            .alignSet(AAChartAlignType.right)
+            .layoutSet(AAChartLayoutType.vertical)
+            .verticalAlignSet(AAChartVerticalAlignType.middle))
         .seriesSet([
       AASeriesElement()
           .nameSet("语言热度值")
@@ -124,8 +121,7 @@ class ChartOptionsComposer {
         ["Safari",    88.5],
         ["Opera",     46.0],
         ["Others",    223]
-      ]
-      ),
+      ]),
     ])
         .colorsSet(["#1e90ff","#ef476f","#ffd066","#04d69f","#25547c",]);//设置颜色主题
     return aaOptions;
@@ -154,14 +150,12 @@ class ChartOptionsComposer {
           .enabledSet(true)
           .useHTMLSet(true)
           .distanceSet(10)
-          .formatSet("<span style=""color:#A9A9A9;font-weight:thin;font-size:10px"">{point.name}</span> <span style=""color:#1E90FF;font-weight:bold;font-size:15px"">{point.percentage:.1f}</span><span style=""color:#1E90FF;font-weight:thin;font-size:10px"">%</span>")
-      )
+          .formatSet("<span style=""color:#A9A9A9;font-weight:thin;font-size:10px"">{point.name}</span> <span style=""color:#1E90FF;font-weight:bold;font-size:15px"">{point.percentage:.1f}</span><span style=""color:#1E90FF;font-weight:thin;font-size:10px"">%</span>"))
           .dataSet([
             ["Firefox",   150],
             ["Opera",      15],
             ["Others",     35]
-          ]
-      ),
+          ]),
     ]);
     return aaOptions;
   }
@@ -198,24 +192,25 @@ class ChartOptionsComposer {
         .tickLengthSet(20)
         .tickPositionSet("inside")
         .lineWidthSet(3)
-        .titleSet(AATitle()
-        .textSet("利润 (millions)"));
+        .titleSet(
+        AATitle()
+            .textSet("利润 (millions)"));
 
     AATooltip aaTooltip = AATooltip()
         .enabledSet(true)
         .sharedSet(true);
 
     AAPlotOptions aaPlotOptions = AAPlotOptions()
-        .seriesSet(AASeries()
-        .animationSet(AAAnimation()
+        .seriesSet(
+        AASeries()
+            .animationSet(
+            AAAnimation()
 //      .easingSet(AAChartAnimationType.bounce)
-        .durationSet(1000)
-    )
-    )
-        .columnSet(AAColumn()
-        .groupingSet(false)
-        .borderWidthSet(0)
-    );
+                .durationSet(1000)))
+        .columnSet(
+        AAColumn()
+            .groupingSet(false)
+            .borderWidthSet(0));
 
     List aaSeries = [
       AAColumn()
@@ -278,8 +273,7 @@ class ChartOptionsComposer {
           .nameSet("2017")
           .colorSet(AAGradientColor.deepSeaColor)
           .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.xAxis.visible = false;//避免多边形外环之外有额外套了一层无用的外环
@@ -303,8 +297,7 @@ class ChartOptionsComposer {
       AASeriesElement()
           .nameSet("2020")
           .dataSet([3.9, 4.2, 5.7, 8.5, 11.9, 15.2,]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
 
@@ -353,14 +346,14 @@ class ChartOptionsComposer {
           .lineWidthSet(1.5)
           .fillOpacitySet(0.4)
           .nameSet("2018")
-          .dataSet(
-          [1.51, 6.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
-            4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.51, 12.7, 0.94, 1.44,
-            18.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46,
-            3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.33, 4.68, 1.31, 1.10, 13.9, 1.10, 1.16, 1.67,
-            2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05,
-            2.18, 3.24,3.23, 3.15, 2.90, 1.81, 2.11, 2.43, 5.59, 3.09, 4.09, 6.14, 5.33, 6.05,
-            5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.48])
+          .dataSet([
+        1.51, 6.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
+        4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.51, 12.7, 0.94, 1.44,
+        18.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46,
+        3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.33, 4.68, 1.31, 1.10, 13.9, 1.10, 1.16, 1.67,
+        2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05,
+        2.18, 3.24,3.23, 3.15, 2.90, 1.81, 2.11, 2.43, 5.59, 3.09, 4.09, 6.14, 5.33, 6.05,
+        5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.48])
     ]);
 
     //Custom Tooltip Style --- 自定义图表浮动提示框样式及内容/
@@ -376,10 +369,9 @@ class ChartOptionsComposer {
         .styleSet(
         AAStyle()
             .colorSet("#FFD700")
-            .fontSizeSet(12)
-    );
-        return aaOptions;
+            .fontSizeSet(12));
 
+        return aaOptions;
   }
 
   static AAOptions adjustChartLeftAndRightMargin() {
@@ -395,8 +387,7 @@ class ChartOptionsComposer {
       AASeriesElement()
           .nameSet("2017")
           .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.chart.marginLeft = 70;
@@ -426,9 +417,7 @@ class ChartOptionsComposer {
           ["C#"    , 888],
           ["C++"   , 66],
         ]),
-        ]
-    )
-    ;
+        ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.chart.plotBackgroundImage = "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2859216016,2109779587&fm=27&gp=0.jpg";
@@ -436,16 +425,17 @@ class ChartOptionsComposer {
   }
 
   static AAOptions configureDoubleYAxisChartOptions() {
-    AATitle aaTitle = AATitle().textSet("双Y轴混合图");
+    AATitle aaTitle = AATitle()
+        .textSet("双Y轴混合图");
 
     AALabels labels = AALabels()
         .enabledSet(true)//设置 y 轴是否显示数字
         .formatSet("{value:.,0f}°C")//让y轴的值完整显示 而不是100000显示为100k,同时单位后缀为°C
         .styleSet(
         AAStyle()
-        .colorSet("#ff0000")//yAxis Label font color
-        .fontSizeSet(15)//yAxis Label font size
-        .fontWeightSet(AAChartFontWeightType.bold)//yAxis Label font weight
+            .colorSet("#ff0000")//yAxis Label font color
+            .fontSizeSet(15)//yAxis Label font size
+            .fontWeightSet(AAChartFontWeightType.bold)//yAxis Label font weight
     );
 
     AAXAxis aaXAxis = AAXAxis()
@@ -456,27 +446,30 @@ class ChartOptionsComposer {
     AAYAxis yAxisOne = AAYAxis()
         .visibleSet(true)
         .labelsSet(labels)
-        .titleSet(AATitle()
-        .textSet("温度")
-        .styleSet(AAStyle()
-        .colorSet("#1e90ff")//Title font color
-        .fontSizeSet(14)//Title font size
-        .fontWeightSet(AAChartFontWeightType.bold)//Title font weight
-        .textOutlineSet("0px 0px contrast")
-    ))
+        .titleSet(
+        AATitle()
+            .textSet("温度")
+            .styleSet(
+            AAStyle()
+                .colorSet("#1e90ff")//Title font color
+                .fontSizeSet(14)//Title font size
+                .fontWeightSet(AAChartFontWeightType.bold)//Title font weight
+                .textOutlineSet("0px 0px contrast")))
         .oppositeSet(true);
 
 
     AAYAxis yAxisTwo = AAYAxis()
         .visibleSet(true)
         .labelsSet(labels.formatSet("{value}mm"))
-        .titleSet(AATitle()
-        .textSet("降雨量")
-        .styleSet(AAStyle()
-        .colorSet("#1e90ff")//Title font color
-        .fontSizeSet(14)//Title font size
-        .fontWeightSet(AAChartFontWeightType.bold)//Title font weight
-    ));
+        .titleSet(
+        AATitle()
+            .textSet("降雨量")
+            .styleSet(
+            AAStyle()
+                .colorSet("#1e90ff")//Title font color
+                .fontSizeSet(14)//Title font size
+                .fontWeightSet(AAChartFontWeightType.bold)//Title font weight
+        ));
 
     List aaYAxisArr = [
       yAxisOne,// Primary yAxis
@@ -484,8 +477,8 @@ class ChartOptionsComposer {
     ];
 
     AATooltip aaTooltip = AATooltip()
-    .enabledSet(true)
-    .sharedSet(true);
+        .enabledSet(true)
+        .sharedSet(true);
 
     List aaSeries = [
       AASeriesElement()
@@ -526,12 +519,12 @@ class ChartOptionsComposer {
         .markerRadiusSet(6)//设置折线连接点宽度为0,即是隐藏连接点
         .yAxisGridLineWidthSet(0.5)
         .markerSymbolStyleSet(AAChartSymbolStyleType.innerBlank)
-        .seriesSet([AASeriesElement()
-        .nameSet("2017")
-        .dataSet([(0.0000001),(0.0000002),(0.0000003),(0.0000004),(0.0000005)])
-        .lineWidthSet(5)
-    ]
-    );
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("2017")
+          .dataSet([(0.0000001),(0.0000002),(0.0000003),(0.0000004),(0.0000005)])
+          .lineWidthSet(5)
+    ]);
     //数值格式化字符串是采用了 C 语言浮点型格式化的子集，格式化字符是在大括号内，变量之后，用冒号（:）分隔的内容。
     //默认情况下点号（.）表示小数点，空格（ ）代表千分符，当然这两个符号可以在 语言文字 选项集里中来设定。
     //具体参见 https://www.hcharts.cn/docs/basic-labels-string-formatting#h2-1
@@ -552,8 +545,7 @@ class ChartOptionsComposer {
       AASeriesElement()
           .nameSet("2017")
           .dataSet([211,183,157,133,111]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     AAColumn aaColumn = aaOptions.plotOptions.column;
@@ -593,8 +585,7 @@ class ChartOptionsComposer {
         .verticalAlignSet(AAChartVerticalAlignType.top)
         .borderColorSet("#ccc")
         .borderWidthSet(1)
-        .xSet((-30))
-        .ySet(25)
+        .xSet((-30)).ySet(25)
     ;
 
     AATooltip aaTooltip = AATooltip()
@@ -605,15 +596,13 @@ class ChartOptionsComposer {
         .stackingSet(AAChartStackingType.normal)
         .dataLabelsSet(
         AADataLabels()
-        .enabledSet(true)
-        .styleSet(
+            .enabledSet(true)
+            .styleSet(
             AAStyle()
-        .colorSet(AAColor.white)
-        .fontSizeSet(15)
-        .fontWeightSet(AAChartFontWeightType.thin)
-        .textOutlineSet("0px 0px contrast")
-    )
-    )
+                .colorSet(AAColor.white)
+                .fontSizeSet(15)
+                .fontWeightSet(AAChartFontWeightType.thin)
+                .textOutlineSet("0px 0px contrast")))
         .pointPaddingSet(0)//Padding between each value groups, in x axis units. default：0.2.
         .groupPaddingSet(0.005)//Padding between each column or bar, in x axis units. default：0.1.
         .borderWidthSet(0)//The width of the border surrounding each column or bar.(调整边缘线宽度) https://api.hcharts.cn/plotOptions.column.borderWidth
@@ -625,9 +614,7 @@ class ChartOptionsComposer {
         .animationSet(
         AAAnimation()
         .easingSet(AAChartAnimationType.bounce)
-        .durationSet(1000)
-    )
-    )
+        .durationSet(1000)))
         .columnSet(aaColumn);
 
     List aaSeriesArr = [
@@ -657,46 +644,54 @@ class ChartOptionsComposer {
 
     // Method 2
     AAOptions options2 = AAOptions()
-        .chartSet(AAChart().typeSet(AAChartType.column))
-        .titleSet(AATitle().textSet("Stacked column chart"))
-        .xAxisSet(AAXAxis()
-        .visibleSet(true)
-        .categoriesSet(["Apples", "Oranges", "Pears", "Grapes", "Bananas"])
-    )
-        .yAxisSet(AAYAxis()
-        .visibleSet(true)
-        .minSet(0)
-        .titleSet(AATitle().textSet("Total fruit consumption"))
-        .stackLabelsSet(AALabels()
-        .enabledSet(true)
-        .styleSet(AAStyle().fontWeightSet(AAChartFontWeightType.bold))
-    )
-    )
-        .legendSet(AALegend()
-        .enabledSet(true)
-        .alignSet(AAChartAlignType.right)
-        .xSet((-30))
-        .verticalAlignSet(AAChartVerticalAlignType.top)
-        .ySet(25)
-        .borderColorSet("#ccc")
-        .borderWidthSet(1)
-    )
-        .tooltipSet(AATooltip()
-        .headerFormatSet("<b>{point.x}</b><br/>")
-        .pointFormatSet("{series.name}: {point.y}<br/>Total: {point.stackTotal}")
-    )
-        .plotOptionsSet(AAPlotOptions()
-        .seriesSet(AASeries()
-        .animationSet(AAAnimation()
-        .easingSet(AAChartAnimationType.bounce)
-        .durationSet(1000)
-    )
-    )
-        .columnSet(AAColumn()
-        .stackingSet(AAChartStackingType.normal)
-        .dataLabelsSet(AADataLabels().enabledSet(true))
-    )
-    )
+        .chartSet(AAChart()
+        .typeSet(AAChartType.column))
+        .titleSet(AATitle()
+        .textSet("Stacked column chart"))
+        .xAxisSet(
+        AAXAxis()
+            .visibleSet(true)
+            .categoriesSet(["Apples", "Oranges", "Pears", "Grapes", "Bananas"]))
+        .yAxisSet(
+        AAYAxis()
+            .visibleSet(true)
+            .minSet(0)
+            .titleSet(
+            AATitle()
+                .textSet("Total fruit consumption"))
+            .stackLabelsSet(
+            AALabels()
+                .enabledSet(true)
+                .styleSet(
+                AAStyle()
+                    .fontWeightSet(AAChartFontWeightType.bold))))
+        .legendSet(
+        AALegend()
+            .enabledSet(true)
+            .alignSet(AAChartAlignType.right)
+            .xSet((-30))
+            .verticalAlignSet(AAChartVerticalAlignType.top)
+            .ySet(25)
+            .borderColorSet("#ccc")
+            .borderWidthSet(1))
+        .tooltipSet(
+        AATooltip()
+            .headerFormatSet("<b>{point.x}</b><br/>")
+            .pointFormatSet("{series.name}: {point.y}<br/>Total: {point.stackTotal}"))
+        .plotOptionsSet(
+        AAPlotOptions()
+            .seriesSet(
+            AASeries()
+                .animationSet(
+                AAAnimation()
+                    .easingSet(AAChartAnimationType.bounce)
+                    .durationSet(1000)))
+            .columnSet(
+            AAColumn()
+                .stackingSet(AAChartStackingType.normal)
+                .dataLabelsSet(
+                AADataLabels()
+                    .enabledSet(true))))
         .seriesSet([
       AASeriesElement()
           .nameSet("John")
@@ -748,8 +743,7 @@ class ChartOptionsComposer {
       AASeriesElement()
           .nameSet("2018")
           .dataSet([0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]),
-    ]
-    );
+    ]);
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.plotOptions.series.animation = false;//禁用图表的渲染动画效果
     AAYAxis aayAxis = aaOptions.yAxis;
@@ -777,8 +771,7 @@ class ChartOptionsComposer {
       AASeriesElement()
           .nameSet("2020")
           .dataSet([3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
 
@@ -798,13 +791,13 @@ class ChartOptionsComposer {
         ;
 
     aaOptions.legend
-//        .itemMarginBottomSet(20)
-//        .symbolRadiusSet(10)//图标圆角
-//        .symbolHeightSet(20)//标志高度
-//        .symbolWidthSet(20)//图标宽度
-//      .alignSet(AAChartAlignType.right)
-//      .layoutSet(AALegendLayoutTypeVertical)
-//      .verticalAlignSet(AAChartVerticalAlignType.top)
+    // .itemMarginBottomSet(20)
+    // .symbolRadiusSet(10)//图标圆角
+    // .symbolHeightSet(20)//标志高度
+    // .symbolWidthSet(20)//图标宽度
+        .alignSet(AAChartAlignType.right)
+        .layoutSet(AAChartLayoutType.vertical)
+        .verticalAlignSet(AAChartVerticalAlignType.top)
         .itemStyleSet(aaItemStyle)
     ;
 
@@ -832,16 +825,14 @@ class ChartOptionsComposer {
         .chartSet(
         AAChart()
             .typeSet(AAChartType.column)
-            .backgroundColorSet("#161139")
-    )
+            .backgroundColorSet("#161139"))
         .titleSet(
-        AATitle().textSet("")
-    )
+        AATitle()
+            .textSet(""))
         .xAxisSet(
         AAXAxis()
             .visibleSet(true)
-            .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"])
-    )
+            .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"]))
         .yAxisSet(
         [AAYAxis()
             .visibleSet(true)
@@ -858,8 +849,7 @@ class ChartOptionsComposer {
         .tooltipSet(
         AATooltip()
             .enabledSet(true)
-            .sharedSet(true)
-    )
+            .sharedSet(true))
         .plotOptionsSet(
         AAPlotOptions()
             .seriesSet(
@@ -867,16 +857,12 @@ class ChartOptionsComposer {
                 .animationSet(
                 AAAnimation()
                     .easingSet(AAChartAnimationType.bounce)
-                    .durationSet(1000)
-            )
-        )
+                    .durationSet(1000)))
             .columnSet(
             AAColumn()
                 .groupingSet(false)
                 .borderWidthSet(0)
-                .borderRadiusSet(5)
-        )
-    )
+                .borderRadiusSet(5)))
         .seriesSet([
       AASeriesElement()
           .nameSet("收入")
@@ -902,8 +888,7 @@ class ChartOptionsComposer {
           .nameSet("2020")
           .colorSet(AAGradientColor.sanguineColor)
           .dataSet([3.9, 4.2, 5.7, 8.5, 11.9, 15.2,]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     AAColumn aaColumn = aaOptions.plotOptions.column;
@@ -1008,8 +993,7 @@ class ChartOptionsComposer {
           .colorSet(AAColor.white)
           .lineWidthSet(10)
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     AACrosshair aaCrosshair = AACrosshair()
@@ -1076,8 +1060,7 @@ class ChartOptionsComposer {
         {"value": 36, "color": "#04d69f"},
         {"color": "#ffd066"}
       ]),
-    ]
-    );
+    ]);
 //    ["#1e90ff","#ef476f","#ffd066","#04d69f","#25547c",]
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     List<AAPlotLinesElement> aaPlotLinesArr = [
@@ -1142,8 +1125,7 @@ class ChartOptionsComposer {
           .nameSet("2020")
           .dataSet([1.51, 6.7, 0.94, 1.44, 3.87, 3.24, 4.90, 4.61, 4.10,
         4.17, 3.85, 4.17, 3.46, 3.46, 3.55,]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.xAxis.crosshairSet(
@@ -1184,50 +1166,49 @@ class ChartOptionsComposer {
           .colorSet(AAGradientColor.fizzyPeachColor)
           .dataSet([
         AADataElement()
-            .dataLabelsSet(AADataLabels()
-            .enabledSet(true)
-            .formatSet("{y} 美元")
-        )
+            .dataLabelsSet(
+            AADataLabels()
+                .enabledSet(true)
+                .formatSet("{y} 美元"))
             .ySet(7.1),
         AADataElement()
-            .dataLabelsSet(AADataLabels()
-            .enabledSet(true)
-            .formatSet("{y} 欧元")
-        )
+            .dataLabelsSet(
+            AADataLabels()
+                .enabledSet(true)
+                .formatSet("{y} 欧元"))
             .ySet(6.9),
         AADataElement()
-            .dataLabelsSet(AADataLabels()
-            .enabledSet(true)
-            .formatSet("{y} 人民币")
-        )
+            .dataLabelsSet(
+            AADataLabels()
+                .enabledSet(true)
+                .formatSet("{y} 人民币"))
             .ySet(2.5),
         AADataElement()
-            .dataLabelsSet(AADataLabels()
-            .enabledSet(true)
-            .formatSet("{y} 日元")
-        )
+            .dataLabelsSet(
+            AADataLabels()
+                .enabledSet(true)
+                .formatSet("{y} 日元"))
             .ySet(14.5),
         AADataElement()
-            .dataLabelsSet(AADataLabels()
-            .enabledSet(true)
-            .formatSet("{y} 韩元")
-        )
+            .dataLabelsSet(
+            AADataLabels()
+                .enabledSet(true)
+                .formatSet("{y} 韩元"))
             .ySet(18.2),
         AADataElement()
-            .dataLabelsSet(AADataLabels()
-            .enabledSet(true)
-            .formatSet("{y} 越南盾")
-        )
+            .dataLabelsSet(
+            AADataLabels()
+                .enabledSet(true)
+                .formatSet("{y} 越南盾"))
             .ySet(18.2),
         AADataElement()
-            .dataLabelsSet(AADataLabels()
-            .enabledSet(true)
-            .formatSet("{y} 港币")
-        )
+            .dataLabelsSet(
+            AADataLabels()
+                .enabledSet(true)
+                .formatSet("{y} 港币"))
             .ySet(21.5),
       ]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     aaOptions.plotOptions.pie.dataLabels.allowOverlap = true;
@@ -1236,15 +1217,14 @@ class ChartOptionsComposer {
     aayAxis.gridLineDashStyle = AALineDashStyleType.longDash;//设置Y轴的网格线样式为 AALineDashStyleType.longDash
     AADataLabels aaDatalabels = aaOptions.plotOptions.areaspline.dataLabels;
     aaDatalabels
-        .xSet(3)
+        .xSet(3).ySet(-20)
         .verticalAlignSet(AAChartVerticalAlignType.middle)
-        .ySet(-20)
-        .styleSet(AAStyle()
-        .fontSizeSet(10)
-        .fontWeightSet(AAChartFontWeightType.bold)
-        .colorSet(AAColor.red)
-        .textOutlineSet("1px 1px contrast")
-    )
+        .styleSet(
+        AAStyle()
+            .fontSizeSet(10)
+            .fontWeightSet(AAChartFontWeightType.bold)
+            .colorSet(AAColor.red)
+            .textOutlineSet("1px 1px contrast"))
         .backgroundColorSet(AAColor.white)// white color
         .borderColorSet(AAColor.red)// red color
         .borderRadiusSet(1.5)
@@ -1280,8 +1260,7 @@ class ChartOptionsComposer {
           .nameSet("Berlin Hot")
           .colorSet(AAGradientColor.mysticMauveColor)
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
-    ]
-    );
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     AAYAxis aayAxis = aaOptions.yAxis;
@@ -1315,12 +1294,11 @@ class ChartOptionsComposer {
         .categoriesSet(categories)
         .markerRadiusSet(0)
         .seriesSet([
-          AASeriesElement()
-        .nameSet("Berlin Hot")
-        .colorSet(AAGradientColor.deepSeaColor)
-        .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
-    ]
-    );
+      AASeriesElement()
+          .nameSet("Berlin Hot")
+          .colorSet(AAGradientColor.deepSeaColor)
+          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
     AAYAxis aayAxis = aaOptions.yAxis;
@@ -1346,34 +1324,34 @@ class ChartOptionsComposer {
         .chartTypeSet(AAChartType.areaspline)
         .titleSet("")
         .subtitleSet("")
-        // .backgroundColorSet(backgroundColorGradientColor)
+        .backgroundColorSet(backgroundColorGradientColor)
         .stackingSet(AAChartStackingType.normal)
         .yAxisVisibleSet(true)
         .yAxisTitleSet("")
         .categoriesSet(["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"])
         .markerRadiusSet(0)
         .seriesSet([
-          AASeriesElement()
-        .nameSet("Berlin Hot")
-        .colorSet(AAColor.white)
-        .lineWidthSet(7)
-        .fillColorSet(fillColorGradientColor)
-        .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
-    ]
-    );
+      AASeriesElement()
+          .nameSet("Berlin Hot")
+          .colorSet(AAColor.white)
+          .lineWidthSet(7)
+          .fillColorSet(fillColorGradientColor)
+          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
+    ]);
 
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
 
     aaOptions.plotOptions.areaspline
         .dataLabelsSet(AADataLabels()
         .enabledSet(true)
-        .styleSet(AAStyle()
-        .colorSet(AAColor.white)
-        .fontSizeSet(14)
-        .fontWeightSet(AAChartFontWeightType.thin)
-        .textOutlineSet("0px 0px contrast")//文字轮廓描边
-    ))
-    ;
+        .styleSet(
+        AAStyle()
+            .colorSet(AAColor.white)
+            .fontSizeSet(14)
+            .fontWeightSet(AAChartFontWeightType.thin)
+            .textOutlineSet("0px 0px contrast")//文字轮廓描边
+    ));
+
     AAYAxis aayAxis = aaOptions.yAxis;
 
     aayAxis
@@ -1483,10 +1461,10 @@ class ChartOptionsComposer {
         .allowOverlapSet(true)
 //      .cropSet(false)
 //      .overflowSet("none")
-        .styleSet(AAStyle()
+        .styleSet(
+        AAStyle()
         .colorSet("#000000")
-        .fontSizeSet(11)
-    )
+        .fontSizeSet(11))
     ;
 
     return aaOptions;
