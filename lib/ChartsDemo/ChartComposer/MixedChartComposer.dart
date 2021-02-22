@@ -17,7 +17,8 @@ class MixedChartComposer {
       AASeriesElement()
           .nameSet("Range")
           .typeSet(AAChartType.arearange)
-          .dataSet([[1246406400000, 14.3, 27.7],
+          .dataSet([
+        [1246406400000, 14.3, 27.7],
         [1246492800000, 14.5, 27.8],
         [1246579200000, 15.5, 29.6],
         [1246665600000, 16.7, 30.7],
@@ -56,7 +57,8 @@ class MixedChartComposer {
       AASeriesElement()
           .nameSet("Temperature")
           .typeSet(AAChartType.line)
-          .dataSet([[1246406400000, 21.5],
+          .dataSet([
+        [1246406400000, 21.5],
         [1246492800000, 22.1],
         [1246579200000, 23.0],
         [1246665600000, 23.8],
@@ -93,8 +95,7 @@ class MixedChartComposer {
           AAMarker()
               .fillColorSet("#1E90FF")
               .lineWidthSet(2.0)
-              .lineColorSet("#ffffff")
-      )
+              .lineColorSet("#ffffff"))
     ]);
   }
 
@@ -145,8 +146,7 @@ class MixedChartComposer {
           .typeSet(AAChartType.line)
           .nameSet("伦敦")
           .dataSet([3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]),
-    ]
-    );
+    ]);
   }
 
   static AAChartModel configureStackingColumnMixedLineChart() {
@@ -167,9 +167,7 @@ class MixedChartComposer {
               .styleSet(
               AAStyle()
                   .colorSet("#000000")
-                  .fontSizeSet(11)
-          )
-      )
+                  .fontSizeSet(11)))
       ,
       AASeriesElement()
           .nameSet("老用户")
@@ -181,9 +179,7 @@ class MixedChartComposer {
               .styleSet(
               AAStyle()
                   .colorSet("#000000")
-                  .fontSizeSet(11)
-          )
-      )
+                  .fontSizeSet(11)))
       ,
       AASeriesElement()
           .typeSet(AAChartType.line)
@@ -198,9 +194,7 @@ class MixedChartComposer {
               AAStyle()
                   .colorSet("#000000")
                   .fontSizeSet(15)
-                  .fontWeightSet("bold")
-          )
-      )
+                  .fontWeightSet(AAChartFontWeightType.bold)))
       ,
     ]);
 
@@ -253,8 +247,7 @@ class MixedChartComposer {
           .lineWidthSet(3)
           .dashStyleSet(AALineDashStyleType.shortDashDotDot)
           .dataSet([50, 320, 230, 370, 230, 400,]),
-    ]
-    );
+    ]);
   }
 
   static AAChartModel configureNegativeColorMixedChart() {
@@ -493,7 +486,10 @@ class MixedChartComposer {
       AASeriesElement()
           .typeSet(AAChartType.line)
           .nameSet("线性回归线")
-          .dataSet([[0.014, 3.078], [0.969, 4.655]])
+          .dataSet([
+        [0.014, 3.078],
+        [0.969, 4.655]
+      ])
           .colorSet(AAGradientColor.sanguineColor)
           .lineWidthSet(4)
           .markerSet(
