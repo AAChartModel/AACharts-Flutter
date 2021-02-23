@@ -61,4 +61,13 @@ class AAColor {
     return "clear";
   }
 
+  static String rgbaColor(
+      int red,
+      int green,
+      int blue,
+      double alpha
+      ) {
+    return "rgba($red,$green,$blue,$alpha)";
+  }
+
 }
