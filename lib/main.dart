@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
@@ -106,6 +108,15 @@ class _MyAppState extends State<Application> {
   void dispose() {
     super.dispose();
   }
+  // How to pretty-print JSON using Dart.
+  //https://gist.github.com/kasperpeulen/d61029fc0bc6cd104602
+  static void prettyPrintJson(String input) {
+     JsonDecoder decoder = JsonDecoder();
+     JsonEncoder encoder = JsonEncoder.withIndent('  ');
+    var object = decoder.convert(input);
+    var prettyString = encoder.convert(object);
+    prettyString.split('\n').forEach((element) => print(element));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -127,9 +138,13 @@ class _MyAppState extends State<Application> {
     String jsonString = convert.jsonEncode(testOptionsJson1);
 
 
-    print(testOptionsJson1.toString());
-    print(testOptionsJson2.toString());
-    print(testOptionsJson3.toString());
+    print(testOptionsJson1);
+    print(testOptionsJson2);
+    print(testOptionsJson3);
+
+    prettyPrintJson(jsonString);
+
+
 
 
     return MaterialApp(
