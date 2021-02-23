@@ -139,7 +139,7 @@ abstract class AAOptionsComposer {
     }
 
     switch (chartType) {
-      case "column":
+      case AAChartType.column:
         AAColumn aaColumn = new AAColumn()
             .borderWidthSet(0)
             .borderRadiusSet(aaChartModel.borderRadius)
@@ -150,7 +150,7 @@ abstract class AAOptionsComposer {
         }
         aaPlotOptions.columnSet(aaColumn);
         break;
-      case "bar":
+      case AAChartType.bar:
         AABar aaBar = new AABar()
             .borderWidthSet(0)
             .borderRadiusSet(aaChartModel.borderRadius)
@@ -161,19 +161,19 @@ abstract class AAOptionsComposer {
         }
         aaPlotOptions.barSet(aaBar);
         break;
-      case "area":
+      case AAChartType.area:
         aaPlotOptions.areaSet(new AAArea().dataLabelsSet(aaDataLabels));
         break;
-      case "areaspline":
+      case AAChartType.areaspline:
         aaPlotOptions.areasplineSet(new AAAreaspline().dataLabelsSet(aaDataLabels));
         break;
-      case "line":
+      case AAChartType.line:
         aaPlotOptions.lineSet(new AALine().dataLabelsSet(aaDataLabels));
         break;
-      case "spline":
+      case AAChartType.spline:
         aaPlotOptions.splineSet(new AASpline().dataLabelsSet(aaDataLabels));
         break;
-      case "pie":
+      case AAChartType.pie:
         AAPie aaPie = new AAPie()
             .allowPointSelectSet(true)
             .cursorSet("pointer")
@@ -184,14 +184,14 @@ abstract class AAOptionsComposer {
         aaPie.dataLabelsSet(aaDataLabels);
         aaPlotOptions.pieSet(aaPie);
         break;
-      case "columnrange":
+      case AAChartType.columnrange:
         AAColumnrange aaColumnrange = new AAColumnrange()
             .borderRadiusSet(0) //The color of the border surrounding each column or bar
             .borderWidthSet(0) //The corner radius of the border surrounding each column or bar. default：0
             .dataLabelsSet(aaDataLabels);
         aaPlotOptions.columnrangeSet(aaColumnrange);
         break;
-      case "arearange":
+      case AAChartType.arearange:
         AAArearange aaArearange = new AAArearange()
             .dataLabelsSet(aaDataLabels);
         aaPlotOptions.arearangeSet(aaArearange);
