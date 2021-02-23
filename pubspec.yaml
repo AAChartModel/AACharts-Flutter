@@ -41,10 +41,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  assets:
-    - assets/index.html
-    - assets/css/
-    - assets/images/
+#  assets:
+#    - images/AAChartView.html
+#    - images/AAChartView.js
+
 
 
   # To add assets to your application, add an assets section, like this:

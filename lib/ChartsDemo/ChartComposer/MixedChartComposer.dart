@@ -537,8 +537,8 @@ class MixedChartComposer {
         [6,4,0],[6,5,0],[6,6,0],[6,7,0],[6,8,0],[6,9,0],[6,10,1],
         [6,11,0],[6,12,2],[6,13,1],[6,14,3],[6,15,4],[6,16,0],[6,17,0],
         [6,18,0],[6,19,0],[6,20,1],[6,21,2],[6,22,2],[6,23,6]])
-          .colorSet(AAGradientColor.oceanBlueColor)
-          .negativeColorSet(AAGradientColor.pinkSugarColor)
+          .colorSet(AAGradientColor.oceanBlue)
+          .negativeColorSet(AAGradientColor.pinkSugar)
           .thresholdSet(5)//default:0
       ,
     ]);

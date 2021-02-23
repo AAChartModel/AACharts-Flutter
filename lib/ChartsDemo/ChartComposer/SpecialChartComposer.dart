@@ -73,8 +73,7 @@ class SpecialChartComposer {
               ]),
           AASeriesElement()
               .nameSet("2018")
-              .dataSet(
-              [
+              .dataSet([
                 [25, 10, 87],
                 [2 , 75, 59],
                 [11, 54, 8 ],
@@ -88,8 +87,7 @@ class SpecialChartComposer {
               ]),
           AASeriesElement()
               .nameSet("2019")
-              .dataSet(
-              [
+              .dataSet([
                 [47, 47, 21],
                 [20, 12, 4 ],
                 [6 , 76, 91],
