@@ -1,4 +1,5 @@
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAGradientColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AASeriesElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
@@ -95,7 +96,7 @@ class MixedChartComposer {
           AAMarker()
               .fillColorSet("#1E90FF")
               .lineWidthSet(2.0)
-              .lineColorSet("#ffffff"))
+              .lineColorSet(AAColor.white))
     ]);
   }
 
@@ -166,7 +167,7 @@ class MixedChartComposer {
               .enabledSet(true)
               .styleSet(
               AAStyle()
-                  .colorSet("#000000")
+                  .colorSet(AAColor.green)
                   .fontSizeSet(11)))
       ,
       AASeriesElement()
@@ -178,7 +179,7 @@ class MixedChartComposer {
               .enabledSet(true)
               .styleSet(
               AAStyle()
-                  .colorSet("#000000")
+                  .colorSet(AAColor.green)
                   .fontSizeSet(11)))
       ,
       AASeriesElement()
@@ -192,12 +193,11 @@ class MixedChartComposer {
               .enabledSet(true)
               .styleSet(
               AAStyle()
-                  .colorSet("#000000")
+                  .colorSet(AAColor.red)
                   .fontSizeSet(15)
                   .fontWeightSet(AAChartFontWeightType.bold)))
       ,
     ]);
-
   }
 
   static AAChartModel configureDashStyleTypeMixedChart() {
@@ -556,7 +556,7 @@ class MixedChartComposer {
         [159, 70], [170, 77],
         [180, 70], [180, 60],
         [173, 52], [166, 45]])
-          .colorSet("rgba(112, 128, 144, 0.5)")//浅石板灰
+          .colorSet(AAColor.rgbaColor(112, 128, 144, 0.5))//浅石板灰
       ,
       AASeriesElement()
           .nameSet("实际值")
@@ -620,7 +620,7 @@ class MixedChartComposer {
           AAMarker()
               .radiusSet(7)//曲线连接点半径，默认是4
               .symbolSet(AAChartSymbolType.circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
-              .fillColorSet("#ffffff")//点的填充色(用来设置折线连接点的填充色)
+              .fillColorSet(AAColor.white)//点的填充色(用来设置折线连接点的填充色)
               .lineWidthSet(2)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
               .lineColorSet("")//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
       ),
