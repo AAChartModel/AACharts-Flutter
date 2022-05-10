@@ -170,8 +170,8 @@ class _MyAppState extends State<Application> {
                   decoration:
                   BoxDecoration(border: Border.all(color: Colors.blueAccent)),
                   child: InAppWebView(
-                    initialUrl: "https://flutter.dev/",
-                    initialHeaders: {},
+                    // initialUrl: "https://flutter.dev/",
+                    // initialHeaders: {},
                     initialOptions: InAppWebViewGroupOptions(
                         crossPlatform: InAppWebViewOptions(
 

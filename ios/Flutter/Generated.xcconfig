@@ -1,14 +1,14 @@
 // This is a generated file; do not edit or check into version control.
-FLUTTER_ROOT=/Users/anan/Downloads/flutter
-FLUTTER_APPLICATION_PATH=/Users/anan/AACharts-Flutter
-FLUTTER_TARGET=/Users/anan/AACharts-Flutter/lib/main.dart
+FLUTTER_ROOT=/Users/admin/Downloads/flutter
+FLUTTER_APPLICATION_PATH=/Users/admin/Documents/GitHub/AACharts-Flutter
+COCOAPODS_PARALLEL_CODE_SIGN=true
+FLUTTER_TARGET=/Users/admin/Documents/GitHub/AACharts-Flutter/lib/main.dart
 FLUTTER_BUILD_DIR=build
-SYMROOT=${SOURCE_ROOT}/../build/ios
-OTHER_LDFLAGS=$(inherited) -framework Flutter
-FLUTTER_FRAMEWORK_DIR=/Users/anan/Downloads/flutter/bin/cache/artifacts/engine/ios
 FLUTTER_BUILD_NAME=1.0.0
 FLUTTER_BUILD_NUMBER=1
+EXCLUDED_ARCHS[sdk=iphonesimulator*]=i386
+DART_DEFINES=Zmx1dHRlci5pbnNwZWN0b3Iuc3RydWN0dXJlZEVycm9ycz10cnVl,RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==
 DART_OBFUSCATION=false
 TRACK_WIDGET_CREATION=true
 TREE_SHAKE_ICONS=false
-PACKAGE_CONFIG=.packages
+PACKAGE_CONFIG=/Users/admin/Documents/GitHub/AACharts-Flutter/.dart_tool/package_config.json

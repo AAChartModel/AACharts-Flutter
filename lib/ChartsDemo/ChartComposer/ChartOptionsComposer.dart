@@ -24,6 +24,11 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAXAxis.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
 
 class ChartOptionsComposer {
+static AAOptions testRobotJson() {
+  
+}
+
+
   static AAOptions configureTheAAOptionsOfAreaChart() {
     AAChartModel aaChartModel= AAChartModel()
         .chartTypeSet(AAChartType.areaspline)
