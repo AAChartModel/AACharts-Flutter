@@ -34,9 +34,9 @@ class CustomStyleChartPage extends StatelessWidget {
 
   AAChartModel chartConfigurationWithSelectedIndex(int selectedIndex) {
     switch(selectedIndex) {
-      case 0:  return CustomStyleChartComposer.configureChartWithShadowStyle();
-      case 1:  return CustomStyleChartComposer.configureCustomSingleDataLabelChart();
-      case 2:  return CustomStyleChartComposer.configureDiscontinuousDataChart();
+      case 0:  return CustomStyleChartComposer.configureColorfulBarChart();
+      case 1:  return CustomStyleChartComposer.configureColorfulGradientColorBarChart();
+      case 2:  return CustomStyleChartComposer.configureChartWithShadowStyle();
       case 3:  return CustomStyleChartComposer.configureMixedLineChart();
       case 4:  return CustomStyleChartComposer.configureColorfulColumnChart();
       case 5:  return CustomStyleChartComposer.configureGradientColorBarChart();
