@@ -1,4 +1,6 @@
 
+import 'dart:convert';
+
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAOptionsComposer.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
@@ -76,19 +78,18 @@ class AAChartView extends StatelessWidget {
 
    void configureChartOptionsAndDrawChart(AAOptions chartOptions) {
     Map<String, dynamic> aaOptionsJsonMap = chartOptions.toJson();
-    String aaOptionsJsonStr = aaOptionsJsonMap.toString();
+    String aaOptionsJsonStr = jsonEncode(aaOptionsJsonMap);
     this.optionsJson = aaOptionsJsonStr;
     // String javaScriptStr = "loadTheHighChartView('"
     //     + aaOptionsJsonStr + "','"
     //     + "0"  + "','"
     //     + "0" + "')"
     // ;
-    String pureJsonStr = aaOptionsJsonStr.replaceAll(new RegExp(r"\s+\b|\b\s"), "");
-    // String javaScriptStr = "loadTheHighChartView('${pureJsonStr}')";
-    pureJsonStr = AAEasyTool.pureJavaScriptFunctionString(pureJsonStr);
-    print(pureJsonStr);
-
-    String javaScriptStr = "testAlert('${pureJsonStr}')";
+    // String pureJsonStr = aaOptionsJsonStr.replaceAll(new RegExp(r"\s+\b|\b\s"), "");
+    // pureJsonStr = AAEasyTool.pureJavaScriptFunctionString(pureJsonStr);
+    // print(pureJsonStr);
+    String javaScriptStr = "loadTheHighChartView('${aaOptionsJsonStr}')";
+    // String javaScriptStr = "testAlert('${pureJsonStr}')";
 
 
     this.safeEvaluateJavaScriptString(javaScriptStr);
