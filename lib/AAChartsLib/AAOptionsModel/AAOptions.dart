@@ -101,7 +101,7 @@ import 'AALegend.dart';
          "series": seriesList,
          "legend": this.legend == null ? null : this.legend.toPureJson(),
          "colors": this.colors == null ? null : this.colors,
-         "touchEventEnabled": this.touchEventEnabled == null ? null : this.touchEventEnabled,
+         // "touchEventEnabled": this.touchEventEnabled == null ? null : this.touchEventEnabled,
        };
 
     return testMap;

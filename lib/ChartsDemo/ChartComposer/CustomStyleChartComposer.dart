@@ -51,7 +51,21 @@ class CustomStyleChartComposer {
         .subtitleSet("use AAColor to get color string")
         .dataLabelsEnabledSet(false)
         // .categoriesSet(colorsNameArr)
-        .colorsThemeSet(colorsArr)
+        .colorsThemeSet([
+      AAColor.red,
+      AAColor.orange,
+      AAColor.yellow,
+      AAColor.green,
+      AAColor.cyan,
+      AAColor.blue,
+      AAColor.purple,
+      AAColor.gray,
+      AAColor.darkGray,
+      AAColor.lightGray,
+      AAColor.magenta,
+      AAColor.brown,
+      AAColor.black
+    ])
         .stackingSet(AAChartStackingType.percent)
         .seriesSet([
       AASeriesElement()
@@ -116,8 +130,31 @@ class CustomStyleChartComposer {
         .chartTypeSet(AAChartType.bar)
         .titleSet("Colorful Column Chart")
         .subtitleSet("single data array colorful column chart")
-        // .categoriesSet(gradientColorNamesArr)
-        // .colorsThemeSet(gradientColorArr)
+        .categoriesSet([
+      "oceanBlue",
+      "sanguine",
+      "lusciousLime",
+      "purpleLake",
+      "freshPapaya",
+      "ultramarine",
+      "pinkSugar",
+      "lemonDrizzle",
+      "victoriaPurple",
+      "springGreens",
+      "mysticMauve",
+      "reflexSilver",
+      "newLeaf",
+      "cottonCandy",
+      "pixieDust",
+      "fizzyPeach",
+      "sweetDream",
+      "firebrick",
+      "wroughtIron",
+      "deepSea",
+      "coastalBreeze",
+      "eveningDelight",
+    ])
+        .colorsThemeSet(gradientColorArr)
         .yAxisTitleSet("gradient color")
         .stackingSet(AAChartStackingType.percent)
         .seriesSet([
@@ -138,7 +175,7 @@ class CustomStyleChartComposer {
       AASeriesElement()
           .nameSet("所有专业")
           .dataSet([7.0, 6.9, 9.5, 14.5, 18.2,null,null,null,null, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6,])
-          .colorSet(AAGradientColor.deepSeaColor)
+          // .colorSet(AAGradientColor.deepSeaColor)
     ]);
   }
 
