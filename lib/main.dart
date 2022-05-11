@@ -8,6 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'dart:convert' as convert;
 
+import 'AAChartsLib/AAChartCreator/AAChartView.dart';
+import 'ChartsDemo/Page/CustomStyleChartPage.dart';
+
 
 // Future main() async {
 //   runApp(new Application());
@@ -33,6 +36,9 @@ class _ApplicationState extends State<Application> {
         itemBuilder: (BuildContext context, int index) {
           return ListTile(title: Text("$index"),
               onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return AAChartView();
+                }));
 
               }, // Handle your onTap here.
           );
@@ -62,7 +68,28 @@ class _ApplicationState extends State<Application> {
 //   _MyAppState createState() => _MyAppState();
 // }
 
+class DetailScreen extends StatelessWidget {
+  const DetailScreen({Key key}) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Center(
+          child: Hero(
+            tag: 'imageHero',
+            child: Image.network(
+              'https://picsum.photos/250?image=9',
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class _MyAppState extends State<Application> {
 
