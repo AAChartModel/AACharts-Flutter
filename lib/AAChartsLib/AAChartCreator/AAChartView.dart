@@ -18,7 +18,12 @@ class AAChartView extends StatelessWidget {
 
 
   void aa_drawChartWithChartModel(AAChartModel aaChartModel) {
+
     AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+
+    // String pureJsonStr =  configurePureOptionsJsonStr(aaOptions);
+    // print(pureJsonStr);
+
     this.aa_drawChartWithChartOptions(aaOptions);
   }
 
@@ -72,13 +77,18 @@ class AAChartView extends StatelessWidget {
   }
 
    void configureChartOptionsAndDrawChart(AAOptions chartOptions) {
-    Map<String, dynamic> aaOptionsJsonMap = chartOptions.toJson();
-    String aaOptionsJsonStr = jsonEncode(aaOptionsJsonMap);
-    this.optionsJson = aaOptionsJsonStr;
-    String javaScriptStr = "loadTheHighChartView('$aaOptionsJsonStr')";
+    String javaScriptStr = configurePureOptionsJsonStr(chartOptions);
 
     this.safeEvaluateJavaScriptString(javaScriptStr);
   }
+
+   String configurePureOptionsJsonStr(AAOptions chartOptions) {
+     Map<String, dynamic> aaOptionsJsonMap = chartOptions.toJson();
+     String aaOptionsJsonStr = jsonEncode(aaOptionsJsonMap);
+     this.optionsJson = aaOptionsJsonStr;
+     String javaScriptStr = "loadTheHighChartView('$aaOptionsJsonStr')";
+     return javaScriptStr;
+   }
 
    void safeEvaluateJavaScriptString(String javaScriptString) {
      webViewController.evaluateJavascript(source: javaScriptString);
