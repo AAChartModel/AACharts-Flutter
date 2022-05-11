@@ -11,7 +11,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 class CustomStyleChartComposer {
 
 
-  static AAChartModel setUpColorfulBarChart() {
+  static AAChartModel configureColorfulBarChart() {
     List colorsNameArr = [
       "red",
       "orange",
@@ -28,7 +28,7 @@ class CustomStyleChartComposer {
       "black"
     ];
 
-    List colorsArr = [
+    List<String> colorsArr = [
       AAColor.red,
       AAColor.orange,
       AAColor.yellow,
@@ -50,7 +50,7 @@ class CustomStyleChartComposer {
         .titleSet("Colorful Chart")
         .subtitleSet("use AAColor to get color string")
         .dataLabelsEnabledSet(false)
-        .categoriesSet(colorsNameArr)
+        // .categoriesSet(colorsNameArr)
         .colorsThemeSet(colorsArr)
         .stackingSet(AAChartStackingType.percent)
         .seriesSet([
@@ -61,7 +61,7 @@ class CustomStyleChartComposer {
     ]);
   }
 
-  static AAChartModel setUpColorfulGradientColorChart() {
+  static AAChartModel configureColorfulGradientColorBarChart() {
     List gradientColorNamesArr = [
       "oceanBlue",
       "sanguine",
@@ -116,8 +116,8 @@ class CustomStyleChartComposer {
         .chartTypeSet(AAChartType.bar)
         .titleSet("Colorful Column Chart")
         .subtitleSet("single data array colorful column chart")
-        .categoriesSet(gradientColorNamesArr)
-        .colorsThemeSet(gradientColorArr)
+        // .categoriesSet(gradientColorNamesArr)
+        // .colorsThemeSet(gradientColorArr)
         .yAxisTitleSet("gradient color")
         .stackingSet(AAChartStackingType.percent)
         .seriesSet([
@@ -128,7 +128,7 @@ class CustomStyleChartComposer {
     ]);
   }
 
-  static AAChartModel setUpDiscontinuousDataChart() {
+  static AAChartModel configureDiscontinuousDataChart() {
     return AAChartModel()
         .chartTypeSet(AAChartType.column)
         .yAxisTitleSet("")//设置Y轴标题
