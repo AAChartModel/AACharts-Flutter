@@ -159,7 +159,7 @@ class AASeriesElement extends AAObject {
       "allowPointSelect": this.allowPointSelect,
       "zIndex": this.zIndex,
       "innerSize": this.innerSize,
-      "shadow": this.shadow.toJson(),
+      "shadow": this.shadow == null ? null : this.shadow.toPureJson(),
       "zones": this.zones,
       "stack": this.stack,
     };
