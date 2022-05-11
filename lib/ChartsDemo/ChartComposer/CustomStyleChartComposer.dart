@@ -192,7 +192,7 @@ class CustomStyleChartComposer {
       AASeriesElement()
           .nameSet("本专业")
           .dataSet([45,88,49,43,65,56,47,28,49,44,89,55])
-          .colorSet(AAGradientColor.freshPapayaColor)
+          // .colorSet(AAGradientColor.freshPapayaColor)
           .lineWidthSet(5)
           .zonesSet([
         {"value": 8},
@@ -201,7 +201,7 @@ class CustomStyleChartComposer {
       ,
       AASeriesElement()
           .nameSet("所有专业")
-          .colorSet(AAGradientColor.pixieDustColor)
+          // .colorSet(AAGradientColor.pixieDustColor)
           .lineWidthSet(5)
           .dataSet([null,null,100,109,89,null,null,120,null,null,null,null])
     ]);
