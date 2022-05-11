@@ -10,6 +10,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'dart:convert' as convert;
 
 import 'AAChartsLib/AAChartCreator/AAChartView.dart';
+import 'ChartsDemo/Page/ChildListViewPage.dart';
 import 'ChartsDemo/Page/CustomStyleChartPage.dart';
 
 
@@ -48,7 +49,7 @@ class _ApplicationState extends State<Application> {
           return ListTile(title: Text("$index"),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return CustomStyleChartPage();
+                  return CustomStyleChartPage(selectedIndex: index,);
                 }));
 
               }, // Handle your onTap here.
