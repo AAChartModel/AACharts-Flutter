@@ -1,4 +1,6 @@
 
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartView.dart';
+import 'package:aacharts_flutter/ChartsDemo/ChartComposer/CustomStyleChartComposer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +9,11 @@ class CustomStyleChartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   var aaChartView = AAChartView();
+
+    var aaChartModel = CustomStyleChartComposer.configureChartWithShadowStyle();
+    aaChartView.aa_drawChartWithChartModel(aaChartModel);
+
     return Scaffold(
       body: GestureDetector(
         onTap: () {
@@ -15,9 +22,7 @@ class CustomStyleChartPage extends StatelessWidget {
         child: Center(
           child: Hero(
             tag: 'imageHero',
-            child: Image.network(
-              'https://picsum.photos/250?image=9',
-            ),
+            child: aaChartView
           ),
         ),
       ),

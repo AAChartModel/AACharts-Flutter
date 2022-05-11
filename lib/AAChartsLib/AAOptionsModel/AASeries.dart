@@ -7,7 +7,7 @@ import 'AAShadow.dart';
     double borderRadius;
     AAMarker marker;
     String stacking;
-    Object animation;
+    AAAnimation animation;
     List keys;
     bool colorByPoint;//决定了图表是否给每个数据列或每个点分配一个颜色，默认值是 false， 即默认是给每个数据类分配颜色，
     bool connectNulls;//设置折线是否断点重连
@@ -64,7 +64,7 @@ import 'AAShadow.dart';
       "borderRadius": this.borderRadius,
       "marker": this.marker == null ? null : this.marker.toPureJson(),
       "stacking": this.stacking,
-      "animation": this.animation,
+      "animation": this.animation == null ? null : this.animation.toPureJson(),
       "keys": this.keys,
       "colorByPoint": this.colorByPoint,
       "connectNulls": this.connectNulls,

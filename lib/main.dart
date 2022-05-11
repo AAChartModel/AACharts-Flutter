@@ -4,6 +4,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 import 'package:aacharts_flutter/ChartsDemo/ChartComposer/ChartOptionsComposer.dart';
+import 'package:aacharts_flutter/ChartsDemo/ChartComposer/CustomStyleChartComposer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'dart:convert' as convert;
@@ -25,6 +26,16 @@ class Application extends StatefulWidget {
 
 
 class _ApplicationState extends State<Application> {
+  AAChartView aaChartView;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
     //下划线widget预定义以供复用。
@@ -37,7 +48,7 @@ class _ApplicationState extends State<Application> {
           return ListTile(title: Text("$index"),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return AAChartView();
+                  return CustomStyleChartPage();
                 }));
 
               }, // Handle your onTap here.
@@ -48,6 +59,8 @@ class _ApplicationState extends State<Application> {
      return index%2==0?divider1:divider2;
    },
     );
+
+
 
     return new MaterialApp(
         title: 'dummy application',

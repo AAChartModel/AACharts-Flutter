@@ -751,7 +751,7 @@ static AAOptions testRobotJson() {
           .dataSet([0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]),
     ]);
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
-    aaOptions.plotOptions.series.animation = false;//禁用图表的渲染动画效果
+    // aaOptions.plotOptions.series.animation = false;//禁用图表的渲染动画效果
     AAYAxis aayAxis = aaOptions.yAxis;
     aayAxis.gridLineDashStyle = AALineDashStyleType.longDash;//设置Y轴的网格线样式为 AALineDashStyleType.longDash
     return aaOptions;
