@@ -8,11 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'dart:convert' as convert;
 
-InAppLocalhostServer localhostServer = new InAppLocalhostServer();
 
 Future main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await localhostServer.start();
   runApp(new Application());
 }
 
@@ -113,7 +110,6 @@ class _MyAppState extends State<Application> {
 
   @override
   void dispose() {
-    localhostServer.close();
 
     super.dispose();
   }
@@ -156,6 +152,7 @@ class _MyAppState extends State<Application> {
 
 
     // https://stackoverflow.com/a/61981071/12302132
+    // https://stackoverflow.com/a/59119002/12302132
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -179,8 +176,8 @@ class _MyAppState extends State<Application> {
                   decoration:
                   BoxDecoration(border: Border.all(color: Colors.blueAccent)),
                   child: InAppWebView(
-                    initialUrlRequest: URLRequest(
-                        url: Uri.parse('http://localhost:8080/assets/AAChartView.html')),
+                    initialFile: "assets/AAChartView.html",
+
                     // initialUrl: "https://flutter.dev/",
                     // initialHeaders: {},
                     initialOptions: InAppWebViewGroupOptions(
