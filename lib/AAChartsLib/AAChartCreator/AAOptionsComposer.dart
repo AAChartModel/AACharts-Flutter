@@ -144,7 +144,7 @@ abstract class AAOptionsComposer {
             .borderWidthSet(0)
             .borderRadiusSet(aaChartModel.borderRadius)
             .dataLabelsSet(aaDataLabels);
-        if (aaChartModel.polar) {
+        if (aaChartModel.polar == true) {
           aaColumn.pointPaddingSet(0)
               .groupPaddingSet(0.005);
         }
@@ -155,7 +155,7 @@ abstract class AAOptionsComposer {
             .borderWidthSet(0)
             .borderRadiusSet(aaChartModel.borderRadius)
             .dataLabelsSet(aaDataLabels);
-        if (aaChartModel.polar) {
+        if (aaChartModel.polar == true) {
           aaBar.pointPaddingSet(0)
               .groupPaddingSet(0.005);
         }
