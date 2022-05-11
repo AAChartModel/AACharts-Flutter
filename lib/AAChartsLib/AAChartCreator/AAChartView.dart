@@ -4,7 +4,6 @@ import 'dart:convert';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAOptionsComposer.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
-import 'package:aacharts_flutter/AAChartsLib/AATools/AAEasyTool.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
@@ -88,7 +87,7 @@ class AAChartView extends StatelessWidget {
     // String pureJsonStr = aaOptionsJsonStr.replaceAll(new RegExp(r"\s+\b|\b\s"), "");
     // pureJsonStr = AAEasyTool.pureJavaScriptFunctionString(pureJsonStr);
     // print(pureJsonStr);
-    String javaScriptStr = "loadTheHighChartView('${aaOptionsJsonStr}')";
+    String javaScriptStr = "loadTheHighChartView('$aaOptionsJsonStr')";
     // String javaScriptStr = "testAlert('${pureJsonStr}')";
 
 
@@ -134,7 +133,7 @@ class AAChartView extends StatelessWidget {
             ButtonBar(
               alignment: MainAxisAlignment.center,
               children: <Widget>[
-                RaisedButton(
+                ElevatedButton(
                   child: Icon(Icons.arrow_back),
                   onPressed: () {
                     // webView?.goBack();
@@ -142,13 +141,13 @@ class AAChartView extends StatelessWidget {
 
                   },
                 ),
-                RaisedButton(
+                ElevatedButton(
                   child: Icon(Icons.arrow_forward),
                   onPressed: () {
                     webViewController?.goForward();
                   },
                 ),
-                RaisedButton(
+                ElevatedButton(
                   child: Icon(Icons.refresh),
                   onPressed: () {
                     webViewController?.reload();
