@@ -36,7 +36,12 @@ class CustomStyleChartPage extends StatelessWidget {
     switch(selectedIndex) {
       case 0:  return CustomStyleChartComposer.configureChartWithShadowStyle();
       case 1:  return CustomStyleChartComposer.configureCustomSingleDataLabelChart();
-
+      case 2:  return CustomStyleChartComposer.configureDiscontinuousDataChart();
+      case 3:  return CustomStyleChartComposer.configureMixedLineChart();
+      case 4:  return CustomStyleChartComposer.configureColorfulColumnChart();
+      case 5:  return CustomStyleChartComposer.configureGradientColorBarChart();
+      // case 6:  return CustomStyleChartComposer.configureStackingPolarColumnChart();
+      case 7:  return CustomStyleChartComposer.configureWithMinusNumberChart();
 
       default: {
         //statements;
