@@ -27,16 +27,12 @@ class AAChartView extends StatelessWidget {
       this.aa_refreshChartWithChartOptions(chartOptions);
     } else {
       this.loadLocalFilesAndDrawChart(chartOptions);
-      // this.showJavaScriptAlertView();
     }
   }
 
   void loadLocalFilesAndDrawChart(final AAOptions aaOptions) {
    webView = InAppWebView(
       initialFile: "assets/AAChartView.html",
-
-      // initialUrl: "https://flutter.dev/",
-      // initialHeaders: {},
       initialOptions: InAppWebViewGroupOptions(
           crossPlatform: InAppWebViewOptions(
 
@@ -79,31 +75,15 @@ class AAChartView extends StatelessWidget {
     Map<String, dynamic> aaOptionsJsonMap = chartOptions.toJson();
     String aaOptionsJsonStr = jsonEncode(aaOptionsJsonMap);
     this.optionsJson = aaOptionsJsonStr;
-    // String javaScriptStr = "loadTheHighChartView('"
-    //     + aaOptionsJsonStr + "','"
-    //     + "0"  + "','"
-    //     + "0" + "')"
-    // ;
-    // String pureJsonStr = aaOptionsJsonStr.replaceAll(new RegExp(r"\s+\b|\b\s"), "");
-    // pureJsonStr = AAEasyTool.pureJavaScriptFunctionString(pureJsonStr);
-    // print(pureJsonStr);
     String javaScriptStr = "loadTheHighChartView('$aaOptionsJsonStr')";
-    // String javaScriptStr = "testAlert('${pureJsonStr}')";
-
 
     this.safeEvaluateJavaScriptString(javaScriptStr);
   }
 
    void safeEvaluateJavaScriptString(String javaScriptString) {
      webViewController.evaluateJavascript(source: javaScriptString);
-
-     // webViewController.evaluateJavascript(source: "testAlert()");
-
-
-     // webViewController.evaluateJavascript(source: "window.alert('You have selected: 9999999')");
    }
 
-    // const AAChartView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
