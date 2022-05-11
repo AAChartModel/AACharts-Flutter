@@ -41,8 +41,8 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-#  assets:
-#    - images/AAChartView.html
+  assets:
+    - AAChartView.html
 #    - images/AAChartView.js
 
 
