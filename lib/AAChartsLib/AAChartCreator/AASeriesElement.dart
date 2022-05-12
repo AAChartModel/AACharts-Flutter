@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAObject.dart';
@@ -203,8 +205,8 @@ class AADataElement extends AAObject {
       "name": this.name,
       "y": this.y,
       "color": this.color,
-      "dataLabels": this.dataLabels.toJson(),
-      "marker": this.marker.toJson(),
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
+      "marker": this.marker == null ? null : this.marker.toJson(),
     };
   }
 }
