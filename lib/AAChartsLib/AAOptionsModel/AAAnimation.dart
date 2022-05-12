@@ -21,7 +21,7 @@ class AAAnimation extends AAObject  {
     Map<String, dynamic> toJson() {
     return {
       "duration": this.duration,
-      "easing": this.easing,
+      "easing": this.easing == null ? null : this.easing.index,
     };
   }
 }
