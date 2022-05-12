@@ -737,5 +737,18 @@ class CustomStyleChartComposer {
     ]);
   }
 
+  static AAChartModel drawLineChartWithPointsCoordinates() {
+    return new AAChartModel()
+      .chartTypeSet(AAChartType.line)
+      .titleSet("Draw Line Chart With Points Coordinates")
+      .markerSymbolStyleSet(AAChartSymbolStyleType.borderBlank)
+      .markerRadiusSet(7)
+      .seriesSet([
+  new AASeriesElement()
+      .nameSet("Blue Dot")
+      .dataSet([[10,20],[15,30] ,[27,52],[43,78]])
+  ]);
+}
+
 
 }
