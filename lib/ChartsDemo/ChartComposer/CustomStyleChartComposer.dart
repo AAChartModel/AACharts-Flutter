@@ -197,11 +197,41 @@ class CustomStyleChartComposer {
       AASeriesElement()
           .nameSet("2020")
           .dataSet([211,183,157,133,111,91,73,57,43,31,21,13,7,3])
-          .colorSet(AAGradientColor.oceanBlueColor),
+          .colorSet(AAGradientColor.oceanBlue)
+      ,
       AASeriesElement()
           .nameSet("2021")
           .dataSet([111,83,187,163,151,191,173,157,143,131,121,113,97,93])
-          .colorSet(AAGradientColor.sanguineColor),
+          .colorSet(AAGradientColor.sanguine)
+      ,
+    ]);
+  }
+
+  static AAChartModel configureStackingPolarColumnChart() {
+    return AAChartModel()
+        .chartTypeSet(AAChartType.column)
+    // .xAxisLabelsStyleSet(AAStyle(color: AAColor.white))
+        .dataLabelsEnabledSet(false)
+        .backgroundColorSet("#22324c")//To make the chart background color transparent, set backgroundColor to "rgba (0,0,0,0)" or "# 00000000". Also make sure `aaChartView!.IsClearBackgroundColor = true`
+        .polarSet(true)
+        .stackingSet(AAChartStackingType.percent)
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("Tokyo")
+          .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6])
+      ,
+      AASeriesElement()
+          .nameSet("New York")
+          .dataSet([0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5])
+      ,
+      AASeriesElement()
+          .nameSet("Berlin")
+          .dataSet([0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0])
+      ,
+      AASeriesElement()
+          .nameSet("London")
+          .dataSet([3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8])
+      ,
     ]);
   }
 
@@ -328,11 +358,11 @@ class CustomStyleChartComposer {
     return AAChartModel()
         .titleSet("单独自定义某个指定数据元素的DataLabel")
         .subtitleSet("")
-        .colorsThemeSet([AAGradientColor.mysticMauveColor])
+        .colorsThemeSet([AAGradientColor.mysticMauve])
         .seriesSet([
       AASeriesElement()
           .nameSet("货币")
-          .dataSet([0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, aaDataElement, 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67]),
+          .dataSet([0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, aaDataElement.toJson(), 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67]),
     ]);
   }
 
@@ -497,14 +527,14 @@ class CustomStyleChartComposer {
       AASeriesElement()
           .nameSet("Virtual Data")
           .lineWidthSet(6)
-          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6])
+          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData.toJson(), 5.2, 26.5, 23.3, 45.3, 13.9, 9.6])
           .colorSet(gradientColorDic1)
     ]);
   }
 
   static AAChartModel configureSpecialStyleColumnOfSingleDataElementChart() {
     AADataElement singleSpecialData = AADataElement()
-        .colorSet(AAGradientColor.freshPapayaColor)
+        .colorSet(AAGradientColor.freshPapaya)
         .ySet(49.5);
 
     return AAChartModel()
@@ -520,8 +550,8 @@ class CustomStyleChartComposer {
       AASeriesElement()
           .nameSet("Virtual Data")
           .lineWidthSet(6)
-          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData, 5.2, 26.5, 23.3, 26.5, 13.9, 9.6])
-          .colorSet(AAGradientColor.oceanBlueColor)
+          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData.toJson(), 5.2, 26.5, 23.3, 26.5, 13.9, 9.6])
+          .colorSet(AAGradientColor.oceanBlue)
     ]);
   }
 
