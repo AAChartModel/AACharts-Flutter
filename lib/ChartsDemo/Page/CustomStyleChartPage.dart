@@ -40,8 +40,8 @@ class CustomStyleChartPage extends StatelessWidget {
       case 3:  return CustomStyleChartComposer.configureMixedLineChart();
       case 4:  return CustomStyleChartComposer.configureColorfulColumnChart();
       case 5:  return CustomStyleChartComposer.configureGradientColorBarChart();
-      // case 6:  return CustomStyleChartComposer.configureStackingPolarColumnChart();
-      case 7:  return CustomStyleChartComposer.configureWithMinusNumberChart();
+      case 6:  return CustomStyleChartComposer.configureWithMinusNumberChart();
+      case 7:  return CustomStyleChartComposer.configureStepLineChart();
 
       default: {
         //statements;
