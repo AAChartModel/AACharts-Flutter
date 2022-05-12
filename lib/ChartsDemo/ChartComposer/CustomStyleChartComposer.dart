@@ -12,7 +12,7 @@ class CustomStyleChartComposer {
 
 
   static AAChartModel configureColorfulBarChart() {
-    List colorsNameArr = [
+    List<String> colorsNameArr = [
       "red",
       "orange",
       "yellow",
@@ -46,26 +46,12 @@ class CustomStyleChartComposer {
 
     return AAChartModel()
         .chartTypeSet(AAChartType.bar)
-        .animationTypeSet(AAChartAnimationType.bounce)
+        // .animationTypeSet(AAChartAnimationType.bounce)
         .titleSet("Colorful Chart")
         .subtitleSet("use AAColor to get color string")
         .dataLabelsEnabledSet(false)
-        // .categoriesSet(colorsNameArr)
-        .colorsThemeSet([
-      AAColor.red,
-      AAColor.orange,
-      AAColor.yellow,
-      AAColor.green,
-      AAColor.cyan,
-      AAColor.blue,
-      AAColor.purple,
-      AAColor.gray,
-      AAColor.darkGray,
-      AAColor.lightGray,
-      AAColor.magenta,
-      AAColor.brown,
-      AAColor.black
-    ])
+        .categoriesSet(colorsNameArr)
+        .colorsThemeSet(colorsArr)
         .stackingSet(AAChartStackingType.percent)
         .seriesSet([
       AASeriesElement()
@@ -76,7 +62,7 @@ class CustomStyleChartComposer {
   }
 
   static AAChartModel configureColorfulGradientColorBarChart() {
-    List gradientColorNamesArr = [
+    List<String> gradientColorNamesArr = [
       "oceanBlue",
       "sanguine",
       "lusciousLime",
@@ -130,30 +116,7 @@ class CustomStyleChartComposer {
         .chartTypeSet(AAChartType.bar)
         .titleSet("Colorful Column Chart")
         .subtitleSet("single data array colorful column chart")
-        .categoriesSet([
-      "oceanBlue",
-      "sanguine",
-      "lusciousLime",
-      "purpleLake",
-      "freshPapaya",
-      "ultramarine",
-      "pinkSugar",
-      "lemonDrizzle",
-      "victoriaPurple",
-      "springGreens",
-      "mysticMauve",
-      "reflexSilver",
-      "newLeaf",
-      "cottonCandy",
-      "pixieDust",
-      "fizzyPeach",
-      "sweetDream",
-      "firebrick",
-      "wroughtIron",
-      "deepSea",
-      "coastalBreeze",
-      "eveningDelight",
-    ])
+        .categoriesSet(gradientColorNamesArr)
         .colorsThemeSet(gradientColorArr)
         .yAxisTitleSet("gradient color")
         .stackingSet(AAChartStackingType.percent)
@@ -192,7 +155,8 @@ class CustomStyleChartComposer {
       AASeriesElement()
           .nameSet("本专业")
           .dataSet([45,88,49,43,65,56,47,28,49,44,89,55])
-          // .colorSet(AAGradientColor.freshPapayaColor)
+      // .colorSet(AAColor.blue)
+      //     .colorSet(AAGradientColor.oceanBlue)
           .lineWidthSet(5)
           .zonesSet([
         {"value": 8},
@@ -201,7 +165,7 @@ class CustomStyleChartComposer {
       ,
       AASeriesElement()
           .nameSet("所有专业")
-          // .colorSet(AAGradientColor.pixieDustColor)
+          // .colorSet(AAGradientColor.oceanBlue)
           .lineWidthSet(5)
           .dataSet([null,null,100,109,89,null,null,120,null,null,null,null])
     ]);
