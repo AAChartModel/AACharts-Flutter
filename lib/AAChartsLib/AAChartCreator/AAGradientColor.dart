@@ -10,102 +10,126 @@ enum AALinearGradientDirection {
 }
 
 
-class AAGradientColor {
+abstract class AAGradientColor {
 
   static Map<String,Object> get oceanBlue {
-    return oceanBlueColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = oceanBlueColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get sanguine {
-    return sanguineColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = sanguineColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get lusciousLime {
-    return lusciousLimeColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = lusciousLimeColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get purpleLake {
-    return purpleLakeColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = purpleLakeColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get freshPapaya {
-    return freshPapayaColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = freshPapayaColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get ultramarine {
-    return ultramarineColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = ultramarineColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get pinkSugar {
-    return pinkSugarColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = pinkSugarColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get lemonDrizzle {
-    return lemonDrizzleColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = lemonDrizzleColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get victoriaPurple {
-    return victoriaPurpleColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = victoriaPurpleColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get springGreens {
-    return springGreensColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = springGreensColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get mysticMauve {
-    return mysticMauveColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = mysticMauveColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get reflexSilver {
-    return reflexSilverColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = reflexSilverColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get neonGlow {
-    return neonGlowColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = neonGlowColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get berrySmoothie {
-    return berrySmoothieColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = berrySmoothieColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get newLeaf {
-    return newLeafColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = newLeafColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get cottonCandy {
-    return cottonCandyColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = cottonCandyColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get pixieDust {
-    return pixieDustColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = pixieDustColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get fizzyPeach {
-    return fizzyPeachColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = fizzyPeachColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get sweetDream {
-    return sweetDreamColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = sweetDreamColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get firebrick {
-    return firebrickColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = firebrickColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get wroughtIron {
-    return wroughtIronColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = wroughtIronColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get deepSea {
-    return deepSeaColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = deepSeaColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get coastalBreeze {
-    return coastalBreezeColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color =  coastalBreezeColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
   static Map<String,Object> get eveningDelight {
-    return eveningDelightColor(AALinearGradientDirection.toTop);
+    Map<String,Object> color = eveningDelightColor(AALinearGradientDirection.toTop);
+    return color;
   }
 
 
