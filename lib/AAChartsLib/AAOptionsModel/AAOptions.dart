@@ -16,6 +16,8 @@ import 'AALegend.dart';
      AASubtitle subtitle;
      AAXAxis xAxis;
      AAYAxis yAxis;
+     List<AAXAxis> xAxisArray;
+     List<AAYAxis> yAxisArray;
      AATooltip tooltip;
      AAPlotOptions plotOptions;
      List series;
@@ -47,6 +49,16 @@ import 'AALegend.dart';
         yAxis = prop;
         return this;
     }
+
+     AAOptions xAxisArraySet(List<AAXAxis> prop) {
+       xAxisArray = prop;
+       return this;
+     }
+
+     AAOptions yAxisArraySet(List<AAYAxis> prop) {
+       yAxisArray = prop;
+       return this;
+     }
 
      AAOptions tooltipSet(AATooltip prop) {
         tooltip = prop;
@@ -80,6 +92,26 @@ import 'AALegend.dart';
 
      Map<String, dynamic> toJson() {
 
+       List<Map<String, dynamic>> xAxisArray;
+       if (this.series == null) {
+         xAxisArray = null;
+       } else {
+         xAxisArray = List<Map<String, dynamic>>();
+         this.series.forEach((element) {
+           xAxisArray.add(element.toPureJson());
+         });
+       }
+
+       List<Map<String, dynamic>> yAxisArray;
+       if (this.series == null) {
+         yAxisArray = null;
+       } else {
+         yAxisArray = List<Map<String, dynamic>>();
+         this.series.forEach((element) {
+           yAxisArray.add(element.toPureJson());
+         });
+       }
+
        List<Map<String, dynamic>> seriesList;
        if (this.series == null) {
          seriesList = null;
@@ -96,6 +128,8 @@ import 'AALegend.dart';
          "subtitle": this.subtitle == null ? null : this.subtitle.toPureJson(),
          "xAxis": this.xAxis == null ? null : this.xAxis.toPureJson(),
          "yAxis": this.yAxis == null ? null : this.yAxis.toPureJson(),
+         "xAxisArray": xAxisArray,
+         "yAxisArray": yAxisArray,
          "tooltip": this.tooltip == null ? null : this.tooltip.toPureJson(),
          "plotOptions": this.plotOptions == null ? null : this.plotOptions.toPureJson(),
          "series": seriesList,
