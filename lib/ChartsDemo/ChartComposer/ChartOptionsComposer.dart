@@ -316,7 +316,7 @@ class ChartOptionsComposer {
         .chartSet(aaChart)
         .titleSet(aaTitle)
         .xAxisSet(aaXAxis)
-    // .yAxisArraySet(YAxisArr)
+        .yAxisArraySet(YAxisArr)
         .plotOptionsSet(aaPlotOptions)
         .seriesSet(aaSeriesArr);
 
