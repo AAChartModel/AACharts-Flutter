@@ -47,7 +47,7 @@ class CustomStyleChartComposer {
 
     return AAChartModel()
         .chartTypeSet(AAChartType.bar)
-        // .animationTypeSet(AAChartAnimationType.bounce)
+        .animationTypeSet(AAChartAnimationType.bounce)
         .titleSet("Colorful Chart")
         .subtitleSet("use AAColor to get color string")
         .dataLabelsEnabledSet(false)
@@ -139,7 +139,7 @@ class CustomStyleChartComposer {
       AASeriesElement()
           .nameSet("所有专业")
           .dataSet([7.0, 6.9, 9.5, 14.5, 18.2,null,null,null,null, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6,])
-          // .colorSet(AAGradientColor.deepSeaColor)
+          .colorSet(AAGradientColor.deepSea)
     ]);
   }
 
@@ -156,8 +156,7 @@ class CustomStyleChartComposer {
       AASeriesElement()
           .nameSet("本专业")
           .dataSet([45,88,49,43,65,56,47,28,49,44,89,55])
-      // .colorSet(AAColor.blue)
-      //     .colorSet(AAGradientColor.oceanBlue)
+          .colorSet(AAGradientColor.freshPapaya)
           .lineWidthSet(5)
           .zonesSet([
         {"value": 8},
@@ -166,7 +165,7 @@ class CustomStyleChartComposer {
       ,
       AASeriesElement()
           .nameSet("所有专业")
-          // .colorSet(AAGradientColor.oceanBlue)
+          .colorSet(AAGradientColor.pixieDust)
           .lineWidthSet(5)
           .dataSet([null,null,100,109,89,null,null,120,null,null,null,null])
     ]);
@@ -559,8 +558,8 @@ class CustomStyleChartComposer {
   static AAChartModel configureAreaChartThreshold() {
     Map gradientColorDic1 = AAGradientColor.linearGradient1(
         AALinearGradientDirection.toBottom,
-        "rgba(30, 144, 255,1)",//DodgerBlue, alpha 透明度 1
-        "rgba(30, 144, 255,0.1)"//DodgerBlue, alpha 透明度 0.1
+        AARgba(30, 144, 255, 1.0),//DodgerBlue, alpha 透明度 1
+        AARgba(30, 144, 255, 0.1)//DodgerBlue, alpha 透明度 0.1
     );
 
     return AAChartModel()
@@ -1212,45 +1211,45 @@ class CustomStyleChartComposer {
 // GitHub issue https://github.com/AAChartModel/AAChartKit-Swift/issues/223
   static AAChartModel configureColorfulGradientColorAndColorfulDataLabelsStepAreaChart() {
     var blueStopsArr = [
-    [0.0, AAColor.rgbaColor(30, 144, 255, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
-    [0.6, AAColor.rgbaColor(30, 144, 255, 0.2)],
-    [1.0, AAColor.rgbaColor(30, 144, 255, 0.0)]
+      [0.0, AAColor.rgbaColor(30, 144, 255, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+      [0.6, AAColor.rgbaColor(30, 144, 255, 0.2)],
+      [1.0, AAColor.rgbaColor(30, 144, 255, 0.0)]
     ];
     var gradientBlueColorDic = AAGradientColor.linearGradient2(
-    AALinearGradientDirection.toBottom,
-    blueStopsArr
+        AALinearGradientDirection.toBottom,
+        blueStopsArr
     );
 
     var redStopsArr = [
-    [0.0, AAColor.rgbaColor(255, 0, 0, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
-    [0.6, AAColor.rgbaColor(255, 0, 0, 0.2)],
-    [1.0, AAColor.rgbaColor(255, 0, 0, 0.0)]
+      [0.0, AAColor.rgbaColor(255, 0, 0, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+      [0.6, AAColor.rgbaColor(255, 0, 0, 0.2)],
+      [1.0, AAColor.rgbaColor(255, 0, 0, 0.0)]
     ];
     var gradientRedColorDic = AAGradientColor.linearGradient2(
-    AALinearGradientDirection.toBottom,
-    redStopsArr
+        AALinearGradientDirection.toBottom,
+        redStopsArr
     );
 
 
     var goldStopsArr = [
-    [0.0, AAColor.rgbaColor(255, 215, 0, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
-    [0.6, AAColor.rgbaColor(255, 215, 0, 0.2)],
-    [1.0, AAColor.rgbaColor(255, 215, 0, 0.0)]
+      [0.0, AAColor.rgbaColor(255, 215, 0, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+      [0.6, AAColor.rgbaColor(255, 215, 0, 0.2)],
+      [1.0, AAColor.rgbaColor(255, 215, 0, 0.0)]
     ];
     var gradientGoldColorDic = AAGradientColor.linearGradient2(
-    AALinearGradientDirection.toBottom,
-    goldStopsArr
+        AALinearGradientDirection.toBottom,
+        goldStopsArr
     );
 
 
     var greenStopsArr = [
-    [0.0, AAColor.rgbaColor(50, 205, 50, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
-    [0.6, AAColor.rgbaColor(50, 205, 50, 0.2)],
-    [1.0, AAColor.rgbaColor(50, 205, 50, 0.0)]
+      [0.0, AAColor.rgbaColor(50, 205, 50, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+      [0.6, AAColor.rgbaColor(50, 205, 50, 0.2)],
+      [1.0, AAColor.rgbaColor(50, 205, 50, 0.0)]
     ];
     var gradientGreenColorDic = AAGradientColor.linearGradient2(
-    AALinearGradientDirection.toBottom,
-    greenStopsArr
+        AALinearGradientDirection.toBottom,
+        greenStopsArr
     );
 
 
@@ -1269,35 +1268,35 @@ class CustomStyleChartComposer {
         .fillColorSet(gradientBlueColorDic)
         .lineWidthSet(6)
         .stepSet(true)
-    //     .dataLabelsSet(new AADataLabels()
-    //     .styleSet(AAStyle.colorSize("#1e90ff", 11))
-    // )
+        .dataLabelsSet(new AADataLabels()
+        .styleSet(AAStyle.colorSize("#1e90ff", 11))
+    )
         .dataSet([2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30]),
     new AASeriesElement()
         .nameSet("2018")
         .fillColorSet(gradientRedColorDic)
         .lineWidthSet(6)
         .stepSet(true)
-    //     .dataLabelsSet(new AADataLabels()
-    //     .styleSet(AAStyle.colorSize("#ef476f", 11))
-    // )
+        .dataLabelsSet(new AADataLabels()
+        .styleSet(AAStyle.colorSize("#ef476f", 11))
+    )
         .dataSet([1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28]),
     new AASeriesElement()
         .nameSet("2019")
         .fillColorSet(gradientGoldColorDic)
         .lineWidthSet(6)
         .stepSet(true)
-        // .dataLabelsSet(new AADataLabels()
-    //     .styleSet(AAStyle.colorSize("#ffd066", 11))
-    // )
+        .dataLabelsSet(new AADataLabels()
+        .styleSet(AAStyle.colorSize("#ffd066", 11))
+    )
         .dataSet([1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24]),
     new AASeriesElement()
         .nameSet("2020")
         .fillColorSet(gradientGreenColorDic)
         .lineWidthSet(6)
         .stepSet(true)
-        // .dataLabelsSet(new AADataLabels()
-        // .styleSet(AAStyle.colorSize("#04d69f", 11)))
+        .dataLabelsSet(new AADataLabels()
+        .styleSet(AAStyle.colorSize("#04d69f", 11)))
         .dataSet([5.59, 3.09, 4.09, 6.14, 5.33, 6.05, 5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.22, 5.77, 6.19, 5.68, 4.33, 5.48]),
     ]);
   }
@@ -1334,7 +1333,7 @@ class CustomStyleChartComposer {
         .enabledSet(true)
         .formatSet("{y} 美元")
         .shapeSet("callout")
-        // .styleSet(AAStyle.colorSizeWeight(AAColor.red, 15, AAChartFontWeightType.bold))
+        .styleSet(AAStyle.colorSizeWeight(AAColor.red, 15, AAChartFontWeightType.bold))
         .backgroundColorSet(AAColor.white)// white color
         .borderColorSet(AAColor.red)// red color
         .borderRadiusSet(1.5)
