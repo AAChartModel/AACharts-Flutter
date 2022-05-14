@@ -25,7 +25,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
 
 class ChartOptionsComposer {
 
-  static AAOptions configureTheAAOptionsOfAreaChart() {
+  static AAOptions configureLegendStyle() {
     AAChartModel aaChartModel= AAChartModel()
         .chartTypeSet(AAChartType.areaspline)
         .titleSet("")
@@ -65,7 +65,78 @@ class ChartOptionsComposer {
     return aaOptions;
   }
 
-  static AAOptions configureTheAAOptionsOfPieChart() {
+  static AAOptions simpleGaugeChart() {
+    var aaChartModel = AAChartModel()
+        .chartTypeSet(AAChartType.gauge)
+        .yAxisMinSet(0)
+        .yAxisMaxSet(100)
+        .backgroundColorSet(["#555555"])
+        .seriesSet([
+      AASeriesElement()
+          .dataSet([80]
+      )]);
+
+    var aaOptions = aaChartModel.aa_toAAOptions();
+
+    // aaOptions.paneSet(AAPane()
+    //     .startAngleSet(-150)
+    //     .endAngleSet(150));
+
+    aaOptions.yAxis
+        .gridLineColorSet(AAColor.white)
+        .plotBandsSet([
+      AAPlotBandsElement()
+          .fromSet(0)
+          .toSet(60)
+          .colorSet(AAColor.red)
+      // .outerRadiusSet("105%")
+      // .thicknessSet("5%")
+    ]);
+
+    return aaOptions;
+  }
+
+  static AAOptions gaugeChartWithPlotBand() {
+    var aaChartModel = AAChartModel()
+        .chartTypeSet(AAChartType.gauge)
+        .backgroundColorSet(["#555555"])
+        .yAxisMinSet(0)
+        .yAxisMaxSet(200)
+        .yAxisTitleSet("km/h")
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("Speed")
+          .dataSet([80]
+      )]);
+
+    var aaOptions = aaChartModel.aa_toAAOptions();
+
+// aaOptions.paneSet(AAPane()
+//     .startAngleSet(-150)
+// .endAngleSet(150));
+
+    aaOptions.yAxis
+        .gridLineColorSet(AAColor.white)
+        .plotBandsSet([
+      AAPlotBandsElement()
+          .fromSet(0)
+          .toSet(120)
+          .colorSet("#1e90ff"),
+      AAPlotBandsElement()
+          .fromSet(120)
+          .toSet(160)
+          .colorSet("#ef476f"),
+      AAPlotBandsElement()
+          .fromSet(160)
+          .toSet(200)
+          .colorSet("#ffd066"),
+    ]);
+
+    return aaOptions;
+  }
+
+
+static AAOptions configureTheAAOptionsOfPieChart() {
     //计算X轴偏移量
 //  CGFloat xOffSet = (self.aaChartView.frame.size.width - 40)  0.1;
 
@@ -903,79 +974,6 @@ class ChartOptionsComposer {
     return aaOptions;
   }
 
-  static Map simpleGaugeChart() {
-    Map aaOptions =
-    {
-      "chart": {
-        "type": "gauge"
-      },
-      "pane": {
-        "startAngle": -150,
-        "endAngle": 150
-      },
-      "yAxis": {
-        "min": 0,
-        "max": 100,
-        "plotBands": [
-          {
-            "from": 0,
-            "to": 60,
-            "color": "#FF0000",
-            "outerRadius": "105%",
-            "thickness": "5%"
-          }]
-      },
-      "series": [{
-        "data": [80]
-      }]
-    };
-
-    return aaOptions;
-  }
-
-  static Map gaugeChartWithPlotBand() {
-    Map aaOptions =
-    {
-      "chart": {
-        "type": "gauge",
-      },
-      "title": {
-        "text": "速度仪"
-      },
-      "pane": {
-        "startAngle": -150,
-        "endAngle": 150,
-      },
-      // the value axis
-      "yAxis": {
-        "min": 0,
-        "max": 200,
-
-        "title": {
-          "text": "km/h"
-        },
-        "plotBands": [{
-          "from": 0,
-          "to": 120,
-          "color": "#ffc069"
-        }, {
-          "from": 120,
-          "to": 160,
-          "color": "#fe117c"
-        }, {
-          "from": 160,
-          "to": 200,
-          "color": "#06caf4"
-        }]
-      },
-      "series": [{
-        "name": "Speed",
-        "data": [80],
-      }]
-    };
-
-    return aaOptions;
-  }
 
   static AAOptions configureAAPlotBandsForChart() {
     AAChartModel aaChartModel = AAChartModel()
