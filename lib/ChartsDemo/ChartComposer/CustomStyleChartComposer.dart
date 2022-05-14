@@ -6,6 +6,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAColumn.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAShadow.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStates.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 
 
@@ -210,7 +211,7 @@ class CustomStyleChartComposer {
   static AAChartModel configureStackingPolarColumnChart() {
     return AAChartModel()
         .chartTypeSet(AAChartType.column)
-    // .xAxisLabelsStyleSet(AAStyle(color: AAColor.white))
+        .xAxisLabelsStyleSet(AAStyle.colorStr(AAColor.white))
         .dataLabelsEnabledSet(false)
         .backgroundColorSet("#22324c")//To make the chart background color transparent, set backgroundColor to "rgba (0,0,0,0)" or "# 00000000". Also make sure `aaChartView!.IsClearBackgroundColor = true`
         .polarSet(true)
@@ -813,13 +814,12 @@ class CustomStyleChartComposer {
           .nameSet("ElementOne")
           .dataSet([211,183,157,133,111,91,73,57,43,31,21,13,7,3])
           .allowPointSelectSet(true)
-          // .statesSet(new AAStates()
-          // .hoverSet(new AAHover()
-          // .colorSet("rgbaColor(220,20,60,1)"))//猩红色, alpha 透明度 1
-          // .selectSet(new AASelect()
-          // .colorSet(AAColor.red)
-    // )
-    //   )
+          .statesSet(new AAStates()
+          .hoverSet(new AAHover()
+          .colorSet("rgbaColor(220,20,60,1)"))//猩红色, alpha 透明度 1
+          .selectSet(new AASelect()
+          .colorSet(AAColor.red)
+    ))
     ]);
   }
 
@@ -847,19 +847,19 @@ class CustomStyleChartComposer {
           .nameSet("ElementOne")
           .dataSet([211,183,157,133,111,91,73,57,43,31,21,13,7,3])
           .allowPointSelectSet(true)
-      //     .statesSet(new AAStates()
-      //     .hoverSet(new AAHover()
-      //     .haloSet(new AAHalo()
-      //     .sizeSet(130)
-      //     .opacitySet(0.8)
-      //     .attributesSet(attributes1)
-      // ))
-      //     .selectSet(new AASelect()
-      //     .haloSet(new AAHalo()
-      //     .sizeSet(130)
-      //     .opacitySet(1.0)
-      //     .attributesSet(attributes2)
-      // )))
+          .statesSet(new AAStates()
+          .hoverSet(new AAHover()
+          .haloSet(new AAHalo()
+          .sizeSet(130)
+          .opacitySet(0.8)
+          .attributesSet(attributes1)
+      ))
+          .selectSet(new AASelect()
+          .haloSet(new AAHalo()
+          .sizeSet(130)
+          .opacitySet(1.0)
+          .attributesSet(attributes2)
+      )))
     ]);
   }
 
@@ -879,14 +879,14 @@ class CustomStyleChartComposer {
           .nameSet("Tokyo Hot")
           .lineWidthSet(5.0)
           .colorSet(AARgba(220,20,60,1))//猩红色, alpha 透明度 1
-      //     .markerSet(new AAMarker()
-      //     .statesSet(new AAMarkerStates()
-      //     .hoverSet(new AAMarkerHover()
-      //     .fillColorSet(AAColor.white)
-      //     .radiusSet(40)
-      //     .lineColorSet(AAColor.green)
-      //     .lineWidthSet(20))
-      // ))
+          .markerSet(new AAMarker()
+          .statesSet(new AAMarkerStates()
+          .hoverSet(new AAMarkerHover()
+          .fillColorSet(AAColor.white)
+          .radiusSet(40)
+          .lineColorSet(AAColor.green)
+          .lineWidthSet(20))
+      ))
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ]);
   }
@@ -1384,7 +1384,7 @@ class CustomStyleChartComposer {
         .tooltipEnabledSet(false)
         .borderRadiusSet(3)
         .markerSymbolStyleSet(AAChartSymbolStyleType.innerBlank)
-        // .xAxisLabelsStyleSet(AAStyle.colorSizeWeight(AAColor.black, 16, AAChartFontWeightType.bold))
+        .xAxisLabelsStyleSet(AAStyle.colorSizeWeight(AAColor.black, 16, AAChartFontWeightType.bold))
         .seriesSet([
       new AASeriesElement()
           .nameSet("2017")
