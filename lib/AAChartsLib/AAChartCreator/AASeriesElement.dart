@@ -4,6 +4,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAObject.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAShadow.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStates.dart';
 
 class AASeriesElement extends AAObject {
 
@@ -22,6 +23,7 @@ class AASeriesElement extends AAObject {
   AADataLabels dataLabels;   //Individual data label for each point. The options are the same as the ones for `plotOptions.series.dataLabels`.
   AAMarker marker;                //Enable or disable the point marker. If null, the markers are hidden when the data is dense, and shown for more widespread data points.
   var step;                  //Whether to apply steps to the line. Possible values are left, center and right.
+  AAStates states;
   bool colorByPoint;          //When using automatic point colors pulled from the `options.colors` collection, this option determines whether the chart should receive one color per series or one color per point.
   bool allowPointSelect;      //Allow this series' points to be selected by clicking on the markers, bars or pie slices
   int zIndex;                //Define the visual z index of the series.
@@ -102,6 +104,11 @@ class AASeriesElement extends AAObject {
 
   AASeriesElement stepSet(var prop) {
     step = prop;
+    return this;
+  }
+
+  AASeriesElement statesSet(var prop) {
+    states = prop;
     return this;
   }
 
