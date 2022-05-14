@@ -84,6 +84,12 @@ class AAChartView extends StatelessWidget {
 
    String configurePureOptionsJsonStr(AAOptions chartOptions) {
      Map<String, dynamic> aaOptionsJsonMap = chartOptions.toJson();
+
+     //debug print
+     String prettyJsonStr = getPrettyJSONString(aaOptionsJsonMap);
+     debugPrint(prettyJsonStr);
+     //debug print
+
      String aaOptionsJsonStr = jsonEncode(aaOptionsJsonMap);
      this.optionsJson = aaOptionsJsonStr;
      String javaScriptStr = "loadTheHighChartView('$aaOptionsJsonStr')";
@@ -93,6 +99,11 @@ class AAChartView extends StatelessWidget {
    void safeEvaluateJavaScriptString(String javaScriptString) {
      webViewController.evaluateJavascript(source: javaScriptString);
    }
+
+  String getPrettyJSONString(jsonObject){
+    var encoder = new JsonEncoder.withIndent("     ");
+    return encoder.convert(jsonObject);
+  }
 
 
   @override
