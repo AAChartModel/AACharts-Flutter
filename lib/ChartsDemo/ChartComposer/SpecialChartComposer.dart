@@ -1,6 +1,8 @@
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAGradientColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AASeriesElement.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAnimation.dart';
 
 
 class SpecialChartComposer {
@@ -622,7 +624,7 @@ class SpecialChartComposer {
     ]);
   }
 
-  static AAChartModel configureArealinerangeChart() {
+  static AAChartModel configureAreasplinerangeChart() {
     return AAChartModel()
         .chartTypeSet(AAChartType.areasplinerange)
         .titleSet("黄昏别馆日气温起伏图")
@@ -715,6 +717,62 @@ class SpecialChartComposer {
         [-5.2, 10.4],
         [-9.9, 16.8]
       ]),
+    ]);
+  }
+
+  static AAChartModel configureStepLineChart() {
+    return AAChartModel()
+        .chartTypeSet(AAChartType.line)//图形类型
+        .animationTypeSet(AAChartAnimationType.easeOutCubic)//图形渲染动画类型为"easeOutCubic"
+        .titleSet("STEP LINE CHART")//图形标题
+        .subtitleSet("2020/08/08")//图形副标题
+        .dataLabelsEnabledSet(false)//是否显示数字
+        .markerSymbolStyleSet(AAChartSymbolStyleType.borderBlank)//折线连接点样式
+        .markerRadiusSet(7)//折线连接点半径长度,为0时相当于没有折线连接点
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("Berlin")
+          .dataSet([450, 432, 401, 454, 590, 530, 510])
+          .stepSet("right")//设置折线样式为直方折线,折线连接点位置靠右👉
+      ,
+      AASeriesElement()
+          .nameSet("New York")
+          .dataSet([220, 282, 201, 234, 290, 430, 410])
+          .stepSet("center")//设置折线样式为直方折线,折线连接点位置居中
+      ,
+      AASeriesElement()
+          .nameSet("Tokyo")
+          .dataSet([120, 132, 101, 134, 90, 230, 210])
+          .stepSet("left")//设置折线样式为直方折线,折线连接点位置靠左👈
+      ,
+    ]);
+  }
+
+  static AAChartModel configureStepAreaChart() {
+    return AAChartModel()
+        .chartTypeSet(AAChartType.area)//图形类型
+        .animationTypeSet(AAChartAnimationType.easeOutCubic)//图形渲染动画类型为"easeOutCubic"
+        .titleSet("STEP AREA CHART")//图形标题
+        .subtitleSet("2049/08/08")//图形副标题
+        .dataLabelsEnabledSet(false)//是否显示数字
+        .markerSymbolStyleSet(AAChartSymbolStyleType.innerBlank)//折线连接点样式
+        .markerRadiusSet(0)//折线连接点半径长度,为0时相当于没有折线连接点
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("Berlin")
+          .dataSet([450, 432, 401, 454, 590, 530, 510])
+          .stepSet(true)//设置折线样式为直方折线,折线连接点位置靠左👈
+      ,
+      AASeriesElement()
+          .nameSet("New York")
+          .dataSet([220, 282, 201, 234, 290, 430, 410])
+          .stepSet(true)//设置折线样式为直方折线,折线连接点位置靠左👈
+      ,
+      AASeriesElement()
+          .nameSet("Tokyo")
+          .dataSet([120, 132, 101, 134, 90, 230, 210])
+          .stepSet(true)//设置折线样式为直方折线,折线连接点位置靠左👈
+      ,
     ]);
   }
 
@@ -816,4 +874,28 @@ class SpecialChartComposer {
       ]),
     ]);
   }
+
+  static AAChartModel configureErrorbarChart() {
+    return new AAChartModel()
+        .yAxisTitleSet("")
+        .categoriesSet([
+      "一月", "二月", "三月", "四月", "五月", "六月",
+      "七月", "八月", "九月", "十月", "十一月", "十二月"
+    ])
+        .seriesSet([
+      new AASeriesElement()
+          .nameSet("降水")
+          .typeSet(AAChartType.column)
+          .dataSet([49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4])
+      ,
+      new AASeriesElement()
+          .nameSet("降雨误差")
+          .typeSet(AAChartType.errorbar)
+          .lineWidthSet(2.5)
+          .colorSet(AAColor.red)
+          .dataSet([[48, 51], [68, 73], [92, 110], [128, 136], [140, 150], [171, 179], [135, 143], [142, 149], [204, 220], [189, 199], [95, 110], [52, 56]])
+      // .tooltipSet(new AATooltip()
+      //     .pointFormatSet("(误差范围: {point.low}-{point.high} mm)<br/>"))
+    ]);
+}
 }
