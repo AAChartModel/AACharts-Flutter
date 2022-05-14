@@ -757,7 +757,7 @@ class MixedChartComposer {
   }
 
   static AAChartModel configureLineChartWithShadow() {
-    AAChartModel()
+    return AAChartModel()
         .chartTypeSet(AAChartType.line)
         .titleSet("Line Chart With Shadow")
         .categoriesSet(["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
@@ -780,7 +780,7 @@ class MixedChartComposer {
 
 //GitHub issue https://github.com/AAChartModel/AAChartKit/issues/921
   static AAChartModel configureNegativeColorMixedAreasplineChart() {
-    AAChartModel()
+    return AAChartModel()
         .chartTypeSet(AAChartType.areaspline)
         .legendEnabledSet(false)
         .dataLabelsEnabledSet(false)
@@ -818,7 +818,7 @@ class MixedChartComposer {
   }
 
   static AAChartModel configureAerasplinerangeMixedColumnrangeMixedLineChart() {
-    AAChartModel()
+    return AAChartModel()
         .chartTypeSet(AAChartType.line)
         .dataLabelsEnabledSet(true)
         .markerSymbolSet(AAChartSymbolType.circle)
