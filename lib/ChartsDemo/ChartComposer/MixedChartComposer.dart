@@ -804,14 +804,14 @@ class MixedChartComposer {
             [1.0, AARgba(30, 144, 255, 0.6)]
           ]
       ))
-      //     .negativeFillColorSet(AAGradientColor.linearGradient2(
-      //     AALinearGradientDirection.toTop,
-      //      [
-      //       [0.0, AARgba(255, 0, 0, 0.6)],//颜色字符串设置支持十六进制类型和 rgba 类型
-      //       [0.5, AARgba(255, 0, 0, 0.0)],
-      //       [1.0, AARgba(255, 0, 0, 0.0)]
-      //     ]
-      // ))
+          .negativeFillColorSet(AAGradientColor.linearGradient2(
+          AALinearGradientDirection.toTop,
+           [
+            [0.0, AARgba(255, 0, 0, 0.6)],//颜色字符串设置支持十六进制类型和 rgba 类型
+            [0.5, AARgba(255, 0, 0, 0.0)],
+            [1.0, AARgba(255, 0, 0, 0.0)]
+          ]
+      ))
           .thresholdSet(0)//default:0
     ]);
   }
