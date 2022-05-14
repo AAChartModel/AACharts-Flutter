@@ -1,3 +1,11 @@
+String AARgba(
+    int red,
+    int green,
+    int blue,
+    double alpha
+    ) {
+  return "rgba($red,$green,$blue,$alpha)";
+}
 
 class AAColor {
 
