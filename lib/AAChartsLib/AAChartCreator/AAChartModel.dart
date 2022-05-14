@@ -59,6 +59,8 @@ abstract class AAChartType {
   static const boxplot = "boxplot";
   static const waterfall = "waterfall";
   static const polygon = "polygon";
+  static const gauge = "gauge";
+  static const errorbar = "errorbar";
 }
 
 abstract class AAChartZoomType {
