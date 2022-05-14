@@ -241,7 +241,7 @@ class SpecialChartComposer {
       AASeriesElement()
           .nameSet("2020")
           .typeSet(AAChartType.arearange)
-          .colorSet(AAGradientColor.sanguineColor)
+          .colorSet(AAGradientColor.sanguine)
           .dataSet([
         /* 2014-01-01 */
         [1388538000000, 1.1,  4.7],
@@ -636,7 +636,7 @@ class SpecialChartComposer {
       AASeriesElement()
           .nameSet("2020")
           .typeSet(AAChartType.areasplinerange)
-          .colorSet(AAGradientColor.pixieDustColor)
+          .colorSet(AAGradientColor.pixieDust)
           .dataSet([
         /* 2014-03-01 */
         [1393635600000, 2.1,  8.9],
@@ -787,7 +787,7 @@ class SpecialChartComposer {
       AASeriesElement()
           .nameSet("Observed Data")
           .lineWidthSet(1.8)
-          .fillColorSet(AAGradientColor.mysticMauveColor)
+          .fillColorSet(AAGradientColor.mysticMauve)
           .dataSet([
         [760, 801, 848, 895, 965],
         [733, 853, 939, 980, 1080],
