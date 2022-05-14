@@ -786,8 +786,8 @@ class ChartOptionsComposer {
 
     var fillColorGradientColor = AAGradientColor.linearGradient1(
         AALinearGradientDirection.toTop,
-        "rgbaSet(256,256,256,0.3)",
-        "rgbaSet(256,256,256,1.0)"//颜色字符串设置支持十六进制类型和 rgba 类型
+        "rgba(256,256,256,0.3)",
+        "rgba(256,256,256,1.0)"//颜色字符串设置支持十六进制类型和 rgba 类型
     );
 
     var aaChartModel = new AAChartModel()
@@ -864,7 +864,7 @@ class ChartOptionsComposer {
       new AASeriesElement()
           .nameSet("New York Hot")
           .lineWidthSet(5.0)
-          .colorSet("rgbaSet(220,20,60,1)")//猩红色, alpha 透明度 1
+          .colorSet("rgba(220,20,60,1)")//猩红色, alpha 透明度 1
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
       new AASeriesElement()
           .typeSet(AAChartType.column)
