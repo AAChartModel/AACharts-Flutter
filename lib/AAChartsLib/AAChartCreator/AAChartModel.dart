@@ -127,6 +127,20 @@ abstract class AAChartFontWeightType {
   static const bold = "bold";
 }
 
+abstract class AAChartLineDashStyleType {
+  static const solid = "solid";
+  static const shortDash = "shortDash";
+  static const shortDot = "shortDot";
+  static const shortDashDot = "shortDashDot";
+  static const shortDashDotDot = "shortDashDotDot";
+  static const dot = "dot";
+  static const dash = "dash";
+  static const longDash = "longDash";
+  static const dashDot = "dashDot";
+  static const longDashDot = "longDashDot";
+  static const longDashDotDot = "longDashDotDot";
+}
+
 class AAChartModel {
   var animationType; //动画类型
   int animationDuration; //动画时间
