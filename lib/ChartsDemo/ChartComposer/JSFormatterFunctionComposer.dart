@@ -317,7 +317,7 @@ class JSFormatterFunctionComposer {
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     AAYAxis aayAxis = aaOptions.yAxis;
     aayAxis.labels
-        .formatterSet("""
+//         .formatterSet("""
 // function () {
 //         let yValue = this.value;
 //         if (yValue >= 200) {
@@ -332,7 +332,7 @@ class JSFormatterFunctionComposer {
 //             return "一般";
 //         }
 //     }
-""")
+// """)
     ;
     return aaOptions;
   }
