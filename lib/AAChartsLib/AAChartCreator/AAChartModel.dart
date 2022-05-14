@@ -150,6 +150,7 @@ class AAChartModel {
   bool dataLabelsEnabled; //是否显示数据
   AAStyle dataLabelsStyle;
   bool xAxisLabelsEnabled; //x 轴是否显示数据
+  AAStyle xAxisLabelsStyle;
   int xAxisTickInterval;
   List<String> categories; //x 轴是否显示数据
   double xAxisGridLineWidth; //x 轴网格线的宽度
@@ -301,6 +302,11 @@ class AAChartModel {
 
   AAChartModel xAxisLabelsEnabledSet(bool prop) {
     xAxisLabelsEnabled = prop;
+    return this;
+  }
+
+  AAChartModel xAxisLabelsStyleSet(AAStyle prop) {
+    xAxisLabelsStyle = prop;
     return this;
   }
 
