@@ -13,7 +13,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
 
 class JSFormatterFunctionComposer {
 
-  static AAOptions customAreaChartTooltipStyleWithFormatterFunction1() {
+  static AAOptions customAreaChartTooltipStyleWithSimpleFormatString() {
     AAChartModel aaChartModel = AAChartModel()
         .chartTypeSet(AAChartType.area)//图表类型
         .titleSet("近三个月金价起伏周期图")//图表主标题
@@ -74,7 +74,7 @@ class JSFormatterFunctionComposer {
     return aaOptions;
   }
 
-  static AAOptions customAreaChartTooltipStyleWithFormatterFunction2() {
+  static AAOptions customAreaChartTooltipStyleWithDifferentUnitSuffix() {
     Map gradientColorDic1 = AAGradientColor.linearGradient1(
         AALinearGradientDirection.toTop,
         "rgba(256,0,0,0.3)",//颜色字符串设置支持十六进制类型和 rgba 类型,
@@ -113,21 +113,22 @@ class JSFormatterFunctionComposer {
     aaOptions.tooltip
         .useHTMLSet(true)
         .formatterSet("""
-function () {
-  var s = '第' + '<b>' +  this.x + '</b>' + '年' + '<br/>';
-  let colorDot1 = '<span style=\"' + 'color:red; font-size:13px\"' + '>◉</span> ';
-  let colorDot2 = '<span style=\"' + 'color:blue; font-size:13px\"' + '>◉</span> ';
-  let s1 = colorDot1  + this.points[0].series.name + ': ' + this.points[0].y + '只' + '<br/>';
-  let s2 =  colorDot2 + this.points[1].series.name + ': ' + this.points[1].y + '棵';
-  s += s1 + s2;
-  return s;
-}
+    function () {
+        var s = '第' + '<b>' +  this.x + '</b>' + '年' + '<br/>';
+        let colorDot1 = '<span style=' + 'color:#1e90ff; font-size:13px' + '>◉</span> ';
+        let colorDot2 = '<span style=' + 'color:#ef476f; font-size:13px' + '>◉</span> ';
+        let s1 = colorDot1  + this.points[0].series.name + ': ' + this.points[0].y + '只' + '<br/>';
+        let s2 =  colorDot2 + this.points[1].series.name + ': ' + this.points[1].y + '棵';
+        s += s1 + s2;
+        return s;
+    }
       """
-    );
+    )
+    ;
     return aaOptions;
   }
 
-  static AAOptions customAreaChartTooltipStyleWithFormatterFunction3() {
+  static AAOptions customAreaChartTooltipStyleWithColorfulHtmlLabels() {
     AAChartModel aaChartModel = AAChartModel()
         .chartTypeSet(AAChartType.line)//图表类型
         .titleSet("")//图表主标题
@@ -164,29 +165,30 @@ function () {
 
     aaOptions.tooltip
         .useHTMLSet(true)
-        .formatterSet("""
-function () {
-        let colorDot0 = '<span style=\"' + 'color:red; font-size:13px\"' + '>◉</span> ';
-        let colorDot1 = '<span style=\"' + 'color:mediumspringgreen; font-size:13px\"' + '>◉</span> ';
-        let colorDot2 = '<span style=\"' + 'color:deepskyblue; font-size:13px\"' + '>◉</span> ';
-        let colorDot3 = '<span style=\"' + 'color:sandybrown; font-size:13px\"' + '>◉</span> ';
-        let colorDotArr = [colorDot0, colorDot1, colorDot2, colorDot3];
-        let wholeContentString = this.points[0].x + '<br/>';
-        for (let i = 0;i < 4;i++) {
-            let yValue = this.points[i].y;
-            if (yValue != 0) {
-                let prefixStr = colorDotArr[i];
-                wholeContentString += prefixStr + this.points[i].series.name + ': ' + this.points[i].y + '<br/>';
-            }
-        }
-        return wholeContentString;
-    }
-""");
+//         .formatterSet("""
+// function () {
+//         let colorDot0 = '<span style=\"' + 'color:red; font-size:13px\"' + '>◉</span> ';
+//         let colorDot1 = '<span style=\"' + 'color:mediumspringgreen; font-size:13px\"' + '>◉</span> ';
+//         let colorDot2 = '<span style=\"' + 'color:deepskyblue; font-size:13px\"' + '>◉</span> ';
+//         let colorDot3 = '<span style=\"' + 'color:sandybrown; font-size:13px\"' + '>◉</span> ';
+//         let colorDotArr = [colorDot0, colorDot1, colorDot2, colorDot3];
+//         let wholeContentString = this.points[0].x + '<br/>';
+//         for (let i = 0;i < 4;i++) {
+//             let yValue = this.points[i].y;
+//             if (yValue != 0) {
+//                 let prefixStr = colorDotArr[i];
+//                 wholeContentString += prefixStr + this.points[i].series.name + ': ' + this.points[i].y + '<br/>';
+//             }
+//         }
+//         return wholeContentString;
+//     }
+// """)
+    ;
 
     return aaOptions;
   }
 
-  static AAOptions customAreaChartTooltipStyleWithFormatterFunction4() {
+  static AAOptions customLineChartTooltipStyleWhenValueBeZeroDoNotShow() {
     AAChartModel aaChartModel = AAChartModel()
         .chartTypeSet(AAChartType.areaspline)//图表类型
         .titleSet("")//图表主标题
@@ -222,22 +224,22 @@ function () {
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
         .useHTMLSet(true)
-        .formatterSet("""
-function () {
-        let colorsArr = ["mediumspringgreen", "deepskyblue", "red", "sandybrown"];
-        let wholeContentString ='<span style=\"' + 'color:lightGray; font-size:13px\"' + '>◉ Time: ' + this.x + ' year</span><br/>';
-        for (let i = 0;i < 4;i++) {
-            let thisPoint = this.points[i];
-            let yValue = thisPoint.y;
-            if (yValue != 0) {
-                let spanStyleStartStr = '<span style=\"' + 'color:'+ colorsArr[i] + '; font-size:13px\"' + '>◉ ';
-                let spanStyleEndStr = '</span> <br/>';
-                wholeContentString += spanStyleStartStr + thisPoint.series.name + ': ' + thisPoint.y + '℃' + spanStyleEndStr;
-            }
-        }
-        return wholeContentString;
-    }
-""")
+//         .formatterSet("""
+// function () {
+//         let colorsArr = ["mediumspringgreen", "deepskyblue", "red", "sandybrown"];
+//         let wholeContentString ='<span style=\"' + 'color:lightGray; font-size:13px\"' + '>◉ Time: ' + this.x + ' year</span><br/>';
+//         for (let i = 0;i < 4;i++) {
+//             let thisPoint = this.points[i];
+//             let yValue = thisPoint.y;
+//             if (yValue != 0) {
+//                 let spanStyleStartStr = '<span style=\"' + 'color:'+ colorsArr[i] + '; font-size:13px\"' + '>◉ ';
+//                 let spanStyleEndStr = '</span> <br/>';
+//                 wholeContentString += spanStyleStartStr + thisPoint.series.name + ': ' + thisPoint.y + '℃' + spanStyleEndStr;
+//             }
+//         }
+//         return wholeContentString;
+//     }
+// """)
         .backgroundColorSet("#050505")
         .borderColorSet("#050505")
     ;
@@ -256,7 +258,7 @@ function () {
       AASeriesElement()
           .nameSet("观测值")
           .lineWidthSet(1.8)
-          .fillColorSet(AAGradientColor.deepSeaColor)
+          .fillColorSet(AAGradientColor.deepSea)
           .dataSet([
         [760, 801, 848, 895, 965],
         [733, 853, 939, 980, 1080],
@@ -316,21 +318,22 @@ function () {
     AAYAxis aayAxis = aaOptions.yAxis;
     aayAxis.labels
         .formatterSet("""
-function () {
-        let yValue = this.value;
-        if (yValue >= 200) {
-            return "极佳";
-        } else if (yValue >= 150 && yValue < 200) {
-            return "非常棒";
-        } else if (yValue >= 100 && yValue < 150) {
-            return "相当棒";
-        } else if (yValue >= 50 && yValue < 100) {
-            return "还不错";
-        } else {
-            return "一般";
-        }
-    }
-""");
+// function () {
+//         let yValue = this.value;
+//         if (yValue >= 200) {
+//             return "极佳";
+//         } else if (yValue >= 150 && yValue < 200) {
+//             return "非常棒";
+//         } else if (yValue >= 100 && yValue < 150) {
+//             return "相当棒";
+//         } else if (yValue >= 50 && yValue < 100) {
+//             return "还不错";
+//         } else {
+//             return "一般";
+//         }
+//     }
+""")
+    ;
     return aaOptions;
   }
 
@@ -633,7 +636,7 @@ function () {
         .seriesSet([
       AASeriesElement()
           .nameSet("2020")
-          .colorSet(AAGradientColor.deepSeaColor)
+          .colorSet(AAGradientColor.deepSea)
           .dataSet([9.9,null, 9.9,null,9.9, null, ]),
     ]);
 

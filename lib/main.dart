@@ -5,6 +5,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 import 'package:aacharts_flutter/ChartsDemo/ChartComposer/ChartOptionsComposer.dart';
 import 'package:aacharts_flutter/ChartsDemo/ChartComposer/CustomStyleChartComposer.dart';
+import 'package:aacharts_flutter/ChartsDemo/Page/JSFormatterPage.dart';
 import 'package:aacharts_flutter/ChartsDemo/Page/MixedChartPage.dart';
 import 'package:aacharts_flutter/ChartsDemo/Page/SpecialChartPage.dart';
 import 'package:flutter/material.dart';
@@ -129,39 +130,66 @@ class _ApplicationState extends State<Application> {
     // ];
 
     /*Mixed Chart*/
-    List chartTypeNamesArr = [
-      "Arearange Mixed Line---面积范围均线图",
-      "Columnrange Mixed Line---柱形范围图混合折线图",
-      "Stacking Column Mixed Line---堆积柱形图混合折线图",
-      "Dash Style Types Mixed---多种类型曲线混合图",
-      "Negative Color Mixed Column Chart---基准线以下异色混合图",
-      "scatterMixedLine---散点图混合折线图",
-      "Negative Color Mixed Bubble Chart---基准线以下异色气泡图",
-      "Polygon Mixed Scatter---多边形混合散点图",
-      "Polar Chart Mixed---极地混合图",
-      "Column Mixed Scatter---柱形图混合散点图",
-      "Pie Mixed Line Mixed Column---扇形折线柱形混合图",
-      "Line Chart With Shadow---带有阴影效果の折线图",
-      "Negative Color Mixed Areaspline chart---基准线以下异色混合曲线填充图",
-      "Aerasplinerange Mixed Columnrange Mixed Line Chart---曲线面积范围混合柱形范围混合折线图"
-    ];
+    // List chartTypeNamesArr = [
+    //   "Arearange Mixed Line---面积范围均线图",
+    //   "Columnrange Mixed Line---柱形范围图混合折线图",
+    //   "Stacking Column Mixed Line---堆积柱形图混合折线图",
+    //   "Dash Style Types Mixed---多种类型曲线混合图",
+    //   "Negative Color Mixed Column Chart---基准线以下异色混合图",
+    //   "scatterMixedLine---散点图混合折线图",
+    //   "Negative Color Mixed Bubble Chart---基准线以下异色气泡图",
+    //   "Polygon Mixed Scatter---多边形混合散点图",
+    //   "Polar Chart Mixed---极地混合图",
+    //   "Column Mixed Scatter---柱形图混合散点图",
+    //   "Pie Mixed Line Mixed Column---扇形折线柱形混合图",
+    //   "Line Chart With Shadow---带有阴影效果の折线图",
+    //   "Negative Color Mixed Areaspline chart---基准线以下异色混合曲线填充图",
+    //   "Aerasplinerange Mixed Columnrange Mixed Line Chart---曲线面积范围混合柱形范围混合折线图"
+    // ];
 
     /*Mixed Chart*/
-     List chartTypesArr = [
-      "arearangeMixedLine",
-      "columnrangeMixedLine",
-      "stackingColumnMixedLine",
-      "dashStyleTypeMixed",
-      "negativeColorMixed",
-      "scatterMixedLine",
-      "negativeColorMixedBubble",
-      "polygonMixedScatter",
-      "polarChartMixed",
-      "columnMixedScatter",
-      "PieMixedLineMixedColumn",
-      "LineChartWithShadow",
-      "NegativeColorMixedAreasplineChart",
-      "AerasplinerangeMixedColumnrangeMixedLineChart"
+    //  List chartTypesArr = [
+    //   "arearangeMixedLine",
+    //   "columnrangeMixedLine",
+    //   "stackingColumnMixedLine",
+    //   "dashStyleTypeMixed",
+    //   "negativeColorMixed",
+    //   "scatterMixedLine",
+    //   "negativeColorMixedBubble",
+    //   "polygonMixedScatter",
+    //   "polarChartMixed",
+    //   "columnMixedScatter",
+    //   "PieMixedLineMixedColumn",
+    //   "LineChartWithShadow",
+    //   "NegativeColorMixedAreasplineChart",
+    //   "AerasplinerangeMixedColumnrangeMixedLineChart"
+    // ];
+
+    List chartTypeNamesArr = [
+      "customAreaChartTooltipStyleWithSimpleFormatString---简单字符串拼接",
+      "customAreaChartTooltipStyleWithDifferentUnitSuffix---自定义不同单位后缀",
+      "customAreaChartTooltipStyleWithColorfulHtmlLabels---自定义多彩颜色文字",
+      "customLineChartTooltipStyleWhenValueBeZeroDoNotShow---值为0时,在tooltip中不显示",
+      "customBoxplotTooltipContent---自定义箱线图の浮动提示框头部内容",
+      "customYAxisLabels---自定义Y轴文字1",
+      "customYAxisLabels2---自定义Y轴文字2",
+      "customStackedAndGroupedColumnChartTooltip---自定义分组堆积柱状图tooltip内容",
+      "Double X Axes Mirror Chart---双 X 轴镜像图表",
+      "custom Arearange Chart Tooltip---自定义面积范围图浮动提示框",
+      "customLineChartOriginalPointPositionByConfiguringXAxisFormatterAndTooltipFormatter---调整折线图の X 轴左边距",
+      "customTooltipWhichDataSourceComeFromOutSideRatherThanSeries---通过来自外部の数据源来自定义 tooltip (而非常规の来自图表の series)",
+      "custom Spider Chart Style---自定义蜘蛛图🕷🕸样式",
+      "customize Every DataLabel Singlely By DataLabels Formatter---通过 DataLabels 的 formatter 函数来实现单个数据标签🏷自定义",
+      "custom XAxis Labels Be Images---自定义柱形图 X 轴 labels 为一组图片🖼",
+      "custom Legend Item Click Event---自定义图例点击事件🖱",
+      "customTooltipPostionerFunction---自定义浮动提示框 positioner 函数",
+      "fixedTooltipPositionByCustomPositionerFunction---通过 Positioner 函数来实现一个位置固定的提示框",
+      "disableColumnChartUnselectEventEffectBySeriesPointEventClickFunction---通过 Series 的 Point 的选中事件函数来禁用条形图反选效果",
+      "customAreasplineChartTooltipStyleByDivWithCSS---通过自定义 div 的 css 样式来自定义复杂效果的 tooltip 浮动提示框",
+      "configureTheAxesLabelsFormattersOfDoubleYAxesChart---配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数",
+      "configureTheAxesLabelsFormattersOfDoubleYAxesChart2---配置双 Y 轴图表的 Y 轴文字标签的 Formatter 函数2",
+      "makePieChartShow0Data---使饼图显示为 0 的数据",
+      "customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters---通过截取前四个字符来自定义 X 轴 labels",
     ];
 
    var listView = ListView.separated(
@@ -170,7 +198,8 @@ class _ApplicationState extends State<Application> {
           return ListTile(title: Text("${chartTypeNamesArr[index]}"),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return MixedChartPage(selectedType:  chartTypesArr[index]);
+                  return JSFormatterPage(selectedIndex: index);
+                  // return MixedChartPage(selectedType:  chartTypesArr[index]);
                   // return SpecialChartPage(selectedType: chartTypesArr[index]);
                   // return CustomStyleChartPage(selectedIndex: index);
                 }));
