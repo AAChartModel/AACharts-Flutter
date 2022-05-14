@@ -879,14 +879,16 @@ class CustomStyleChartComposer {
           .nameSet("Tokyo Hot")
           .lineWidthSet(5.0)
           .colorSet(AARgba(220,20,60,1))//猩红色, alpha 透明度 1
-          .markerSet(new AAMarker()
-          .statesSet(new AAMarkerStates()
-          .hoverSet(new AAMarkerHover()
-          .fillColorSet(AAColor.white)
-          .radiusSet(40)
-          .lineColorSet(AAColor.green)
-          .lineWidthSet(20))
-      ))
+          .markerSet(
+          new AAMarker()
+              .statesSet(
+              new AAMarkerStates()
+                  .hoverSet(
+                  new AAMarkerHover()
+                      .fillColorSet(AAColor.white)
+                      .radiusSet(40)
+                      .lineColorSet(AAColor.green)
+                      .lineWidthSet(20))))
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ]);
   }
@@ -916,16 +918,17 @@ class CustomStyleChartComposer {
 
     var element1 = new AASeriesElement()
         .nameSet("2017")
-        .dataLabelsSet(new AADataLabels()
-        .enabledSet(true)
-        .ySet(-10)
-        .formatSet("{total} mm")
-        .colorSet(AAColor.red)
-        .shapeSet("callout")
-        .backgroundColorSet(AAColor.white)
-        .borderColorSet(AAColor.red)
-        .borderRadiusSet(1)
-        .borderWidthSet(1))
+        .dataLabelsSet(
+        new AADataLabels()
+            .enabledSet(true)
+            .ySet(-10)
+            .formatSet("{total} mm")
+            .colorSet(AAColor.red)
+            .shapeSet("callout")
+            .backgroundColorSet(AAColor.white)
+            .borderColorSet(AAColor.red)
+            .borderRadiusSet(1)
+            .borderWidthSet(1))
         .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]);
 
 
@@ -1114,45 +1117,49 @@ class CustomStyleChartComposer {
           .nameSet("2017")
           .lineWidthSet(5)
           .dataSet([0.45, 0.43, 0.50, 0.55, 0.58, 0.62, 0.83, 0.39, 0.56, 0.67, 0.50, 0.34, 0.50, 0.67, 0.58, 0.29, 0.46, 0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36])
-          .shadowSet(new AAShadow()
-          .offsetXSet(15.0)
-          .offsetYSet(15.0)
-          .opacitySet(0.2)
-          .widthSet(8.0)
-          .colorSet("#1e90ff")
+          .shadowSet(
+          new AAShadow()
+              .offsetXSet(15.0)
+              .offsetYSet(15.0)
+              .opacitySet(0.2)
+              .widthSet(8.0)
+              .colorSet("#1e90ff")
       ),
       new AASeriesElement()
           .nameSet("2018")
           .lineWidthSet(5)
           .dataSet([0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67])
-          .shadowSet(new AAShadow()
-          .offsetXSet(15.0)
-          .offsetYSet(15.0)
-          .opacitySet(0.2)
-          .widthSet(8.0)
-          .colorSet("#ef476f")
+          .shadowSet(
+          new AAShadow()
+              .offsetXSet(15.0)
+              .offsetYSet(15.0)
+              .opacitySet(0.2)
+              .widthSet(8.0)
+              .colorSet("#ef476f")
       ),
       new AASeriesElement()
           .nameSet("2019")
           .lineWidthSet(5)
           .dataSet([0.46, 0.32, 0.53, 0.58, 0.86, 0.68, 0.85, 0.73, 0.69, 0.71, 0.91, 0.74, 0.60, 0.50, 0.39, 0.67, 0.55, 0.49, 0.65, 0.45, 0.64, 0.47, 0.63, 0.64])
-          .shadowSet(new AAShadow()
-          .offsetXSet(15.0)
-          .offsetYSet(15.0)
-          .opacitySet(0.2)
-          .widthSet(8.0)
-          .colorSet("#ffd066")
+          .shadowSet(
+          new AAShadow()
+              .offsetXSet(15.0)
+              .offsetYSet(15.0)
+              .opacitySet(0.2)
+              .widthSet(8.0)
+              .colorSet("#ffd066")
       ),
       new AASeriesElement()
           .nameSet("2020")
           .lineWidthSet(5)
           .dataSet([0.60, 0.51, 0.52, 0.53, 0.64, 0.84, 0.65, 0.68, 0.63, 0.47, 0.72, 0.60, 0.65, 0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53])
-          .shadowSet(new AAShadow()
-          .offsetXSet(15.0)
-          .offsetYSet(15.0)
-          .opacitySet(0.2)
-          .widthSet(8.0)
-          .colorSet("#04d69f")
+          .shadowSet(
+          new AAShadow()
+              .offsetXSet(15.0)
+              .offsetYSet(15.0)
+              .opacitySet(0.2)
+              .widthSet(8.0)
+              .colorSet("#04d69f")
       ),
     ]);
   }
@@ -1173,37 +1180,45 @@ class CustomStyleChartComposer {
           .nameSet("2017")
           .fillOpacitySet(1.0)
           .stepSet(true)
-          .dataLabelsSet(new AADataLabels()
-          .styleSet(new AAStyle()
-          .colorSet("#1e90ff")
-          .fontSizeSet(11)))
+          .dataLabelsSet(
+          new AADataLabels()
+              .styleSet(
+              new AAStyle()
+                  .colorSet("#1e90ff")
+                  .fontSizeSet(11)))
           .dataSet([2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30]),
       new AASeriesElement()
           .nameSet("2018")
           .fillOpacitySet(1.0)
           .stepSet(true)
-          .dataLabelsSet(new AADataLabels()
-          .styleSet(new AAStyle()
-          .colorSet("#ef476f")
-          .fontSizeSet(11)))
+          .dataLabelsSet(
+          new AADataLabels()
+              .styleSet(
+              new AAStyle()
+                  .colorSet("#ef476f")
+                  .fontSizeSet(11)))
           .dataSet([1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28]),
       new AASeriesElement()
           .nameSet("2019")
           .fillOpacitySet(1.0)
           .stepSet(true)
-          .dataLabelsSet(new AADataLabels()
-          .styleSet(new AAStyle()
-          .colorSet("#ffd066")
-          .fontSizeSet(11)))
+          .dataLabelsSet(
+          new AADataLabels()
+              .styleSet(
+              new AAStyle()
+                  .colorSet("#ffd066")
+                  .fontSizeSet(11)))
           .dataSet([1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24]),
       new AASeriesElement()
           .nameSet("2020")
           .fillOpacitySet(1.0)
           .stepSet(true)
-          .dataLabelsSet(new AADataLabels()
-          .styleSet(new AAStyle()
-          .colorSet("#04d69f")
-          .fontSizeSet(11)))
+          .dataLabelsSet(
+          new AADataLabels()
+              .styleSet(
+              new AAStyle()
+                  .colorSet("#04d69f")
+                  .fontSizeSet(11)))
           .dataSet([5.59, 3.09, 4.09, 6.14, 5.33, 6.05, 5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.22, 5.77, 6.19, 5.68, 4.33, 5.48]),
     ]);
   }
@@ -1252,7 +1267,6 @@ class CustomStyleChartComposer {
         greenStopsArr
     );
 
-
     return new AAChartModel()
         .chartTypeSet(AAChartType.area)
         .yAxisVisibleSet(false)
@@ -1263,41 +1277,43 @@ class CustomStyleChartComposer {
         .dataLabelsEnabledSet(true)
         .markerSymbolStyleSet(AAChartSymbolStyleType.innerBlank)
         .seriesSet([
-    new AASeriesElement()
-        .nameSet("2017")
-        .fillColorSet(gradientBlueColorDic)
-        .lineWidthSet(6)
-        .stepSet(true)
-        .dataLabelsSet(new AADataLabels()
-        .styleSet(AAStyle.colorSize("#1e90ff", 11))
-    )
-        .dataSet([2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30]),
-    new AASeriesElement()
-        .nameSet("2018")
-        .fillColorSet(gradientRedColorDic)
-        .lineWidthSet(6)
-        .stepSet(true)
-        .dataLabelsSet(new AADataLabels()
-        .styleSet(AAStyle.colorSize("#ef476f", 11))
-    )
-        .dataSet([1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28]),
-    new AASeriesElement()
-        .nameSet("2019")
-        .fillColorSet(gradientGoldColorDic)
-        .lineWidthSet(6)
-        .stepSet(true)
-        .dataLabelsSet(new AADataLabels()
-        .styleSet(AAStyle.colorSize("#ffd066", 11))
-    )
-        .dataSet([1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24]),
-    new AASeriesElement()
-        .nameSet("2020")
-        .fillColorSet(gradientGreenColorDic)
-        .lineWidthSet(6)
-        .stepSet(true)
-        .dataLabelsSet(new AADataLabels()
-        .styleSet(AAStyle.colorSize("#04d69f", 11)))
-        .dataSet([5.59, 3.09, 4.09, 6.14, 5.33, 6.05, 5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.22, 5.77, 6.19, 5.68, 4.33, 5.48]),
+      new AASeriesElement()
+          .nameSet("2017")
+          .fillColorSet(gradientBlueColorDic)
+          .lineWidthSet(6)
+          .stepSet(true)
+          .dataLabelsSet(
+          new AADataLabels()
+              .styleSet(AAStyle.colorSize("#1e90ff", 11))
+      )
+          .dataSet([2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30]),
+      new AASeriesElement()
+          .nameSet("2018")
+          .fillColorSet(gradientRedColorDic)
+          .lineWidthSet(6)
+          .stepSet(true)
+          .dataLabelsSet(
+          new AADataLabels()
+              .styleSet(AAStyle.colorSize("#ef476f", 11)))
+          .dataSet([1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28]),
+      new AASeriesElement()
+          .nameSet("2019")
+          .fillColorSet(gradientGoldColorDic)
+          .lineWidthSet(6)
+          .stepSet(true)
+          .dataLabelsSet(
+          new AADataLabels()
+              .styleSet(AAStyle.colorSize("#ffd066", 11)))
+          .dataSet([1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24]),
+      new AASeriesElement()
+          .nameSet("2020")
+          .fillColorSet(gradientGreenColorDic)
+          .lineWidthSet(6)
+          .stepSet(true)
+          .dataLabelsSet(
+          new AADataLabels()
+              .styleSet(AAStyle.colorSize("#04d69f", 11)))
+          .dataSet([5.59, 3.09, 4.09, 6.14, 5.33, 6.05, 5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.22, 5.77, 6.19, 5.68, 4.33, 5.48]),
     ]);
   }
 
@@ -1319,10 +1335,13 @@ class CustomStyleChartComposer {
           .nameSet("Tokyo Hot")
           .lineWidthSet(5.0)
           .colorSet("rgbaSet(220,20,60,1)")//猩红色, alpha 透明度 1
-          // .markerSet(new AAMarker()
-          // .statesSet(new AAMarkerStates()
-          // .hoverSet(new AAMarkerHover()
-          // .enabledSet(false))))
+          .markerSet(
+          new AAMarker()
+              .statesSet(
+              new AAMarkerStates()
+                  .hoverSet(
+                  new AAMarkerHover()
+                      .enabledSet(false))))
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6])
     ]);
   }
