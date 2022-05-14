@@ -3,9 +3,10 @@ import 'AAObject.dart';
  class AAMarker extends AAObject  {
     double radius;
     String symbol;
-    String fillColor;//点的填充色Set(用来设置折线连接点的填充色)
-    double lineWidth;//外沿线的宽度Set(用来设置折线连接点的轮廓描边的宽度)
-    Object lineColor;//外沿线的颜色Set(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
+    String fillColor;//点的填充色(用来设置折线连接点的填充色)
+    double lineWidth;//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+    Object lineColor;//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
+    AAMarkerStates states;
 
 
      AAMarker radiusSet(double prop) {
@@ -33,6 +34,11 @@ import 'AAObject.dart';
         return this;
     }
 
+    AAMarker statesSet(Object prop) {
+      states = prop;
+      return this;
+    }
+
     Map<String, dynamic> toJson() {
     return {
       "radius": this.radius,
@@ -43,3 +49,61 @@ import 'AAObject.dart';
     };
   }
 }
+
+class AAMarkerStates {
+  AAMarkerHover hover;
+
+
+  AAMarkerStates hoverSet(AAMarkerHover prop) {
+    hover = prop;
+    return this;
+  }
+}
+
+class AAMarkerHover {
+
+  bool enabled;
+  String fillColor;
+  String lineColor;
+  double lineWidth;
+  double lineWidthPlus;
+  double radius;
+  double radiusPlus;
+
+  AAMarkerHover enabledSet(bool prop) {
+    enabled = prop;
+    return this;
+  }
+
+  AAMarkerHover fillColorSet(String prop) {
+    fillColor = prop;
+    return this;
+  }
+
+  AAMarkerHover lineColorSet(String prop) {
+    lineColor = prop;
+    return this;
+  }
+
+  AAMarkerHover lineWidthSet(double prop) {
+    lineWidth = prop;
+    return this;
+  }
+
+  AAMarkerHover lineWidthPlusSet(double prop) {
+    lineWidthPlus = prop;
+    return this;
+  }
+
+  AAMarkerHover radiusSet(double prop) {
+    radius = prop;
+    return this;
+  }
+
+  AAMarkerHover radiusPlusSet(double prop) {
+    radiusPlus = prop;
+    return this;
+  }
+
+}
+
