@@ -755,8 +755,8 @@ class CustomStyleChartComposer {
   static AAChartModel customSpecialStyleDataLabelOfSingleDataElementChart() {
     var gradientColorDic1 = AAGradientColor.linearGradient1(
         AALinearGradientDirection.toBottom,
-        "rgbaColor(255,215,0,0.1)",//gold color, alpha: 0.1
-        "rgbaColor(255,215,0, 0.6)"// gold color, alpha: 0.6
+        AARgba(255,215,0,0.1),//gold color, alpha: 0.1
+        AARgba(255,215,0, 0.6)// gold color, alpha: 0.6
     );
 
     var formatStr = (
@@ -780,7 +780,8 @@ class CustomStyleChartComposer {
         // .overflowSet("none")
         // .cropSet(false)
     )
-        .ySet(26.5);
+        .ySet(26.5)
+    ;
 
     return new AAChartModel()
         .chartTypeSet(AAChartType.areaspline)
@@ -795,9 +796,9 @@ class CustomStyleChartComposer {
       new AASeriesElement()
           .nameSet("Virtual Data")
           .lineWidthSet(6)
-          .colorSet("rgbaColor(255,215,0,1)")
+          .colorSet(AAColor.rgbaColor(255,215,0,1))
           .fillColorSet(gradientColorDic1)// gold color, alpha: 1.0
-          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6])
+          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData.toJson(), 5.2, 26.5, 23.3, 45.3, 13.9, 9.6])
     ]);
   }
 
@@ -878,7 +879,7 @@ class CustomStyleChartComposer {
       new AASeriesElement()
           .nameSet("Tokyo Hot")
           .lineWidthSet(5.0)
-          .colorSet("rgbaSet(220,20,60,1)")//猩红色, alpha 透明度 1
+          .colorSet(AARgba(220,20,60,1))//猩红色, alpha 透明度 1
       //     .markerSet(new AAMarker()
       //     .statesSet(new AAMarkerStates()
       //     .hoverSet(new AAMarkerHover()
