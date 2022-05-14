@@ -35,4 +35,26 @@ import 'AAObject.dart';
       "textOutLine": this.textOutLine,
     };
   }
+
+    static AAStyle colorStr(String color) {
+      return AAStyle.colorSize(color, null);
+    }
+
+    static AAStyle colorSize(String color, double fontSize) {
+      return AAStyle.colorSizeWeight(color, fontSize, null);
+    }
+
+    static AAStyle colorSizeWeight(String color, double fontSize, String weight) {
+      return AAStyle.colorSizeWeightOutline(color, fontSize, weight, null);
+    }
+
+    static AAStyle colorSizeWeightOutline(String color, double fontSize, String weight, String outline) {
+      var aaStyle = new AAStyle();
+      aaStyle
+          .colorSet(color)
+          .fontSizeSet(fontSize)
+          .fontWeightSet(weight)
+          .textOutlineSet(outline);
+      return aaStyle;
+    }
 }
