@@ -4,6 +4,8 @@ import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAGradientColor.dart
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AASeriesElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPie.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAShadow.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 
 class MixedChartComposer {
@@ -647,6 +649,251 @@ class MixedChartComposer {
     ]);
   }
 
+  static AAChartModel configureColumnMixedScatterChart() {
+    return AAChartModel()
+        .xAxisReversedSet(true)
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("Column")
+          .typeSet(AAChartType.column)
+          .dataSet([
+        8,null,null,null,null,null,null,null,null,null,null,null,null,
+        7,null,null,null,null,null,null,null,null,null,null,null,null,
+        6,null,null,null,null,null,null,null,null,null,null,null,null,
+        5,null,null,null,null,null,null,null,null,null,null,null,null,
+        4,null,null,null,null,null,null,null,null,null,null,null,null,
+        3,null,null,null,null,null,null,null,null,null,null,null,null,
+        2,null,null,null,null,null,null,null,null,null,null,null,null,
+        1])
+      ,
+      AASeriesElement()
+          .nameSet("Scatter")
+          .typeSet(AAChartType.scatter)
+          .dataSet([3.5, 3, 3.2, 3.1, 3.6, 3.9, 3.4, 3.4, 2.9, 3.1, 3.7, 3.4, 3, 3.3, 4, 4.4, 3.9, 3.5, 3.8, 3.8, 3.4, 3.7, 3.6, 3.3,
+        3.4, 3, 3.4, 3.5, 3.4, 3.2, 3.1, 3.4, 4.1, 4.2, 3.1, 3.2, 3.5, 3.6, 3, 3.4, 3.5, 2.3, 3.2, 3.5, 3.8, 3, 3.8, 3.2,
+        3.7, 3.3, 3.2, 3.2, 3.1, 2.3, 2.8, 2.8, 3.3, 2.4, 2.9, 2.7, 2, 3, 2.2, 2.9, 2.9, 3.1, 3, 2.7, 2.2, 2.5, 3.2, 2.8,
+        2.5, 2.8, 2.9, 3, 2.8, 3, 2.9, 2.6, 2.4, 2.4, 2.7, 2.7, 3, 3.4, 3.1, 2.3, 3, 2.5, 2.6, 3.6, 2.6, 2.3, 2.7, 3, 2.9,
+        2.9, 2.5, 2.8, 3.3, 2.7, 3, 2.9, 3, 3, 2.5, 2.9, 2.5, 3.6, 3.2, 2.7, 3, 2.5, 2.8, 3.2, 3, 3.8, 2.6, 2.2, 3.2, 2.8,
+        2.8, 2.7, 3.3, 3.2, 2.8, 3, 2.8, 3, 2.8, 3.8, 2.8, 2.8, 2.6, 3, 3.4, 3.1, 3, 3.1, 3.1, 3.1, 2.7, 3.2, 3.3, 3, 2.5,
+        3, 3.4, 3])
+          .markerSet(
+          AAMarker()
+              .radiusSet(5)
+              .symbolSet("circle")
+              .fillColorSet("#1E90FF")
+              .lineWidthSet(2.0)
+              .lineColorSet(AAColor.red))
+    ]);
+  }
 
+  static AAChartModel configurePieMixedLineMixedColumnChart() {
+    var columnElement1 = AASeriesElement()
+        .nameSet("Anna")
+        .typeSet(AAChartType.column)
+        .dataSet([3, 2, 1, 3, 4]);
+
+    var columnElement2 = AASeriesElement()
+        .nameSet("Babara")
+        .typeSet(AAChartType.column)
+        .dataSet([2, 3, 5, 7, 6]);
+
+    var columnElement3 = AASeriesElement()
+        .nameSet("Cortana")
+        .typeSet(AAChartType.column)
+        .dataSet([4, 3, 3, 9, 0]);
+
+    var lineElement = AASeriesElement()
+        .nameSet("average value")
+        .typeSet(AAChartType.line)
+        .dataSet([3, 2.67, 3, 6.33, 3.33])
+        .markerSet(AAMarker()
+        .fillColorSet("#1E90FF")
+        .lineWidthSet(2.0)
+        .lineColorSet(AAColor.white));
+
+    var pieElement = AAPie()
+    // .typeSet(AAChartType.pie)
+        .centerSet([100,80])
+        .sizeSet(100)
+        .showInLegendSet(true)
+        .dataLabelsSet(
+        AADataLabels()
+            .enabledSet(false))
+//     .dataSet([
+//   AADataElement()
+//       .nameSet("Ada")
+//       .ySet(13.0)
+//       .colorSet(AAGradientColor.oceanBlue)
+//   ,
+//   AADataElement()
+//       .nameSet("Bob")
+//       .ySet(13.0)
+//       .colorSet(AAGradientColor.sanguine)
+//   ,
+//   AADataElement()
+//       .nameSet("Coco")
+//       .ySet(13.0)
+//       .colorSet(AAGradientColor.purpleLake)
+// ])
+        ;
+
+    var aaSeriesArr = [
+      columnElement1,
+      columnElement2,
+      columnElement3,
+      lineElement,
+      pieElement,
+    ];
+
+    return AAChartModel()
+        .stackingSet(AAChartStackingType.normal)
+        .colorsThemeSet([
+      AAGradientColor.oceanBlue,
+      AAGradientColor.sanguine,
+      AAGradientColor.purpleLake
+    ])
+        .dataLabelsEnabledSet(false)
+        .seriesSet(aaSeriesArr);
+  }
+
+  static AAChartModel configureLineChartWithShadow() {
+    AAChartModel()
+        .chartTypeSet(AAChartType.line)
+        .titleSet("Line Chart With Shadow")
+        .categoriesSet(["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+        .legendEnabledSet(false)
+        .dataLabelsEnabledSet(false)
+        .markerSymbolStyleSet(AAChartSymbolStyleType.borderBlank)
+        .seriesSet([
+      AASeriesElement()
+          .dataSet([7.0, 6.9, 9.5, 9.6, 13.9, 14.5, 18.3, 18.2, 21.5, 25.2, 26.5, 23.3])
+          .lineWidthSet(4)
+          .shadowSet(
+          AAShadow()
+              .offsetXSet(15.0)
+              .offsetYSet(15.0)
+              .opacitySet(0.1)
+              .widthSet(9.0)
+              .colorSet(AAColor.red))
+    ]);
+  }
+
+//GitHub issue https://github.com/AAChartModel/AAChartKit/issues/921
+  static AAChartModel configureNegativeColorMixedAreasplineChart() {
+    AAChartModel()
+        .chartTypeSet(AAChartType.areaspline)
+        .legendEnabledSet(false)
+        .dataLabelsEnabledSet(false)
+        .markerRadiusSet(5)
+        .markerSymbolStyleSet(AAChartSymbolStyleType.innerBlank)
+        .yAxisGridLineWidthSet(0)
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("Column")
+          .dataSet([
+        7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6,
+        -7.0, -6.9, -2.5, -14.5, -18.2, -21.5, -5.2, -26.5, -23.3, -45.3, -13.9, -9.6,
+      ])
+          .lineWidthSet(5)
+          .colorSet(AARgba(30, 144, 255, 1.0))
+          .negativeColorSet(AARgba(255, 0, 0, 1.0))
+          .fillColorSet(AAGradientColor.linearGradient2(
+          AALinearGradientDirection.toTop,
+          [
+            [0.0, AARgba(30, 144, 255, 0.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+            [0.5, AARgba(30, 144, 255, 0.0)],
+            [1.0, AARgba(30, 144, 255, 0.6)]
+          ]
+      ))
+      //     .negativeFillColorSet(AAGradientColor.linearGradient2(
+      //     AALinearGradientDirection.toTop,
+      //      [
+      //       [0.0, AARgba(255, 0, 0, 0.6)],//颜色字符串设置支持十六进制类型和 rgba 类型
+      //       [0.5, AARgba(255, 0, 0, 0.0)],
+      //       [1.0, AARgba(255, 0, 0, 0.0)]
+      //     ]
+      // ))
+          .thresholdSet(0)//default:0
+    ]);
+  }
+
+  static AAChartModel configureAerasplinerangeMixedColumnrangeMixedLineChart() {
+    AAChartModel()
+        .chartTypeSet(AAChartType.line)
+        .dataLabelsEnabledSet(true)
+        .markerSymbolSet(AAChartSymbolType.circle)
+        .markerSymbolStyleSet(AAChartSymbolStyleType.borderBlank)
+        .borderRadiusSet(10)
+        .categoriesSet([
+      "流水线",
+      "机器加工",
+      "冲床",
+      "模具工",
+      "机器加工",
+      "仓库",
+      "维修工",
+      "质检员",
+    ])
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("工资变化曲线")
+          .typeSet(AAChartType.areasplinerange)
+          .dataSet([
+        [3800, 5500],//流水线
+        [4000, 6500],//机器加工
+        [4000, 6800],//冲床
+        [4000, 7500],//模具工
+        [4200, 9000],//机器加工
+        [3800, 6800],//仓库
+        [5500, 7500],//维修工
+        [5000, 7200],//质检员
+      ])
+      ,
+      AASeriesElement()
+          .nameSet("工资变化棱形")
+          .colorSet(AAGradientColor.oceanBlue)
+          .typeSet(AAChartType.columnrange)
+          .dataSet([
+        [3800, 5500],//流水线
+        [4000, 6500],//机器加工
+        [4000, 6800],//冲床
+        [4000, 7500],//模具工
+        [4200, 9000],//机器加工
+        [3800, 6800],//仓库
+        [5500, 7500],//维修工
+        [5000, 7200],//质检员
+      ])
+      ,
+      AASeriesElement()
+          .nameSet("八月份均值")
+          .lineWidthSet(8)
+          .dataSet([
+        4000,//流水线
+        4400,//机器加工
+        4600,//冲床
+        5200,//模具工
+        5800,//机器加工
+        5000,//仓库
+        5500,//维修工
+        5000,//质检员
+      ])
+      ,
+
+      AASeriesElement()
+          .nameSet("九月份均值")
+          .lineWidthSet(8)
+          .dataSet([
+        3868,//流水线
+        4084,//机器加工
+        4260,//冲床
+        4586,//模具工
+        5518,//机器加工
+        5483,//仓库
+        4962,//维修工
+        5821,//质检员
+      ])
+      ,
+    ]);
+  }
 
 }
