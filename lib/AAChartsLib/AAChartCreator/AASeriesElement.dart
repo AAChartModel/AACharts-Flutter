@@ -19,6 +19,7 @@ class AASeriesElement extends AAObject {
   double fillOpacity;          //折线填充图、曲线填充图、直方折线填充图等填充图类型的填充颜色透明度 Fill opacity for the area. Note that when you set an explicit fillColor, the fillOpacity is not applied. Instead, you should define the opacity in the fillColor with an rgba color definition. 默认是：0.75. https;//api.hcharts.cn/highcharts#plotOptions.area.fillOpacity
   double threshold;           //The threshold, also called zero level or base level. For line type series this is only used in conjunction with negativeColor. default：0.
   var negativeColor;       //The color for the parts of the graph or points that are below the threshold
+  var negativeFillColor;
   String dashStyle;         //A name for the dash style to use for the graph. Applies only to series type having a graph, like line, spline, area and scatter in case it has a lineWidth.
   AADataLabels dataLabels;   //Individual data label for each point. The options are the same as the ones for `plotOptions.series.dataLabels`.
   AAMarker marker;                //Enable or disable the point marker. If null, the markers are hidden when the data is dense, and shown for more widespread data points.
@@ -84,6 +85,11 @@ class AASeriesElement extends AAObject {
 
   AASeriesElement negativeColorSet(var prop) {
     negativeColor = prop;
+    return this;
+  }
+
+  AASeriesElement negativeFillColorSet(var prop) {
+    negativeFillColor = prop;
     return this;
   }
 
@@ -160,6 +166,7 @@ class AASeriesElement extends AAObject {
       "fillOpacity": this.fillOpacity,
       "threshold": this.threshold,
       "negativeColor": this.negativeColor,
+      "negativeFillColor": this.negativeFillColor,
       "dashStyle": this.dashStyle,
       "dataLabels": this.dataLabels,
       "marker": this.marker,
