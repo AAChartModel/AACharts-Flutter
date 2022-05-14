@@ -33,6 +33,12 @@ class AAChartView extends StatelessWidget {
     } else {
       this.loadLocalFilesAndDrawChart(chartOptions);
     }
+
+    //debug print
+    Map<String, dynamic> aaOptionsJsonMap = chartOptions.toJson();
+    String prettyJsonStr = getPrettyJSONString(aaOptionsJsonMap);
+    debugPrint(prettyJsonStr);
+    //debug print
   }
 
   void loadLocalFilesAndDrawChart(final AAOptions aaOptions) {
@@ -84,12 +90,6 @@ class AAChartView extends StatelessWidget {
 
    String configurePureOptionsJsonStr(AAOptions chartOptions) {
      Map<String, dynamic> aaOptionsJsonMap = chartOptions.toJson();
-
-     //debug print
-     String prettyJsonStr = getPrettyJSONString(aaOptionsJsonMap);
-     debugPrint(prettyJsonStr);
-     //debug print
-
      String aaOptionsJsonStr = jsonEncode(aaOptionsJsonMap);
      this.optionsJson = aaOptionsJsonStr;
      String javaScriptStr = "loadTheHighChartView('$aaOptionsJsonStr')";
