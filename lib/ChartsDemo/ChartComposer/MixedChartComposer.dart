@@ -712,30 +712,29 @@ class MixedChartComposer {
         .lineColorSet(AAColor.white));
 
     var pieElement = AAPie()
-    // .typeSet(AAChartType.pie)
+        .typeSet(AAChartType.pie)
         .centerSet([100,80])
         .sizeSet(100)
         .showInLegendSet(true)
         .dataLabelsSet(
         AADataLabels()
             .enabledSet(false))
-//     .dataSet([
-//   AADataElement()
-//       .nameSet("Ada")
-//       .ySet(13.0)
-//       .colorSet(AAGradientColor.oceanBlue)
-//   ,
-//   AADataElement()
-//       .nameSet("Bob")
-//       .ySet(13.0)
-//       .colorSet(AAGradientColor.sanguine)
-//   ,
-//   AADataElement()
-//       .nameSet("Coco")
-//       .ySet(13.0)
-//       .colorSet(AAGradientColor.purpleLake)
-// ])
-        ;
+        .dataSet([
+      AADataElement()
+          .nameSet("Ada")
+          .ySet(13.0)
+          .colorSet(AAGradientColor.oceanBlue)
+      ,
+      AADataElement()
+          .nameSet("Bob")
+          .ySet(13.0)
+          .colorSet(AAGradientColor.sanguine)
+      ,
+      AADataElement()
+          .nameSet("Coco")
+          .ySet(13.0)
+          .colorSet(AAGradientColor.purpleLake)
+    ]);
 
     var aaSeriesArr = [
       columnElement1,
