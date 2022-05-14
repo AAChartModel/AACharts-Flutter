@@ -5,6 +5,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 import 'package:aacharts_flutter/ChartsDemo/ChartComposer/ChartOptionsComposer.dart';
 import 'package:aacharts_flutter/ChartsDemo/ChartComposer/CustomStyleChartComposer.dart';
+import 'package:aacharts_flutter/ChartsDemo/Page/MixedChartPage.dart';
 import 'package:aacharts_flutter/ChartsDemo/Page/SpecialChartPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
@@ -93,38 +94,74 @@ class _ApplicationState extends State<Application> {
     // ];
 
     /*Special types chart*/
+    // List chartTypeNamesArr = [
+    //   "Polar Chart---极地图",
+    //   "Pie Chart---扇形图",
+    //   "Bubble Chart---气泡图",
+    //   "Scatter Chart---散点图",
+    //   "Arearange Chart---折线区域范围图",
+    //   "Area Spline range Chart--曲线区域范围图",
+    //   "Columnrange Chart--- 柱形范围图",
+    //   "Step Line Chart--- 直方折线图",
+    //   "Step Area Chart--- 直方折线填充图",
+    //   "Boxplot Chart--- 箱线图",
+    //   "Waterfall Chart--- 瀑布图",
+    //   "Pyramid Chart---金字塔图",
+    //   "Funnel Chart---漏斗图",
+    //   "Error Bar Chart---误差图",
+    // ];
+
+    // List chartTypesArr = [
+    //   AAChartType.column,
+    //   AAChartType.pie,
+    //   AAChartType.bubble,
+    //   AAChartType.scatter,
+    //   AAChartType.arearange,
+    //   AAChartType.areasplinerange,
+    //   AAChartType.columnrange,
+    //   AAChartType.line,
+    //   AAChartType.area,
+    //   AAChartType.boxplot,
+    //   AAChartType.waterfall,
+    //   AAChartType.pyramid,
+    //   AAChartType.funnel,
+    //   AAChartType.errorbar,
+    // ];
+
+    /*Mixed Chart*/
     List chartTypeNamesArr = [
-      "Polar Chart---极地图",
-      "Pie Chart---扇形图",
-      "Bubble Chart---气泡图",
-      "Scatter Chart---散点图",
-      "Arearange Chart---折线区域范围图",
-      "Area Spline range Chart--曲线区域范围图",
-      "Columnrange Chart--- 柱形范围图",
-      "Step Line Chart--- 直方折线图",
-      "Step Area Chart--- 直方折线填充图",
-      "Boxplot Chart--- 箱线图",
-      "Waterfall Chart--- 瀑布图",
-      "Pyramid Chart---金字塔图",
-      "Funnel Chart---漏斗图",
-      "Error Bar Chart---误差图",
+      "Arearange Mixed Line---面积范围均线图",
+      "Columnrange Mixed Line---柱形范围图混合折线图",
+      "Stacking Column Mixed Line---堆积柱形图混合折线图",
+      "Dash Style Types Mixed---多种类型曲线混合图",
+      "Negative Color Mixed Column Chart---基准线以下异色混合图",
+      "scatterMixedLine---散点图混合折线图",
+      "Negative Color Mixed Bubble Chart---基准线以下异色气泡图",
+      "Polygon Mixed Scatter---多边形混合散点图",
+      "Polar Chart Mixed---极地混合图",
+      "Column Mixed Scatter---柱形图混合散点图",
+      "Pie Mixed Line Mixed Column---扇形折线柱形混合图",
+      "Line Chart With Shadow---带有阴影效果の折线图",
+      "Negative Color Mixed Areaspline chart---基准线以下异色混合曲线填充图",
+      "Aerasplinerange Mixed Columnrange Mixed Line Chart---曲线面积范围混合柱形范围混合折线图"
     ];
 
-    List chartTypesArr = [
-      AAChartType.column,
-      AAChartType.pie,
-      AAChartType.bubble,
-      AAChartType.scatter,
-      AAChartType.arearange,
-      AAChartType.areasplinerange,
-      AAChartType.columnrange,
-      AAChartType.line,
-      AAChartType.area,
-      AAChartType.boxplot,
-      AAChartType.waterfall,
-      AAChartType.pyramid,
-      AAChartType.funnel,
-      AAChartType.errorbar,
+    /*Mixed Chart*/
+     List chartTypesArr = [
+      "arearangeMixedLine",
+      "columnrangeMixedLine",
+      "stackingColumnMixedLine",
+      "dashStyleTypeMixed",
+      "negativeColorMixed",
+      "scatterMixedLine",
+      "negativeColorMixedBubble",
+      "polygonMixedScatter",
+      "polarChartMixed",
+      "columnMixedScatter",
+      "PieMixedLineMixedColumn",
+      "LineChartWithShadow",
+      "NegativeColorMixedAreasplineChart",
+      "AerasplinerangeMixedColumnrangeMixedLineChart"
     ];
 
    var listView = ListView.separated(
@@ -133,7 +170,8 @@ class _ApplicationState extends State<Application> {
           return ListTile(title: Text("${chartTypeNamesArr[index]}"),
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return SpecialChartPage(selectedType: chartTypesArr[index]);
+                  return MixedChartPage(selectedType:  chartTypesArr[index]);
+                  // return SpecialChartPage(selectedType: chartTypesArr[index]);
                   // return CustomStyleChartPage(selectedIndex: index);
                 }));
 
