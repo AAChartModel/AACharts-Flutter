@@ -52,12 +52,12 @@ class MixedChartPage extends StatelessWidget {
     case "arearangeMixedLine":return MixedChartComposer.configureArearangeMixedLineChart();
     case "columnrangeMixedLine":return MixedChartComposer.configureColumnrangeMixedLineChart();
     case "stackingColumnMixedLine":return MixedChartComposer.configureStackingColumnMixedLineChart();
-    // case "dashStyleTypeMixed":return MixedChartComposer.configureDashStyleTypesMixedChart();
+    case "dashStyleTypeMixed":return MixedChartComposer.configureDashStyleTypeMixedChart();
     case "negativeColorMixed":return MixedChartComposer.configureNegativeColorMixedChart();
     case "scatterMixedLine":return MixedChartComposer.configureScatterMixedLineChart();
     case "negativeColorMixedBubble":return MixedChartComposer.configureNegativeColorMixedBubbleChart();
     case "polygonMixedScatter":return MixedChartComposer.configurePolygonMixedScatterChart();
-    // case "polarChartMixed":return MixedChartComposer.configurePolarChartMixedChart();
+    case "polarChartMixed":return MixedChartComposer.configurePolarMixedChart();
     // case "columnMixedScatter":return MixedChartComposer.configureColumnMixedScatterChart();
     // case "PieMixedLineMixedColumn":return MixedChartComposer.configurePieMixedLineMixedColumnChart();
     // case "LineChartWithShadow":return MixedChartComposer.configureLineChartWithShadow();
