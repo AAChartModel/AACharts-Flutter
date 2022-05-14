@@ -18,7 +18,7 @@ import 'AALegend.dart';
      AAYAxis yAxis;
      AATooltip tooltip;
      AAPlotOptions plotOptions;
-     List<AASeriesElement> series;
+     List series;
      AALegend legend;
      List colors;
      bool touchEventEnabled;
@@ -58,7 +58,7 @@ import 'AALegend.dart';
         return this;
     }
 
-     AAOptions seriesSet(List<AASeriesElement> prop) {
+     AAOptions seriesSet(List prop) {
         series = prop;
         return this;
     }

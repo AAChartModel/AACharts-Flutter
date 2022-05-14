@@ -166,7 +166,7 @@ class AAChartModel {
   String tooltipValueSuffix; //浮动提示框单位后缀
   bool tooltipCrosshairs; //是否显示准星线(默认显示)
   List colorsTheme; //图表主题颜色数组
-  List<AASeriesElement> series; //图表的数据数组
+  List series; //图表的数据数组
   bool legendEnabled; //是否显示图例
   String legendLayout; //图例数据项的布局。布局类型： "horizontal" 或 "vertical" 即水平布局和垂直布局 默认是：horizontal.
   String legendAlign; //设定图例在图表区中的水平对齐方式，合法值有left，center 和 right。
@@ -389,7 +389,7 @@ class AAChartModel {
     return this;
   }
 
-  AAChartModel seriesSet(List<AASeriesElement> prop) {
+  AAChartModel seriesSet(List prop) {
     series = prop;
     return this;
   }
