@@ -63,6 +63,7 @@ class MixedChartPage extends StatelessWidget {
     case "LineChartWithShadow":return MixedChartComposer.configureLineChartWithShadow();
     case "NegativeColorMixedAreasplineChart": return MixedChartComposer.configureNegativeColorMixedAreasplineChart();
     case "AerasplinerangeMixedColumnrangeMixedLineChart": return MixedChartComposer.configureAerasplinerangeMixedColumnrangeMixedLineChart();
+
     default: return MixedChartComposer.configureArearangeMixedLineChart();
     }
   }
