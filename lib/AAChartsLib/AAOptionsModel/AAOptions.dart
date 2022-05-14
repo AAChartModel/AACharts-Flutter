@@ -93,21 +93,21 @@ import 'AALegend.dart';
      Map<String, dynamic> toJson() {
 
        List<Map<String, dynamic>> xAxisArray;
-       if (this.series == null) {
+       if (this.xAxisArray == null) {
          xAxisArray = null;
        } else {
          xAxisArray = List<Map<String, dynamic>>();
-         this.series.forEach((element) {
+         this.xAxisArray.forEach((element) {
            xAxisArray.add(element.toPureJson());
          });
        }
 
        List<Map<String, dynamic>> yAxisArray;
-       if (this.series == null) {
+       if (this.yAxisArray == null) {
          yAxisArray = null;
        } else {
          yAxisArray = List<Map<String, dynamic>>();
-         this.series.forEach((element) {
+         this.yAxisArray.forEach((element) {
            yAxisArray.add(element.toPureJson());
          });
        }
