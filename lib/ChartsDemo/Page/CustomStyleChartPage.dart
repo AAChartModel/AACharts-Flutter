@@ -24,8 +24,8 @@ class CustomStyleChartPage extends StatelessWidget {
     //test
    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
    Map<String, dynamic> aaOptionsJsonMap = aaOptions.toJson();
-   String aaOptionsJsonStr = jsonEncode(aaOptionsJsonMap);
-   print(aaOptionsJsonStr);
+   String prettyJsonStr = getPrettyJSONString(aaOptionsJsonMap);
+   debugPrint(prettyJsonStr);
 
     return Scaffold(
       body: GestureDetector(
@@ -40,6 +40,11 @@ class CustomStyleChartPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String getPrettyJSONString(jsonObject){
+    var encoder = new JsonEncoder.withIndent("     ");
+    return encoder.convert(jsonObject);
   }
 
   AAChartModel chartConfigurationWithSelectedIndex(int selectedIndex) {
