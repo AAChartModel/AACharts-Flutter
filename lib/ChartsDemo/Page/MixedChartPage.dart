@@ -58,11 +58,11 @@ class MixedChartPage extends StatelessWidget {
     case "negativeColorMixedBubble":return MixedChartComposer.configureNegativeColorMixedBubbleChart();
     case "polygonMixedScatter":return MixedChartComposer.configurePolygonMixedScatterChart();
     case "polarChartMixed":return MixedChartComposer.configurePolarMixedChart();
-    // case "columnMixedScatter":return MixedChartComposer.configureColumnMixedScatterChart();
-    // case "PieMixedLineMixedColumn":return MixedChartComposer.configurePieMixedLineMixedColumnChart();
-    // case "LineChartWithShadow":return MixedChartComposer.configureLineChartWithShadow();
-    // case "NegativeColorMixedAreasplineChart": return MixedChartComposer.configureNegativeColorMixedAreasplineChart();
-    // case "AerasplinerangeMixedColumnrangeMixedLineChart": return MixedChartComposer.configureAerasplinerangeMixedColumnrangeMixedLineChart();
+    case "columnMixedScatter":return MixedChartComposer.configureColumnMixedScatterChart();
+    case "PieMixedLineMixedColumn":return MixedChartComposer.configurePieMixedLineMixedColumnChart();
+    case "LineChartWithShadow":return MixedChartComposer.configureLineChartWithShadow();
+    case "NegativeColorMixedAreasplineChart": return MixedChartComposer.configureNegativeColorMixedAreasplineChart();
+    case "AerasplinerangeMixedColumnrangeMixedLineChart": return MixedChartComposer.configureAerasplinerangeMixedColumnrangeMixedLineChart();
     default: return MixedChartComposer.configureArearangeMixedLineChart();
     }
   }
