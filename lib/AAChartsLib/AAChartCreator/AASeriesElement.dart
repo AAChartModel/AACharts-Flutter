@@ -184,6 +184,7 @@ class AASeriesElement extends AAObject {
 
 class AADataElement extends AAObject {
   String name;
+  double x;
   double y;
   Object color;
   AADataLabels dataLabels;
@@ -191,6 +192,11 @@ class AADataElement extends AAObject {
 
   AADataElement nameSet(String prop) {
     name = prop;
+    return this;
+  }
+
+  AADataElement xSet(double prop) {
+    x = prop;
     return this;
   }
 
@@ -217,6 +223,7 @@ class AADataElement extends AAObject {
   Map<String, dynamic> toJson() {
     return {
       "name": this.name,
+      "x": this.x,
       "y": this.y,
       "color": this.color,
       "dataLabels": this.dataLabels == null ? null : this.dataLabels.toJson(),
