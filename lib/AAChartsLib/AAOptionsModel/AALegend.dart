@@ -10,10 +10,15 @@ import 'AAItemStyle.dart';
     double borderWidth;
     double itemMarginTop; //图例的每一项的顶部外边距，单位px。 默认是：0.
     AAItemStyle itemStyle;
+    double symbolHeight;
+    double symbolPadding;
+    double symbolRadius;
+    double symbolWidth;
     double x;
     double y;
+    bool floating;
 
-     AALegend layoutSet(String prop) {
+    AALegend layoutSet(String prop) {
         layout = prop;
         return this;
     }
@@ -53,6 +58,26 @@ import 'AAItemStyle.dart';
         return this;
     }
 
+    AALegend symbolHeightSet(double prop) {
+      symbolHeight = prop;
+      return this;
+    }
+
+    AALegend symbolPaddingSet(double prop) {
+      symbolPadding = prop;
+      return this;
+    }
+
+    AALegend symbolRadiusSet(double prop) {
+      symbolRadius = prop;
+      return this;
+    }
+
+    AALegend symbolWidthSet(double prop) {
+      symbolWidth = prop;
+      return this;
+    }
+
      AALegend xSet(double prop) {
         x = prop;
         return this;
@@ -61,6 +86,11 @@ import 'AAItemStyle.dart';
      AALegend ySet(double prop) {
         y = prop;
         return this;
+    }
+
+    AALegend floatingSet(bool prop) {
+      floating = prop;
+      return this;
     }
 
     Map<String, dynamic> toJson() {
