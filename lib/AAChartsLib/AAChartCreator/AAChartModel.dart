@@ -426,9 +426,10 @@ class AAChartModel {
   }
 
   AAChartModel() {
+     title                 = "";
      backgroundColor       = "#ffffff";
      axisColor             = "#000000";
-//     animationType         = AAChartAnimationType.bounce as int;
+     // animationType         = AAChartAnimationType.bounce as int;
      animationDuration     = 800;//以毫秒为单位
      chartType             = AAChartType.column;
      stacking              = AAChartStackingType.none;
