@@ -1,4 +1,6 @@
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AASeriesElement.dart';
+import 'AACredits.dart';
+import 'AALang.dart';
 import 'AAObject.dart';
 import 'AAChart.dart';
 import 'AATitle.dart';
@@ -23,6 +25,8 @@ import 'AALegend.dart';
      List series;
      AALegend legend;
      List colors;
+     AACredits credits;
+     AALang defaultOptions;
      bool touchEventEnabled;
 
      AAOptions chartSet(AAChart prop) {
@@ -85,6 +89,16 @@ import 'AALegend.dart';
         return this;
     }
 
+    AAOptions creditsSet(AACredits prop) {
+       credits = prop;
+       return this;
+     }
+
+     AAOptions defaultOptionsSet(AALang prop) {
+       defaultOptions = prop;
+       return this;
+     }
+
      AAOptions touchEventEnabledSet(bool prop) {
         touchEventEnabled = prop;
         return this;
@@ -135,6 +149,9 @@ import 'AALegend.dart';
          "series": seriesList,
          "legend": this.legend == null ? null : this.legend.toPureJson(),
          "colors": this.colors == null ? null : this.colors,
+         "credits": this.credits == null ? null : this.credits.toPureJson(),
+         "defaultOptions": this.defaultOptions == null ? null : this.defaultOptions.toPureJson(),
+
          // "touchEventEnabled": this.touchEventEnabled == null ? null : this.touchEventEnabled,
        };
 
