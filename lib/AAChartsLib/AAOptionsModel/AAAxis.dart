@@ -69,9 +69,9 @@ class AAAxis extends AAObject {
       "title": this.title,
       "type": this.type,
       "dateTimeLabelFormats": this.dateTimeLabelFormats,
-      "plotBands": jsonEncode(this.plotBands),
-      "plotLines": jsonEncode(this.plotLines),
-      "categories": jsonEncode(this.categories),
+      "plotBands": this.plotBands,
+      "plotLines": this.plotLines,
+      "categories": this.categories,
       "linkedTo": this.linkedTo,
       "reversed": this.reversed,
       "opposite": this.opposite,
@@ -103,7 +103,7 @@ class AAAxis extends AAObject {
       "tickWidth": this.tickWidth,
       "tickLength": this.tickLength,
       "tickPosition": this.tickPosition,
-      "tickPositions": jsonEncode(this.tickPositions),
+      "tickPositions": this.tickPositions,
     };
   }
 

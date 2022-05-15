@@ -38,7 +38,7 @@ class AALang extends AAObject {
     return {
       "noData": this.noData,
       "numericSymbolMagnitude": this.numericSymbolMagnitude,
-      "numericSymbols": jsonEncode(this.numericSymbols),
+      "numericSymbols": this.numericSymbols,
       "resetZoom": this.resetZoom,
       "thousandsSep": this.thousandsSep,
     };

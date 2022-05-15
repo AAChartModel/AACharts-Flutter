@@ -37,7 +37,7 @@ class AAPane extends AAObject {
   Map<String, dynamic> toJson() {
     return {
       "background": this.background == null ? null : this.background.toPureJson(),
-      "center": jsonEncode(this.center),
+      "center": this.center,
       "endAngle": this.endAngle,
       "size": this.size,
       "startAngle": this.startAngle,
