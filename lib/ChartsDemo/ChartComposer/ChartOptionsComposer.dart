@@ -11,9 +11,11 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAItemStyle.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AALabel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AALabels.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AALang.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AALegend.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAMarker.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPane.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPie.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPlotBandsElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPlotLinesElement.dart';
@@ -118,17 +120,17 @@ class ChartOptionsComposer {
         .fontWeightSet(AAChartFontWeightType.bold));
 
     //禁用图例点击事件
-    // aaOptions.plotOptions.series.events = new AAEvents()
-    //     .legendItemClickSet("
-    // public static function() {
-    //   return false
-    // }
-    // ");
+    aaOptions.plotOptions.series.events = new AASeriesEvents()
+        .legendItemClickSet("""
+          function() {
+              return false;
+                    }
+        """);
 
-    // aaOptions.defaultOptionsSet(
-    // new AALang()
-    //     .resetZoomSet("重置缩放比例")
-    //     .thousandsSepSet(","));
+    aaOptions.defaultOptionsSet(
+    new AALang()
+        .resetZoomSet("重置缩放比例")
+        .thousandsSepSet(","));
 
     return aaOptions;
   }
@@ -201,7 +203,7 @@ class ChartOptionsComposer {
 
     aaOptions.yAxis
         .allowDecimalsSet(false)
-// .alternateGridColorSet("#EAF4FF")
+.alternateGridColorSet("#EAF4FF")
 // .tickAmountSet(13)
         .gridLineWidthSet(0);
 
@@ -209,22 +211,15 @@ class ChartOptionsComposer {
 // var categoryJSArrStr = AAJSArrayConverter.JSArrayWithHaxeArray(categories);
 
     aaOptions.xAxis.labels
-//     .formatterSet("
-// static AAOptions () {
-//   return ${categoryJSArrStr)[this.value];
-//   }
-//   ");
-//
-//   aaOptions.tooltip
-//       .useHTMLSet(true)
-//       .formatterSet("
-//   static AAOptions () {
-//   return  'The value for <b>'
-//   + ${categoryJSArrStr)[this.x]
-//   + '</b> is <b>' + this.y + '</b> '
-//   + \"℃\";
-//   }
-//   ")
+    .formatterSet("""
+
+  """);
+
+  aaOptions.tooltip
+      .useHTMLSet(true)
+      .formatterSet("""
+
+  """)
         ;
 
     return aaOptions;
@@ -400,10 +395,10 @@ class ChartOptionsComposer {
       )]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    //
-    // aaOptions.paneSet(new AAPane()
-    //     .startAngleSet(-150)
-    //     .endAngleSet(150));
+
+    aaOptions.paneSet(new AAPane()
+        .startAngleSet(-150)
+        .endAngleSet(150));
 
     aaOptions.yAxis
         .gridLineColorSet(AAColor.white)
@@ -434,9 +429,9 @@ class ChartOptionsComposer {
 
     var aaOptions = aaChartModel.aa_toAAOptions();
 
-    // aaOptions.paneSet(new AAPane()
-    //     .startAngleSet(-150)
-    //     .endAngleSet(150));
+    aaOptions.paneSet(new AAPane()
+        .startAngleSet(-150)
+        .endAngleSet(150));
 
     aaOptions.yAxis
         .gridLineColorSet(AAColor.white)
