@@ -149,10 +149,10 @@ import 'AAStates.dart';
        "marker": this.marker == null ? null : this.marker.toPureJson(),
        "stacking": this.stacking,
        // "animation": this.animation == null ? null : this.animation.toPureJson(),
-       "keys": jsonEncode(this.keys),
+       "keys": this.keys,
        "colorByPoint": this.colorByPoint,
        "connectNulls": this.connectNulls,
-       "events": this.events,
+       "events": this.events == null ? null : this.events.toPureJson(),
        "shadow": this.shadow == null ? null : this.shadow.toPureJson(),
        "dataLabels": this.dataLabels == null ? null : this.dataLabels.toPureJson(),
        "states": this.states == null ? null : this.states.toPureJson(),
@@ -168,11 +168,17 @@ import 'AAStates.dart';
 class AASeriesEvents extends AAObject {
    String legendItemClick;
 
-   AASeriesEvents legendItemClickSet(String prop) {
+  AASeriesEvents legendItemClickSet(String prop) {
     String pureJSFunctionStr = "(" + prop + ")";
     pureJSFunctionStr = AAEasyTool.pureJavaScriptFunctionString(pureJSFunctionStr);
     legendItemClick = pureJSFunctionStr;
     return this;
   }
+
+   Map<String, dynamic> toJson() {
+     return {
+       "legendItemClick": this.legendItemClick,
+     };
+   }
 
 }
