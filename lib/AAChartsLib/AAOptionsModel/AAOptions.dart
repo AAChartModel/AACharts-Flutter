@@ -3,6 +3,7 @@ import 'AACredits.dart';
 import 'AALang.dart';
 import 'AAObject.dart';
 import 'AAChart.dart';
+import 'AAPane.dart';
 import 'AATitle.dart';
 import 'AASubtitle.dart';
 import 'AAXAxis.dart';
@@ -24,6 +25,7 @@ import 'AALegend.dart';
      AAPlotOptions plotOptions;
      List series;
      AALegend legend;
+     AAPane pane;
      List colors;
      AACredits credits;
      AALang defaultOptions;
@@ -83,6 +85,11 @@ import 'AALegend.dart';
         legend = prop;
         return this;
     }
+
+     AAOptions paneSet(AAPane prop) {
+       pane = prop;
+       return this;
+     }
 
      AAOptions colorsSet(List prop) {
         colors = prop;
@@ -148,6 +155,7 @@ import 'AALegend.dart';
          "plotOptions": this.plotOptions == null ? null : this.plotOptions.toPureJson(),
          "series": seriesList,
          "legend": this.legend == null ? null : this.legend.toPureJson(),
+         "pane": this.pane == null ? null : this.pane.toPureJson(),
          "colors": this.colors == null ? null : this.colors,
          "credits": this.credits == null ? null : this.credits.toPureJson(),
          "defaultOptions": this.defaultOptions == null ? null : this.defaultOptions.toPureJson(),
