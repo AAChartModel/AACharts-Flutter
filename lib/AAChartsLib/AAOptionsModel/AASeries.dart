@@ -19,7 +19,7 @@ import 'AAStates.dart';
    Object borderRadiusBottomRight;
    AAMarker marker;
    String stacking;
-   AAAnimation animation;
+   Object animation;
    List<String> keys;
    bool colorByPoint;//决定了图表是否给每个数据列或每个点分配一个颜色，默认值是 false， 即默认是给每个数据类分配颜色，
    bool connectNulls;//设置折线是否断点重连
@@ -77,7 +77,7 @@ import 'AAStates.dart';
      return this;
    }
 
-   AASeries animationSet(AAAnimation prop) {
+   AASeries animationSet(Object prop) {
      animation = prop;
      return this;
    }
@@ -148,7 +148,7 @@ import 'AAStates.dart';
        "borderRadiusBottomRight": this.borderRadiusBottomRight,
        "marker": this.marker == null ? null : this.marker.toPureJson(),
        "stacking": this.stacking,
-       "animation": this.animation == null ? null : this.animation.toPureJson(),
+       // "animation": this.animation == null ? null : this.animation.toPureJson(),
        "keys": jsonEncode(this.keys),
        "colorByPoint": this.colorByPoint,
        "connectNulls": this.connectNulls,
