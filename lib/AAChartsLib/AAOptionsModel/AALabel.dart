@@ -65,7 +65,7 @@ class AALabel extends AAObject  {
        "textAlign": this.textAlign,
        "useHTML": this.useHTML,
        "verticalAlign": this.verticalAlign,
-       "style": this.style == null ? Null : this.style.toPureJson(),
+       "style": this.style == null ? null : this.style.toPureJson(),
        "x": this.x,
        "y": this.y,
      };
