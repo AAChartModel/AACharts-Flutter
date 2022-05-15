@@ -1,3 +1,5 @@
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AABubble.dart';
+
 import 'AAObject.dart';
 import 'AAColumn.dart';
 import 'AALine.dart';
@@ -12,12 +14,13 @@ import 'AASeries.dart';
 
  class AAPlotOptions extends AAObject  {
      AAColumn column;
-     AALine line;
-     AAPie pie;
      AABar bar;
+     AALine line;
      AASpline spline;
      AAArea area;
      AAAreaspline areaspline;
+     AAPie pie;
+     AABubble bubble;
      AAColumnrange columnrange;
      AAArearange arearange;
      AASeries series;
@@ -28,18 +31,13 @@ import 'AASeries.dart';
         return this;
     }
 
+     AAPlotOptions barSet(AABar prop) {
+       bar = prop;
+       return this;
+     }
+
      AAPlotOptions lineSet(AALine prop) {
         line = prop;
-        return this;
-    }
-
-     AAPlotOptions pieSet(AAPie prop) {
-        pie = prop;
-        return this;
-    }
-
-     AAPlotOptions barSet(AABar prop) {
-        bar = prop;
         return this;
     }
 
@@ -57,6 +55,16 @@ import 'AASeries.dart';
         areaspline = prop;
         return this;
     }
+
+     AAPlotOptions pieSet(AAPie prop) {
+       pie = prop;
+       return this;
+     }
+
+     AAPlotOptions bubbleSet(AABubble prop) {
+       bubble = prop;
+       return this;
+     }
 
      AAPlotOptions columnrangeSet(AAColumnrange prop) {
         columnrange = prop;
