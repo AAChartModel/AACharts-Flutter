@@ -106,9 +106,9 @@ class ChartOptionsComposer {
 
     aaOptions.legend
         .itemMarginTopSet(20)
-    // .symbolRadiusSet(10)//图标圆角
-    // .symbolHeightSet(20)//标志高度
-    // .symbolWidthSet(20)//图标宽度
+        .symbolRadiusSet(10)//图标圆角
+        .symbolHeightSet(20)//标志高度
+        .symbolWidthSet(20)//图标宽度
         .alignSet(AAChartAlignType.right)
         .layoutSet(AAChartLayoutType.vertical)
         .verticalAlignSet(AAChartVerticalAlignType.top)
