@@ -73,10 +73,10 @@ class ChartOptionsComposer {
 
     var aaCrosshair = new AACrosshair()
         .colorSet("#FFD700")//pure gold color
-    .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)
+        .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)
         .widthSet(2)
-    .zIndexSet(10)
-        ;
+        .zIndexSet(10)
+    ;
 
     aaOptions.xAxis.crosshairSet(aaCrosshair);
     aaOptions.yAxis.crosshairSet(aaCrosshair);
@@ -87,25 +87,25 @@ class ChartOptionsComposer {
     aaOptions.xAxis
         .typeSet(AAChartAxisType.datetime)
         .dateTimeLabelFormatsSet(
-    new AADateTimeLabelFormats()
-        .daySet("%e of %b"));
+        new AADateTimeLabelFormats()
+            .daySet("%e of %b"));
 
     //https://github.com/AAChartModel/AAChartKit-Swift/issues/306
     aaOptions.xAxis
         .gridLineColorSet(AAColor.darkGray)
         .gridLineWidthSet(1)
-    .minorGridLineColorSet(AAColor.lightGray)
-    .minorGridLineWidthSet(0.5)
-    .minorTickIntervalSet("auto")
-        ;
+        .minorGridLineColorSet(AAColor.lightGray)
+        .minorGridLineWidthSet(0.5)
+        .minorTickIntervalSet("auto")
+    ;
 
     aaOptions.yAxis
         .gridLineColorSet(AAColor.darkGray)
         .gridLineWidthSet(1)
-    .minorGridLineColorSet(AAColor.lightGray)
-    .minorGridLineWidthSet(0.5)
-    .minorTickIntervalSet("auto")
-        ;
+        .minorGridLineColorSet(AAColor.lightGray)
+        .minorGridLineWidthSet(0.5)
+        .minorTickIntervalSet("auto")
+    ;
 
     aaOptions.legend
         .itemMarginTopSet(20)
@@ -129,9 +129,9 @@ class ChartOptionsComposer {
         """);
 
     aaOptions.defaultOptionsSet(
-    new AALang()
-        .resetZoomSet("重置缩放比例")
-        .thousandsSepSet(","));
+        new AALang()
+            .resetZoomSet("重置缩放比例")
+            .thousandsSepSet(","));
 
     return aaOptions;
   }
@@ -204,7 +204,7 @@ class ChartOptionsComposer {
 
     aaOptions.yAxis
         .allowDecimalsSet(false)
-.alternateGridColorSet("#EAF4FF")
+        .alternateGridColorSet("#EAF4FF")
 // .tickAmountSet(13)
         .gridLineWidthSet(0);
 
@@ -212,16 +212,16 @@ class ChartOptionsComposer {
 // var categoryJSArrStr = AAJSArrayConverter.JSArrayWithHaxeArray(categories);
 
     aaOptions.xAxis.labels
-    .formatterSet("""
+        .formatterSet("""
 
   """);
 
-  aaOptions.tooltip
-      .useHTMLSet(true)
-      .formatterSet("""
+    aaOptions.tooltip
+        .useHTMLSet(true)
+        .formatterSet("""
 
   """)
-        ;
+    ;
 
     return aaOptions;
   }
@@ -531,51 +531,51 @@ class ChartOptionsComposer {
 
     var aaStyle = new AAStyle()
         .colorSet("#FFD700") //#FFD700Set(纯金色)
-    // .backgroundColorSet(AAColor.black)
-    // .borderRadiusSet(5)
-    // .borderSet("6px solid #000000")
-    // .opacitySet(1.0)
+        .backgroundColorSet(AAColor.black)
+        .borderRadiusSet(5)
+        .borderSet("6px solid #000000")
+        .opacitySet(1.0)
         .fontWeightSet(AAChartFontWeightType.bold)
     ;
 
     var aaStyle1 = new AAStyle()
         .colorSet(AAColor.red) //#FFD700Set(纯金色)
-    // .backgroundColorSet(AAColor.black)
-    // .borderRadiusSet(5)
-    // .borderSet("2px solid red")
-    // .opacitySet(1.0)
-    // .fontWeightSet(AAChartFontWeightType.bold)
-    // .paddingSet(6)
-    // .fontSizeSet(16)
-        ;
+        .backgroundColorSet(AAColor.black)
+        .borderRadiusSet(5)
+        .borderSet("2px solid red")
+        .opacitySet(1.0)
+        .fontWeightSet(AAChartFontWeightType.bold)
+        .paddingSet(6)
+        .fontSizeSet(16)
+    ;
 
     var aaPlotLinesArr = [
       new AAPlotLinesElement()
           .colorSet("#1e90ff")//颜色值Set(16进制)
-      // .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)//样式：Dash,Dot,Solid等,默认Solid
+          .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)//样式：Dash,Dot,Solid等,默认Solid
           .widthSet(1.0) //标示线粗细
           .valueSet(12) //所在位置
           .zIndexSet(1) //层叠,标示线在图表中显示の层叠级别，值越大，显示越向前
           .labelSet(new AALabel()
-      // .useHTMLSet(true)
+          .useHTMLSet(true)
           .textSet("PLOT LINES ONE")
           .styleSet(aaStyle1)),
       new AAPlotLinesElement()
           .colorSet("#ef476f")
-      // .dashStyleSet(AAChartLineDashStyleType.longDashDot)
+          .dashStyleSet(AAChartLineDashStyleType.longDashDot)
           .widthSet(1)
           .valueSet(24)
           .labelSet(new AALabel()
-      // .useHTMLSet(true)
+          .useHTMLSet(true)
           .textSet("PLOT LINES TWO")
           .styleSet(aaStyle)),
       new AAPlotLinesElement()
           .colorSet("#04d69f")
-      // .dashStyleSet(AAChartLineDashStyleType.longDash)
+          .dashStyleSet(AAChartLineDashStyleType.longDash)
           .widthSet(1)
           .valueSet(36)
           .labelSet(new AALabel()
-      // .useHTMLSet(true)
+          .useHTMLSet(true)
           .textSet("PLOT LINES THREE")
           .styleSet(aaStyle)),
     ];
@@ -1101,7 +1101,7 @@ class ChartOptionsComposer {
         .subtitleSet(aaSubtitle)
         .colorsSet(colorsThemeArr)
         .xAxisSet(aaXAxis)
-    .yAxisArraySet([yAxis1,yAxis2,yAxis3])
+        .yAxisArraySet([yAxis1,yAxis2,yAxis3])
         .tooltipSet(aaTooltip)
         .legendSet(aaLegend)
         .seriesSet([element1,element2,element3,]);
@@ -1285,8 +1285,8 @@ class ChartOptionsComposer {
         .textSet("ETH-BTC 市场深度图");
 
     var aaSubtitle = new AASubtitle()
-        // .textSet("数据来源: https://github.com/AAChartModel")
-    ;
+    // .textSet("数据来源: https://github.com/AAChartModel")
+        ;
 
     var aaXAxis = new AAXAxis()
         .visibleSet(true)
@@ -1295,7 +1295,7 @@ class ChartOptionsComposer {
           .colorSet(AAColor.red)
           .valueSet(0.1523)
           .widthSet(1.1)
-      .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)
+          .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)
           .labelSet(new AALabel()
           .textSet("实际价格")
         // .rotationSet(90)
@@ -1333,7 +1333,7 @@ class ChartOptionsComposer {
 
     var aaTooltip = new AATooltip()
         .enabledSet(true)
-        // .headerFormatSet("<span style=\\\"font-size=10px;\\\">Price: {point.key}</span><br/>")
+    // .headerFormatSet("<span style=\\\"font-size=10px;\\\">Price: {point.key}</span><br/>")
         .valueDecimalsSet(2);
 
     var aaLegend = new AALegend()
@@ -1398,7 +1398,7 @@ class ChartOptionsComposer {
         .titleSet(aaTitle)
         .subtitleSet(aaSubtitle)
         .xAxisSet(aaXAxis)
-    .yAxisArraySet([yAxis1,yAxis2])
+        .yAxisArraySet([yAxis1,yAxis2])
         .tooltipSet(aaTooltip)
         .legendSet(aaLegend)
         .seriesSet([element1,element2]);
