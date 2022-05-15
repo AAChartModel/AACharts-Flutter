@@ -114,7 +114,7 @@ class AAChart extends AAObject  {
       "polar": this.polar,
       "animation": this.animation == null ? null : this.animation.toPureJson(),
       "inverted": this.inverted,
-      "margin": jsonEncode(this.margin),
+      "margin": this.margin,
       "marginTop": this.marginTop,
       "marginRight": this.marginRight,
       "marginBottom": this.marginBottom,
