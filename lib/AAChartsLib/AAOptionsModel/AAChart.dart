@@ -93,6 +93,16 @@ class AAChart extends AAObject  {
     return this;
   }
 
+  AAChart scrollablePlotAreaSet(AAScrollablePlotArea prop) {
+    scrollablePlotArea = prop;
+    return this;
+  }
+
+  AAChart resetZoomButtonSet(AAResetZoomButton prop) {
+    resetZoomButton = prop;
+    return this;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       "type": this.type,
