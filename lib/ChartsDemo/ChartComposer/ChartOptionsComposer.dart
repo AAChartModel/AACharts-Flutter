@@ -410,8 +410,8 @@ class ChartOptionsComposer {
           .fromSet(0)
           .toSet(60)
           .colorSet(AAColor.red)
-      // .outerRadiusSet("105%")
-      // .thicknessSet("5%")
+          .outerRadiusSet("105%")
+          .thicknessSet("5%")
     ]);
 
     return aaOptions;
