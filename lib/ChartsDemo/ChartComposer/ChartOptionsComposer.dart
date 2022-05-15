@@ -2850,7 +2850,7 @@ class ChartOptionsComposer {
           .nameSet("Yingyun-SH")
           .dataSet([
         new AADataElement()
-        // .xSet(33).ySet(1.37)
+        .xSet(33).ySet(1.37)
             .dataLabelsSet(
             new AADataLabels()
                 .enabledSet(true)
@@ -2861,7 +2861,7 @@ class ChartOptionsComposer {
         ,
 
         new AADataElement()
-        // .xSet(35).ySet(1.36)
+        .xSet(35).ySet(1.36)
             .dataLabelsSet(
             new AADataLabels()
                 .enabledSet(true)
@@ -2871,81 +2871,81 @@ class ChartOptionsComposer {
         )
         ,
 
-        // new AADataElement()
-        //     .xSet(38).ySet(1.32)
-        //     .dataLabelsSet(
-        // new AADataLabels()
-        //     .enabledSet(true)
-        //     .formatSet("Others")
-        //     .xSet(3)
-        //     .verticalAlignSet(AAChartVerticalAlignType.middle)
-        // )
-        // ,
-        //
-        // new AADataElement()
-        //     .xSet(35).ySet(1.32)
-        //     .dataLabelsSet(
-        // new AADataLabels()
-        //     .enabledSet(true)
-        //     .formatSet("QC")
-        //     .xSet(3)
-        //     .verticalAlignSet(AAChartVerticalAlignType.middle)
-        // )
-        // ,
-        //
-        // new AADataElement()
-        //     .xSet(47).ySet(1.19)
-        //     .dataLabelsSet(
-        // new AADataLabels()
-        //     .enabledSet(true)
-        //     .formatSet("Welder")
-        //     .xSet(3)
-        //     .verticalAlignSet(AAChartVerticalAlignType.middle)
-        // )
-        // ,
-        //
-        // [ 33, 1.37],
-        // [ 35, 1.36],
-        // [ 38, 1.32],
-        // [ 35, 1.32],
-        // [ 47, 1.19],
-        // ])
-        // ,
-        //
-        // new AASeriesElement()
-        //     .nameSet("GI-SZ")
-        //     .dataSet([
-        // new AADataElement()
-        //     .xSet(38).ySet(1.37)
-        //     .dataLabelsSet(
-        // new AADataLabels()
-        //     .enabledSet(true)
-        //     .formatSet("Grinder")
-        //     .xSet(3)
-        //     .verticalAlignSet(AAChartVerticalAlignType.middle)
-        // )
-        // ,
-        //
-        // new AADataElement()
-        //     .xSet(38).ySet(1.37)
-        //     .dataLabelsSet(
-        // new AADataLabels()
-        //     .enabledSet(true)
-        //     .formatSet("Paint/Blast worker")
-        //     .xSet(123)
-        // )
-        // ,
-        //
-        // [ 38, 1.37],
-        // [ 38, 1.37],
-        // ])
-        // ,
+        new AADataElement()
+            .xSet(38).ySet(1.32)
+            .dataLabelsSet(
+        new AADataLabels()
+            .enabledSet(true)
+            .formatSet("Others")
+            .xSet(3)
+            .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
+        ,
+
+        new AADataElement()
+            .xSet(35).ySet(1.32)
+            .dataLabelsSet(
+        new AADataLabels()
+            .enabledSet(true)
+            .formatSet("QC")
+            .xSet(3)
+            .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
+        ,
+
+        new AADataElement()
+            .xSet(47).ySet(1.19)
+            .dataLabelsSet(
+        new AADataLabels()
+            .enabledSet(true)
+            .formatSet("Welder")
+            .xSet(3)
+            .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
+        ,
+
+        [ 33, 1.37],
+        [ 35, 1.36],
+        [ 38, 1.32],
+        [ 35, 1.32],
+        [ 47, 1.19],
+        ])
+        ,
+
+        new AASeriesElement()
+            .nameSet("GI-SZ")
+            .dataSet([
+        new AADataElement()
+            .xSet(38).ySet(1.37)
+            .dataLabelsSet(
+        new AADataLabels()
+            .enabledSet(true)
+            .formatSet("Grinder")
+            .xSet(3)
+            .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
+        ,
+
+        new AADataElement()
+            .xSet(38).ySet(1.37)
+            .dataLabelsSet(
+        new AADataLabels()
+            .enabledSet(true)
+            .formatSet("Paint/Blast worker")
+            .xSet(123)
+        )
+        ,
+
+        [ 38, 1.37],
+        [ 38, 1.37],
+        ])
+        ,
 
         new AASeriesElement()
             .nameSet("Engma-SZ")
             .dataSet([
           new AADataElement()
-          // .xSet(43).ySet(1.30)
+          .xSet(43).ySet(1.30)
               .dataLabelsSet(
               new AADataLabels()
                   .enabledSet(true)
@@ -2956,7 +2956,7 @@ class ChartOptionsComposer {
           ,
 
           new AADataElement()
-          // .xSet(40).ySet(1.33)
+          .xSet(40).ySet(1.33)
               .dataLabelsSet(
               new AADataLabels()
                   .enabledSet(true)
@@ -2967,7 +2967,7 @@ class ChartOptionsComposer {
           ,
 
           new AADataElement()
-          // .xSet(40).ySet(1.33)
+          .xSet(40).ySet(1.33)
               .dataLabelsSet(
               new AADataLabels()
                   .enabledSet(true)
@@ -2978,7 +2978,7 @@ class ChartOptionsComposer {
           ,
 
           new AADataElement()
-          // .xSet(42).ySet(1.31)
+          .xSet(42).ySet(1.31)
               .dataLabelsSet(
               new AADataLabels()
                   .enabledSet(true)
@@ -2989,7 +2989,7 @@ class ChartOptionsComposer {
           ,
 
           new AADataElement()
-          // .xSet(40).ySet(1.35)
+          .xSet(40).ySet(1.35)
               .dataLabelsSet(
               new AADataLabels()
                   .enabledSet(true)
@@ -3011,7 +3011,7 @@ class ChartOptionsComposer {
             .nameSet("Weifu-SZ")
             .dataSet([
           new AADataElement()
-          // .xSet(41).ySet(1.15)
+          .xSet(41).ySet(1.15)
               .dataLabelsSet(
               new AADataLabels()
                   .enabledSet(true)
@@ -3022,7 +3022,7 @@ class ChartOptionsComposer {
           ,
 
           new AADataElement()
-          // .xSet(44).ySet(1.11)
+          .xSet(44).ySet(1.11)
               .dataLabelsSet(
               new AADataLabels()
                   .enabledSet(true)
@@ -3033,7 +3033,7 @@ class ChartOptionsComposer {
           ,
 
           new AADataElement()
-          // .xSet(41).ySet(1.12)
+          .xSet(41).ySet(1.12)
               .dataLabelsSet(
               new AADataLabels()
                   .enabledSet(true)
@@ -3047,7 +3047,7 @@ class ChartOptionsComposer {
           [ 41, 1.12],
         ])
         ,
-      ])]);
+      ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
 
