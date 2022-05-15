@@ -631,17 +631,17 @@ class ChartOptionsComposer {
 
     aaOptions.tooltip
         .useHTMLSet(true)
-    //     .formatterSet("
-    // function () {
-    // return ' 🌕 🌖 🌗 🌘 🌑 🌒 🌓 🌔 <br/> '
-    // + ' Support JavaScript Function Just Right Now  <br/> '
-    // + ' The Gold Price For <b>2020 '
-    // +  this.x
-    // + ' </b> Is <b> '
-    // +  this.y
-    // + ' </b> Dollars ';
-    // }
-    // ")
+        .formatterSet("""
+    function () {
+    return ' 🌕 🌖 🌗 🌘 🌑 🌒 🌓 🌔 <br/> '
+    + ' Support JavaScript Function Just Right Now  <br/> '
+    + ' The Gold Price For <b>2020 '
+    +  this.x
+    + ' </b> Is <b> '
+    +  this.y
+    + ' </b> Dollars ';
+    }
+    """)
         .valueDecimalsSet(2)//设置取值精确到小数点后几位//设置取值精确到小数点后几位
         .backgroundColorSet(AAColor.black)
         .borderColorSet(AAColor.black)
@@ -696,7 +696,7 @@ class ChartOptionsComposer {
     var aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.xAxis
         .crosshairSet(new AACrosshair()
-    // .dashStyleSet(AAChartLineDashStyleType.longDashDot)
+        .dashStyleSet(AAChartLineDashStyleType.longDashDot)
         .colorSet(AAColor.red)
         .widthSet(1));
 
@@ -1061,7 +1061,7 @@ class ChartOptionsComposer {
 
     var aaLegend = new AALegend()
         .enabledSet(true)
-    // .floatingSet(true)
+        .floatingSet(true)
         .layoutSet(AAChartLayoutType.vertical)
         .alignSet(AAChartAlignType.left)
         .xSet(80).ySet(55)
@@ -1668,15 +1668,15 @@ class ChartOptionsComposer {
         .dashStyleSet(AAChartLineDashStyleType.longDashDotDot));
 
     aaOptions.yAxis
-    // .gridLineInterpolationSet("polygon")
+        .gridLineInterpolationSet("polygon")
         .lineWidthSet(0)
         .gridLineColorSet(AAColor.rgbaColor(30, 144, 255, 1.0))
         .crosshairSet(new AACrosshair()
         .widthSet(1.5)
         .colorSet(AAColor.white)
         .dashStyleSet(AAChartLineDashStyleType.longDashDotDot))
-    // .tickPositionsSet([5,10,15,20,25,])
-        ;
+        .tickPositionsSet([5,10,15,20,25,])
+    ;
 
     var aaPlotBandsArr = [
       new AAPlotBandsElement()
@@ -2629,12 +2629,12 @@ class ChartOptionsComposer {
 
     var aaOptions = aaChartModel.aa_toAAOptions();
 
-    // aaOptions.xAxis
-    // .typeSet(AAChartAxisType.datetime)
-    // .dateTimeLabelFormatsSet(new AADateTimeLabelFormats()
-    // .monthSet("%e. %b")
-    // .yearSet("%b")
-    // );
+    aaOptions.xAxis
+        .typeSet(AAChartAxisType.datetime)
+        .dateTimeLabelFormatsSet(new AADateTimeLabelFormats()
+        .monthSet("%e. %b")
+        .yearSet("%b")
+    );
 
     return aaOptions;
   }
@@ -2646,11 +2646,11 @@ class ChartOptionsComposer {
         .chartSet(new AAChart()
         .typeSet(AAChartType.line))
         .xAxisSet(new AAXAxis()
-    // .typeSet(AAChartAxisType.logarithmic)
+        .typeSet(AAChartAxisType.logarithmic)
         .gridLineWidthSet(0.6))
         .yAxisSet(new AAYAxis()
-      // .typeSet(AAChartAxisType.logarithmic)
-      // .minorTickIntervalSet(0.1)
+        .typeSet(AAChartAxisType.logarithmic)
+        .minorTickIntervalSet(0.1)
     )
         .tooltipSet(new AATooltip()
         .enabledSet(true)
@@ -2697,22 +2697,23 @@ class ChartOptionsComposer {
         .chartSet(new AAChart()
         .typeSet(AAChartType.scatter))
         .xAxisSet(new AAXAxis()
-    // .typeSet(AAChartAxisType.logarithmic)
+        .typeSet(AAChartAxisType.logarithmic)
         .minSet(1)
         .maxSet(1000)
     // .endOnTickSet(true)
         .tickIntervalSet(1)
-    // .minorTickIntervalSet(0.1)
+        .minorTickIntervalSet(0.1)
         .gridLineWidthSet(1))
-        .yAxisSet(new AAYAxis()
-    // .typeSet(AAChartAxisType.logarithmic)
-        .minSet(1)
-        .maxSet(1000)
-        .tickIntervalSet(1)
-    // .minorTickIntervalSet(0.1)
-        .gridLineWidthSet(1)
-        .titleSet(new AATitle()
-        .textSet("")))
+        .yAxisSet(
+        new AAYAxis()
+            .typeSet(AAChartAxisType.logarithmic)
+            .minSet(1)
+            .maxSet(1000)
+            .tickIntervalSet(1)
+            .minorTickIntervalSet(0.1)
+            .gridLineWidthSet(1)
+            .titleSet(new AATitle()
+            .textSet("")))
         .seriesSet([
       new AASeriesElement()
           .markerSet(aaMarker)
@@ -2808,8 +2809,8 @@ class ChartOptionsComposer {
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    // aaOptions.plotOptions.series.dataLabels
-    //     .formatSet("{point.name}");
+    aaOptions.plotOptions.series.dataLabels
+        .formatSet("{point.name}");
 
     return aaOptions;
   }
@@ -2826,8 +2827,8 @@ class ChartOptionsComposer {
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    // aaOptions.plotOptions.series.dataLabels
-    //     .formatSet("{x}");
+    aaOptions.plotOptions.series.dataLabels
+        .formatSet("{x}");
 
     return aaOptions;
   }
@@ -3098,9 +3099,9 @@ class ChartOptionsComposer {
 
     aaOptions.legend
         .itemMarginTopSet(10)
-    // .symbolRadiusSet(10)//图标圆角
-    // .symbolHeightSet(20)//标志高度
-    // .symbolWidthSet(20)//图标宽度
+        .symbolRadiusSet(10)//图标圆角
+        .symbolHeightSet(20)//标志高度
+        .symbolWidthSet(20)//图标宽度
         .alignSet(AAChartAlignType.right)
         .layoutSet(AAChartLayoutType.vertical)
         .verticalAlignSet(AAChartVerticalAlignType.top);
