@@ -10,6 +10,8 @@ import 'AALabel.dart';
     String className;
     AALabel label;
     int zIndex;
+    String outerRadius;
+    String thickness;
 
      AAPlotBandsElement fromSet(double prop) {
         from = prop;
@@ -51,6 +53,16 @@ import 'AALabel.dart';
         return this;
     }
 
+    AAPlotBandsElement outerRadiusSet(String prop) {
+      outerRadius = prop;
+      return this;
+    }
+
+    AAPlotBandsElement thicknessSet(String prop) {
+      thickness = prop;
+      return this;
+    }
+
     Map<String, dynamic> toJson() {
     return {
       "from": this.from,
@@ -61,6 +73,8 @@ import 'AALabel.dart';
       "className": this.className,
       "label": this.label == null ? null : this.label.toPureJson(),
       "zIndex": this.zIndex,
+      "outerRadius": this.outerRadius,
+      "thickness": this.thickness,
     };
   }
 }
