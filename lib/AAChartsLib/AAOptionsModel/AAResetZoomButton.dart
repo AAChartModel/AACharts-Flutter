@@ -1,6 +1,8 @@
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAObject.dart';
+
 import 'AAPosition.dart';
 
-class AAResetZoomButton {
+class AAResetZoomButton extends AAObject {
   AAPosition position;
   String relativeTo;
   Map theme;
