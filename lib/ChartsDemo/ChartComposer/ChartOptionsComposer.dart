@@ -69,7 +69,7 @@ class ChartOptionsComposer {
 
     var aaCrosshair = new AACrosshair()
         .colorSet("#FFD700")//pure gold color
-    // .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)
+    .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)
         .widthSet(2)
     // .zIndexSet(10)
         ;
@@ -1104,7 +1104,7 @@ class ChartOptionsComposer {
         .subtitleSet(aaSubtitle)
         .colorsSet(colorsThemeArr)
         .xAxisSet(aaXAxis)
-    // .yAxisArraySet([yAxis1,yAxis2,yAxis3])
+    .yAxisArraySet([yAxis1,yAxis2,yAxis3])
         .tooltipSet(aaTooltip)
         .legendSet(aaLegend)
         .seriesSet([element1,element2,element3,]);
@@ -1153,15 +1153,14 @@ class ChartOptionsComposer {
       ,23200,24450,25250,7500
     ];
 
-    // var rateValuesArr = new Array<Float>();
-    //
-    // for (i in 0 ... 32) {
-    // var goalValue = goalValuesArr[i];
-    // var realValue = realValuesArr[i];
-    // var rateValue = realValue / goalValue;
-    // rateValuesArr.push(rateValue);
-    // }
-        ;
+    var rateValuesArr = new List();
+
+    for (var i = 0; i < 32; i++) {
+      var goalValue = goalValuesArr[i];
+      var realValue = realValuesArr[i];
+      var rateValue = realValue / goalValue;
+      rateValuesArr.add(rateValue);
+    }
 
     var aaChart = new AAChart()
         .backgroundColorSet("#191E40");
@@ -1189,20 +1188,20 @@ class ChartOptionsComposer {
 
     var yAxis1 = new AAYAxis()
         .visibleSet(true)
-    // .labelsSet(aaLabels)
+        .labelsSet(aaLabels)
         .gridLineWidthSet(0)
         .titleSet(new AATitle()
         .textSet("已贯通 / 计划贯通")
-      // .styleSet(aaYAxisTitleStyle)
+        .styleSet(aaYAxisTitleStyle)
     );
 
     var yAxis2 = new AAYAxis()
         .visibleSet(true)
-    // .labelsSet(aaLabels)
+        .labelsSet(aaLabels)
         .gridLineWidthSet(0)
         .titleSet(new AATitle()
         .textSet("贯通率")
-      // .styleSet(aaYAxisTitleStyle)
+        .styleSet(aaYAxisTitleStyle)
     )
         .oppositeSet(true);
 
@@ -1235,19 +1234,19 @@ class ChartOptionsComposer {
         .nameSet("计划贯通")
         .typeSet(AAChartType.column)
         .borderWidthSet(0)
-    // .colorSet(gradientColorDic1)
+        .colorSet(gradientColorDic1)
     // .yAxisSet(0)
-    // .dataSet(goalValuesArr)
-        ;
+        .dataSet(goalValuesArr)
+    ;
 
     var realValuesElement = new AASeriesElement()
         .nameSet("已贯通")
         .typeSet(AAChartType.column)
         .borderWidthSet(0)
-    // .colorSet(gradientColorDic2)
+        .colorSet(gradientColorDic2)
     // .yAxisSet(0)
-    // .dataSet(realValuesArr)
-        ;
+        .dataSet(realValuesArr)
+    ;
 
     var rateValuesElement = new AASeriesElement()
         .nameSet("贯通率")
@@ -1261,14 +1260,14 @@ class ChartOptionsComposer {
     )
         .colorSet("#F02FC2")
     // .yAxisSet(1)
-    // .dataSet(rateValuesArr)
-        ;
+        .dataSet(rateValuesArr)
+    ;
 
     var aaOptions = new AAOptions()
         .chartSet(aaChart)
         .titleSet(aaTitle)
         .xAxisSet(aaXAxis)
-    // .yAxisArraySet([yAxis1,yAxis2])
+        .yAxisArraySet([yAxis1,yAxis2])
         .tooltipSet(aaTooltip)
         .plotOptionsSet(aaPlotOptions)
         .legendSet(aaLegend)
@@ -1289,7 +1288,8 @@ class ChartOptionsComposer {
         .textSet("ETH-BTC 市场深度图");
 
     var aaSubtitle = new AASubtitle()
-        .textSet("数据来源: https://github.com/AAChartModel");
+        // .textSet("数据来源: https://github.com/AAChartModel")
+    ;
 
     var aaXAxis = new AAXAxis()
         .visibleSet(true)
@@ -1298,7 +1298,7 @@ class ChartOptionsComposer {
           .colorSet(AAColor.red)
           .valueSet(0.1523)
           .widthSet(1.1)
-      // .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)
+      .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)
           .labelSet(new AALabel()
           .textSet("实际价格")
         // .rotationSet(90)
@@ -1336,7 +1336,7 @@ class ChartOptionsComposer {
 
     var aaTooltip = new AATooltip()
         .enabledSet(true)
-        .headerFormatSet("<span style=\\\"font-size=10px;\\\">Price: {point.key}</span><br/>")
+        // .headerFormatSet("<span style=\\\"font-size=10px;\\\">Price: {point.key}</span><br/>")
         .valueDecimalsSet(2);
 
     var aaLegend = new AALegend()
@@ -1401,7 +1401,7 @@ class ChartOptionsComposer {
         .titleSet(aaTitle)
         .subtitleSet(aaSubtitle)
         .xAxisSet(aaXAxis)
-    // .yAxisArraySet([yAxis1,yAxis2])
+    .yAxisArraySet([yAxis1,yAxis2])
         .tooltipSet(aaTooltip)
         .legendSet(aaLegend)
         .seriesSet([element1,element2]);
