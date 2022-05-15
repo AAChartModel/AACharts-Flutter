@@ -65,10 +65,10 @@ class AAAxis extends AAObject {
     return {
       "allowDecimals": this.allowDecimals,
       "alternateGridColor": this.alternateGridColor,
-      "crosshair": this.crosshair,
-      "title": this.title,
+      "crosshair": this.crosshair == null ? null : this.crosshair.toPureJson(),
+      "title": this.title == null ? null : this.title.toPureJson(),
       "type": this.type,
-      "dateTimeLabelFormats": this.dateTimeLabelFormats,
+      "dateTimeLabelFormats": this.dateTimeLabelFormats == null ? null : this.dateTimeLabelFormats.toPureJson(),
       "plotBands": this.plotBands,
       "plotLines": this.plotLines,
       "categories": this.categories,
@@ -94,7 +94,7 @@ class AAAxis extends AAObject {
       "gridLineDashStyle": this.gridLineDashStyle,
       "gridLineInterpolation": this.gridLineInterpolation,
       "off": this.off,
-      "labels": this.labels,
+      "labels": this.labels == null ? null : this.labels.toPureJson(),
       "visible": this.visible,
       "startOnTick": this.startOnTick,
       "tickColor": this.tickColor,
@@ -157,5 +157,18 @@ class AADateTimeLabelFormats extends AAObject {
   AADateTimeLabelFormats yearSet(String prop) {
     year = prop;
     return this;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      "millisecond": this.millisecond,
+      "second": this.second,
+      "minute": this.minute,
+      "hour": this.hour,
+      "day": this.day,
+      "week": this.week,
+      "month": this.month,
+      "year": this.year,
+    };
   }
 }
