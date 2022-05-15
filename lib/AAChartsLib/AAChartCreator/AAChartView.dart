@@ -1,5 +1,6 @@
 
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAOptionsComposer.dart';
@@ -37,7 +38,7 @@ class AAChartView extends StatelessWidget {
     //debug print
     Map<String, dynamic> aaOptionsJsonMap = chartOptions.toJson();
     String prettyJsonStr = getPrettyJSONString(aaOptionsJsonMap);
-    debugPrint(prettyJsonStr);
+    log(prettyJsonStr);
     //debug print
   }
 
