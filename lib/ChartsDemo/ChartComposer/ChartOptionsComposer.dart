@@ -4,6 +4,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AASeriesElement.dart
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAGradientColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAnimation.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAxis.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AABubble.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAChart.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAColumn.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AACrosshair.dart';
@@ -20,6 +21,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPie.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPlotBandsElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPlotLinesElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPlotOptions.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAResetZoomButton.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AASeries.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AASubtitle.dart';
@@ -966,7 +968,7 @@ class ChartOptionsComposer {
     var element1 = new AASeriesElement()
         .nameSet("2017")
         .typeSet(AAChartType.areaspline)
-    //          .borderRadiusSet(4)
+             // .borderRadiusSet(4)
         .colorSet(gradientColorDic1)
         .markerSet(aaMarker)
     // .yAxisSet(1)
@@ -982,7 +984,7 @@ class ChartOptionsComposer {
     var aaOptions = new AAOptions()
         .titleSet(aaTitle)
         .xAxisSet(aaXAxis)
-    // .yAxisArraySet([yAxisOne,yAxisTwo])
+    .yAxisArraySet([yAxisOne,yAxisTwo])
         .tooltipSet(aaTooltip)
         .seriesSet([element1,element2]);
 
@@ -1082,7 +1084,7 @@ class ChartOptionsComposer {
         .typeSet(AAChartType.line)
     // .yAxisSet(2)
         .dataSet([1016, 1016, 1015.9, 1015.5, 1012.3, 1009.5, 1009.6, 1010.2, 1013.1, 1016.9, 1018.2, 1016.7])
-    // .dashStyleSet(AAChartLineDashStyleType.shortDot)
+    .dashStyleSet(AAChartLineDashStyleType.shortDot)
     // .tooltipSet(new AATooltip()
     // .valueSuffixSet(" mb"))
         ;
@@ -1220,7 +1222,7 @@ class ChartOptionsComposer {
         .enabledSet(true)
         .itemStyleSet(new AAItemStyle()
         .colorSet(AAColor.lightGray))
-    // .floatingSet(true)
+    .floatingSet(true)
         .layoutSet(AAChartLayoutType.horizontal)
         .alignSet(AAChartAlignType.left)
         .xSet(30).ySet(10)
@@ -1285,7 +1287,7 @@ class ChartOptionsComposer {
         .textSet("ETH-BTC 市场深度图");
 
     var aaSubtitle = new AASubtitle()
-    // .textSet("数据来源: https://github.com/AAChartModel")
+    .textSet("数据来源: https://github.com/AAChartModel")
         ;
 
     var aaXAxis = new AAXAxis()
@@ -1298,7 +1300,7 @@ class ChartOptionsComposer {
           .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)
           .labelSet(new AALabel()
           .textSet("实际价格")
-        // .rotationSet(90)
+        .rotationSet(90)
       )
     ]);
 
@@ -1333,7 +1335,7 @@ class ChartOptionsComposer {
 
     var aaTooltip = new AATooltip()
         .enabledSet(true)
-    // .headerFormatSet("<span style=\\\"font-size=10px;\\\">Price: {point.key}</span><br/>")
+    .headerFormatSet("<span style=\\\"font-size=10px;\\\">Price: {point.key}</span><br/>")
         .valueDecimalsSet(2);
 
     var aaLegend = new AALegend()
@@ -1518,7 +1520,7 @@ class ChartOptionsComposer {
     // ";
 
     aaOptions.yAxis
-    // .tickPositionsSet([0, 25, 50, 75, 100])
+    .tickPositionsSet([0, 25, 50, 75, 100])
         .gridLineColorSet("#DDDDDD")
         .gridLineWidthSet(2.0)
         .gridLineDashStyleSet(AAChartLineDashStyleType.dash);
@@ -1529,7 +1531,7 @@ class ChartOptionsComposer {
         .gridLineColorSet(AAColor.red)
         .gridLineWidthSet(3)
         .gridLineDashStyleSet(AAChartLineDashStyleType.longDashDotDot)
-    // .tickPositionsSet([0,1,2,0])
+    .tickPositionsSet([0,1,2,0])
         ;
 
     aaOptions.xAxis.labels
@@ -1886,7 +1888,7 @@ class ChartOptionsComposer {
     var aaYAXis = new AAYAxis()
         .titleSet(new AATitle()
         .textSet(""))
-    // .tickPositionsSet([0, 20, 40, 60, 80, 100])
+    .tickPositionsSet([0, 20, 40, 60, 80, 100])
         .lineWidthSet(1.5)//Y轴轴线颜色
         .lineColorSet(AAColor.white)//Y轴轴线颜色
         .gridLineWidthSet(0)//Y轴网格线宽度
@@ -2002,12 +2004,12 @@ class ChartOptionsComposer {
           .nameSet("空气湿度")
           .fillColorSet(gradientBlueColorDic)
           .lineWidthSet(6)
-          .dataSet([17.0, 16.9, 8.5, 34.5, 28.2, singleSpecialData1, 15.2, 56.5, 33.3, 85.3, 23.9, 29.6]),
+          .dataSet([17.0, 16.9, 8.5, 34.5, 28.2, singleSpecialData1.toPureJson(), 15.2, 56.5, 33.3, 85.3, 23.9, 29.6]),
       new AASeriesElement()
           .nameSet("土壤湿度")
           .fillColorSet(gradientRedColorDic)
           .lineWidthSet(6)
-          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData2, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
+          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData2.toPureJson(), 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ];
 
     var aaOptions = new AAOptions()
@@ -2109,45 +2111,45 @@ class ChartOptionsComposer {
     ;
 
     var aaSeriesArr = [
-      // new AASeriesElement()
-      //     .nameSet("空气湿度")
-      //     .lineWidthSet(3)
-      //     .zoneAxisSet("x")
-      //     .zonesSet([
-      // new AAZonesElement()
-      //     .valueSet(5)
-      //     .fillColorSet(
-      // AAGradientColor.linearGradient2(
-      // AALinearGradientDirection.toTop,
-      // [
-      // [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
-      // [0.6, AAColor.rgbaColor(219, 148, 111, 0.6)],
-      // [1.0, AAColor.rgbaColor(219, 148, 111, 1.0)]
-      // ])
-      // ),
-      // new AAZonesElement()
-      //     .fillColorSet(AAColor.clear),
-      // ])
-      //     .dataSet([17.0, 16.9, 8.5, 34.5, 28.2, singleSpecialData1, 15.2, 56.5, 33.3, 85.3, 23.9, 29.6]),
-      //
-      // new AASeriesElement()
-      //     .nameSet("土壤湿度")
-      //     .lineWidthSet(3)
-      //     .zoneAxisSet("x")
-      //     .zonesSet([
-      // new AAZonesElement()
-      //     .valueSet(5)
-      //     .fillColorSet(AAGradientColor.linearGradient2(
-      // AALinearGradientDirection.toTop,
-      // [
-      // [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
-      // [0.6, AAColor.rgbaColor(65, 111, 166, 0.6)],
-      // [1.0, AAColor.rgbaColor(65, 111, 166, 1.0)]
-      // ])),
-      // new AAZonesElement()
-      //     .fillColorSet(AAColor.clear),
-      // ])
-      //     .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData22, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
+      new AASeriesElement()
+          .nameSet("空气湿度")
+          .lineWidthSet(3)
+          // .zoneAxisSet("x")
+          .zonesSet([
+      new AAZonesElement()
+          .valueSet(5)
+          .fillColorSet(
+      AAGradientColor.linearGradient2(
+      AALinearGradientDirection.toTop,
+      [
+      [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
+      [0.6, AAColor.rgbaColor(219, 148, 111, 0.6)],
+      [1.0, AAColor.rgbaColor(219, 148, 111, 1.0)]
+      ])
+      ),
+      new AAZonesElement()
+          .fillColorSet(AAColor.clear),
+      ])
+          .dataSet([17.0, 16.9, 8.5, 34.5, 28.2, singleSpecialData1.toPureJson(), 15.2, 56.5, 33.3, 85.3, 23.9, 29.6]),
+
+      new AASeriesElement()
+          .nameSet("土壤湿度")
+          .lineWidthSet(3)
+          // .zoneAxisSet("x")
+          .zonesSet([
+      new AAZonesElement()
+          .valueSet(5)
+          .fillColorSet(AAGradientColor.linearGradient2(
+      AALinearGradientDirection.toTop,
+      [
+      [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
+      [0.6, AAColor.rgbaColor(65, 111, 166, 0.6)],
+      [1.0, AAColor.rgbaColor(65, 111, 166, 1.0)]
+      ])),
+      new AAZonesElement()
+          .fillColorSet(AAColor.clear),
+      ])
+          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData22.toPureJson(), 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ];
 
     aaOptions.series = aaSeriesArr;
@@ -2222,43 +2224,43 @@ class ChartOptionsComposer {
     ;
 
     var aaSeriesArr = [
-      // new AASeriesElement()
-      //     .nameSet("空气湿度")
-      //     .lineWidthSet(3)
-      //     .zoneAxisSet("x")
-      //     .zonesSet([
-      // new AAZonesElement()
-      //     .valueSet(3)
-      //     .fillColorSet(AAColor.clear),
-      // new AAZonesElement()
-      //     .fillColorSet(AAGradientColor.linearGradient2(
-      // AALinearGradientDirection.toTop,
-      // [
-      // [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
-      // [0.6, AAColor.rgbaColor(65, 111, 166, 0.6)],
-      // [1.0, AAColor.rgbaColor(65, 111, 166, 1.0)]
-      // ])),
-      // ])
-      //     .dataSet([17.0, 16.9, 8.5, singleSpecialData1, 28.2, 51.5, 15.2, 56.5, 33.3, 85.3, 23.9, 29.6]),
-      //
-      // new AASeriesElement()
-      //     .nameSet("土壤湿度")
-      //     .lineWidthSet(3)
-      //     .zoneAxisSet("x")
-      //     .zonesSet([
-      // new AAZonesElement()
-      //     .valueSet(3)
-      //     .fillColorSet(AAColor.clear),
-      // new AAZonesElement()
-      //     .fillColorSet(AAGradientColor.linearGradient2(
-      // AALinearGradientDirection.toTop,
-      // [
-      // [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
-      // [0.6, AAColor.rgbaColor(65, 111, 166, 0.6)],
-      // [1.0, AAColor.rgbaColor(65, 111, 166, 1.0)]
-      // ])),
-      // ])
-      //     .dataSet([7.0, 6.9, 2.5, singleSpecialData2, 18.2, 26.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
+      new AASeriesElement()
+          .nameSet("空气湿度")
+          .lineWidthSet(3)
+      // .zoneAxisSet("x")
+          .zonesSet([
+        new AAZonesElement()
+            .valueSet(3)
+            .fillColorSet(AAColor.clear),
+        new AAZonesElement()
+            .fillColorSet(AAGradientColor.linearGradient2(
+            AALinearGradientDirection.toTop,
+            [
+              [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
+              [0.6, AAColor.rgbaColor(65, 111, 166, 0.6)],
+              [1.0, AAColor.rgbaColor(65, 111, 166, 1.0)]
+            ])),
+      ])
+          .dataSet([17.0, 16.9, 8.5, singleSpecialData1.toPureJson(), 28.2, 51.5, 15.2, 56.5, 33.3, 85.3, 23.9, 29.6]),
+
+      new AASeriesElement()
+          .nameSet("土壤湿度")
+          .lineWidthSet(3)
+      // .zoneAxisSet("x")
+          .zonesSet([
+        new AAZonesElement()
+            .valueSet(3)
+            .fillColorSet(AAColor.clear),
+        new AAZonesElement()
+            .fillColorSet(AAGradientColor.linearGradient2(
+            AALinearGradientDirection.toTop,
+            [
+              [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
+              [0.6, AAColor.rgbaColor(65, 111, 166, 0.6)],
+              [1.0, AAColor.rgbaColor(65, 111, 166, 1.0)]
+            ])),
+      ])
+          .dataSet([7.0, 6.9, 2.5, singleSpecialData2, 18.2, 26.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ];
 
     var aaOptions = configureComplicatedCustomAreasplineChart2();
@@ -2384,13 +2386,13 @@ class ChartOptionsComposer {
         .backgroundColorSet("#050505")
         .borderColorSet("#050505");
 
-    // //禁用图例点击事件
-    // aaOptions.plotOptions.series.events = new AAEvents()
-    //     .legendItemClickSet("
-    // public static function() {
-    // return false;
-    // }
-    // ");
+    //禁用图例点击事件
+    aaOptions.plotOptions.series.events = new AASeriesEvents()
+        .legendItemClickSet("""
+      function() {
+        return false;
+      }
+        """);
 
     return aaOptions;
   }
@@ -2482,13 +2484,12 @@ class ChartOptionsComposer {
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    return aaOptions;
 
-    // aaOptions.defaultOptions = new AALang()
-    //     .numericSymbolMagnitudeSet(10000) //国际单位符基数
-    //     .numericSymbolsSet(["万","億"]); //国际单位符;
-    //
-    // return aaOptions;
+    aaOptions.defaultOptions = new AALang()
+        .numericSymbolMagnitudeSet(10000) //国际单位符基数
+        .numericSymbolsSet(["万","億"]); //国际单位符;
+
+    return aaOptions;
     // }
     //
     // private static function AADateUTC(year: Int, month: Int, day: Int): String {
@@ -2785,12 +2786,12 @@ class ChartOptionsComposer {
 
     var aaOptions = aaChartModel.aa_toAAOptions();
 
-    // aaOptions.plotOptions
-    //     .bubbleSet(new AABubble()
-    //     .minSizeSet(0)
-    //     .maxSizeSet(100)
-    //     .zMinSet(0)
-    //     .zMaxSet(100));
+    aaOptions.plotOptions
+        .bubbleSet(new AABubble()
+        .minSizeSet(0)
+        .maxSizeSet(100)
+        .zMinSet(0)
+        .zMaxSet(100));
 
     return aaOptions;
   }
@@ -2850,7 +2851,7 @@ class ChartOptionsComposer {
           .nameSet("Yingyun-SH")
           .dataSet([
         new AADataElement()
-        .xSet(33).ySet(1.37)
+            .xSet(33).ySet(1.37)
             .dataLabelsSet(
             new AADataLabels()
                 .enabledSet(true)
@@ -2861,7 +2862,7 @@ class ChartOptionsComposer {
         ,
 
         new AADataElement()
-        .xSet(35).ySet(1.36)
+            .xSet(35).ySet(1.36)
             .dataLabelsSet(
             new AADataLabels()
                 .enabledSet(true)
@@ -2874,33 +2875,33 @@ class ChartOptionsComposer {
         new AADataElement()
             .xSet(38).ySet(1.32)
             .dataLabelsSet(
-        new AADataLabels()
-            .enabledSet(true)
-            .formatSet("Others")
-            .xSet(3)
-            .verticalAlignSet(AAChartVerticalAlignType.middle)
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("Others")
+                .xSet(3)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
         )
         ,
 
         new AADataElement()
             .xSet(35).ySet(1.32)
             .dataLabelsSet(
-        new AADataLabels()
-            .enabledSet(true)
-            .formatSet("QC")
-            .xSet(3)
-            .verticalAlignSet(AAChartVerticalAlignType.middle)
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("QC")
+                .xSet(3)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
         )
         ,
 
         new AADataElement()
             .xSet(47).ySet(1.19)
             .dataLabelsSet(
-        new AADataLabels()
-            .enabledSet(true)
-            .formatSet("Welder")
-            .xSet(3)
-            .verticalAlignSet(AAChartVerticalAlignType.middle)
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("Welder")
+                .xSet(3)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
         )
         ,
 
@@ -2909,145 +2910,145 @@ class ChartOptionsComposer {
         [ 38, 1.32],
         [ 35, 1.32],
         [ 47, 1.19],
-        ])
-        ,
+      ])
+      ,
 
-        new AASeriesElement()
-            .nameSet("GI-SZ")
-            .dataSet([
+      new AASeriesElement()
+          .nameSet("GI-SZ")
+          .dataSet([
         new AADataElement()
             .xSet(38).ySet(1.37)
             .dataLabelsSet(
-        new AADataLabels()
-            .enabledSet(true)
-            .formatSet("Grinder")
-            .xSet(3)
-            .verticalAlignSet(AAChartVerticalAlignType.middle)
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("Grinder")
+                .xSet(3)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
         )
         ,
 
         new AADataElement()
             .xSet(38).ySet(1.37)
             .dataLabelsSet(
-        new AADataLabels()
-            .enabledSet(true)
-            .formatSet("Paint/Blast worker")
-            .xSet(123)
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("Paint/Blast worker")
+                .xSet(123)
         )
         ,
 
         [ 38, 1.37],
         [ 38, 1.37],
-        ])
+      ])
+      ,
+
+      new AASeriesElement()
+          .nameSet("Engma-SZ")
+          .dataSet([
+        new AADataElement()
+            .xSet(43).ySet(1.30)
+            .dataLabelsSet(
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("Welder")
+                .xSet(3)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
         ,
 
-        new AASeriesElement()
-            .nameSet("Engma-SZ")
-            .dataSet([
-          new AADataElement()
-          .xSet(43).ySet(1.30)
-              .dataLabelsSet(
-              new AADataLabels()
-                  .enabledSet(true)
-                  .formatSet("Welder")
-                  .xSet(3)
-                  .verticalAlignSet(AAChartVerticalAlignType.middle)
-          )
-          ,
-
-          new AADataElement()
-          .xSet(40).ySet(1.33)
-              .dataLabelsSet(
-              new AADataLabels()
-                  .enabledSet(true)
-                  .formatSet("Grinder")
-                  .xSet(3)
-                  .verticalAlignSet(AAChartVerticalAlignType.middle)
-          )
-          ,
-
-          new AADataElement()
-          .xSet(40).ySet(1.33)
-              .dataLabelsSet(
-              new AADataLabels()
-                  .enabledSet(true)
-                  .formatSet("Paint/Blast worker")
-                  .xSet(123)
-                  .verticalAlignSet(AAChartVerticalAlignType.middle)
-          )
-          ,
-
-          new AADataElement()
-          .xSet(42).ySet(1.31)
-              .dataLabelsSet(
-              new AADataLabels()
-                  .enabledSet(true)
-                  .formatSet("Pipe Fitter")
-                  .xSet(3)
-                  .verticalAlignSet(AAChartVerticalAlignType.middle)
-          )
-          ,
-
-          new AADataElement()
-          .xSet(40).ySet(1.35)
-              .dataLabelsSet(
-              new AADataLabels()
-                  .enabledSet(true)
-                  .formatSet("OH2 Operator")
-                  .xSet(3)
-                  .verticalAlignSet(AAChartVerticalAlignType.middle)
-          )
-          ,
-
-          [ 43, 1.30],
-          [ 40, 1.33],
-          [ 40, 1.33],
-          [ 42, 1.31],
-          [ 40, 1.35],
-        ])
+        new AADataElement()
+            .xSet(40).ySet(1.33)
+            .dataLabelsSet(
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("Grinder")
+                .xSet(3)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
         ,
 
-        new AASeriesElement()
-            .nameSet("Weifu-SZ")
-            .dataSet([
-          new AADataElement()
-          .xSet(41).ySet(1.15)
-              .dataLabelsSet(
-              new AADataLabels()
-                  .enabledSet(true)
-                  .formatSet("Grinder")
-                  .xSet(3)
-                  .verticalAlignSet(AAChartVerticalAlignType.middle)
-          )
-          ,
-
-          new AADataElement()
-          .xSet(44).ySet(1.11)
-              .dataLabelsSet(
-              new AADataLabels()
-                  .enabledSet(true)
-                  .formatSet("Paint/Blast worker")
-                  .xSet(3)
-                  .verticalAlignSet(AAChartVerticalAlignType.middle)
-          )
-          ,
-
-          new AADataElement()
-          .xSet(41).ySet(1.12)
-              .dataLabelsSet(
-              new AADataLabels()
-                  .enabledSet(true)
-                  .formatSet("Pipe Fitter")
-                  .xSet(3)
-                  .verticalAlignSet(AAChartVerticalAlignType.middle)
-          )
-          ,
-          [ 41, 1.15],
-          [ 44, 1.11],
-          [ 41, 1.12],
-        ])
+        new AADataElement()
+            .xSet(40).ySet(1.33)
+            .dataLabelsSet(
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("Paint/Blast worker")
+                .xSet(123)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
         ,
-      ]);
+
+        new AADataElement()
+            .xSet(42).ySet(1.31)
+            .dataLabelsSet(
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("Pipe Fitter")
+                .xSet(3)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
+        ,
+
+        new AADataElement()
+            .xSet(40).ySet(1.35)
+            .dataLabelsSet(
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("OH2 Operator")
+                .xSet(3)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
+        ,
+
+        [ 43, 1.30],
+        [ 40, 1.33],
+        [ 40, 1.33],
+        [ 42, 1.31],
+        [ 40, 1.35],
+      ])
+      ,
+
+      new AASeriesElement()
+          .nameSet("Weifu-SZ")
+          .dataSet([
+        new AADataElement()
+            .xSet(41).ySet(1.15)
+            .dataLabelsSet(
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("Grinder")
+                .xSet(3)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
+        ,
+
+        new AADataElement()
+            .xSet(44).ySet(1.11)
+            .dataLabelsSet(
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("Paint/Blast worker")
+                .xSet(3)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
+        ,
+
+        new AADataElement()
+            .xSet(41).ySet(1.12)
+            .dataLabelsSet(
+            new AADataLabels()
+                .enabledSet(true)
+                .formatSet("Pipe Fitter")
+                .xSet(3)
+                .verticalAlignSet(AAChartVerticalAlignType.middle)
+        )
+        ,
+        [ 41, 1.15],
+        [ 44, 1.11],
+        [ 41, 1.12],
+      ])
+      ,
+    ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
 
