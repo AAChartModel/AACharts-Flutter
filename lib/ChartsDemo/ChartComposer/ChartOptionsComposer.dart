@@ -65,13 +65,13 @@ class ChartOptionsComposer {
 
     var aaOptions = aaChartModel.aa_toAAOptions();
 
-    // aaOptions.plotOptions.series.pointIntervalSet(24 * 3600 * 1000);
+    aaOptions.plotOptions.series.pointIntervalSet(24 * 3600 * 1000);
 
     var aaCrosshair = new AACrosshair()
         .colorSet("#FFD700")//pure gold color
     .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)
         .widthSet(2)
-    // .zIndexSet(10)
+    .zIndexSet(10)
         ;
 
     aaOptions.xAxis.crosshairSet(aaCrosshair);
