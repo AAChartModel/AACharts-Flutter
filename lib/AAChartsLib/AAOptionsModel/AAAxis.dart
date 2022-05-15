@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAObject.dart';
 
 import 'AACrosshair.dart';
@@ -5,6 +7,13 @@ import 'AALabels.dart';
 import 'AAPlotBandsElement.dart';
 import 'AAPlotLinesElement.dart';
 import 'AATitle.dart';
+
+abstract class AAChartAxisType {
+  static const linear = "linear";
+  static const logarithmic = "logarithmic";
+  static const datetime = "datetime";
+  static const category = "category";
+}
 
 class AAAxis extends AAObject {
   bool allowDecimals;
@@ -51,6 +60,52 @@ class AAAxis extends AAObject {
   double tickLength;//坐标轴刻度线的长度。 默认是：10.
   String tickPosition; //刻度线相对于轴线的位置，可用的值有 inside 和 outside，分别表示在轴线的内部和外部。 默认是：outside.
   List tickPositions; // Custom chart axis coordinates
+
+  Map<String, dynamic> toJson() {
+    return {
+      "allowDecimals": this.allowDecimals,
+      "alternateGridColor": this.alternateGridColor,
+      "crosshair": this.crosshair,
+      "title": this.title,
+      "type": this.type,
+      "dateTimeLabelFormats": this.dateTimeLabelFormats,
+      "plotBands": jsonEncode(this.plotBands),
+      "plotLines": jsonEncode(this.plotLines),
+      "categories": jsonEncode(this.categories),
+      "linkedTo": this.linkedTo,
+      "reversed": this.reversed,
+      "opposite": this.opposite,
+      "lineWidth": this.lineWidth,
+      "lineColor": this.lineColor,
+      "max": this.max,
+      "min": this.min,
+      "minRange": this.minRange,
+      "minTickInterval": this.minTickInterval,
+      "minorGridLineColor": this.minorGridLineColor,
+      "minorGridLineDashStyle": this.minorGridLineDashStyle,
+      "minorGridLineWidth": this.minorGridLineWidth,
+      "minorTickColor": this.minorTickColor,
+      "minorTickInterval": this.minorTickInterval,
+      "minorTickLength": this.minorTickLength,
+      "minorTickPosition": this.minorTickPosition,
+      "minorTickWidth": this.minorTickWidth,
+      "gridLineWidth": this.gridLineWidth,
+      "gridLineColor": this.gridLineColor,
+      "gridLineDashStyle": this.gridLineDashStyle,
+      "gridLineInterpolation": this.gridLineInterpolation,
+      "off": this.off,
+      "labels": this.labels,
+      "visible": this.visible,
+      "startOnTick": this.startOnTick,
+      "tickColor": this.tickColor,
+      "tickInterval": this.tickInterval,
+      "tickmarkPlacement": this.tickmarkPlacement,
+      "tickWidth": this.tickWidth,
+      "tickLength": this.tickLength,
+      "tickPosition": this.tickPosition,
+      "tickPositions": jsonEncode(this.tickPositions),
+    };
+  }
 
 }
 
