@@ -1,4 +1,6 @@
- class AAStates {
+ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAObject.dart';
+
+class AAStates extends AAObject {
   AAHover hover;
   AASelect select;
   AAInactive inactive;
