@@ -626,10 +626,10 @@ class ChartOptionsComposer {
     var themeMap = new Map<String, Object>();
     themeMap["display"] = "none";
 
-    // aaOptions.chart
-    //     .resetZoomButtonSet(new AAResetZoomButton()
-    //     .themeSet(themeMap)
-    // );//隐藏图表缩放后的默认显示的缩放按钮;
+    aaOptions.chart
+        .resetZoomButtonSet(new AAResetZoomButton()
+        .themeSet(themeMap)
+    );//隐藏图表缩放后的默认显示的缩放按钮;
 
     aaOptions.tooltip
         .useHTMLSet(true)
