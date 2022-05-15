@@ -27,6 +27,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATitle.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATooltip.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAXAxis.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAZonesElement.dart';
 
 class ChartOptionsComposer {
 
@@ -513,17 +514,17 @@ class ChartOptionsComposer {
           .fillOpacitySet(0.5)
           .lineWidthSet(10)
           .zonesSet([
-        // new AAZonesElement()
-        //     .valueSet(12)
-        //     .colorSet("#1e90ff"),
-        // new AAZonesElement()
-        //     .valueSet(24)
-        //     .colorSet("#ef476f"),
-        // new AAZonesElement()
-        //     .valueSet(36)
-        //     .colorSet("#04d69f"),
-        // new AAZonesElement()
-        //     .colorSet("#ffd066"),
+        new AAZonesElement()
+            .valueSet(12)
+            .colorSet("#1e90ff"),
+        new AAZonesElement()
+            .valueSet(24)
+            .colorSet("#ef476f"),
+        new AAZonesElement()
+            .valueSet(36)
+            .colorSet("#04d69f"),
+        new AAZonesElement()
+            .colorSet("#ffd066"),
       ])
     ]);
     var aaOptions = aaChartModel.aa_toAAOptions();
