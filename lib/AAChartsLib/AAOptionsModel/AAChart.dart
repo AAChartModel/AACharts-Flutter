@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'AAObject.dart';
 import 'AAAnimation.dart';
+import 'AAResetZoomButton.dart';
+import 'AAScrollablePlotArea.dart';
 
 class AAChart extends AAObject  {
   String type;
@@ -16,6 +20,8 @@ class AAChart extends AAObject  {
   double marginRight;
   double marginBottom;
   double marginLeft;
+  AAScrollablePlotArea scrollablePlotArea;
+  AAResetZoomButton resetZoomButton;
 
   AAChart typeSet(String prop) {
     type = prop;
@@ -98,8 +104,14 @@ class AAChart extends AAObject  {
       "polar": this.polar,
       "animation": this.animation == null ? null : this.animation.toPureJson(),
       "inverted": this.inverted,
-      "marginLeft": this.marginLeft,
+      "margin": jsonEncode(this.margin),
+      "marginTop": this.marginTop,
       "marginRight": this.marginRight,
+      "marginBottom": this.marginBottom,
+      "marginLeft": this.marginLeft,
+      "scrollablePlotArea": this.scrollablePlotArea == null ? null : this.scrollablePlotArea.toPureJson(),
+      "resetZoomButton": this.resetZoomButton == null ? null : this.resetZoomButton.toPureJson(),
     };
   }
+
 }
