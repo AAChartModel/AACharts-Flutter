@@ -3,6 +3,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AASeriesElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAGradientColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAnimation.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAxis.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAChart.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAColumn.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AACrosshair.dart';
@@ -80,27 +81,27 @@ class ChartOptionsComposer {
     aaOptions.yAxis.labels.format = "{value} \$";//给y轴添加单位
 
     //https://jshare.com.cn/highcharts/hhhhf0
-    // aaOptions.xAxis
-    //     .typeSet(AAChartAxisType.datetime)
-    //     .dateTimeLabelFormatsSet(
-    // new AADateTimeLabelFormats()
-    //     .daySet("%e of %b"));
+    aaOptions.xAxis
+        .typeSet(AAChartAxisType.datetime)
+        .dateTimeLabelFormatsSet(
+    new AADateTimeLabelFormats()
+        .daySet("%e of %b"));
 
     //https://github.com/AAChartModel/AAChartKit-Swift/issues/306
     aaOptions.xAxis
         .gridLineColorSet(AAColor.darkGray)
         .gridLineWidthSet(1)
-    // .minorGridLineColorSet(AAColor.lightGray)
-    // .minorGridLineWidthSet(0.5)
-    // .minorTickIntervalSet("auto")
+    .minorGridLineColorSet(AAColor.lightGray)
+    .minorGridLineWidthSet(0.5)
+    .minorTickIntervalSet("auto")
         ;
 
     aaOptions.yAxis
         .gridLineColorSet(AAColor.darkGray)
         .gridLineWidthSet(1)
-    // .minorGridLineColorSet(AAColor.lightGray)
-    // .minorGridLineWidthSet(0.5)
-    // .minorTickIntervalSet("auto")
+    .minorGridLineColorSet(AAColor.lightGray)
+    .minorGridLineWidthSet(0.5)
+    .minorTickIntervalSet("auto")
         ;
 
     aaOptions.legend
