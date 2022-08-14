@@ -56,9 +56,11 @@ import 'AAStyle.dart';
     }
 
      AATooltip formatterSet(String prop) {
-        String pureJSFunctionStr = "(" + prop + ")";
-        pureJSFunctionStr = AAEasyTool.pureJavaScriptFunctionString(pureJSFunctionStr);
-        formatter = pureJSFunctionStr;
+       if (prop != null) {
+         String pureJSFunctionStr = "(" + prop + ")";
+         pureJSFunctionStr = AAEasyTool.pureJavaScriptFunctionString(pureJSFunctionStr);
+         formatter = pureJSFunctionStr;
+       }
         return this;
     }
 
