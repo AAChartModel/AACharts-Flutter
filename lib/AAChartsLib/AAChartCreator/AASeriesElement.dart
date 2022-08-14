@@ -32,6 +32,7 @@ class AASeriesElement extends AAObject {
   AAShadow shadow;
   List zones;
   String stack;
+  bool enableMouseTracking;
 
   AASeriesElement typeSet(String prop) {
     type = prop;
@@ -153,6 +154,11 @@ class AASeriesElement extends AAObject {
     return this;
   }
 
+  AASeriesElement enableMouseTrackingSet(bool prop) {
+    enableMouseTracking = prop;
+    return this;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       "type": this.type,
@@ -178,6 +184,7 @@ class AASeriesElement extends AAObject {
       "shadow": this.shadow == null ? null : this.shadow.toPureJson(),
       "zones": this.zones,
       "stack": this.stack,
+      "enableMouseTracking": this.enableMouseTracking,
     };
   }
 }
