@@ -33,6 +33,8 @@ class AASeriesElement extends AAObject {
   List zones;
   String stack;
   bool enableMouseTracking;
+  bool showInLegend;
+  int yAxis;
 
   AASeriesElement typeSet(String prop) {
     type = prop;
@@ -159,6 +161,16 @@ class AASeriesElement extends AAObject {
     return this;
   }
 
+  AASeriesElement showInLegendSet(bool prop) {
+    showInLegend = prop;
+    return this;
+  }
+
+  AASeriesElement yAxisSet(int prop) {
+    yAxis = prop;
+    return this;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       "type": this.type,
@@ -185,8 +197,12 @@ class AASeriesElement extends AAObject {
       "zones": this.zones,
       "stack": this.stack,
       "enableMouseTracking": this.enableMouseTracking,
+      "showInLegend": this.showInLegend,
+      "yAxis": this.yAxis,
     };
   }
+
+  // yAxisSet(int i) {}
 }
 
 class AADataElement extends AAObject {
