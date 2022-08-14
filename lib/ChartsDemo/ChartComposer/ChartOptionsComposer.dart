@@ -210,19 +210,19 @@ class ChartOptionsComposer {
 // .tickAmountSet(13)
         .gridLineWidthSet(0);
 
-    var categories = ["17.04","21.04","25.04","29.04","03.05","07.05","11.05", ""];
-// var categoryJSArrStr = AAJSArrayConverter.JSArrayWithHaxeArray(categories);
-
-    aaOptions.xAxis.labels
-        .formatterSet("""
-
-  """);
-
-    aaOptions.tooltip
-        .useHTMLSet(true)
-        .formatterSet("""
-
-  """)
+//     var categories = ["17.04","21.04","25.04","29.04","03.05","07.05","11.05", ""];
+// // var categoryJSArrStr = AAJSArrayConverter.JSArrayWithHaxeArray(categories);
+//
+//     aaOptions.xAxis.labels
+//         .formatterSet("""
+//
+//   """);
+//
+//     aaOptions.tooltip
+//         .useHTMLSet(true)
+//         .formatterSet("""
+//
+//   """)
     ;
 
     return aaOptions;
@@ -1072,7 +1072,7 @@ class ChartOptionsComposer {
     var element1 = new AASeriesElement()
         .nameSet("降雨量")
         .typeSet(AAChartType.column)
-    // .yAxisSet(1)
+    .yAxisSet(1)
         .dataSet([49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4])
     // .tooltipSet(new AATooltip()
     // .valueSuffixSet(" mm")
@@ -1082,7 +1082,7 @@ class ChartOptionsComposer {
     var element2 = new AASeriesElement()
         .nameSet("海平面气压")
         .typeSet(AAChartType.line)
-    // .yAxisSet(2)
+    .yAxisSet(2)
         .dataSet([1016, 1016, 1015.9, 1015.5, 1012.3, 1009.5, 1009.6, 1010.2, 1013.1, 1016.9, 1018.2, 1016.7])
     .dashStyleSet(AAChartLineDashStyleType.shortDot)
     // .tooltipSet(new AATooltip()
@@ -1092,7 +1092,7 @@ class ChartOptionsComposer {
     var element3 = new AASeriesElement()
         .nameSet("温度")
         .typeSet(AAChartType.line)
-    // .yAxisSet(0)
+    .yAxisSet(0)
         .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6])
     // .tooltipSet(new AATooltip()
     // .valueSuffixSet(" ℃"))
@@ -1234,7 +1234,7 @@ class ChartOptionsComposer {
         .typeSet(AAChartType.column)
         .borderWidthSet(0)
         .colorSet(gradientColorDic1)
-    // .yAxisSet(0)
+    .yAxisSet(0)
         .dataSet(goalValuesArr)
     ;
 
@@ -1243,7 +1243,7 @@ class ChartOptionsComposer {
         .typeSet(AAChartType.column)
         .borderWidthSet(0)
         .colorSet(gradientColorDic2)
-    // .yAxisSet(0)
+    .yAxisSet(0)
         .dataSet(realValuesArr)
     ;
 
@@ -1258,7 +1258,7 @@ class ChartOptionsComposer {
         .lineColorSet("")//外沿线の颜色Set(用来设置折线连接点の轮廓描边颜色，当值为空字符串时，默认取数据点或数据列の颜色)
     )
         .colorSet("#F02FC2")
-    // .yAxisSet(1)
+    .yAxisSet(1)
         .dataSet(rateValuesArr)
     ;
 
