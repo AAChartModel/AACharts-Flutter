@@ -35,6 +35,8 @@ class AASeriesElement extends AAObject {
   bool enableMouseTracking;
   bool showInLegend;
   int yAxis;
+  int xAxis;
+
 
   AASeriesElement typeSet(String prop) {
     type = prop;
@@ -171,6 +173,11 @@ class AASeriesElement extends AAObject {
     return this;
   }
 
+  AASeriesElement xAxisSet(int prop) {
+    xAxis = prop;
+    return this;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       "type": this.type,
@@ -199,6 +206,7 @@ class AASeriesElement extends AAObject {
       "enableMouseTracking": this.enableMouseTracking,
       "showInLegend": this.showInLegend,
       "yAxis": this.yAxis,
+      "xAxis": this.xAxis,
     };
   }
 
