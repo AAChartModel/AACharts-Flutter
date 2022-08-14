@@ -1,3 +1,5 @@
+import 'package:aacharts_flutter/AAChartsLib/AATools/AAEasyTool.dart';
+
 import 'AAObject.dart';
 import 'AAStyle.dart';
 
@@ -49,7 +51,9 @@ import 'AAStyle.dart';
     }
 
      AALabels formatterSet(String prop) {
-        formatter = prop;
+       if (prop != null) {
+         formatter = AAEasyTool.pureJavaScriptFunctionString(prop);
+       }
         return this;
     }
 
