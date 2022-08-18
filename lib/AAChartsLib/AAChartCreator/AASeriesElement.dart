@@ -6,6 +6,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAObject.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAShadow.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStates.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATooltip.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAZonesElement.dart';
 
 class AASeriesElement extends AAObject {
   String type; //A chart type series. If the type option is not specified, it is inherited from `chart.type`.
@@ -41,7 +42,7 @@ class AASeriesElement extends AAObject {
   dynamic innerSize; //The innder size for pie chart (String | Number)
   dynamic minSize; //The minimum size for a pie in response to auto margins, Only useful for pie, bubble, funnel, Pyramid (String | Number)
   AAShadow shadow; //Shadow options for the series
-  List zones; //An array defining zones within a series. Zones can be applied to the X axis, Y axis or Z axis for bubbles, according to the zoneAxis option.
+  List<AAZonesElement> zones; //An array defining zones within a series. Zones can be applied to the X axis, Y axis or Z axis for bubbles, according to the zoneAxis option.
   String zoneAxis; //Defines the Axis on which the zones are applied. defalut value：y.
   String stack; //A stack for the series.
   AATooltip tooltip; //A configuration object for the tooltip that specifies the tooltip that is shown when the user hovers over a series or point.
@@ -216,7 +217,7 @@ class AASeriesElement extends AAObject {
     return this;
   }
 
-  AASeriesElement zonesSet(List prop) {
+  AASeriesElement zonesSet(List<AAZonesElement> prop) {
     zones = prop;
     return this;
   }
