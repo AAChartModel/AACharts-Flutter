@@ -23,6 +23,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPlotLinesElement.d
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPlotOptions.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAResetZoomButton.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AASeries.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStates.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AASubtitle.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATitle.dart';
@@ -1074,9 +1075,9 @@ class ChartOptionsComposer {
         .typeSet(AAChartType.column)
     .yAxisSet(1)
         .dataSet([49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4])
-    // .tooltipSet(new AATooltip()
-    // .valueSuffixSet(" mm")
-    // )
+    .tooltipSet(new AATooltip()
+    .valueSuffixSet(" mm")
+    )
         ;
 
     var element2 = new AASeriesElement()
@@ -1085,8 +1086,8 @@ class ChartOptionsComposer {
     .yAxisSet(2)
         .dataSet([1016, 1016, 1015.9, 1015.5, 1012.3, 1009.5, 1009.6, 1010.2, 1013.1, 1016.9, 1018.2, 1016.7])
     .dashStyleSet(AAChartLineDashStyleType.shortDot)
-    // .tooltipSet(new AATooltip()
-    // .valueSuffixSet(" mb"))
+    .tooltipSet(new AATooltip()
+    .valueSuffixSet(" mb"))
         ;
 
     var element3 = new AASeriesElement()
@@ -1094,8 +1095,8 @@ class ChartOptionsComposer {
         .typeSet(AAChartType.line)
     .yAxisSet(0)
         .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6])
-    // .tooltipSet(new AATooltip()
-    // .valueSuffixSet(" ℃"))
+    .tooltipSet(new AATooltip()
+    .valueSuffixSet(" ℃"))
         ;
 
     var aaOptions = new AAOptions()
@@ -1958,10 +1959,10 @@ class ChartOptionsComposer {
             .fontSizeSet(16)
             .fontWeightSet(AAChartFontWeightType.thin))
             .ySet(-75)
-        // .alignSet(AAChartAlignType.center)
+        .alignSet(AAChartAlignType.center)
             .verticalAlignSet(AAChartVerticalAlignType.top)
-      // .overflowSet("none")
-      // .cropSet(false)
+      .overflowSet("none")
+      .cropSet(false)
     )
         .ySet(51.5)
     ;
@@ -1990,10 +1991,10 @@ class ChartOptionsComposer {
             .fontSizeSet(16)
             .fontWeightSet(AAChartFontWeightType.thin))
             .ySet(-75)
-      // .alignSet(AAChartAlignType.center)
-      // .verticalAlignSet(AAChartVerticalAlignType.top)
-      // .overflowSet("none")
-      // .cropSet(false)
+      .alignSet(AAChartAlignType.center)
+      .verticalAlignSet(AAChartVerticalAlignType.top)
+      .overflowSet("none")
+      .cropSet(false)
     )
         .ySet(26.5)
 
@@ -2072,10 +2073,10 @@ class ChartOptionsComposer {
             .formatSet("{point.category}<br>{series.name}: {point.y} %")
             .styleSet(aaDataLabelsStyle)
             .ySet(-75)
-      // .alignSet(AAChartAlignType.center)
-      // .verticalAlignSet(AAChartVerticalAlignType.top)
-      // .overflowSet("none")
-      // .cropSet(false)
+      .alignSet(AAChartAlignType.center)
+      .verticalAlignSet(AAChartVerticalAlignType.top)
+      .overflowSet("none")
+      .cropSet(false)
     )
         .ySet(51.5)
     ;
@@ -2102,10 +2103,10 @@ class ChartOptionsComposer {
             .formatSet("{point.category}<br>{series.name}: {point.y} %")
             .styleSet(aaDataLabelsStyle)
             .ySet(-75)
-      // .alignSet(AAChartAlignType.center)
-      // .verticalAlignSet(AAChartVerticalAlignType.top)
-      // .overflowSet("none")
-      // .cropSet(false)
+      .alignSet(AAChartAlignType.center)
+      .verticalAlignSet(AAChartVerticalAlignType.top)
+      .overflowSet("none")
+      .cropSet(false)
     )
         .ySet(26.5)
     ;
@@ -2114,7 +2115,7 @@ class ChartOptionsComposer {
       new AASeriesElement()
           .nameSet("空气湿度")
           .lineWidthSet(3)
-          // .zoneAxisSet("x")
+          .zoneAxisSet("x")
           .zonesSet([
       new AAZonesElement()
           .valueSet(5)
@@ -2135,7 +2136,7 @@ class ChartOptionsComposer {
       new AASeriesElement()
           .nameSet("土壤湿度")
           .lineWidthSet(3)
-          // .zoneAxisSet("x")
+          .zoneAxisSet("x")
           .zonesSet([
       new AAZonesElement()
           .valueSet(5)
@@ -2185,10 +2186,10 @@ class ChartOptionsComposer {
             .formatSet("{point.category}<br>{series.name}: {point.y} %")
             .styleSet(aaDataLabelsStyle)
             .ySet(-75)
-      // .alignSet(AAChartAlignType.center)
-      // .verticalAlignSet(AAChartVerticalAlignType.top)
-      // .overflowSet("none")
-      // .cropSet(false)
+      .alignSet(AAChartAlignType.center)
+      .verticalAlignSet(AAChartVerticalAlignType.top)
+      .overflowSet("none")
+      .cropSet(false)
     )
         .ySet(34.5)
     ;
@@ -2215,10 +2216,10 @@ class ChartOptionsComposer {
             .formatSet("{point.category}<br>{series.name}: {point.y} %")
             .styleSet(aaDataLabelsStyle)
             .ySet(-75)
-      // .alignSet(AAChartAlignType.center)
-      // .verticalAlignSet(AAChartVerticalAlignType.top)
-      // .overflowSet("none")
-      // .cropSet(false)
+      .alignSet(AAChartAlignType.center)
+      .verticalAlignSet(AAChartVerticalAlignType.top)
+      .overflowSet("none")
+      .cropSet(false)
     )
         .ySet(14.5)
     ;
@@ -2227,7 +2228,7 @@ class ChartOptionsComposer {
       new AASeriesElement()
           .nameSet("空气湿度")
           .lineWidthSet(3)
-      // .zoneAxisSet("x")
+      .zoneAxisSet("x")
           .zonesSet([
         new AAZonesElement()
             .valueSet(3)
@@ -2246,7 +2247,7 @@ class ChartOptionsComposer {
       new AASeriesElement()
           .nameSet("土壤湿度")
           .lineWidthSet(3)
-      // .zoneAxisSet("x")
+      .zoneAxisSet("x")
           .zonesSet([
         new AAZonesElement()
             .valueSet(3)
@@ -2307,7 +2308,7 @@ class ChartOptionsComposer {
         .seriesSet([
       new AASeriesElement()
           .nameSet("Past")
-      // .sizeSet("40%")//尺寸大小
+      .sizeSet("40%")//尺寸大小
           .innerSizeSet("30%")//内部圆环半径大小占比
           .borderWidthSet(0)//描边的宽度
           .allowPointSelectSet(false)//是否允许在点击数据点标记Set(扇形图点击选中的块发生位移)
@@ -2320,7 +2321,7 @@ class ChartOptionsComposer {
       ]),
       new AASeriesElement()
           .nameSet("Now")
-      // .sizeSet("80%")//尺寸大小
+      .sizeSet("80%")//尺寸大小
           .innerSizeSet("70%")//内部圆环半径大小占比
           .borderWidthSet(0)//描边的宽度
           .allowPointSelectSet(false)//是否允许在点击数据点标记Set(扇形图点击选中的块发生位移)
@@ -2749,10 +2750,12 @@ class ChartOptionsComposer {
 
     aaOptions.tooltip.sharedSet(false);
 
-    // aaOptions.plotOptions.series
-    //     .statesSet(new AAStates()
-    //     .inactiveSet(new AAInactive()
-    //     .enabledSet(false)));
+    aaOptions.plotOptions.series
+        .statesSet(
+        new AAStates()
+            .inactiveSet(
+            new AAInactive()
+                .enabledSet(false)));
 
     return aaOptions;
   }
