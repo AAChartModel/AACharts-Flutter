@@ -191,6 +191,11 @@ import 'AACrosshair.dart';
      return this;
    }
 
+   AAYAxis tickAmountSet(int prop) {
+     tickAmount = prop;
+     return this;
+   }
+
    AAYAxis tickIntervalSet(int prop) {
      tickInterval = prop;
      return this;

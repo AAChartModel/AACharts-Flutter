@@ -31,6 +31,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATooltip.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAXAxis.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAZonesElement.dart';
+import 'package:aacharts_flutter/AAChartsLib/AATools/AAEasyTool.dart';
 
 class ChartOptionsComposer {
 
@@ -208,26 +209,28 @@ class ChartOptionsComposer {
     aaOptions.yAxis
         .allowDecimalsSet(false)
         .alternateGridColorSet("#EAF4FF")
-// .tickAmountSet(13)
+.tickAmountSet(13)
         .gridLineWidthSet(0);
 
-//     var categories = ["17.04","21.04","25.04","29.04","03.05","07.05","11.05", ""];
-// // var categoryJSArrStr = AAJSArrayConverter.JSArrayWithHaxeArray(categories);
-//
-//     aaOptions.xAxis.labels
-//         .formatterSet("""
-//
-//   """);
-//
-//     aaOptions.tooltip
-//         .useHTMLSet(true)
-//         .formatterSet("""
-//
-//   """)
+    var categories = ["17.04","21.04","25.04","29.04","03.05","07.05","11.05", ""];
+var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
+
+    aaOptions.xAxis.labels
+        .formatterSet("""
+
+  """);
+
+    aaOptions.tooltip
+        .useHTMLSet(true)
+        .formatterSet("""
+
+  """)
     ;
 
     return aaOptions;
   }
+
+
 
   static AAOptions adjustYAxisMinValueForChart() {
     var aaChartModel = new AAChartModel()
@@ -1512,13 +1515,11 @@ class ChartOptionsComposer {
     var aaOptions = aaChartModel.aa_toAAOptions();
 
     var categories = ["智力感", "距离感", "成熟感"];
-    // var categoryJSArrStr = AAJSArrayConverter.JSArrayWithHaxeArray(categories);
+    var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
 
-    // var xAxisLabelsFormatter = "
-    // static AAOptions () {
-    // return ${categoryJSArrStr)[this.value];
-    // }
-    // ";
+    var xAxisLabelsFormatter = """
+   
+    """;
 
     aaOptions.yAxis
     .tickPositionsSet([0, 25, 50, 75, 100])
@@ -1536,7 +1537,7 @@ class ChartOptionsComposer {
         ;
 
     aaOptions.xAxis.labels
-    // .formatterSet(xAxisLabelsFormatter)
+    .formatterSet(xAxisLabelsFormatter)
         ;
 
     return aaOptions;
@@ -1598,8 +1599,8 @@ class ChartOptionsComposer {
     //https://api.highcharts.com.cn/highcharts#plotOptions.column.pointPadding;
 
     aaOptions.plotOptions.columnrange
-    // .groupingSet(false)
-    // .groupPaddingSet(0.003)
+    .groupingSet(false)
+    .groupPaddingSet(0.003)
         ;
 
     return aaOptions;
@@ -3090,7 +3091,7 @@ class ChartOptionsComposer {
     aaOptions.xAxis.tickWidth = 0;
 
     aaOptions.yAxis
-    // .tickAmountSet(20)
+    .tickAmountSet(20)
         .lineWidthSet(1)
         .lineColorSet(AAColor.black);
 

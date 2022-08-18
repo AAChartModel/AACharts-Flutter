@@ -165,24 +165,24 @@ class JSFormatterFunctionComposer {
 
     aaOptions.tooltip
         .useHTMLSet(true)
-//         .formatterSet("""
-// function () {
-//         let colorDot0 = '<span style=\"' + 'color:red; font-size:13px\"' + '>◉</span> ';
-//         let colorDot1 = '<span style=\"' + 'color:mediumspringgreen; font-size:13px\"' + '>◉</span> ';
-//         let colorDot2 = '<span style=\"' + 'color:deepskyblue; font-size:13px\"' + '>◉</span> ';
-//         let colorDot3 = '<span style=\"' + 'color:sandybrown; font-size:13px\"' + '>◉</span> ';
-//         let colorDotArr = [colorDot0, colorDot1, colorDot2, colorDot3];
-//         let wholeContentString = this.points[0].x + '<br/>';
-//         for (let i = 0;i < 4;i++) {
-//             let yValue = this.points[i].y;
-//             if (yValue != 0) {
-//                 let prefixStr = colorDotArr[i];
-//                 wholeContentString += prefixStr + this.points[i].series.name + ': ' + this.points[i].y + '<br/>';
-//             }
-//         }
-//         return wholeContentString;
-//     }
-// """)
+        .formatterSet("""
+function () {
+        let colorDot0 = '<span style=\"' + 'color:red; font-size:13px\"' + '>◉</span> ';
+        let colorDot1 = '<span style=\"' + 'color:mediumspringgreen; font-size:13px\"' + '>◉</span> ';
+        let colorDot2 = '<span style=\"' + 'color:deepskyblue; font-size:13px\"' + '>◉</span> ';
+        let colorDot3 = '<span style=\"' + 'color:sandybrown; font-size:13px\"' + '>◉</span> ';
+        let colorDotArr = [colorDot0, colorDot1, colorDot2, colorDot3];
+        let wholeContentString = this.points[0].x + '<br/>';
+        for (let i = 0;i < 4;i++) {
+            let yValue = this.points[i].y;
+            if (yValue != 0) {
+                let prefixStr = colorDotArr[i];
+                wholeContentString += prefixStr + this.points[i].series.name + ': ' + this.points[i].y + '<br/>';
+            }
+        }
+        return wholeContentString;
+    }
+""")
     ;
 
     return aaOptions;

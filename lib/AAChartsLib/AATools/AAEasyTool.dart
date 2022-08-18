@@ -17,3 +17,18 @@
     return pureJSFunctionStr;
   }
 }
+
+class AAJSArrayConverter {
+  //Convert List to JS Array String
+  static String JSArrayWithDartArray(List<dynamic> list) {
+    var jsArray = "[";
+    for (var i = 0; i < list.length; i++) {
+      jsArray += "${list[i]}";
+      if (i != list.length - 1) {
+        jsArray += ",";
+      }
+    }
+    jsArray += "]";
+    return jsArray;
+  }
+}
