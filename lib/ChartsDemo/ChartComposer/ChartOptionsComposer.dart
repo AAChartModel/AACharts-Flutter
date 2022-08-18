@@ -41,7 +41,7 @@ class ChartOptionsComposer {
         .animationTypeSet(AAChartAnimationType.easeFrom)//设置图表渲染动画类型为 EaseFrom
         .dataLabelsEnabledSet(false)
         .zoomTypeSet(AAChartZoomType.x)
-    .marginSet([100, 100, 100, 100])
+        .marginSet([100, 100, 100, 100])
         .colorsThemeSet([
       AAGradientColor.oceanBlue,
       AAGradientColor.sanguine,
@@ -209,11 +209,11 @@ class ChartOptionsComposer {
     aaOptions.yAxis
         .allowDecimalsSet(false)
         .alternateGridColorSet("#EAF4FF")
-.tickAmountSet(13)
+        .tickAmountSet(13)
         .gridLineWidthSet(0);
 
     var categories = ["17.04","21.04","25.04","29.04","03.05","07.05","11.05", ""];
-var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
+    var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
 
     aaOptions.xAxis.labels
         .formatterSet("""
@@ -924,27 +924,30 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     var aaYAxisLabels = new AALabels()
         .enabledSet(true)//设置 y 轴是否显示数字
         .formatSet("{value:.,0f}mm")//让y轴の值完整显示 而不是100000显示为100k,同时单位后缀为°C
-        .styleSet(new AAStyle()
-        .colorSet(AAColor.red)//yAxis Label font color
-        .fontSizeSet(15)//yAxis Label font size
-        .fontWeightSet(AAChartFontWeightType.bold)//yAxis Label font weight
+        .styleSet(
+        new AAStyle()
+            .colorSet(AAColor.red)//yAxis Label font color
+            .fontSizeSet(15)//yAxis Label font size
+            .fontWeightSet(AAChartFontWeightType.bold)//yAxis Label font weight
     );
 
     var yAxisOne = new AAYAxis()
         .visibleSet(true)
         .labelsSet(aaYAxisLabels)
-        .titleSet(new AATitle()
-        .textSet("冬季降雨量")
-        .styleSet(aaYAxisTitleStyle))
+        .titleSet(
+        new AATitle()
+            .textSet("冬季降雨量")
+            .styleSet(aaYAxisTitleStyle))
         .oppositeSet(true);
 
 
     var yAxisTwo = new AAYAxis()
         .visibleSet(true)
         .labelsSet(aaYAxisLabels)
-        .titleSet(new AATitle()
-        .textSet("夏季降雨量")
-        .styleSet(aaYAxisTitleStyle));
+        .titleSet(
+        new AATitle()
+            .textSet("夏季降雨量")
+            .styleSet(aaYAxisTitleStyle));
 
     var aaTooltip = new AATooltip()
         .enabledSet(true)
@@ -972,7 +975,7 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     var element1 = new AASeriesElement()
         .nameSet("2017")
         .typeSet(AAChartType.areaspline)
-             // .borderRadiusSet(4)
+    // .borderRadiusSet(4)
         .colorSet(gradientColorDic1)
         .markerSet(aaMarker)
     // .yAxisSet(1)
@@ -988,7 +991,7 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     var aaOptions = new AAOptions()
         .titleSet(aaTitle)
         .xAxisSet(aaXAxis)
-    .yAxisArraySet([yAxisOne,yAxisTwo])
+        .yAxisArraySet([yAxisOne,yAxisTwo])
         .tooltipSet(aaTooltip)
         .seriesSet([element1,element2]);
 
@@ -1019,27 +1022,33 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     var yAxis1 = new AAYAxis()
         .visibleSet(true)
         .gridLineWidthSet(0)
-        .labelsSet(new AALabels()
-        .enabledSet(true)//设置 y 轴是否显示数字
-        .formatSet("{value}°C")
-        .styleSet(new AAStyle()
-        .colorSet(colorsThemeArr[2])//yAxis Label font color
-    ))
-        .titleSet(new AATitle()
-        .textSet("温度")
-        .styleSet(new AAStyle()
-        .colorSet(colorsThemeArr[2])))
+        .labelsSet(
+        new AALabels()
+            .enabledSet(true)//设置 y 轴是否显示数字
+            .formatSet("{value}°C")
+            .styleSet(
+            new AAStyle()
+                .colorSet(colorsThemeArr[2])//yAxis Label font color
+        ))
+        .titleSet(
+        new AATitle()
+            .textSet("温度")
+            .styleSet(
+            new AAStyle()
+                .colorSet(colorsThemeArr[2])))
         .oppositeSet(true);
 
     var yAxis2 = new AAYAxis()
         .visibleSet(true)
         .gridLineWidthSet(0)
-        .labelsSet(new AALabels()
-        .enabledSet(true)//设置 y 轴是否显示数字
-        .formatSet("{value}°mm")
-        .styleSet(new AAStyle()
-        .colorSet(colorsThemeArr[0])//yAxis Label font color
-    ))
+        .labelsSet(
+        new AALabels()
+            .enabledSet(true)//设置 y 轴是否显示数字
+            .formatSet("{value}°mm")
+            .styleSet(
+            new AAStyle()
+                .colorSet(colorsThemeArr[0])//yAxis Label font color
+        ))
         .titleSet(new AATitle()
         .textSet("降雨量")
         .styleSet(new AAStyle()
@@ -1048,16 +1057,20 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     var yAxis3 = new AAYAxis()
         .visibleSet(true)
         .gridLineWidthSet(0)
-        .labelsSet(new AALabels()
-        .enabledSet(true)//设置 y 轴是否显示数字
-        .formatSet("{value}°mb")
-        .styleSet(new AAStyle()
-        .colorSet(colorsThemeArr[1])//yAxis Label font color
-    ))
-        .titleSet(new AATitle()
-        .textSet("海平面气压")
-        .styleSet(new AAStyle()
-        .colorSet(colorsThemeArr[1])))
+        .labelsSet(
+        new AALabels()
+            .enabledSet(true)//设置 y 轴是否显示数字
+            .formatSet("{value}°mb")
+            .styleSet(
+            new AAStyle()
+                .colorSet(colorsThemeArr[1])//yAxis Label font color
+        ))
+        .titleSet(
+        new AATitle()
+            .textSet("海平面气压")
+            .styleSet(
+            new AAStyle()
+                .colorSet(colorsThemeArr[1])))
         .oppositeSet(true);
 
 
@@ -1076,31 +1089,33 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     var element1 = new AASeriesElement()
         .nameSet("降雨量")
         .typeSet(AAChartType.column)
-    .yAxisSet(1)
+        .yAxisSet(1)
         .dataSet([49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4])
-    .tooltipSet(new AATooltip()
-    .valueSuffixSet(" mm")
+        .tooltipSet(new AATooltip()
+        .valueSuffixSet(" mm")
     )
-        ;
+    ;
 
     var element2 = new AASeriesElement()
         .nameSet("海平面气压")
         .typeSet(AAChartType.line)
-    .yAxisSet(2)
+        .yAxisSet(2)
         .dataSet([1016, 1016, 1015.9, 1015.5, 1012.3, 1009.5, 1009.6, 1010.2, 1013.1, 1016.9, 1018.2, 1016.7])
-    .dashStyleSet(AAChartLineDashStyleType.shortDot)
-    .tooltipSet(new AATooltip()
-    .valueSuffixSet(" mb"))
-        ;
+        .dashStyleSet(AAChartLineDashStyleType.shortDot)
+        .tooltipSet(
+        new AATooltip()
+            .valueSuffixSet(" mb"))
+    ;
 
     var element3 = new AASeriesElement()
         .nameSet("温度")
         .typeSet(AAChartType.line)
-    .yAxisSet(0)
+        .yAxisSet(0)
         .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6])
-    .tooltipSet(new AATooltip()
-    .valueSuffixSet(" ℃"))
-        ;
+        .tooltipSet(
+        new AATooltip()
+            .valueSuffixSet(" ℃"))
+    ;
 
     var aaOptions = new AAOptions()
         .titleSet(aaTitle)
@@ -1213,20 +1228,24 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
         .sharedSet(true);
 
     var aaPlotOptions = new AAPlotOptions()
-        .seriesSet(new AASeries()
-        .animationSet(new AAAnimation()
-        .easingSet(AAChartAnimationType.easeTo)
-        .durationSet(1000)))
-        .columnSet(new AAColumn()
-        .groupingSet(false)
-        .pointPaddingSet(0)
-        .pointPlacementSet(0));
+        .seriesSet(
+        new AASeries()
+            .animationSet(
+            new AAAnimation()
+                .easingSet(AAChartAnimationType.easeTo)
+                .durationSet(1000)))
+        .columnSet(
+        new AAColumn()
+            .groupingSet(false)
+            .pointPaddingSet(0)
+            .pointPlacementSet(0));
 
     var aaLegend = new AALegend()
         .enabledSet(true)
-        .itemStyleSet(new AAItemStyle()
-        .colorSet(AAColor.lightGray))
-    .floatingSet(true)
+        .itemStyleSet(
+        new AAItemStyle()
+            .colorSet(AAColor.lightGray))
+        .floatingSet(true)
         .layoutSet(AAChartLayoutType.horizontal)
         .alignSet(AAChartAlignType.left)
         .xSet(30).ySet(10)
@@ -1238,7 +1257,7 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
         .typeSet(AAChartType.column)
         .borderWidthSet(0)
         .colorSet(gradientColorDic1)
-    .yAxisSet(0)
+        .yAxisSet(0)
         .dataSet(goalValuesArr)
     ;
 
@@ -1247,22 +1266,23 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
         .typeSet(AAChartType.column)
         .borderWidthSet(0)
         .colorSet(gradientColorDic2)
-    .yAxisSet(0)
+        .yAxisSet(0)
         .dataSet(realValuesArr)
     ;
 
     var rateValuesElement = new AASeriesElement()
         .nameSet("贯通率")
         .typeSet(AAChartType.spline)
-        .markerSet(new AAMarker()
-        .radiusSet(7)//曲线连接点半径，默认是4
-        .symbolSet(AAChartSymbolType.circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
-        .fillColorSet(AAColor.white)//点の填充色Set(用来设置折线连接点の填充色)
-        .lineWidthSet(3)//外沿线の宽度Set(用来设置折线连接点の轮廓描边の宽度)
-        .lineColorSet("")//外沿线の颜色Set(用来设置折线连接点の轮廓描边颜色，当值为空字符串时，默认取数据点或数据列の颜色)
+        .markerSet(
+        new AAMarker()
+            .radiusSet(7)//曲线连接点半径，默认是4
+            .symbolSet(AAChartSymbolType.circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+            .fillColorSet(AAColor.white)//点の填充色Set(用来设置折线连接点の填充色)
+            .lineWidthSet(3)//外沿线の宽度Set(用来设置折线连接点の轮廓描边の宽度)
+            .lineColorSet("")//外沿线の颜色Set(用来设置折线连接点の轮廓描边颜色，当值为空字符串时，默认取数据点或数据列の颜色)
     )
         .colorSet("#F02FC2")
-    .yAxisSet(1)
+        .yAxisSet(1)
         .dataSet(rateValuesArr)
     ;
 
@@ -1291,8 +1311,8 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
         .textSet("ETH-BTC 市场深度图");
 
     var aaSubtitle = new AASubtitle()
-    .textSet("数据来源: https://github.com/AAChartModel")
-        ;
+        .textSet("数据来源: https://github.com/AAChartModel")
+    ;
 
     var aaXAxis = new AAXAxis()
         .visibleSet(true)
@@ -1302,9 +1322,10 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
           .valueSet(0.1523)
           .widthSet(1.1)
           .dashStyleSet(AAChartLineDashStyleType.longDashDotDot)
-          .labelSet(new AALabel()
-          .textSet("实际价格")
-        .rotationSet(90)
+          .labelSet(
+          new AALabel()
+              .textSet("实际价格")
+              .rotationSet(90)
       )
     ]);
 
@@ -1315,12 +1336,14 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
         .tickLengthSet(5)
         .tickPositionSet("inside")
         .gridLineWidthSet(1)
-        .titleSet(new AATitle()
-        .textSet(""))
-        .labelsSet(new AALabels()
-        .enabledSet(true)//设置 y 轴是否显示数字
-        .alignSet(AAChartAlignType.left)
-        .xSet(8));
+        .titleSet(
+        new AATitle()
+            .textSet(""))
+        .labelsSet(
+        new AALabels()
+            .enabledSet(true)//设置 y 轴是否显示数字
+            .alignSet(AAChartAlignType.left)
+            .xSet(8));
 
     var yAxis2 = new AAYAxis()
         .oppositeSet(true)
@@ -1330,16 +1353,18 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
         .tickLengthSet(5)
         .tickPositionSet("inside")
         .gridLineWidthSet(0)
-        .titleSet(new AATitle()
-        .textSet(""))
-        .labelsSet(new AALabels()
-        .enabledSet(true)//设置 y 轴是否显示数字
-        .alignSet(AAChartAlignType.right)
-        .xSet(-8));
+        .titleSet(
+        new AATitle()
+            .textSet(""))
+        .labelsSet(
+        new AALabels()
+            .enabledSet(true)//设置 y 轴是否显示数字
+            .alignSet(AAChartAlignType.right)
+            .xSet(-8));
 
     var aaTooltip = new AATooltip()
         .enabledSet(true)
-    .headerFormatSet("<span style=\\\"font-size=10px;\\\">Price: {point.key}</span><br/>")
+        .headerFormatSet("<span style=\\\"font-size=10px;\\\">Price: {point.key}</span><br/>")
         .valueDecimalsSet(2);
 
     var aaLegend = new AALegend()
@@ -1522,7 +1547,7 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     """;
 
     aaOptions.yAxis
-    .tickPositionsSet([0, 25, 50, 75, 100])
+        .tickPositionsSet([0, 25, 50, 75, 100])
         .gridLineColorSet("#DDDDDD")
         .gridLineWidthSet(2.0)
         .gridLineDashStyleSet(AAChartLineDashStyleType.dash);
@@ -1533,12 +1558,12 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
         .gridLineColorSet(AAColor.red)
         .gridLineWidthSet(3)
         .gridLineDashStyleSet(AAChartLineDashStyleType.longDashDotDot)
-    .tickPositionsSet([0,1,2,0])
-        ;
+        .tickPositionsSet([0,1,2,0])
+    ;
 
     aaOptions.xAxis.labels
-    .formatterSet(xAxisLabelsFormatter)
-        ;
+        .formatterSet(xAxisLabelsFormatter)
+    ;
 
     return aaOptions;
   }
@@ -1599,9 +1624,9 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     //https://api.highcharts.com.cn/highcharts#plotOptions.column.pointPadding;
 
     aaOptions.plotOptions.columnrange
-    .groupingSet(false)
-    .groupPaddingSet(0.003)
-        ;
+        .groupingSet(false)
+        .groupPaddingSet(0.003)
+    ;
 
     return aaOptions;
   }
@@ -1655,8 +1680,9 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
       new AASeriesElement()
           .colorSet(AAColor.white)
           .fillOpacitySet(0.01)
-          .dataLabelsSet(new AADataLabels()
-          .colorSet(AAColor.rgbaColor(30, 144, 255, 1.0)))
+          .dataLabelsSet(
+          new AADataLabels()
+              .colorSet(AAColor.rgbaColor(30, 144, 255, 1.0)))
           .dataSet([17.0, 16.9, 12.5,]),
     ]);
 
@@ -1666,19 +1692,21 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
         .tickIntervalSet(1)
         .lineWidthSet(0)//避免多边形外环之外有额外套了一层无用の外环
         .gridLineColorSet(AAColor.rgbaColor(30, 144, 255, 0.6))
-        .crosshairSet(new AACrosshair()
-        .widthSet(1.5)
-        .colorSet(AAColor.white)
-        .dashStyleSet(AAChartLineDashStyleType.longDashDotDot));
+        .crosshairSet(
+        new AACrosshair()
+            .widthSet(1.5)
+            .colorSet(AAColor.white)
+            .dashStyleSet(AAChartLineDashStyleType.longDashDotDot));
 
     aaOptions.yAxis
         .gridLineInterpolationSet("polygon")
         .lineWidthSet(0)
         .gridLineColorSet(AAColor.rgbaColor(30, 144, 255, 1.0))
-        .crosshairSet(new AACrosshair()
-        .widthSet(1.5)
-        .colorSet(AAColor.white)
-        .dashStyleSet(AAChartLineDashStyleType.longDashDotDot))
+        .crosshairSet(
+        new AACrosshair()
+            .widthSet(1.5)
+            .colorSet(AAColor.white)
+            .dashStyleSet(AAChartLineDashStyleType.longDashDotDot))
         .tickPositionsSet([5,10,15,20,25,])
     ;
 
@@ -1743,8 +1771,9 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     AASeriesElement element = aaOptions.series[0];
     element
         .dataSet([17.0, 16.9, 12.5, 14.5,])
-        .dataLabelsSet(new AADataLabels()
-        .colorSet(AAColor.rgbaColor(255, 0, 0, 1.0)));
+        .dataLabelsSet(
+        new AADataLabels()
+            .colorSet(AAColor.rgbaColor(255, 0, 0, 1.0)));
 
     return aaOptions;
   }
@@ -1781,8 +1810,9 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     AASeriesElement element = aaOptions.series[0];
     element
         .dataSet([17.0, 16.9, 12.5, 14.5, 18.2,])
-        .dataLabelsSet(new AADataLabels()
-        .colorSet(AAColor.rgbaColor(255, 215, 0, 1.0)));
+        .dataLabelsSet(
+        new AADataLabels()
+            .colorSet(AAColor.rgbaColor(255, 215, 0, 1.0)));
 
     return aaOptions;
   }
@@ -1819,8 +1849,9 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     AASeriesElement element = aaOptions.series[0];
     element
         .dataSet([17.0, 16.9, 12.5, 14.5, 18.2, 21.5,])
-        .dataLabelsSet(new AADataLabels()
-        .colorSet(AAColor.rgbaColor(50, 205, 50, 1.0)));
+        .dataLabelsSet(
+        new AADataLabels()
+            .colorSet(AAColor.rgbaColor(50, 205, 50, 1.0)));
 
     return aaOptions;
   }
@@ -1857,8 +1888,9 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     AASeriesElement element = aaOptions.series[0];
     element
         .dataSet([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24])
-        .dataLabelsSet(new AADataLabels()
-        .colorSet(AAColor.rgbaColor(138, 43, 226, 1.0)));
+        .dataLabelsSet(
+        new AADataLabels()
+            .colorSet(AAColor.rgbaColor(138, 43, 226, 1.0)));
 
     return aaOptions;
   }
@@ -1882,36 +1914,44 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
         .gridLineColorSet(AAColor.white)
         .gridLineWidthSet(0.5)//X轴网格线宽度
         .gridLineDashStyleSet(AAChartLineDashStyleType.dash)
-        .labelsSet(new AALabels()
-        .styleSet(new AAStyle()
-        .colorSet(AAColor.white))//X轴文字颜色
+        .labelsSet(
+        new AALabels()
+            .styleSet(
+            new AAStyle()
+                .colorSet(AAColor.white))//X轴文字颜色
     );
 
     var aaYAXis = new AAYAxis()
-        .titleSet(new AATitle()
-        .textSet(""))
-    .tickPositionsSet([0, 20, 40, 60, 80, 100])
+        .titleSet(
+        new AATitle()
+            .textSet(""))
+        .tickPositionsSet([0, 20, 40, 60, 80, 100])
         .lineWidthSet(1.5)//Y轴轴线颜色
         .lineColorSet(AAColor.white)//Y轴轴线颜色
         .gridLineWidthSet(0)//Y轴网格线宽度
         .gridLineDashStyleSet(AAChartLineDashStyleType.dash)
-        .labelsSet(new AALabels()
-        .formatSet("{value} %")//给y轴添加单位
-        .styleSet(new AAStyle()
-        .colorSet(AAColor.white))//Y轴文字颜色
+        .labelsSet(
+        new AALabels()
+            .formatSet("{value} %")//给y轴添加单位
+            .styleSet(
+            new AAStyle()
+                .colorSet(AAColor.white))//Y轴文字颜色
     );
 
 
     var aaPlotOptions = new AAPlotOptions()
-        .seriesSet(new AASeries()
-        .markerSet(new AAMarker()
-        .symbolSet(AAChartSymbolType.circle)
-        .radiusSet(0)));
+        .seriesSet(
+        new AASeries()
+            .markerSet(
+            new AAMarker()
+                .symbolSet(AAChartSymbolType.circle)
+                .radiusSet(0)));
 
     var aaLegend = new AALegend()
         .enabledSet(true)
-        .itemStyleSet(new AAItemStyle()
-        .colorSet(AAColor.white))
+        .itemStyleSet(
+        new AAItemStyle()
+            .colorSet(AAColor.white))
         .alignSet(AAChartAlignType.left)//设置图例位于水平方向上的右侧
         .layoutSet(AAChartLayoutType.horizontal)//设置图例排列方式为垂直排布
         .verticalAlignSet(AAChartVerticalAlignType.top);//设置图例位于竖直方向上的顶部;
@@ -1960,10 +2000,10 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
             .fontSizeSet(16)
             .fontWeightSet(AAChartFontWeightType.thin))
             .ySet(-75)
-        .alignSet(AAChartAlignType.center)
+            .alignSet(AAChartAlignType.center)
             .verticalAlignSet(AAChartVerticalAlignType.top)
-      .overflowSet("none")
-      .cropSet(false)
+            .overflowSet("none")
+            .cropSet(false)
     )
         .ySet(51.5)
     ;
@@ -1986,16 +2026,18 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
             .borderRadiusSet(5)
             .shapeSet("callout")
             .formatSet("{point.category}<br>{series.name}: {point.y} %")
-            .styleSet(new AAStyle()
-            .fontWeightSet(AAChartFontWeightType.bold)
-            .colorSet(AAColor.white)
-            .fontSizeSet(16)
-            .fontWeightSet(AAChartFontWeightType.thin))
+            .styleSet(
+            new AAStyle()
+                .fontWeightSet(AAChartFontWeightType.bold)
+                .colorSet(AAColor.white)
+                .fontSizeSet(16)
+                .fontWeightSet(AAChartFontWeightType.thin)
+        )
             .ySet(-75)
-      .alignSet(AAChartAlignType.center)
-      .verticalAlignSet(AAChartVerticalAlignType.top)
-      .overflowSet("none")
-      .cropSet(false)
+            .alignSet(AAChartAlignType.center)
+            .verticalAlignSet(AAChartVerticalAlignType.top)
+            .overflowSet("none")
+            .cropSet(false)
     )
         .ySet(26.5)
 
@@ -2074,10 +2116,10 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
             .formatSet("{point.category}<br>{series.name}: {point.y} %")
             .styleSet(aaDataLabelsStyle)
             .ySet(-75)
-      .alignSet(AAChartAlignType.center)
-      .verticalAlignSet(AAChartVerticalAlignType.top)
-      .overflowSet("none")
-      .cropSet(false)
+            .alignSet(AAChartAlignType.center)
+            .verticalAlignSet(AAChartVerticalAlignType.top)
+            .overflowSet("none")
+            .cropSet(false)
     )
         .ySet(51.5)
     ;
@@ -2104,10 +2146,10 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
             .formatSet("{point.category}<br>{series.name}: {point.y} %")
             .styleSet(aaDataLabelsStyle)
             .ySet(-75)
-      .alignSet(AAChartAlignType.center)
-      .verticalAlignSet(AAChartVerticalAlignType.top)
-      .overflowSet("none")
-      .cropSet(false)
+            .alignSet(AAChartAlignType.center)
+            .verticalAlignSet(AAChartVerticalAlignType.top)
+            .overflowSet("none")
+            .cropSet(false)
     )
         .ySet(26.5)
     ;
@@ -2118,19 +2160,19 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
           .lineWidthSet(3)
           .zoneAxisSet("x")
           .zonesSet([
-      new AAZonesElement()
-          .valueSet(5)
-          .fillColorSet(
-      AAGradientColor.linearGradient2(
-      AALinearGradientDirection.toTop,
-      [
-      [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
-      [0.6, AAColor.rgbaColor(219, 148, 111, 0.6)],
-      [1.0, AAColor.rgbaColor(219, 148, 111, 1.0)]
-      ])
-      ),
-      new AAZonesElement()
-          .fillColorSet(AAColor.clear),
+        new AAZonesElement()
+            .valueSet(5)
+            .fillColorSet(
+            AAGradientColor.linearGradient2(
+                AALinearGradientDirection.toTop,
+                [
+                  [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
+                  [0.6, AAColor.rgbaColor(219, 148, 111, 0.6)],
+                  [1.0, AAColor.rgbaColor(219, 148, 111, 1.0)]
+                ])
+        ),
+        new AAZonesElement()
+            .fillColorSet(AAColor.clear),
       ])
           .dataSet([17.0, 16.9, 8.5, 34.5, 28.2, singleSpecialData1.toPureJson(), 15.2, 56.5, 33.3, 85.3, 23.9, 29.6]),
 
@@ -2139,17 +2181,17 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
           .lineWidthSet(3)
           .zoneAxisSet("x")
           .zonesSet([
-      new AAZonesElement()
-          .valueSet(5)
-          .fillColorSet(AAGradientColor.linearGradient2(
-      AALinearGradientDirection.toTop,
-      [
-      [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
-      [0.6, AAColor.rgbaColor(65, 111, 166, 0.6)],
-      [1.0, AAColor.rgbaColor(65, 111, 166, 1.0)]
-      ])),
-      new AAZonesElement()
-          .fillColorSet(AAColor.clear),
+        new AAZonesElement()
+            .valueSet(5)
+            .fillColorSet(AAGradientColor.linearGradient2(
+            AALinearGradientDirection.toTop,
+            [
+              [0.0, AAColor.clear],//颜色字符串设置支持十六进制类型和 rgba 类型
+              [0.6, AAColor.rgbaColor(65, 111, 166, 0.6)],
+              [1.0, AAColor.rgbaColor(65, 111, 166, 1.0)]
+            ])),
+        new AAZonesElement()
+            .fillColorSet(AAColor.clear),
       ])
           .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData22.toPureJson(), 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]),
     ];
@@ -2187,10 +2229,10 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
             .formatSet("{point.category}<br>{series.name}: {point.y} %")
             .styleSet(aaDataLabelsStyle)
             .ySet(-75)
-      .alignSet(AAChartAlignType.center)
-      .verticalAlignSet(AAChartVerticalAlignType.top)
-      .overflowSet("none")
-      .cropSet(false)
+            .alignSet(AAChartAlignType.center)
+            .verticalAlignSet(AAChartVerticalAlignType.top)
+            .overflowSet("none")
+            .cropSet(false)
     )
         .ySet(34.5)
     ;
@@ -2217,10 +2259,10 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
             .formatSet("{point.category}<br>{series.name}: {point.y} %")
             .styleSet(aaDataLabelsStyle)
             .ySet(-75)
-      .alignSet(AAChartAlignType.center)
-      .verticalAlignSet(AAChartVerticalAlignType.top)
-      .overflowSet("none")
-      .cropSet(false)
+            .alignSet(AAChartAlignType.center)
+            .verticalAlignSet(AAChartVerticalAlignType.top)
+            .overflowSet("none")
+            .cropSet(false)
     )
         .ySet(14.5)
     ;
@@ -2229,7 +2271,7 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
       new AASeriesElement()
           .nameSet("空气湿度")
           .lineWidthSet(3)
-      .zoneAxisSet("x")
+          .zoneAxisSet("x")
           .zonesSet([
         new AAZonesElement()
             .valueSet(3)
@@ -2248,7 +2290,7 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
       new AASeriesElement()
           .nameSet("土壤湿度")
           .lineWidthSet(3)
-      .zoneAxisSet("x")
+          .zoneAxisSet("x")
           .zonesSet([
         new AAZonesElement()
             .valueSet(3)
@@ -2309,7 +2351,7 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
         .seriesSet([
       new AASeriesElement()
           .nameSet("Past")
-      .sizeSet("40%")//尺寸大小
+          .sizeSet("40%")//尺寸大小
           .innerSizeSet("30%")//内部圆环半径大小占比
           .borderWidthSet(0)//描边的宽度
           .allowPointSelectSet(false)//是否允许在点击数据点标记Set(扇形图点击选中的块发生位移)
@@ -2322,7 +2364,7 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
       ]),
       new AASeriesElement()
           .nameSet("Now")
-      .sizeSet("80%")//尺寸大小
+          .sizeSet("80%")//尺寸大小
           .innerSizeSet("70%")//内部圆环半径大小占比
           .borderWidthSet(0)//描边的宽度
           .allowPointSelectSet(false)//是否允许在点击数据点标记Set(扇形图点击选中的块发生位移)
@@ -2501,6 +2543,14 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     // return Std.string(dateSeconds);
   }
 
+  //get date UTC seconds
+  static num AADateUTC(int year, int month, int day) {
+    var dateStr = '${year}-${month}-${day}';
+    var date = DateTime.parse(dateStr);
+    var dateSeconds = date.second;
+    return dateSeconds;
+  }
+
   //X 轴时间不连续的折线图
   static AAOptions timeDataWithIrregularIntervalsChart() {
     var aaChartModel = new AAChartModel()
@@ -2512,122 +2562,122 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
         .markerSymbolStyleSet(AAChartSymbolStyleType.innerBlank)//折线连接点样式
         .markerRadiusSet(7)//折线连接点半径长度,为0时相当于没有折线连接点
         .seriesSet([
-      // new AASeriesElement()
-      //     .nameSet("Winter 2014-2015")
-      //     .dataSet([
-      // [AADateUTC(1970, 10, 25),    0],
-      // [AADateUTC(1970, 11,  6), 0.25],
-      // [AADateUTC(1970, 11, 20), 1.41],
-      // [AADateUTC(1970, 11, 25), 1.64],
-      // [AADateUTC(1971, 0,  4),   1.6],
-      // [AADateUTC(1971, 0, 17),  2.55],
-      // [AADateUTC(1971, 0, 24),  2.62],
-      // [AADateUTC(1971, 1,  4),   2.5],
-      // [AADateUTC(1971, 1, 14),  2.42],
-      // [AADateUTC(1971, 2,  6),  2.74],
-      // [AADateUTC(1971, 2, 14),  2.62],
-      // [AADateUTC(1971, 2, 24),   2.6],
-      // [AADateUTC(1971, 3,  1),  2.81],
-      // [AADateUTC(1971, 3, 11),  2.63],
-      // [AADateUTC(1971, 3, 27),  2.77],
-      // [AADateUTC(1971, 4,  4),  2.68],
-      // [AADateUTC(1971, 4,  9),  2.56],
-      // [AADateUTC(1971, 4, 14),  2.39],
-      // [AADateUTC(1971, 4, 19),   2.3],
-      // [AADateUTC(1971, 5,  4),     2],
-      // [AADateUTC(1971, 5,  9),  1.85],
-      // [AADateUTC(1971, 5, 14),  1.49],
-      // [AADateUTC(1971, 5, 19),  1.27],
-      // [AADateUTC(1971, 5, 24),  0.99],
-      // [AADateUTC(1971, 5, 29),  0.67],
-      // [AADateUTC(1971, 6,  3),  0.18],
-      // [AADateUTC(1971, 6,  4),     0]
-      // ]),
-      // new AASeriesElement()
-      //     .nameSet("Winter 2015-2016")
-      //     .dataSet([
-      // [AADateUTC(1970, 10,  9),    0],
-      // [AADateUTC(1970, 10, 15), 0.23],
-      // [AADateUTC(1970, 10, 20), 0.25],
-      // [AADateUTC(1970, 10, 25), 0.23],
-      // [AADateUTC(1970, 10, 30), 0.39],
-      // [AADateUTC(1970, 11,  5), 0.41],
-      // [AADateUTC(1970, 11, 10), 0.59],
-      // [AADateUTC(1970, 11, 15), 0.73],
-      // [AADateUTC(1970, 11, 20), 0.41],
-      // [AADateUTC(1970, 11, 25), 1.07],
-      // [AADateUTC(1970, 11, 30), 0.88],
-      // [AADateUTC(1971, 0,  5),  0.85],
-      // [AADateUTC(1971, 0, 11),  0.89],
-      // [AADateUTC(1971, 0, 17),  1.04],
-      // [AADateUTC(1971, 0, 20),  1.02],
-      // [AADateUTC(1971, 0, 25),  1.03],
-      // [AADateUTC(1971, 0, 30),  1.39],
-      // [AADateUTC(1971, 1,  5),  1.77],
-      // [AADateUTC(1971, 1, 26),  2.12],
-      // [AADateUTC(1971, 3, 19),   2.1],
-      // [AADateUTC(1971, 4,  9),   1.7],
-      // [AADateUTC(1971, 4, 29),  0.85],
-      // [AADateUTC(1971, 5,  7),     0]
-      // ]),
-      // new AASeriesElement()
-      //     .nameSet("Winter 2016-2017")
-      //     .dataSet([
-      // [AADateUTC(1970, 9, 15),     0],
-      // [AADateUTC(1970, 9, 31),  0.09],
-      // [AADateUTC(1970, 10,  7), 0.17],
-      // [AADateUTC(1970, 10, 10),  0.1],
-      // [AADateUTC(1970, 11, 10),  0.1],
-      // [AADateUTC(1970, 11, 13),  0.1],
-      // [AADateUTC(1970, 11, 16), 0.11],
-      // [AADateUTC(1970, 11, 19), 0.11],
-      // [AADateUTC(1970, 11, 22), 0.08],
-      // [AADateUTC(1970, 11, 25), 0.23],
-      // [AADateUTC(1970, 11, 28), 0.37],
-      // [AADateUTC(1971, 0, 16),  0.68],
-      // [AADateUTC(1971, 0, 19),  0.55],
-      // [AADateUTC(1971, 0, 22),   0.4],
-      // [AADateUTC(1971, 0, 25),   0.4],
-      // [AADateUTC(1971, 0, 28),  0.37],
-      // [AADateUTC(1971, 0, 31),  0.43],
-      // [AADateUTC(1971, 1,  4),  0.42],
-      // [AADateUTC(1971, 1,  7),  0.39],
-      // [AADateUTC(1971, 1, 10),  0.39],
-      // [AADateUTC(1971, 1, 13),  0.39],
-      // [AADateUTC(1971, 1, 16),  0.39],
-      // [AADateUTC(1971, 1, 19),  0.35],
-      // [AADateUTC(1971, 1, 22),  0.45],
-      // [AADateUTC(1971, 1, 25),  0.62],
-      // [AADateUTC(1971, 1, 28),  0.68],
-      // [AADateUTC(1971, 2,  4),  0.68],
-      // [AADateUTC(1971, 2,  7),  0.65],
-      // [AADateUTC(1971, 2, 10),  0.65],
-      // [AADateUTC(1971, 2, 13),  0.75],
-      // [AADateUTC(1971, 2, 16),  0.86],
-      // [AADateUTC(1971, 2, 19),  1.14],
-      // [AADateUTC(1971, 2, 22),   1.2],
-      // [AADateUTC(1971, 2, 25),  1.27],
-      // [AADateUTC(1971, 2, 27),  1.12],
-      // [AADateUTC(1971, 2, 30),  0.98],
-      // [AADateUTC(1971, 3,  3),  0.85],
-      // [AADateUTC(1971, 3,  6),  1.04],
-      // [AADateUTC(1971, 3,  9),  0.92],
-      // [AADateUTC(1971, 3, 12),  0.96],
-      // [AADateUTC(1971, 3, 15),  0.94],
-      // [AADateUTC(1971, 3, 18),  0.99],
-      // [AADateUTC(1971, 3, 21),  0.96],
-      // [AADateUTC(1971, 3, 24),  1.15],
-      // [AADateUTC(1971, 3, 27),  1.18],
-      // [AADateUTC(1971, 3, 30),  1.12],
-      // [AADateUTC(1971, 4,  3),  1.06],
-      // [AADateUTC(1971, 4,  6),  0.96],
-      // [AADateUTC(1971, 4,  9),  0.87],
-      // [AADateUTC(1971, 4, 12),  0.88],
-      // [AADateUTC(1971, 4, 15),  0.79],
-      // [AADateUTC(1971, 4, 18),  0.54],
-      // [AADateUTC(1971, 4, 21),  0.34],
-      // [AADateUTC(1971, 4, 25),     0]
-      // ]),
+      new AASeriesElement()
+          .nameSet("Winter 2014-2015")
+          .dataSet([
+        [AADateUTC(1970, 10, 25),    0],
+        [AADateUTC(1970, 11,  6), 0.25],
+        [AADateUTC(1970, 11, 20), 1.41],
+        [AADateUTC(1970, 11, 25), 1.64],
+        [AADateUTC(1971, 0,  4),   1.6],
+        [AADateUTC(1971, 0, 17),  2.55],
+        [AADateUTC(1971, 0, 24),  2.62],
+        [AADateUTC(1971, 1,  4),   2.5],
+        [AADateUTC(1971, 1, 14),  2.42],
+        [AADateUTC(1971, 2,  6),  2.74],
+        [AADateUTC(1971, 2, 14),  2.62],
+        [AADateUTC(1971, 2, 24),   2.6],
+        [AADateUTC(1971, 3,  1),  2.81],
+        [AADateUTC(1971, 3, 11),  2.63],
+        [AADateUTC(1971, 3, 27),  2.77],
+        [AADateUTC(1971, 4,  4),  2.68],
+        [AADateUTC(1971, 4,  9),  2.56],
+        [AADateUTC(1971, 4, 14),  2.39],
+        [AADateUTC(1971, 4, 19),   2.3],
+        [AADateUTC(1971, 5,  4),     2],
+        [AADateUTC(1971, 5,  9),  1.85],
+        [AADateUTC(1971, 5, 14),  1.49],
+        [AADateUTC(1971, 5, 19),  1.27],
+        [AADateUTC(1971, 5, 24),  0.99],
+        [AADateUTC(1971, 5, 29),  0.67],
+        [AADateUTC(1971, 6,  3),  0.18],
+        [AADateUTC(1971, 6,  4),     0]
+      ]),
+      new AASeriesElement()
+          .nameSet("Winter 2015-2016")
+          .dataSet([
+        [AADateUTC(1970, 10,  9),    0],
+        [AADateUTC(1970, 10, 15), 0.23],
+        [AADateUTC(1970, 10, 20), 0.25],
+        [AADateUTC(1970, 10, 25), 0.23],
+        [AADateUTC(1970, 10, 30), 0.39],
+        [AADateUTC(1970, 11,  5), 0.41],
+        [AADateUTC(1970, 11, 10), 0.59],
+        [AADateUTC(1970, 11, 15), 0.73],
+        [AADateUTC(1970, 11, 20), 0.41],
+        [AADateUTC(1970, 11, 25), 1.07],
+        [AADateUTC(1970, 11, 30), 0.88],
+        [AADateUTC(1971, 0,  5),  0.85],
+        [AADateUTC(1971, 0, 11),  0.89],
+        [AADateUTC(1971, 0, 17),  1.04],
+        [AADateUTC(1971, 0, 20),  1.02],
+        [AADateUTC(1971, 0, 25),  1.03],
+        [AADateUTC(1971, 0, 30),  1.39],
+        [AADateUTC(1971, 1,  5),  1.77],
+        [AADateUTC(1971, 1, 26),  2.12],
+        [AADateUTC(1971, 3, 19),   2.1],
+        [AADateUTC(1971, 4,  9),   1.7],
+        [AADateUTC(1971, 4, 29),  0.85],
+        [AADateUTC(1971, 5,  7),     0]
+      ]),
+      new AASeriesElement()
+          .nameSet("Winter 2016-2017")
+          .dataSet([
+        [AADateUTC(1970, 9, 15),     0],
+        [AADateUTC(1970, 9, 31),  0.09],
+        [AADateUTC(1970, 10,  7), 0.17],
+        [AADateUTC(1970, 10, 10),  0.1],
+        [AADateUTC(1970, 11, 10),  0.1],
+        [AADateUTC(1970, 11, 13),  0.1],
+        [AADateUTC(1970, 11, 16), 0.11],
+        [AADateUTC(1970, 11, 19), 0.11],
+        [AADateUTC(1970, 11, 22), 0.08],
+        [AADateUTC(1970, 11, 25), 0.23],
+        [AADateUTC(1970, 11, 28), 0.37],
+        [AADateUTC(1971, 0, 16),  0.68],
+        [AADateUTC(1971, 0, 19),  0.55],
+        [AADateUTC(1971, 0, 22),   0.4],
+        [AADateUTC(1971, 0, 25),   0.4],
+        [AADateUTC(1971, 0, 28),  0.37],
+        [AADateUTC(1971, 0, 31),  0.43],
+        [AADateUTC(1971, 1,  4),  0.42],
+        [AADateUTC(1971, 1,  7),  0.39],
+        [AADateUTC(1971, 1, 10),  0.39],
+        [AADateUTC(1971, 1, 13),  0.39],
+        [AADateUTC(1971, 1, 16),  0.39],
+        [AADateUTC(1971, 1, 19),  0.35],
+        [AADateUTC(1971, 1, 22),  0.45],
+        [AADateUTC(1971, 1, 25),  0.62],
+        [AADateUTC(1971, 1, 28),  0.68],
+        [AADateUTC(1971, 2,  4),  0.68],
+        [AADateUTC(1971, 2,  7),  0.65],
+        [AADateUTC(1971, 2, 10),  0.65],
+        [AADateUTC(1971, 2, 13),  0.75],
+        [AADateUTC(1971, 2, 16),  0.86],
+        [AADateUTC(1971, 2, 19),  1.14],
+        [AADateUTC(1971, 2, 22),   1.2],
+        [AADateUTC(1971, 2, 25),  1.27],
+        [AADateUTC(1971, 2, 27),  1.12],
+        [AADateUTC(1971, 2, 30),  0.98],
+        [AADateUTC(1971, 3,  3),  0.85],
+        [AADateUTC(1971, 3,  6),  1.04],
+        [AADateUTC(1971, 3,  9),  0.92],
+        [AADateUTC(1971, 3, 12),  0.96],
+        [AADateUTC(1971, 3, 15),  0.94],
+        [AADateUTC(1971, 3, 18),  0.99],
+        [AADateUTC(1971, 3, 21),  0.96],
+        [AADateUTC(1971, 3, 24),  1.15],
+        [AADateUTC(1971, 3, 27),  1.18],
+        [AADateUTC(1971, 3, 30),  1.12],
+        [AADateUTC(1971, 4,  3),  1.06],
+        [AADateUTC(1971, 4,  6),  0.96],
+        [AADateUTC(1971, 4,  9),  0.87],
+        [AADateUTC(1971, 4, 12),  0.88],
+        [AADateUTC(1971, 4, 15),  0.79],
+        [AADateUTC(1971, 4, 18),  0.54],
+        [AADateUTC(1971, 4, 21),  0.34],
+        [AADateUTC(1971, 4, 25),     0]
+      ]),
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
@@ -2644,21 +2694,26 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
 
   static AAOptions logarithmicAxisLineChart() {
     return new AAOptions()
-        .titleSet(new AATitle()
-        .textSet("Logarithmic Axis Chart"))
-        .chartSet(new AAChart()
-        .typeSet(AAChartType.line))
-        .xAxisSet(new AAXAxis()
-        .typeSet(AAChartAxisType.logarithmic)
-        .gridLineWidthSet(0.6))
-        .yAxisSet(new AAYAxis()
-        .typeSet(AAChartAxisType.logarithmic)
-        .minorTickIntervalSet(0.1)
+        .titleSet(
+        new AATitle()
+            .textSet("Logarithmic Axis Chart"))
+        .chartSet(
+        new AAChart()
+            .typeSet(AAChartType.line))
+        .xAxisSet(
+        new AAXAxis()
+            .typeSet(AAChartAxisType.logarithmic)
+            .gridLineWidthSet(0.6))
+        .yAxisSet(
+        new AAYAxis()
+            .typeSet(AAChartAxisType.logarithmic)
+            .minorTickIntervalSet(0.1)
     )
-        .tooltipSet(new AATooltip()
-        .enabledSet(true)
-        .headerFormatSet("<b>{series.name}</b><br />")
-        .pointFormatSet("x = {point.x}, y = {point.y}"))
+        .tooltipSet(
+        new AATooltip()
+            .enabledSet(true)
+            .headerFormatSet("<b>{series.name}</b><br />")
+            .pointFormatSet("x = {point.x}, y = {point.y}"))
         .seriesSet([
       new AASeriesElement()
           .nameSet("Tokyo Hot")
@@ -2695,18 +2750,21 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     ];
 
     return new AAOptions()
-        .titleSet(new AATitle()
-        .textSet("Logarithmic Axis Scatter Chart"))
-        .chartSet(new AAChart()
-        .typeSet(AAChartType.scatter))
-        .xAxisSet(new AAXAxis()
-        .typeSet(AAChartAxisType.logarithmic)
-        .minSet(1)
-        .maxSet(1000)
-    // .endOnTickSet(true)
-        .tickIntervalSet(1)
-        .minorTickIntervalSet(0.1)
-        .gridLineWidthSet(1))
+        .titleSet(
+        new AATitle()
+            .textSet("Logarithmic Axis Scatter Chart"))
+        .chartSet(
+        new AAChart()
+            .typeSet(AAChartType.scatter))
+        .xAxisSet(
+        new AAXAxis()
+            .typeSet(AAChartAxisType.logarithmic)
+            .minSet(1)
+            .maxSet(1000)
+        // .endOnTickSet(true)
+            .tickIntervalSet(1)
+            .minorTickIntervalSet(0.1)
+            .gridLineWidthSet(1))
         .yAxisSet(
         new AAYAxis()
             .typeSet(AAChartAxisType.logarithmic)
@@ -2715,8 +2773,9 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
             .tickIntervalSet(1)
             .minorTickIntervalSet(0.1)
             .gridLineWidthSet(1)
-            .titleSet(new AATitle()
-            .textSet("")))
+            .titleSet(
+            new AATitle()
+                .textSet("")))
         .seriesSet([
       new AASeriesElement()
           .markerSet(aaMarker)
@@ -3063,22 +3122,26 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
           .widthSet(4.0) //标示线粗细
           .valueSet(1.28) //所在位置
           .zIndexSet(1) //层叠,标示线在图表中显示の层叠级别，值越大，显示越向前
-          .labelSet(new AALabel()
-          .textSet("Benchmark Mutiplier On Average Set(1.28)")
-          .styleSet(new AAStyle()
-          .colorSet(AAColor.green)
-          .fontWeightSet(AAChartFontWeightType.bold)))
+          .labelSet(
+          new AALabel()
+              .textSet("Benchmark Mutiplier On Average Set(1.28)")
+              .styleSet(
+              new AAStyle()
+                  .colorSet(AAColor.green)
+                  .fontWeightSet(AAChartFontWeightType.bold)))
       ,
       new AAPlotLinesElement()
           .colorSet(AAColor.black)
           .dashStyleSet(AAChartLineDashStyleType.solid)
           .widthSet(4)
           .valueSet(1.18)
-          .labelSet(new AALabel()
-          .textSet("Current Multiplier on Average Set(1.18)")
-          .styleSet(new AAStyle()
-          .colorSet(AAColor.black)
-          .fontWeightSet(AAChartFontWeightType.bold)))
+          .labelSet(
+          new AALabel()
+              .textSet("Current Multiplier on Average Set(1.18)")
+              .styleSet(
+              new AAStyle()
+                  .colorSet(AAColor.black)
+                  .fontWeightSet(AAChartFontWeightType.bold)))
       ,
 
     ];
@@ -3091,7 +3154,7 @@ var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
     aaOptions.xAxis.tickWidth = 0;
 
     aaOptions.yAxis
-    .tickAmountSet(20)
+        .tickAmountSet(20)
         .lineWidthSet(1)
         .lineColorSet(AAColor.black);
 
