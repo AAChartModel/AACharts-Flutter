@@ -1479,4 +1479,176 @@ class CustomStyleChartComposer {
 
 
 
+  static AAChartModel customColumnChartBorderStyleAndStatesHoverColor() {
+    return new AAChartModel().chartTypeSet(AAChartType.column)
+        .stackingSet(AAChartStackingType.normal)
+        .colorsThemeSet([AAColor.darkGray, AAColor.lightGray]) //Colors theme
+        .categoriesSet(["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"])
+        .seriesSet([
+      new AASeriesElement()
+          .nameSet("Berlin Hot")
+          .borderColorSet(AAColor.white)
+          .borderWidthSet(3)
+          .borderRadiusSet(10)
+          .statesSet(
+          new AAStates()
+          .hoverSet(
+          new AAHover()
+          .colorSet(AAColor.red)))
+          .dataSet(
+          [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]),
+      new AASeriesElement()
+          .nameSet("Beijing Hot")
+          .borderColorSet(AAColor.white)
+          .borderWidthSet(3)
+          .borderRadiusSet(10)
+          .statesSet(
+          new AAStates()
+          .hoverSet(
+              new AAHover()
+          .colorSet("dodgerblue"))) // Dodgerblue／道奇藍／#1e90ff十六进制颜色代码
+          .dataSet(
+          [0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]),
+    ]);
+  }
+
+
+  static AAChartModel customLineChartWithColorfulMarkersAndLines() {
+    return new AAChartModel()
+        .chartTypeSet(AAChartType.line)
+        .titleSet("Custom Line Chart With Colorful Markers And Lines")
+        .markerRadiusSet(18.0) //marker点半径为8个像素
+        .yAxisLineWidthSet(0)
+        .legendEnabledSet(false)
+        .seriesSet([
+      new AASeriesElement()
+          .nameSet("Tokyo Hot")
+          .lineWidthSet(5.0)
+          .markerSet(
+          new AAMarker()
+              .statesSet(
+              new AAMarkerStates()
+                  .hoverSet(
+                  new AAMarkerHover()
+                      .radiusSet(40)
+                      .lineWidthSet(5))))
+          .dataSet([
+        2, 4, 8, 16, 32, 64, 128,
+        new AADataElement()
+            .ySet(256.0)
+            .colorSet(AAColor.red)
+            .toJson()
+      ])
+          .zoneAxisSet("x")
+          .zonesSet([
+        new AAZonesElement()
+            .valueSet(1)
+            .colorSet(AAColor.red),
+        new AAZonesElement()
+            .valueSet(2)
+            .colorSet(AAColor.orange),
+        new AAZonesElement()
+            .valueSet(3)
+            .colorSet(AAColor.yellow),
+        new AAZonesElement()
+            .valueSet(4)
+            .colorSet(AAColor.green),
+        new AAZonesElement()
+            .valueSet(5)
+            .colorSet(AAColor.cyan),
+        new AAZonesElement()
+            .valueSet(6)
+            .colorSet(AAColor.blue),
+        new AAZonesElement()
+            .valueSet(7)
+            .colorSet(AAColor.purple),
+      ])
+    ]);
+  }
+
+
+  static AAChartModel topRoundedCornersStackingColumnChart() {
+    return new AAChartModel()
+        .chartTypeSet(AAChartType.column)
+        .stackingSet(AAChartStackingType.normal)
+        .titleSet("Top Rounded Corners Stacking Column Chart")
+        .colorsThemeSet(["#fe117c", "#ffc069", "#06caf4",])
+        .seriesSet([
+      new AASeriesElement()
+          .nameSet("Tokyo Hot")
+          .borderRadiusTopLeftSet("50%")
+          .borderRadiusTopRightSet("50%")
+          .dataSet([2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30]),
+      new AASeriesElement()
+          .nameSet("Berlin Hot")
+          .dataSet([1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28]),
+      new AASeriesElement()
+          .nameSet("Beijing Hot")
+          .dataSet([1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24]),
+    ]);
+  }
+
+
+
+  static AAChartModel configureSpecialStyleColumnForNegativeDataMixedPositiveData() {
+    var categoriesArr = [
+      "立春", "雨水", "惊蛰", "春分", "清明", "谷雨", "立夏", "小满", "芒种", "夏至", "小暑", "大暑",
+      "立秋", "处暑", "白露", "秋分", "寒露", "霜降", "立冬", "小雪", "大雪", "冬至", "小寒", "大寒"
+    ];
+
+    var dataArr = [
+      -70, -69, -25, -145, -182, -215, -52, -265, -233, -453, -139, -96,
+      70, 69, 25, 145, 182, 215, 52, 265, 233, 453, 139, 96,
+    ];
+
+    var newDataArr = List<Map<String, dynamic>>();
+
+    dataArr.forEach((element) {
+      var aaDataLabels = new AADataLabels()
+          .enabledSet(true)
+          .verticalAlignSet(AAChartVerticalAlignType.middle)
+          .xSet(0)
+          .ySet(-10);
+
+      var dataElementValue = element.toDouble();
+      if (dataElementValue < 0) {
+        var negativeDataElement = new AADataElement()
+            .ySet((-dataElementValue))
+            .colorSet(AAColor.green)
+            .dataLabelsSet(aaDataLabels
+            .formatSet("-{y} 美元")
+            .styleSet(new AAStyle()
+            .colorSet(AAColor.green)
+            .fontSizeSet(11)
+            .fontWeightSet(AAChartFontWeightType.thin)));
+        newDataArr.add(negativeDataElement.toJson());
+      } else {
+        var positiveDataElement = new AADataElement()
+            .ySet((dataElementValue))
+            .colorSet(AAColor.red)
+            .dataLabelsSet(aaDataLabels
+            .formatSet("+{y} 美元")
+            .styleSet(new AAStyle()
+            .colorSet(AAColor.red)
+            .fontSizeSet(11)
+            .fontWeightSet(AAChartFontWeightType.thin)));
+        newDataArr.add(positiveDataElement.toJson());
+      }
+
+      return AAChartModel()
+          .chartTypeSet(AAChartType.column)
+          .categoriesSet(categoriesArr)
+          .tooltipEnabledSet(false)
+          .yAxisVisibleSet(false)
+          .seriesSet([
+        new AASeriesElement()
+            .nameSet("虚构数据")
+            .dataSet(newDataArr)
+      ]);
+    });
+  }
+
+
+
 }
