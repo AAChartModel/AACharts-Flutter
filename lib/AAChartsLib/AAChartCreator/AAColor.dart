@@ -7,6 +7,14 @@ String AARgba(
   return "rgba($red,$green,$blue,$alpha)";
 }
 
+String AARgb(
+    int red,
+    int green,
+    int blue
+    ) {
+  return AARgba(red, green, blue, 1.0);
+}
+
 class AAColor {
 
   static String get black {
