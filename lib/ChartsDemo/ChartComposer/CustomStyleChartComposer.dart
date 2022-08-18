@@ -1477,6 +1477,67 @@ class CustomStyleChartComposer {
     ]);
   }
 
+  static AAChartModel topRoundedCornersStackingColumnChart() {
+    return new AAChartModel()
+        .chartTypeSet(AAChartType.column)
+        .stackingSet(AAChartStackingType.normal)
+        .titleSet("Top Rounded Corners Stacking Column Chart")
+        .colorsThemeSet(["#fe117c", "#ffc069", "#06caf4",])
+        .seriesSet([
+      new AASeriesElement()
+          .nameSet("Tokyo Hot")
+          .borderRadiusTopLeftSet("50%")
+          .borderRadiusTopRightSet("50%")
+          .dataSet([2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30]),
+      new AASeriesElement()
+          .nameSet("Berlin Hot")
+          .dataSet([1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28]),
+      new AASeriesElement()
+          .nameSet("Beijing Hot")
+          .dataSet([1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24]),
+    ]);
+  }
+
+
+  static AAChartModel freeStyleRoundedCornersStackingColumnChart() {
+    return new AAChartModel()
+        .chartTypeSet(AAChartType.column)
+        .stackingSet(AAChartStackingType.percent)
+        .titleSet("Free-Style Rounded Corners Stacking Column Chart")
+        .colorsThemeSet([
+      AAGradientColor.linearGradient0(AARgb(128, 255, 165), AARgb(1, 191, 236)),
+      AAGradientColor.linearGradient0(AARgb(0, 221, 255), AARgb(77, 119, 255)),
+      AAGradientColor.linearGradient0(AARgb(55, 162, 255), AARgb(116, 21, 219)),
+      AAGradientColor.linearGradient0(AARgb(255, 0, 135), AARgb(135, 0, 157)),
+      AAGradientColor.linearGradient0(AARgb(255, 191, 0), AARgb(224, 62, 76)),
+    ])
+        .seriesSet([
+      new AASeriesElement()
+          .nameSet("Tokyo Hot")
+          .borderRadiusTopLeftSet("50%")
+          .borderRadiusTopRightSet("50%")
+          .dataSet([2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30]),
+      new AASeriesElement()
+          .nameSet("Berlin Hot")
+          .borderRadiusBottomLeftSet("50%")
+          .borderRadiusBottomRightSet("50%")
+          .dataSet([1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28]),
+      new AASeriesElement()
+          .nameSet("Beijing Hot")
+          .borderRadiusTopLeftSet("50%")
+          .borderRadiusBottomRightSet("50%")
+          .dataSet([1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24]),
+      new AASeriesElement()
+          .nameSet("London Hot")
+          .borderRadiusTopRightSet("50%")
+          .borderRadiusBottomLeftSet("50%")
+          .dataSet([5.59, 3.09, 4.09, 6.14, 5.33, 6.05, 5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.22, 5.77, 6.19, 5.68, 4.33, 5.48]),
+      new AASeriesElement()
+          .nameSet("NewYork Hot")
+          .borderRadiusSet(20)
+          .dataSet([2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30]),
+    ]);
+  }
 
 
   static AAChartModel customColumnChartBorderStyleAndStatesHoverColor() {
@@ -1493,9 +1554,9 @@ class CustomStyleChartComposer {
           .borderRadiusSet(10)
           .statesSet(
           new AAStates()
-          .hoverSet(
-          new AAHover()
-          .colorSet(AAColor.red)))
+              .hoverSet(
+              new AAHover()
+                  .colorSet(AAColor.red)))
           .dataSet(
           [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]),
       new AASeriesElement()
@@ -1505,14 +1566,13 @@ class CustomStyleChartComposer {
           .borderRadiusSet(10)
           .statesSet(
           new AAStates()
-          .hoverSet(
+              .hoverSet(
               new AAHover()
-          .colorSet("dodgerblue"))) // Dodgerblue／道奇藍／#1e90ff十六进制颜色代码
+                  .colorSet("dodgerblue"))) // Dodgerblue／道奇藍／#1e90ff十六进制颜色代码
           .dataSet(
           [0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]),
     ]);
   }
-
 
   static AAChartModel customLineChartWithColorfulMarkersAndLines() {
     return new AAChartModel()
@@ -1567,28 +1627,171 @@ class CustomStyleChartComposer {
     ]);
   }
 
-
-  static AAChartModel topRoundedCornersStackingColumnChart() {
-    return new AAChartModel()
-        .chartTypeSet(AAChartType.column)
+  static AAChartModel customLineChartWithColorfulMarkersAndLines2() {
+    return AAChartModel()
+        .chartTypeSet(AAChartType.line)
+        .titleSet("Custom Line Chart With Colorful Markers And Lines")
+        .markerRadiusSet(25.0)
+        .markerSymbolSet(AAChartSymbolType.circle)
+        .yAxisLineWidthSet(0.0)
+        .legendEnabledSet(false)
         .stackingSet(AAChartStackingType.normal)
-        .titleSet("Top Rounded Corners Stacking Column Chart")
-        .colorsThemeSet(["#fe117c", "#ffc069", "#06caf4",])
         .seriesSet([
-      new AASeriesElement()
-          .nameSet("Tokyo Hot")
-          .borderRadiusTopLeftSet("50%")
-          .borderRadiusTopRightSet("50%")
-          .dataSet([2.10, 2.54, 2.78, 3.62, 4.41, 4.09, 3.83, 4.47, 4.20, 3.94, 3.80, 3.58, 3.19, 4.30, 3.69, 3.52, 3.02, 3.30]),
-      new AASeriesElement()
-          .nameSet("Berlin Hot")
-          .dataSet([1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28]),
-      new AASeriesElement()
-          .nameSet("Beijing Hot")
-          .dataSet([1.16, 1.67, 2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3.25, 3.32, 3.07, 3.92, 3.05, 2.18, 3.24]),
+      AASeriesElement()
+          .nameSet(AAColor.blue)
+          .lineWidthSet(20.0)
+          .dataSet([
+        2048, 1024, 1024, 1024, 1024,
+        AADataElement()
+            .ySet(2048)
+            .colorSet(AARgba(30, 144, 255, 1.0))
+            .toJson(),
+      ])
+          .zoneAxisSet("x")
+          .zonesSet([
+        AAZonesElement()
+            .valueSet(1)
+            .colorSet(AARgba(30, 144, 255, 1.0)),
+        AAZonesElement()
+            .valueSet(2)
+            .colorSet(AARgba(30, 144, 255, 0.8)),
+        AAZonesElement()
+            .valueSet(3)
+            .colorSet(AARgba(30, 144, 255, 0.6)),
+        AAZonesElement()
+            .valueSet(4)
+            .colorSet(AARgba(30, 144, 255, 0.4)),
+        AAZonesElement()
+            .valueSet(5)
+            .colorSet(AARgba(30, 144, 255, 0.2)),
+      ])
+      ,
+
+      AASeriesElement()
+          .nameSet(AAColor.red)
+          .lineWidthSet(20.0)
+          .dataSet([
+        2048, 1024, 1024, 1024, 1024,
+        AADataElement()
+            .ySet(2048)
+            .colorSet(AARgba(255, 0, 0, 1.0))
+            .toJson(),
+      ])
+          .zoneAxisSet("x")
+          .zonesSet([
+        AAZonesElement()
+            .valueSet(1)
+            .colorSet(AARgba(255, 0, 0, 1.0)),
+        AAZonesElement()
+            .valueSet(2)
+            .colorSet(AARgba(255, 0, 0, 0.8)),
+        AAZonesElement()
+            .valueSet(3)
+            .colorSet(AARgba(255, 0, 0, 0.6)),
+        AAZonesElement()
+            .valueSet(4)
+            .colorSet(AARgba(255, 0, 0, 0.4)),
+        AAZonesElement()
+            .valueSet(5)
+            .colorSet(AARgba(255, 0, 0, 0.2)),
+      ]),
+
+      AASeriesElement()
+          .nameSet(AAColor.green)
+          .lineWidthSet(20.0)
+          .dataSet([
+        2048, 1024, 1024, 1024, 1024,
+        AADataElement()
+            .ySet(2048)
+            .colorSet(AARgba(50, 205, 50, 1.0))
+            .toJson(),
+      ])
+          .zoneAxisSet("x")
+          .zonesSet([
+        AAZonesElement()
+            .valueSet(1)
+            .colorSet(AARgba(50, 205, 50, 1.0)),
+        AAZonesElement()
+            .valueSet(2)
+            .colorSet(AARgba(50, 205, 50, 0.8)),
+        AAZonesElement()
+            .valueSet(3)
+            .colorSet(AARgba(50, 205, 50, 0.6)),
+        AAZonesElement()
+            .valueSet(4)
+            .colorSet(AARgba(50, 205, 50, 0.4)),
+        AAZonesElement()
+            .valueSet(5)
+            .colorSet(AARgba(50, 205, 50, 0.2)),
+      ]),
+
+      AASeriesElement()
+          .nameSet(AAColor.purple)
+          .lineWidthSet(20.0)
+          .dataSet([
+        2048, 1024, 1024, 1024, 1024,
+        AADataElement()
+            .ySet(2048)
+            .colorSet(AARgba(138, 43, 226, 1.0))
+            .toJson(),
+      ])
+          .zoneAxisSet("x")
+          .zonesSet([
+        AAZonesElement()
+            .valueSet(1)
+            .colorSet(AARgba(138, 43, 226, 1.0)),
+        AAZonesElement()
+            .valueSet(2)
+            .colorSet(AARgba(138, 43, 226, 0.8)),
+        AAZonesElement()
+            .valueSet(3)
+            .colorSet(AARgba(138, 43, 226, 0.6)),
+        AAZonesElement()
+            .valueSet(4)
+            .colorSet(AARgba(138, 43, 226, 0.4)),
+        AAZonesElement()
+            .valueSet(5)
+            .colorSet(AARgba(138, 43, 226, 0.2)),
+      ]),
     ]);
   }
 
+  static AAChartModel drawLineChartWithPointsCoordinates2() {
+    var dataArr = [
+      [0, 200],
+      [0, 300],
+      [0, 400],
+      [1, 100],
+      [2, 120],
+      [3, 130]
+    ];
+
+    return new AAChartModel()
+        .chartTypeSet(AAChartType.scatter)
+        .titleSet("Draw Line Chart With Points Coordinates")
+        .markerSymbolSet(AAChartSymbolType.circle)
+        .markerSymbolStyleSet(AAChartSymbolStyleType.borderBlank)
+        .markerRadiusSet(8)
+        .colorsThemeSet([AAColor.red])
+        .seriesSet([
+      new AASeriesElement()
+          .typeSet(AAChartType.line)
+          .enableMouseTrackingSet(false)
+          .markerSet(
+          new AAMarker()
+              .enabledSet(false))
+          .statesSet(
+          new AAStates()
+              .inactiveSet(
+              new AAInactive()
+                  .enabledSet(false)))
+          .dataSet(dataArr),
+      new AASeriesElement()
+          .nameSet("Red Dot")
+          .typeSet(AAChartType.scatter)
+          .dataSet(dataArr),
+    ]);
+  }
 
 
   static AAChartModel configureSpecialStyleColumnForNegativeDataMixedPositiveData() {
