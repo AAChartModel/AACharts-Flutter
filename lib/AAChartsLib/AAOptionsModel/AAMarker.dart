@@ -1,6 +1,7 @@
 import 'AAObject.dart';
 
  class AAMarker extends AAObject  {
+    bool enabled;
     double radius;
     String symbol;
     String fillColor;//点的填充色(用来设置折线连接点的填充色)
@@ -8,6 +9,10 @@ import 'AAObject.dart';
     Object lineColor;//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
     AAMarkerStates states;
 
+    AAMarker enabledSet(bool prop) {
+      enabled = prop;
+      return this;
+    }
 
      AAMarker radiusSet(double prop) {
         radius = prop;
@@ -41,6 +46,7 @@ import 'AAObject.dart';
 
     Map<String, dynamic> toJson() {
     return {
+      "enabled": this.enabled,
       "radius": this.radius,
       "symbol": this.symbol,
       "fillColor": this.fillColor,
