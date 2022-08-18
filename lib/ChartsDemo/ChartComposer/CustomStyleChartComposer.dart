@@ -161,7 +161,7 @@ class CustomStyleChartComposer {
           .lineWidthSet(5)
           .zonesSet([
         {"value": 8},
-        {"dashStyle": AALineDashStyleType.dot}
+        {"dashStyle": AAChartLineDashStyleType.dot}
       ])
       ,
       AASeriesElement()

@@ -222,32 +222,32 @@ class MixedChartComposer {
       AASeriesElement()
           .nameSet("Dash")
           .lineWidthSet(3)
-          .dashStyleSet(AALineDashStyleType.dash)
+          .dashStyleSet(AAChartLineDashStyleType.dash)
           .dataSet([50, 320, 230, 370, 230, 400,]),
       AASeriesElement()
           .nameSet("DashDot")
           .lineWidthSet(3)
-          .dashStyleSet(AALineDashStyleType.dashDot)
+          .dashStyleSet(AAChartLineDashStyleType.dashDot)
           .dataSet([50, 320, 230, 370, 230, 400,]),
       AASeriesElement()
           .nameSet("LongDash")
           .lineWidthSet(3)
-          .dashStyleSet(AALineDashStyleType.longDash)
+          .dashStyleSet(AAChartLineDashStyleType.longDash)
           .dataSet([50, 320, 230, 370, 230, 400,]),
       AASeriesElement()
           .nameSet("LongDashDot")
           .lineWidthSet(3)
-          .dashStyleSet(AALineDashStyleType.longDashDot)
+          .dashStyleSet(AAChartLineDashStyleType.longDashDot)
           .dataSet([50, 320, 230, 370, 230, 400,]),
       AASeriesElement()
           .nameSet("ShortDashDot")
           .lineWidthSet(3)
-          .dashStyleSet(AALineDashStyleType.shortDashDot)
+          .dashStyleSet(AAChartLineDashStyleType.shortDashDot)
           .dataSet([50, 320, 230, 370, 230, 400,]),
       AASeriesElement()
           .nameSet("ShortDashDotDot")
           .lineWidthSet(3)
-          .dashStyleSet(AALineDashStyleType.shortDashDotDot)
+          .dashStyleSet(AAChartLineDashStyleType.shortDashDotDot)
           .dataSet([50, 320, 230, 370, 230, 400,]),
     ]);
   }

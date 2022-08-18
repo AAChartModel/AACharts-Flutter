@@ -158,7 +158,7 @@ class JSFormatterFunctionComposer {
 
     aaOptions.xAxis.crosshairSet(
         AACrosshair()
-            .dashStyleSet(AALineDashStyleType.dashDot)
+            .dashStyleSet(AAChartLineDashStyleType.dashDot)
             .widthSet(1.0)
             .colorSet(AAColor.darkGray)
     );
