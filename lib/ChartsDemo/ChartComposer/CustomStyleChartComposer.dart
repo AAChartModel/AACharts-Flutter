@@ -343,17 +343,18 @@ class CustomStyleChartComposer {
   static AAChartModel configureCustomSingleDataLabelChart() {
     AADataElement aaDataElement = AADataElement()
         .ySet(1.25)
-        .dataLabelsSet(AADataLabels()
-        .enabledSet(true)
-        .verticalAlignSet(AAChartVerticalAlignType.middle)
-        .formatSet("{y} 美元🇺🇸💲")
-        .xSet(3)
-        .styleSet(AAStyle()
-        .fontSizeSet(20)
-        .fontWeightSet("bold")
-        .colorSet(AAColor.red)
-        .textOutlineSet("1px 1px contrast")
-    )
+        .dataLabelsSet(
+        AADataLabels()
+            .enabledSet(true)
+            .verticalAlignSet(AAChartVerticalAlignType.middle)
+            .formatSet("{y} 美元🇺🇸💲")
+            .xSet(3)
+            .styleSet(AAStyle()
+            .fontSizeSet(20)
+            .fontWeightSet("bold")
+            .colorSet(AAColor.red)
+            .textOutlineSet("1px 1px contrast")
+        )
     );
 
     return AAChartModel()
@@ -777,10 +778,10 @@ class CustomStyleChartComposer {
                 .colorSet(AAColor.white)
                 .fontSizeSet(16))
             .ySet(-35)
-        // .alignSet(AAChartAlignType.center)
+            .alignSet(AAChartAlignType.center)
             .verticalAlignSet(AAChartVerticalAlignType.top)
-      // .overflowSet("none")
-      // .cropSet(false)
+            .overflowSet("none")
+            .cropSet(false)
     )
         .ySet(26.5)
     ;
@@ -969,7 +970,7 @@ class CustomStyleChartComposer {
         .seriesSet([
       new AASeriesElement()
           .nameSet("2020")
-      // .reversedSet(false)
+          .reversedSet(false)
           .dataSet([
         ["swift",      11850],
         ["Objective-C",12379],
@@ -990,7 +991,7 @@ class CustomStyleChartComposer {
         .seriesSet([
       new AASeriesElement()
           .nameSet("Past")
-      // .sizeSet("40%")//尺寸大小
+          .sizeSet("40%")//尺寸大小
           .innerSizeSet("30%")//内部圆环半径大小占比
           .borderWidthSet(0)//描边的宽度
           .allowPointSelectSet(false)//是否允许在点击数据点标记Set(扇形图点击选中的块发生位移)
@@ -1003,7 +1004,7 @@ class CustomStyleChartComposer {
       ]),
       new AASeriesElement()
           .nameSet("Now")
-      // .sizeSet("80%")//尺寸大小
+          .sizeSet("80%")//尺寸大小
           .innerSizeSet("70%")//内部圆环半径大小占比
           .borderWidthSet(0)//描边的宽度
           .allowPointSelectSet(false)//是否允许在点击数据点标记Set(扇形图点击选中的块发生位移)
@@ -1029,17 +1030,17 @@ class CustomStyleChartComposer {
         .seriesSet([
       new AASeriesElement()
           .nameSet("Past")
-      // .colorsSet([
-      //     AAColor.rgbaColor(255, 0, 0, 1.0),
-      //     AAColor.rgbaColor(255, 0, 0, 0.8),
-      //     AAColor.rgbaColor(255, 0, 0, 0.6),
-      //     AAColor.rgbaColor(255, 0, 0, 0.4),
-      //     AAColor.rgbaColor(255, 0, 0, 0.2),
-      // ])
+          .colorsSet([
+        AAColor.rgbaColor(255, 0, 0, 1.0),
+        AAColor.rgbaColor(255, 0, 0, 0.8),
+        AAColor.rgbaColor(255, 0, 0, 0.6),
+        AAColor.rgbaColor(255, 0, 0, 0.4),
+        AAColor.rgbaColor(255, 0, 0, 0.2),
+      ])
           .dataLabelsSet(
           new AADataLabels()
               .enabledSet(false))
-      // .sizeSet("25%")//尺寸大小
+          .sizeSet("25%")//尺寸大小
           .innerSizeSet("20%")//内部圆环半径大小占比
           .borderWidthSet(0)//描边的宽度
           .allowPointSelectSet(false)//是否允许在点击数据点标记Set(扇形图点击选中的块发生位移)
@@ -1053,25 +1054,25 @@ class CustomStyleChartComposer {
 
       new AASeriesElement()
           .nameSet("Now")
-      // .colorsSet([
-      //     AAColor.rgbaColor(30, 144, 255, 1.0),
-      //     AAColor.rgbaColor(30, 144, 255, 0.8),
-      //     AAColor.rgbaColor(30, 144, 255, 0.6),
-      //     AAColor.rgbaColor(30, 144, 255, 0.4),
-      //     AAColor.rgbaColor(30, 144, 255, 0.2),
-      // ])
-      //     .dataLabelsSet(
-      //     new AADataLabels()
-      //     .enabledSet(true)
-      //     .formatSet("<b>{point.name}</b> <br> {point.percentage:.1f} %")
-      // .alignToSet("plotEdges")
-      // .connectorShapeSet("crookedLine")
-      // .crookDistanceSet("90%")
-      // .styleSet(AAStyle.colorStr(AAColor.rgbaColor(30, 144, 255, 1.0))))
-      // .sizeSet("40%")//尺寸大小
-      // .innerSizeSet("80%")//内部圆环半径大小占比
+          .colorsSet([
+        AAColor.rgbaColor(30, 144, 255, 1.0),
+        AAColor.rgbaColor(30, 144, 255, 0.8),
+        AAColor.rgbaColor(30, 144, 255, 0.6),
+        AAColor.rgbaColor(30, 144, 255, 0.4),
+        AAColor.rgbaColor(30, 144, 255, 0.2),
+      ])
+          .dataLabelsSet(
+          new AADataLabels()
+              .enabledSet(true)
+              .formatSet("<b>{point.name}</b> <br> {point.percentage:.1f} %")
+              .alignToSet("plotEdges")
+              .connectorShapeSet("crookedLine")
+              .crookDistanceSet("90%")
+              .styleSet(AAStyle.colorStr(AAColor.rgbaColor(30, 144, 255, 1.0))))
+          .sizeSet("40%")//尺寸大小
+          .innerSizeSet("80%")//内部圆环半径大小占比
           .borderWidthSet(0)//描边的宽度
-      // .allowPointSelectSet(false)//是否允许在点击数据点标记Set(扇形图点击选中的块发生位移)
+          .allowPointSelectSet(false)//是否允许在点击数据点标记Set(扇形图点击选中的块发生位移)
           .dataSet([
         ["Firefox Now",    926.8],
         ["Chrome Now",     336.2],
@@ -1098,15 +1099,15 @@ class CustomStyleChartComposer {
           .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]),
       new AASeriesElement()
           .nameSet("2018")
-      .enableMouseTrackingSet(false)
+          .enableMouseTrackingSet(false)
           .dataSet([0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]),
       new AASeriesElement()
           .nameSet("2019")
-      .enableMouseTrackingSet(false)
+          .enableMouseTrackingSet(false)
           .dataSet([0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]),
       new AASeriesElement()
           .nameSet("2020")
-      .enableMouseTrackingSet(false)
+          .enableMouseTrackingSet(false)
           .dataSet([3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]),
     ]);
   }
