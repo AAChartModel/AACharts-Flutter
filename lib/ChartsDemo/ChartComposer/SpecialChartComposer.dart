@@ -3,6 +3,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAGradientColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AASeriesElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAnimation.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATooltip.dart';
 
 
 class SpecialChartComposer {
@@ -810,30 +811,14 @@ class SpecialChartComposer {
           .colorSet("#ef476f")
           .borderWidthSet(0)
           .dataSet([
-        {
-          "name": "启动资金",
-          "y": 120000
-        }, {
-          "name": "产品收入",
-          "y": 569000
-        }, {
-          "name": "服务收入",
-          "y": 231000
-        }, {
-          "name": "正平衡",
-          "isIntermediateSum": true,
-          "color": "#ffd066"
-        }, {
-          "name": "固定成本",
-          "y": -342000
-        }, {
-          "name": "可变成本",
-          "y": -233000
-        }, {
-          "name": "余额",
-          "isSum": true,
-          "color": "#04d69f"
-        }],)
+            {"name": "启动资金", "y": 120000},
+            {"name": "产品收入", "y": 569000},
+            {"name": "服务收入", "y": 231000},
+            {"name": "正平衡" ,  "isIntermediateSum": true, "color": "#ffd066"},
+            {"name": "固定成本", "y": -342000},
+            {"name": "可变成本", "y": -233000},
+            {"name": "余额",    "isSum": true, "color": "#04d69f"}
+      ],)
     ]);
   }
 
@@ -894,8 +879,8 @@ class SpecialChartComposer {
           .lineWidthSet(2.5)
           .colorSet(AAColor.red)
           .dataSet([[48, 51], [68, 73], [92, 110], [128, 136], [140, 150], [171, 179], [135, 143], [142, 149], [204, 220], [189, 199], [95, 110], [52, 56]])
-      // .tooltipSet(new AATooltip()
-      //     .pointFormatSet("(误差范围: {point.low}-{point.high} mm)<br/>"))
+      .tooltipSet(new AATooltip()
+          .pointFormatSet("(误差范围: {point.low}-{point.high} mm)<br/>"))
     ]);
 }
 }
