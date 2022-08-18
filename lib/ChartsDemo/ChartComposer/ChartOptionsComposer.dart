@@ -39,7 +39,7 @@ class ChartOptionsComposer {
         .animationTypeSet(AAChartAnimationType.easeFrom)//设置图表渲染动画类型为 EaseFrom
         .dataLabelsEnabledSet(false)
         .zoomTypeSet(AAChartZoomType.x)
-    // .marginSet(100, 100, 100, 100)
+    .marginSet([100, 100, 100, 100])
         .colorsThemeSet([
       AAGradientColor.oceanBlue,
       AAGradientColor.sanguine,
