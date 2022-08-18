@@ -42,25 +42,26 @@ enum AAChartAnimationType {
 }
 
 abstract class AAChartType {
-  static const column = "column";
-  static const bar = "bar";
-  static const area = "area";
-  static const areaspline = "areaspline";
-  static const line = "line";
-  static const spline = "spline";
-  static const scatter = "scatter";
-  static const pie = "pie";
-  static const bubble = "bubble";
-  static const pyramid = "pyramid";
-  static const funnel = "funnel";
-  static const columnrange = "columnrange";
-  static const arearange = "arearange";
-  static const areasplinerange = "areasplinerange";
-  static const boxplot = "boxplot";
-  static const waterfall = "waterfall";
-  static const polygon = "polygon";
-  static const gauge = "gauge";
-  static const errorbar = "errorbar";
+  static const String column = 'column';          //Column series display one column per value along an X axis.
+  static const String bar = 'bar';                //A bar series is a special type of column series where the columns are horizontal.
+  static const String area = 'area';              //The area series type.
+  static const String areaspline = 'areaspline';  //The area spline series is an area series where the graph between the points is smoothed into a spline.
+  static const String line = 'line';              //A line series displays information as a series of data points connected by straight line segments.
+  static const String spline = 'spline';          //A spline series is a special type of line series, where the segments between the data points are smoothed.
+  static const String scatter = 'scatter';        //A scatter plot uses cartesian coordinates to display values for two variables for a set of data.
+  static const String pie = 'pie';                //A pie chart is a circular graphic which is divided into slices to illustrate numerical proportion.
+  static const String bubble = 'bubble';          //A bubble series is a three dimensional series type where each point renders an X, Y and Z value. Each points is drawn as a bubble where the position along the X and Y axes mark the X and Y values, and the size of the bubble relates to the Z value.
+  static const String pyramid = 'pyramid';        //A pyramid series is a special type of funnel, without neck and reversed by default.
+  static const String funnel = 'funnel';          //Funnel charts are a type of chart often used to visualize stages in a sales project, where the top are the initial stages with the most clients. It requires that the modules/funnel.js file is loaded.
+  static const String columnrange = 'columnrange';//The column range is a cartesian series type with higher and lower Y values along an X axis. To display horizontal bars, set chart.inverted to true.
+  static const String arearange = 'arearange';    //The area range series is a carteseian series with higher and lower values for each point along an X axis, where the area between the values is shaded.
+  static const String areasplinerange = 'areasplinerange';//The area spline range is a cartesian series type with higher and lower Y values along an X axis. The area inside the range is colored, and the graph outlining the area is a smoothed spline.
+  static const String boxplot = 'boxplot';        //A box plot is a convenient way of depicting groups of data through their five-number summaries: the smallest observation (sample minimum), lower quartile (Q1), median (Q2), upper quartile (Q3), and largest observation (sample maximum).
+  static const String waterfall = 'waterfall';    //A waterfall chart displays sequentially introduced positive or negative values in cumulative columns.
+  static const String polygon = 'polygon';        //A polygon series can be used to draw any freeform shape in the cartesian coordinate system. A fill is applied with the color option, and stroke is applied through lineWidth and lineColor options.
+  static const String gauge = 'gauge';            //Gauges are circular plots displaying one or more values with a dial pointing to values along the perimeter.
+  static const String errorbar = 'errorbar';      //Error bars are a graphical representation of the variability of data and are used on graphs to indicate the error, or uncertainty in a reported measurement.
+
 }
 
 abstract class AAChartZoomType {
@@ -77,11 +78,11 @@ abstract class AAChartStackingType {
 }
 
 abstract class AAChartSymbolType {
-  static const circle = "circle";
-  static const square = "square";
-  static const diamond = "diamond";
-  static const triangle = "triangle";
-  static const triangleDown = "triangle-down";
+  static const circle = "circle";               //◉ ◉ ◉
+  static const square = "square";               //◼ ◼ ◼
+  static const diamond = "diamond";             //◆ ◆ ◆
+  static const triangle = "triangle";           //▲ ▲ ▲
+  static const triangleDown = "triangle-down";  //▼ ▼ ▼
 }
 
 abstract class AAChartSymbolStyleType {
@@ -107,18 +108,18 @@ abstract class AAChartVerticalAlignType {
   static const bottom = "bottom";
 }
 
-abstract class AALineDashStyleType {
-  static const solid = "Solid";
-  static const shortDash = "ShortDash";
-  static const shortDot = "ShortDot";
-  static const shortDashDot = "ShortDashDot";
-  static const shortDashDotDot = "ShortDashDotDot";
-  static const dot = "Dot";
-  static const dash = "Dash";
-  static const longDash = "LongDash";
-  static const dashDot = "DashDot";
-  static const longDashDot = "LongDashDot";
-  static const longDashDotDot = "LongDashDotDot";
+abstract class  AAChartLineDashStyleType {
+  static const solid           = 'solid';           //———————————————————————————————————
+  static const shortDash       = 'shortDash';       //— — — — — — — — — — — — — — — — — —
+  static const shortDot        = 'shortDot';        //ⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈⵈ
+  static const shortDashDot    = 'shortDashDot';    //—‧—‧—‧—‧—‧—‧—‧—‧—‧—‧—‧—‧—‧—‧—‧—‧—‧—‧
+  static const shortDashDotDot = 'shortDashDotDot'; //—‧‧—‧‧—‧‧—‧‧—‧‧—‧‧—‧‧—‧‧—‧‧—‧‧—‧‧—‧‧
+  static const dot             = 'dot';             //‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧‧
+  static const dash            = 'dash';            //—— —— —— —— —— —— —— —— —— —— —— ——
+  static const longDash        = 'longDash';        //——— ——— ——— ——— ——— ——— ——— ——— ———
+  static const dashDot         = 'dashDot';         //——‧——‧——‧——‧——‧——‧——‧——‧——‧——‧——‧——‧
+  static const longDashDot     = 'longDashDot';     //———‧———‧———‧———‧———‧———‧———‧———‧———‧
+  static const longDashDotDot  = 'longDashDotDot';  //———‧‧———‧‧———‧‧———‧‧———‧‧———‧‧———‧‧
 }
 
 abstract class AAChartFontWeightType {
@@ -127,19 +128,6 @@ abstract class AAChartFontWeightType {
   static const bold = "bold";
 }
 
-abstract class AAChartLineDashStyleType {
-  static const solid = "solid";
-  static const shortDash = "shortDash";
-  static const shortDot = "shortDot";
-  static const shortDashDot = "shortDashDot";
-  static const shortDashDotDot = "shortDashDotDot";
-  static const dot = "dot";
-  static const dash = "dash";
-  static const longDash = "longDash";
-  static const dashDot = "dashDot";
-  static const longDashDot = "longDashDot";
-  static const longDashDotDot = "longDashDotDot";
-}
 
 class AAChartModel {
   var animationType; //动画类型
