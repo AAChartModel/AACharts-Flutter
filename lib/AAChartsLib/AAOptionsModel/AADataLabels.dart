@@ -3,6 +3,7 @@ import 'AAStyle.dart';
 
  class AADataLabels extends AAObject  {
     bool enabled;
+    String align;
     AAStyle style;
     String format;
     double rotation;
@@ -19,11 +20,28 @@ import 'AAStyle.dart';
     double borderWidth;
     String shape;
 
+    bool crop;
+    bool inside;
+    String overflow;
+    AAFilter filter;
+    AATextPath textPath;
+    bool softConnector;
+    String connectorColor;
+    double connectorPadding;
+    String connectorShape;
+    double connectorWidth;
+    String crookDistance;
+    String alignTo;
 
      AADataLabels enabledSet(bool prop) {
         enabled = prop;
         return this;
     }
+
+      AADataLabels alignSet(String prop) {
+        align = prop;
+        return this;
+      }
 
      AADataLabels styleSet(AAStyle prop) {
         style = prop;
@@ -100,6 +118,66 @@ import 'AAStyle.dart';
         return this;
     }
 
+    AADataLabels cropSet(bool prop) {
+      crop = prop;
+      return this;
+    }
+
+    AADataLabels insideSet(bool prop) {
+      inside = prop;
+      return this;
+    }
+
+    AADataLabels overflowSet(String prop) {
+      overflow = prop;
+      return this;
+    }
+
+    AADataLabels filterSet(AAFilter prop) {
+      filter = prop;
+      return this;
+    }
+
+    AADataLabels textPathSet(AATextPath prop) {
+      textPath = prop;
+      return this;
+    }
+
+    AADataLabels softConnectorSet(bool prop) {
+      softConnector = prop;
+      return this;
+    }
+
+    AADataLabels connectorColorSet(String prop) {
+      connectorColor = prop;
+      return this;
+    }
+
+    AADataLabels connectorPaddingSet(double prop) {
+      connectorPadding = prop;
+      return this;
+    }
+
+    AADataLabels connectorShapeSet(String prop) {
+      connectorShape = prop;
+      return this;
+    }
+
+    AADataLabels connectorWidthSet(double prop) {
+      connectorWidth = prop;
+      return this;
+    }
+
+    AADataLabels crookDistanceSet(String prop) {
+      crookDistance = prop;
+      return this;
+    }
+
+    AADataLabels alignToSet(String prop) {
+      alignTo = prop;
+      return this;
+    }
+
     Map<String, dynamic> toJson() {
     return {
       "enabled": this.enabled,
@@ -118,6 +196,64 @@ import 'AAStyle.dart';
       "borderRadius": this.borderRadius,
       "borderWidth": this.borderWidth,
       "shape": this.shape,
+    };
+  }
+}
+
+class AATextPath {
+  bool enabled;
+  Map<String, dynamic> attributes;
+  double value;
+
+  AATextPath enabledSet(bool prop) {
+    enabled = prop;
+    return this;
+  }
+
+  AATextPath attributesSet(Map<String, dynamic> prop) {
+    attributes = prop;
+    return this;
+  }
+
+  AATextPath valueSet(double prop) {
+    value = prop;
+    return this;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      "enabled": this.enabled,
+      "attributes": this.attributes,
+      "value": this.value,
+    };
+  }
+}
+
+class AAFilter {
+  String property;
+  String operator;
+  double value;
+
+  AAFilter propertySet(String prop) {
+    property = prop;
+    return this;
+  }
+
+  AAFilter operatorSet(String prop) {
+    operator = prop;
+    return this;
+  }
+
+  AAFilter valueSet(double prop) {
+    value = prop;
+    return this;
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      "property": this.property,
+      "operator": this.operator,
+      "value": this.value,
     };
   }
 }
