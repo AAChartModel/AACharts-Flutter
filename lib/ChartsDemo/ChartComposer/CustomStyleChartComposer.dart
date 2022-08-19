@@ -831,16 +831,6 @@ class CustomStyleChartComposer {
   }
 
   static AAChartModel customChartHoverAndSelectHaloStyle() {
-    var attributes1 = new Map<String, Object>();
-    attributes1["stroke-width"] = 50;
-    attributes1["fill"] = "#00BFFF";
-    attributes1["stroke"] = "#00BFFF";
-
-    var attributes2 = new Map<String, Object>();
-    attributes2["stroke-width"] = 150;
-    attributes2["fill"] = "rgba(138,43,226,1)";
-    attributes2["stroke"] = "rgba(30,144,255,1)";
-
     return new AAChartModel()
         .chartTypeSet(AAChartType.line)
         .titleSet("Custom Chart Hover And Select Halo Style")
@@ -862,14 +852,22 @@ class CustomStyleChartComposer {
                   new AAHalo()
                       .sizeSet(130)
                       .opacitySet(0.8)
-                      .attributesSet(attributes1)))
+                      .attributesSet({
+                    "stroke-width":50,
+                    "fill":"#00BFFF",
+                    "stroke":"#00BFFF"
+                      })))
               .selectSet(
               new AASelect()
                   .haloSet(
                   new AAHalo()
                       .sizeSet(130)
                       .opacitySet(1.0)
-                      .attributesSet(attributes2))))
+                      .attributesSet({
+                      "stroke-width":150,
+                      "fill":"rgba(138,43,226,1)",
+                      "stroke":"rgba(30,144,255,1)"
+                      }))))
     ]);
   }
 
@@ -1821,7 +1819,8 @@ class CustomStyleChartComposer {
             .colorSet(AAColor.green)
             .dataLabelsSet(aaDataLabels
             .formatSet("-{y} 美元")
-            .styleSet(new AAStyle()
+            .styleSet(
+            new AAStyle()
             .colorSet(AAColor.green)
             .fontSizeSet(11)
             .fontWeightSet(AAChartFontWeightType.thin)));
@@ -1832,7 +1831,8 @@ class CustomStyleChartComposer {
             .colorSet(AAColor.red)
             .dataLabelsSet(aaDataLabels
             .formatSet("+{y} 美元")
-            .styleSet(new AAStyle()
+            .styleSet(
+            new AAStyle()
             .colorSet(AAColor.red)
             .fontSizeSet(11)
             .fontWeightSet(AAChartFontWeightType.thin)));
