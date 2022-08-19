@@ -85,8 +85,14 @@ class CustomStyleChartPage extends StatelessWidget {
       case 40: return CustomStyleChartComposer.customVerticalXAxisCategoriesLabelsByHTMLBreakLineTag();
       case 41: return CustomStyleChartComposer.noMoreGroupingAndOverlapEachOtherColumnChart();
       case 42: return CustomStyleChartComposer.noMoreGroupingAndNestedColumnChart();
-      // case 43: return CustomStyleChartComposer.topRoundedCornersStackingColumnChart();
-      // case 44: return CustomStyleChartComposer.freeStyleRoundedCornersStackingColumnChart();
+      case 43: return CustomStyleChartComposer.topRoundedCornersStackingColumnChart();
+      case 44: return CustomStyleChartComposer.freeStyleRoundedCornersStackingColumnChart();
+      case 45: return CustomStyleChartComposer.customColumnChartBorderStyleAndStatesHoverColor();
+
+      case 46: return CustomStyleChartComposer.customLineChartWithColorfulMarkersAndLines();
+      case 47: return CustomStyleChartComposer.customLineChartWithColorfulMarkersAndLines2();
+      case 48: return CustomStyleChartComposer.drawLineChartWithPointsCoordinates2();
+      case 49: return CustomStyleChartComposer.configureSpecialStyleColumnForNegativeDataMixedPositiveData();
 
       default: {
         //statements;
