@@ -114,8 +114,8 @@ class AAStates extends AAObject {
    double opacity;
    double size;
 
-   AAHalo attributesSet(Map prop) {
-     attributes = prop;
+   AAHalo attributesSet(AASVGAttributes prop) {
+     attributes = prop.toJSon();
      return this;
    }
 
@@ -127,6 +127,35 @@ class AAStates extends AAObject {
    AAHalo sizeSet(double prop) {
      size = prop;
      return this;
+   }
+ }
+
+ class AASVGAttributes {
+   String fill;
+   String stroke;
+   double strokeWidth;
+
+   AASVGAttributes fillSet(String prop) {
+     fill = prop;
+     return this;
+   }
+
+   AASVGAttributes strokeSet(String prop) {
+     stroke = prop;
+     return this;
+   }
+
+   AASVGAttributes strokeWidthSet(double prop) {
+     strokeWidth = prop;
+     return this;
+   }
+
+   Map<String, dynamic> toJSon() {
+     return {
+       "fill": fill,
+       "stroke": stroke,
+       "stroke-width": strokeWidth,
+     };
    }
  }
 
