@@ -852,22 +852,24 @@ class CustomStyleChartComposer {
                   new AAHalo()
                       .sizeSet(130)
                       .opacitySet(0.8)
-                      .attributesSet({
-                    "stroke-width":50,
-                    "fill":"#00BFFF",
-                    "stroke":"#00BFFF"
-                      })))
+                      .attributesSet(
+                      new AASVGAttributes()
+                          .strokeWidthSet(50)
+                          .fillSet("#00BFFF")
+                          .strokeSet("#00BFFF")
+                  )))
               .selectSet(
               new AASelect()
                   .haloSet(
                   new AAHalo()
                       .sizeSet(130)
                       .opacitySet(1.0)
-                      .attributesSet({
-                      "stroke-width":150,
-                      "fill":"rgba(138,43,226,1)",
-                      "stroke":"rgba(30,144,255,1)"
-                      }))))
+                      .attributesSet(
+                      new AASVGAttributes()
+                          .strokeWidthSet(150)
+                          .fillSet("rgba(138,43,226,1)")
+                          .strokeSet("rgba(30,144,255,1)")
+                  ))))
     ]);
   }
 
