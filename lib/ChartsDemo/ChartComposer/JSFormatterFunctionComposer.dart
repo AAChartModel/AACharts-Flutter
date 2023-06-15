@@ -52,7 +52,7 @@ class JSFormatterFunctionComposer {
     //Custom Tooltip Style --- 自定义图表浮动提示框样式及内容/
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
-        .useHTMLSet(true)
+        ?.useHTMLSet(true)
         .formatterSet("""
   function () {
     return ' 🌕 🌖 🌗 🌘 🌑 🌒 🌓 🌔 <br/> '
@@ -111,7 +111,7 @@ class JSFormatterFunctionComposer {
 //Custom Tooltip Style --- 自定义图表浮动提示框样式及内容/
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
-        .useHTMLSet(true)
+        ?.useHTMLSet(true)
         .formatterSet("""
     function () {
         var s = '第' + '<b>' +  this.x + '</b>' + '年' + '<br/>';
@@ -156,7 +156,7 @@ class JSFormatterFunctionComposer {
 
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
 
-    aaOptions.xAxis.crosshairSet(
+    aaOptions.xAxis?.crosshairSet(
         AACrosshair()
             .dashStyleSet(AAChartLineDashStyleType.dashDot)
             .widthSet(1.0)
@@ -164,7 +164,7 @@ class JSFormatterFunctionComposer {
     );
 
     aaOptions.tooltip
-        .useHTMLSet(true)
+        ?.useHTMLSet(true)
         .formatterSet("""
 function () {
         let colorDot0 = '<span style=\"' + 'color:red; font-size:13px\"' + '>◉</span> ';
@@ -223,7 +223,7 @@ function () {
 
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
-        .useHTMLSet(true)
+        ?.useHTMLSet(true)
 //         .formatterSet("""
 // function () {
 //         let colorsArr = ["mediumspringgreen", "deepskyblue", "red", "sandybrown"];
@@ -282,7 +282,7 @@ function () {
 
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
-        .useHTMLSet(true)
+        ?.useHTMLSet(true)
         .headerFormatSet("<em>实验号码： {point.key}</em><br/>")
         .pointFormatSet(pointFormatStr)
         .valueDecimalsSet(2)//设置取值精确到小数点后几位
@@ -315,8 +315,8 @@ function () {
     ]);
 
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
-    AAYAxis aayAxis = aaOptions.yAxis;
-    aayAxis.labels
+    AAYAxis? aayAxis = aaOptions.yAxis;
+    aayAxis?.labels
 //         .formatterSet("""
 // function () {
 //         let yValue = this.value;
@@ -370,7 +370,7 @@ function () {
       ,]);
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
-        .sharedSet(false)
+        ?.sharedSet(false)
         .formatterSet("""
 function () {
                 return '<b>'
@@ -421,16 +421,16 @@ function () {
 
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.xAxis
-        .lineWidthSet(1)
+        ?.lineWidthSet(1)
         .lineColorSet("rgba(255,255,255,0.3)")
         .tickWidthSet(0);
 
-    AAYAxis aayAxis = aaOptions.yAxis;
-    aayAxis.gridLineWidthSet(0)
+    AAYAxis? aayAxis = aaOptions.yAxis;
+    aayAxis?.gridLineWidthSet(0)
         .lineColorSet("rgba(255,255,255,0.3)");
 
     aaOptions.plotOptions
-        .seriesSet(
+        ?.seriesSet(
         AASeries()
             .animationSet(false))
         .columnSet(
@@ -440,7 +440,7 @@ function () {
             .borderRadiusSet(8));
 
     aaOptions.tooltip
-        .sharedSet(false)
+        ?.sharedSet(false)
         .backgroundColorSet(gradientColorDic1)
         .styleSet(
         AAStyle()
@@ -497,15 +497,15 @@ function () {
 
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.xAxis
-        .lineWidthSet(1)
+        ?.lineWidthSet(1)
         .lineColorSet("rgba(255,255,255,0.3)")
         .tickWidthSet(0);
-    AAYAxis aayAxis = aaOptions.yAxis;
-    aayAxis.gridLineWidthSet(0)
+    AAYAxis? aayAxis = aaOptions.yAxis;
+    aayAxis?.gridLineWidthSet(0)
         .lineColorSet("rgba(255,255,255,0.3)");
 
     aaOptions.plotOptions
-        .seriesSet(
+        ?.seriesSet(
         AASeries()
             .animationSet(false))
         .columnSet(
@@ -516,7 +516,7 @@ function () {
     );
 
     aaOptions.tooltip
-        .sharedSet(false)
+        ?.sharedSet(false)
         .backgroundColorSet(AAColor.darkGray)
         .styleSet(
         AAStyle()
@@ -573,16 +573,16 @@ function () {
 
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.xAxis
-        .lineWidthSet(1)
+        ?.lineWidthSet(1)
         .lineColorSet("rgba(255,255,255,0.3)")
         .tickWidthSet(0);
-    AAYAxis aayAxis = aaOptions.yAxis;
+    AAYAxis? aayAxis = aaOptions.yAxis;
     aayAxis
-        .gridLineWidthSet(0)
+        ?.gridLineWidthSet(0)
         .lineColorSet("rgba(255,255,255,0.3)");
 
     aaOptions.plotOptions
-        .seriesSet(
+        ?.seriesSet(
         AASeries()
             .animationSet(false))
         .columnSet(
@@ -593,7 +593,7 @@ function () {
     ;
 
     aaOptions.tooltip
-        .sharedSet(false)
+        ?.sharedSet(false)
         .backgroundColorSet(AAColor.darkGray)
         .styleSet(
         AAStyle()
@@ -641,13 +641,13 @@ function () {
     ]);
 
     AAOptions aaOptions = aaChartModel.aa_toAAOptions();
-    aaOptions.xAxis.lineWidth = 0.0;//避免多边形外环之外有额外套了一层无用的外环
-    AAYAxis aayAxis = aaOptions.yAxis;
+    aaOptions.xAxis?.lineWidth = 0.0;//避免多边形外环之外有额外套了一层无用的外环
+    AAYAxis? aayAxis = aaOptions.yAxis;
 //    aayAxis.gridLineInterpolation = AAYAxisGridLineInterpolationPolygon;
 //    aayAxis.tickAmount = 8.0;
     aaOptions
-        .xAxis.labels
-        .formatterSet("""
+        .xAxis?.labels
+        ?.formatterSet("""
 function () {
   let categoriesArr = [];
   categoriesArr.push("Swift");
@@ -662,7 +662,7 @@ function () {
     """);
 
     aaOptions.tooltip
-        .useHTMLSet(true)
+        ?.useHTMLSet(true)
         .formatterSet("""
 function () {
   let categoriesArr = [];

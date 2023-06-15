@@ -64,8 +64,9 @@ abstract class AAOptionsComposer {
     )
     ;
 
+
     if (aaChartModel.animationType != AAChartAnimationType.linear) {
-      aaPlotOptions.series.animationSet((new AAAnimation()
+      aaPlotOptions.series?.animationSet((new AAAnimation()
           .easingSet(aaChartModel.animationType)
           .durationSet(aaChartModel.animationDuration)
       ));
@@ -101,7 +102,7 @@ abstract class AAOptionsComposer {
   static void _configureAAPlotOptionsMarkerStyle(
       AAChartModel aaChartModel,
       AAPlotOptions aaPlotOptions) {
-    String chartType = aaChartModel.chartType;
+    String? chartType = aaChartModel.chartType;
     //数据点标记相关配置，只有线性图Set(折线图、曲线图、折线区域填充图、曲线区域填充图,散点图)才有数据点标记
     if (   chartType == AAChartType.area
         || chartType == AAChartType.areaspline
@@ -119,8 +120,8 @@ abstract class AAOptionsComposer {
         aaMarker.lineWidthSet(2)
             .lineColorSet(aaChartModel.backgroundColor);
       }
-      AASeries aaSeries = aaPlotOptions.series;
-      aaSeries.markerSet(aaMarker);
+      AASeries? aaSeries = aaPlotOptions.series;
+      aaSeries?.markerSet(aaMarker);
 
     }
   }
@@ -129,11 +130,11 @@ abstract class AAOptionsComposer {
   static void _configureAAPlotOptionsDataLabels(
       AAPlotOptions aaPlotOptions,
       AAChartModel aaChartModel) {
-    String chartType = aaChartModel.chartType;
+    String? chartType = aaChartModel.chartType;
 
     AADataLabels aaDataLabels = new AADataLabels()
         .enabledSet(aaChartModel.dataLabelsEnabled);
-    if (aaChartModel.dataLabelsEnabled) {
+    if (aaChartModel.dataLabelsEnabled == true) {
       aaDataLabels = aaDataLabels
           .styleSet(aaChartModel.dataLabelsStyle);
     }
@@ -178,7 +179,7 @@ abstract class AAOptionsComposer {
             .allowPointSelectSet(true)
             .cursorSet("pointer")
             .showInLegendSet(true);
-        if (aaChartModel.dataLabelsEnabled) {
+        if (aaChartModel.dataLabelsEnabled == true) {
           aaDataLabels.formatSet("<b>{point.name}</b>: {point.percentage:.1f} %");
         }
         aaPie.dataLabelsSet(aaDataLabels);
@@ -202,15 +203,15 @@ abstract class AAOptionsComposer {
   static void _configureAxisContentAndStyle (
       AAOptions aaOptions,
       AAChartModel aaChartModel) {
-    String chartType = aaChartModel.chartType;
+    String? chartType = aaChartModel.chartType;
     //x 轴和 Y 轴的相关配置,扇形图、金字塔图和漏斗图则不需要设置 X 轴和 Y 轴的相关内容
     if (   chartType != AAChartType.pie
         && chartType != AAChartType.pyramid
         && chartType != AAChartType.funnel) {
-      bool aaXAxisLabelsEnabled = aaChartModel.xAxisLabelsEnabled;
+      bool? aaXAxisLabelsEnabled = aaChartModel.xAxisLabelsEnabled;
       AALabels aaXAxisLabels = new AALabels()
           .enabledSet(aaXAxisLabelsEnabled);//设置 x 轴是否显示文字
-      if (aaXAxisLabelsEnabled) {
+      if (aaXAxisLabelsEnabled == true) {
         aaXAxisLabels.styleSet( new AAStyle()
             .colorSet(aaChartModel.axesTextColor)
         );
@@ -225,10 +226,10 @@ abstract class AAOptionsComposer {
           .tickIntervalSet(aaChartModel.xAxisTickInterval)
       ;//x轴坐标点间隔数
 
-      bool aaYAxisLabelsEnabled = aaChartModel.yAxisLabelsEnabled;
+      bool? aaYAxisLabelsEnabled = aaChartModel.yAxisLabelsEnabled;
       AALabels aaYAxisLabels = new AALabels()
           .enabledSet(aaChartModel.yAxisLabelsEnabled);
-      if (aaYAxisLabelsEnabled) {
+      if (aaYAxisLabelsEnabled == true) {
         aaYAxisLabels.styleSet(new AAStyle()
             .colorSet(aaChartModel.axesTextColor)
         );

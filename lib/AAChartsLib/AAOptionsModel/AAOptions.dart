@@ -14,151 +14,151 @@ import 'AALegend.dart';
 
 
  class AAOptions extends AAObject  {
-     AAChart chart;
-     AATitle title;
-     AASubtitle subtitle;
-     AAXAxis xAxis;
-     AAYAxis yAxis;
-     List<AAXAxis> xAxisArray;
-     List<AAYAxis> yAxisArray;
-     AATooltip tooltip;
-     AAPlotOptions plotOptions;
-     List series;
-     AALegend legend;
-     AAPane pane;
-     List colors;
-     AACredits credits;
-     AALang defaultOptions;
-     bool touchEventEnabled;
+     AAChart? chart;
+     AATitle? title;
+     AASubtitle? subtitle;
+     AAXAxis? xAxis;
+     AAYAxis? yAxis;
+     List<AAXAxis>? xAxisArray;
+     List<AAYAxis>? yAxisArray;
+     AATooltip? tooltip;
+     AAPlotOptions? plotOptions;
+     List? series;
+     AALegend? legend;
+     AAPane? pane;
+     List? colors;
+     AACredits? credits;
+     AALang? defaultOptions;
+     bool? touchEventEnabled;
 
-     AAOptions chartSet(AAChart prop) {
+     AAOptions chartSet(AAChart? prop) {
         chart = prop;
         return this;
     }
 
-     AAOptions titleSet(AATitle prop) {
+     AAOptions titleSet(AATitle? prop) {
         title = prop;
         return this;
     }
 
-     AAOptions subtitleSet(AASubtitle prop) {
+     AAOptions subtitleSet(AASubtitle? prop) {
         subtitle = prop;
         return this;
     }
 
-     AAOptions xAxisSet(AAXAxis prop) {
+     AAOptions xAxisSet(AAXAxis? prop) {
         xAxis = prop;
         return this;
     }
 
-     AAOptions yAxisSet(Object prop) {
+     AAOptions yAxisSet(AAYAxis? prop) {
         yAxis = prop;
         return this;
     }
 
-     AAOptions xAxisArraySet(List<AAXAxis> prop) {
+     AAOptions xAxisArraySet(List<AAXAxis>? prop) {
        xAxisArray = prop;
        return this;
      }
 
-     AAOptions yAxisArraySet(List<AAYAxis> prop) {
+     AAOptions yAxisArraySet(List<AAYAxis>? prop) {
        yAxisArray = prop;
        return this;
      }
 
-     AAOptions tooltipSet(AATooltip prop) {
+     AAOptions tooltipSet(AATooltip? prop) {
         tooltip = prop;
         return this;
     }
 
-     AAOptions plotOptionsSet(AAPlotOptions prop) {
+     AAOptions plotOptionsSet(AAPlotOptions? prop) {
         plotOptions = prop;
         return this;
     }
 
-     AAOptions seriesSet(List prop) {
+     AAOptions seriesSet(List? prop) {
         series = prop;
         return this;
     }
 
-     AAOptions legendSet(AALegend prop) {
+     AAOptions legendSet(AALegend? prop) {
         legend = prop;
         return this;
     }
 
-     AAOptions paneSet(AAPane prop) {
+     AAOptions paneSet(AAPane? prop) {
        pane = prop;
        return this;
      }
 
-     AAOptions colorsSet(List prop) {
+     AAOptions colorsSet(List? prop) {
         colors = prop;
         return this;
     }
 
-    AAOptions creditsSet(AACredits prop) {
+    AAOptions creditsSet(AACredits? prop) {
        credits = prop;
        return this;
      }
 
-     AAOptions defaultOptionsSet(AALang prop) {
+     AAOptions defaultOptionsSet(AALang? prop) {
        defaultOptions = prop;
        return this;
      }
 
-     AAOptions touchEventEnabledSet(bool prop) {
+     AAOptions touchEventEnabledSet(bool? prop) {
         touchEventEnabled = prop;
         return this;
     }
 
      Map<String, dynamic> toJson() {
 
-       List<Map<String, dynamic>> xAxisArray;
+       List<Map<String, dynamic>>? xAxisArray;
        if (this.xAxisArray == null) {
          xAxisArray = null;
        } else {
-         xAxisArray = List<Map<String, dynamic>>();
-         this.xAxisArray.forEach((element) {
-           xAxisArray.add(element.toPureJson());
+         xAxisArray = [];
+         this.xAxisArray?.forEach((element) {
+           xAxisArray?.add(element.toPureJson());
          });
        }
 
-       List<Map<String, dynamic>> yAxisArray;
+       List<Map<String, dynamic>>? yAxisArray;
        if (this.yAxisArray == null) {
          yAxisArray = null;
        } else {
-         yAxisArray = List<Map<String, dynamic>>();
-         this.yAxisArray.forEach((element) {
-           yAxisArray.add(element.toPureJson());
+         yAxisArray = [];
+         this.yAxisArray?.forEach((element) {
+           yAxisArray?.add(element.toPureJson());
          });
        }
 
-       List<Map<String, dynamic>> seriesList;
+       List<Map<String, dynamic>>? seriesList;
        if (this.series == null) {
          seriesList = null;
        } else {
-         seriesList = List<Map<String, dynamic>>();
-         this.series.forEach((element) {
-           seriesList.add(element.toPureJson());
+         seriesList = [];
+         this.series?.forEach((element) {
+           seriesList?.add(element.toPureJson());
          });
        }
 
        var testMap = {
-         "chart": this.chart == null ? null : this.chart.toPureJson(),
-         "title": this.title == null ? null : this.title.toPureJson(),
-         "subtitle": this.subtitle == null ? null : this.subtitle.toPureJson(),
-         "xAxis": this.xAxis == null ? null : this.xAxis.toPureJson(),
-         "yAxis": this.yAxis == null ? null : this.yAxis.toPureJson(),
+         "chart": this.chart == null ? null : this.chart?.toPureJson(),
+         "title": this.title == null ? null : this.title?.toPureJson(),
+         "subtitle": this.subtitle == null ? null : this.subtitle?.toPureJson(),
+         "xAxis": this.xAxis == null ? null : this.xAxis?.toPureJson(),
+         "yAxis": this.yAxis == null ? null : this.yAxis?.toPureJson(),
          "xAxisArray": xAxisArray,
          "yAxisArray": yAxisArray,
-         "tooltip": this.tooltip == null ? null : this.tooltip.toPureJson(),
-         "plotOptions": this.plotOptions == null ? null : this.plotOptions.toPureJson(),
+         "tooltip": this.tooltip == null ? null : this.tooltip?.toPureJson(),
+         "plotOptions": this.plotOptions == null ? null : this.plotOptions?.toPureJson(),
          "series": seriesList,
-         "legend": this.legend == null ? null : this.legend.toPureJson(),
-         "pane": this.pane == null ? null : this.pane.toPureJson(),
+         "legend": this.legend == null ? null : this.legend?.toPureJson(),
+         "pane": this.pane == null ? null : this.pane?.toPureJson(),
          "colors": this.colors == null ? null : this.colors,
-         "credits": this.credits == null ? null : this.credits.toPureJson(),
-         "defaultOptions": this.defaultOptions == null ? null : this.defaultOptions.toPureJson(),
+         "credits": this.credits == null ? null : this.credits?.toPureJson(),
+         "defaultOptions": this.defaultOptions == null ? null : this.defaultOptions?.toPureJson(),
 
          // "touchEventEnabled": this.touchEventEnabled == null ? null : this.touchEventEnabled,
        };

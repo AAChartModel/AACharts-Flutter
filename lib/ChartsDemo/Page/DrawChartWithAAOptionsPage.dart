@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class DrawChartWithAAOptionsPage extends StatelessWidget {
   final int selectedIndex;
 
-  const DrawChartWithAAOptionsPage({Key key, @required this.selectedIndex})
+  const DrawChartWithAAOptionsPage({ Key? key, required this.selectedIndex})
       : super(key: key);
 
   @override

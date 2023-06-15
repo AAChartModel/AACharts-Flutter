@@ -1,45 +1,45 @@
 import 'AAObject.dart';
 
  class AAMarker extends AAObject  {
-    bool enabled;
-    double radius;
-    String symbol;
-    String fillColor;//点的填充色(用来设置折线连接点的填充色)
-    double lineWidth;//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
-    Object lineColor;//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
-    AAMarkerStates states;
+    bool? enabled;
+    double? radius;
+    String? symbol;
+    String? fillColor;//点的填充色(用来设置折线连接点的填充色)
+    double? lineWidth;//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+    Object? lineColor;//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色。)
+    AAMarkerStates? states;
 
-    AAMarker enabledSet(bool prop) {
+    AAMarker enabledSet(bool? prop) {
       enabled = prop;
       return this;
     }
 
-     AAMarker radiusSet(double prop) {
+     AAMarker radiusSet(double? prop) {
         radius = prop;
         return this;
     }
 
-     AAMarker symbolSet(String prop) {
+     AAMarker symbolSet(String? prop) {
         symbol = prop;
         return this;
     }
 
-     AAMarker fillColorSet(String prop) {
+     AAMarker fillColorSet(String? prop) {
         fillColor = prop;
         return this;
     }
 
-     AAMarker lineWidthSet(double prop) {
+     AAMarker lineWidthSet(double? prop) {
         lineWidth = prop;
         return this;
     }
 
-     AAMarker lineColorSet(Object prop) {
+     AAMarker lineColorSet(Object? prop) {
         lineColor = prop;
         return this;
     }
 
-    AAMarker statesSet(Object prop) {
+    AAMarker statesSet(AAMarkerStates? prop) {
       states = prop;
       return this;
     }
@@ -57,10 +57,10 @@ import 'AAObject.dart';
 }
 
 class AAMarkerStates {
-  AAMarkerHover hover;
+  AAMarkerHover? hover;
 
 
-  AAMarkerStates hoverSet(AAMarkerHover prop) {
+  AAMarkerStates hoverSet(AAMarkerHover? prop) {
     hover = prop;
     return this;
   }
@@ -68,45 +68,45 @@ class AAMarkerStates {
 
 class AAMarkerHover {
 
-  bool enabled;
-  String fillColor;
-  String lineColor;
-  double lineWidth;
-  double lineWidthPlus;
-  double radius;
-  double radiusPlus;
+  bool? enabled;
+  String? fillColor;
+  String? lineColor;
+  double? lineWidth;
+  double? lineWidthPlus;
+  double? radius;
+  double? radiusPlus;
 
-  AAMarkerHover enabledSet(bool prop) {
+  AAMarkerHover enabledSet(bool? prop) {
     enabled = prop;
     return this;
   }
 
-  AAMarkerHover fillColorSet(String prop) {
+  AAMarkerHover fillColorSet(String? prop) {
     fillColor = prop;
     return this;
   }
 
-  AAMarkerHover lineColorSet(String prop) {
+  AAMarkerHover lineColorSet(String? prop) {
     lineColor = prop;
     return this;
   }
 
-  AAMarkerHover lineWidthSet(double prop) {
+  AAMarkerHover lineWidthSet(double? prop) {
     lineWidth = prop;
     return this;
   }
 
-  AAMarkerHover lineWidthPlusSet(double prop) {
+  AAMarkerHover lineWidthPlusSet(double? prop) {
     lineWidthPlus = prop;
     return this;
   }
 
-  AAMarkerHover radiusSet(double prop) {
+  AAMarkerHover radiusSet(double? prop) {
     radius = prop;
     return this;
   }
 
-  AAMarkerHover radiusPlusSet(double prop) {
+  AAMarkerHover radiusPlusSet(double? prop) {
     radiusPlus = prop;
     return this;
   }

@@ -10,12 +10,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class AAChartView extends StatelessWidget {
-  InAppWebViewController webViewController;
-  InAppWebView webView;
+  InAppWebViewController? webViewController;
+  InAppWebView? webView;
   String url = "";
   double progress = 0;
 
-  String optionsJson;
+  String? optionsJson;
 
 
   void aa_drawChartWithChartModel(AAChartModel aaChartModel) {
@@ -55,12 +55,12 @@ class AAChartView extends StatelessWidget {
       },
       onLoadStart: (controller, url) {
         // setState(() {
-        this.url = url ?? '';
+        this.url = url as String;
         // });
       },
       onLoadStop: (controller, url) {
         // setState(() {
-        this.url = url ?? '';
+        this.url = url as String;
         configureChartOptionsAndDrawChart(aaOptions);
         var result =  controller.evaluateJavascript(source: "1 + 1");
         print(result.runtimeType); // int
@@ -98,7 +98,7 @@ class AAChartView extends StatelessWidget {
    }
 
    void safeEvaluateJavaScriptString(String javaScriptString) {
-     webViewController.evaluateJavascript(source: javaScriptString);
+     webViewController?.evaluateJavascript(source: javaScriptString);
    }
 
   String getPrettyJSONString(jsonObject){

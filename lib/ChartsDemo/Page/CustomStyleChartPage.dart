@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 class CustomStyleChartPage extends StatelessWidget {
   final int selectedIndex;
 
-  const CustomStyleChartPage({Key key, @required this.selectedIndex}) : super(key: key);
+  const CustomStyleChartPage({ Key? key,  required this.selectedIndex}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +92,7 @@ class CustomStyleChartPage extends StatelessWidget {
       case 46: return CustomStyleChartComposer.customLineChartWithColorfulMarkersAndLines();
       case 47: return CustomStyleChartComposer.customLineChartWithColorfulMarkersAndLines2();
       case 48: return CustomStyleChartComposer.drawLineChartWithPointsCoordinates2();
-      case 49: return CustomStyleChartComposer.configureSpecialStyleColumnForNegativeDataMixedPositiveData();
+      // case 49: return CustomStyleChartComposer.configureSpecialStyleColumnForNegativeDataMixedPositiveData();
 
       default: {
         //statements;

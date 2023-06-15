@@ -1,33 +1,33 @@
 import 'AAObject.dart';
 
  class AAShadow extends AAObject  {
-    String color;
-    double offsetX;
-    double offsetY;
-    double opacity;
-    double width;
+    String? color;
+    double? offsetX;
+    double? offsetY;
+    double? opacity;
+    double? width;
 
-     AAShadow colorSet(String prop) {
+     AAShadow colorSet(String? prop) {
         color = prop;
         return this;
     }
 
-     AAShadow offsetXSet(double prop) {
+     AAShadow offsetXSet(double? prop) {
         offsetX = prop;
         return this;
     }
 
-     AAShadow offsetYSet(double prop) {
+     AAShadow offsetYSet(double? prop) {
         offsetY = prop;
         return this;
     }
 
-     AAShadow opacitySet(double prop) {
+     AAShadow opacitySet(double? prop) {
         opacity = prop;
         return this;
     }
 
-     AAShadow widthSet(double prop) {
+     AAShadow widthSet(double? prop) {
         width = prop;
         return this;
     }

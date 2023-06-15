@@ -1,141 +1,141 @@
 import 'AAObject.dart';
 
 class AAStyle extends AAObject  {
-  String background;
-  String backgroundColor;
-  String border;
-  String borderRadius;
-  String color;
-  String cursor;
-  String fontFamily;
-  String fontSize;
-  String fontWeight;
-  double height;
-  double lineWidth;
-  double opacity;
-  String padding;
-  String pointerEvents;
-  String position;
-  String textAlign;
-  String textDecoration;
-  String textOutline;
-  String textOverflow;
-  String top;
-  String transition;
-  String whiteSpace;
-  double width;
+  String? background;
+  String? backgroundColor;
+  String? border;
+  String? borderRadius;
+  String? color;
+  String? cursor;
+  String? fontFamily;
+  String? fontSize;
+  String? fontWeight;
+  double? height;
+  double? lineWidth;
+  double? opacity;
+  String? padding;
+  String? pointerEvents;
+  String? position;
+  String? textAlign;
+  String? textDecoration;
+  String? textOutline;
+  String? textOverflow;
+  String? top;
+  String? transition;
+  String? whiteSpace;
+  double? width;
 
-  AAStyle backgroundSet(String prop) {
+  AAStyle backgroundSet(String? prop) {
     background = prop;
     return this;
   }
 
-  AAStyle backgroundColorSet(String prop) {
+  AAStyle backgroundColorSet(String? prop) {
     backgroundColor = prop;
     return this;
   }
 
-  AAStyle borderSet(String prop) {
+  AAStyle borderSet(String? prop) {
     border = prop;
     return this;
   }
 
-  AAStyle borderRadiusSet(double prop) {
+  AAStyle borderRadiusSet(double? prop) {
     borderRadius = "${prop}px";
     return this;
   }
 
-  AAStyle colorSet(String prop) {
+  AAStyle colorSet(String? prop) {
     color = prop;
     return this;
   }
 
-  AAStyle cursorSet(String prop) {
+  AAStyle cursorSet(String? prop) {
     cursor = prop;
     return this;
   }
 
-  AAStyle fontFamilySet(String prop) {
+  AAStyle fontFamilySet(String? prop) {
     fontFamily = prop;
     return this;
   }
 
-  AAStyle fontSizeSet(double prop) {
+  AAStyle fontSizeSet(double? prop) {
     fontSize = "${prop}px";
     return this;
   }
 
-  AAStyle fontWeightSet(String prop) {
+  AAStyle fontWeightSet(String? prop) {
     fontWeight = prop;
     return this;
   }
 
-  AAStyle heightSet(double prop) {
+  AAStyle heightSet(double? prop) {
     height = prop;
     return this;
   }
 
-  AAStyle lineWidthSet(double prop) {
+  AAStyle lineWidthSet(double? prop) {
     lineWidth = prop;
     return this;
   }
 
-  AAStyle opacitySet(double prop) {
+  AAStyle opacitySet(double? prop) {
     opacity = prop;
     return this;
   }
 
-  AAStyle paddingSet(double prop) {
+  AAStyle paddingSet(double? prop) {
     padding = "${prop}px";
     return this;
   }
 
-  AAStyle pointerEventsSet(String prop) {
+  AAStyle pointerEventsSet(String? prop) {
     pointerEvents = prop;
     return this;
   }
 
-  AAStyle positionSet(String prop) {
+  AAStyle positionSet(String? prop) {
     position = prop;
     return this;
   }
 
-  AAStyle textAlignSet(String prop) {
+  AAStyle textAlignSet(String? prop) {
     textAlign = prop;
     return this;
   }
 
-  AAStyle textDecorationSet(String prop) {
+  AAStyle textDecorationSet(String? prop) {
     textDecoration = prop;
     return this;
   }
 
-  AAStyle textOutlineSet(String prop) {
+  AAStyle textOutlineSet(String? prop) {
     textOutline = prop;
     return this;
   }
 
-  AAStyle textOverflowSet(String prop) {
+  AAStyle textOverflowSet(String? prop) {
     textOverflow = prop;
     return this;
   }
 
-  AAStyle topSet(String prop) {
+  AAStyle topSet(String? prop) {
     top = prop;
     return this;
   }
 
-  AAStyle transitionSet(String prop) {
+  AAStyle transitionSet(String? prop) {
     transition = prop;
     return this;
   }
 
-  AAStyle whiteSpaceSet(String prop) {
+  AAStyle whiteSpaceSet(String? prop) {
     whiteSpace = prop;
     return this;
   }
 
-  AAStyle widthSet(double prop) {
+  AAStyle widthSet(double? prop) {
     width = prop;
     return this;
   }
@@ -172,21 +172,33 @@ class AAStyle extends AAObject  {
     return AAStyle.colorSize(color, null);
   }
 
-  static AAStyle colorSize(String color, double fontSize) {
+  static AAStyle colorSize(String? color, double? fontSize) {
     return AAStyle.colorSizeWeight(color, fontSize, null);
   }
 
-  static AAStyle colorSizeWeight(String color, double fontSize, String weight) {
+  static AAStyle colorSizeWeight(String? color, double? fontSize, String? weight) {
     return AAStyle.colorSizeWeightOutline(color, fontSize, weight, null);
   }
 
-  static AAStyle colorSizeWeightOutline(String color, double fontSize, String weight, String outline) {
+  static AAStyle colorSizeWeightOutline(String? color, double? fontSize, String? weight, String? outline) {
     var aaStyle = new AAStyle();
-    aaStyle
-        .colorSet(color)
-        .fontSizeSet(fontSize)
-        .fontWeightSet(weight)
-        .textOutlineSet(outline);
+    // aaStyle
+        // .colorSet(color)
+        // .fontSizeSet(fontSize)
+        // .fontWeightSet(weight)
+        // .textOutlineSet(outline);
+    if (color != null) {
+      aaStyle.colorSet(color);
+    }
+    if (fontSize != null) {
+      aaStyle.fontSizeSet(fontSize);
+    }
+    if (weight != null) {
+      aaStyle.fontWeightSet(weight);
+    }
+    if (outline != null) {
+      aaStyle.textOutlineSet(outline);
+    }
     return aaStyle;
   }
 }

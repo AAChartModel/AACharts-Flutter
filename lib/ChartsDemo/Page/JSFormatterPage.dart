@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 class JSFormatterPage extends StatelessWidget {
   final int selectedIndex;
 
-  const JSFormatterPage({Key key, @required this.selectedIndex})
+  const JSFormatterPage({ Key? key, required this.selectedIndex})
       : super(key: key);
 
   @override

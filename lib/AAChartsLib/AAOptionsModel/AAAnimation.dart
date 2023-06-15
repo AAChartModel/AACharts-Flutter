@@ -5,15 +5,15 @@
 import 'AAObject.dart';
 
 class AAAnimation extends AAObject  {
-    int duration;
-    AAChartAnimationType easing;
+    int? duration;
+    AAChartAnimationType? easing;
 
-     AAAnimation durationSet(int prop) {
+     AAAnimation durationSet(int? prop) {
         duration = prop;
         return this;
     }
 
-     AAAnimation easingSet(AAChartAnimationType prop) {
+     AAAnimation easingSet(AAChartAnimationType? prop) {
         easing = prop;
         return this;
     }
@@ -21,7 +21,7 @@ class AAAnimation extends AAObject  {
     Map<String, dynamic> toJson() {
     return {
       "duration": this.duration,
-      "easing": this.easing == null ? null : this.easing.index,
+      "easing": this.easing == null ? null : this.easing?.index,
     };
   }
 }

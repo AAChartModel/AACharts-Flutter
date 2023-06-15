@@ -1,7 +1,7 @@
 class AAObject {
 
   Map<String, dynamic> toJson() {
-    return null;
+    return toPureJson();
   }
 
   Map<String, dynamic> toPureJson() {

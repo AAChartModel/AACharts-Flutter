@@ -1,33 +1,33 @@
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAObject.dart';
 
 class AAScrollablePlotArea extends AAObject {
-  int minHeight;
-  int minWidth;
-  double opacity;
-  double scrollPositionX;
-  double scrollPositionY;
+  int? minHeight;
+  int? minWidth;
+  double? opacity;
+  double? scrollPositionX;
+  double? scrollPositionY;
 
-  AAScrollablePlotArea minHeightSet(int prop) {
+  AAScrollablePlotArea minHeightSet(int? prop) {
     minHeight = prop;
     return this;
   }
 
-  AAScrollablePlotArea minWidthSet(int prop) {
+  AAScrollablePlotArea minWidthSet(int? prop) {
     minWidth = prop;
     return this;
   }
 
-  AAScrollablePlotArea opacitySet(double prop) {
+  AAScrollablePlotArea opacitySet(double? prop) {
     opacity = prop;
     return this;
   }
 
-  AAScrollablePlotArea scrollPositionXSet(double prop) {
+  AAScrollablePlotArea scrollPositionXSet(double? prop) {
     scrollPositionX = prop;
     return this;
   }
 
-  AAScrollablePlotArea scrollPositionYSet(double prop) {
+  AAScrollablePlotArea scrollPositionYSet(double? prop) {
     scrollPositionY = prop;
     return this;
   }

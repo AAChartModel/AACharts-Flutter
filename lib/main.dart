@@ -32,7 +32,7 @@ class Application extends StatefulWidget {
 
 
 class _ApplicationState extends State<Application> {
-  AAChartView aaChartView;
+  late AAChartView aaChartView;
 
   @override
   void initState() {
@@ -295,7 +295,7 @@ class _ApplicationState extends State<Application> {
 // }
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key key}) : super(key: key);
+  const DetailScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -319,7 +319,7 @@ class DetailScreen extends StatelessWidget {
 
 class _MyAppState extends State<Application> {
 
-  InAppWebViewController webView;
+  late InAppWebViewController webView;
   String url = "";
   double progress = 0;
 
@@ -407,17 +407,15 @@ class _MyAppState extends State<Application> {
 
                         )
                     ),
-                    onWebViewCreated: (InAppWebViewController controller) {
-                      webView = controller;
-                    },
+
                     onLoadStart: (controller, url) {
                       setState(() {
-                        this.url = url ?? '';
+                        this.url = url as String;
                       });
                     },
                     onLoadStop: (controller, url) async {
                       setState(() {
-                        this.url = url ?? '';
+                        this.url = url as String;
                       });
                     },
                     onProgressChanged: (controller, progress) {
@@ -431,19 +429,19 @@ class _MyAppState extends State<Application> {
               ButtonBar(
                 alignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  RaisedButton(
+                  ElevatedButton(
                     child: Icon(Icons.arrow_back),
                     onPressed: () {
                       webView?.goBack();
                     },
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     child: Icon(Icons.arrow_forward),
                     onPressed: () {
                       webView?.goForward();
                     },
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     child: Icon(Icons.refresh),
                     onPressed: () {
                       webView?.reload();

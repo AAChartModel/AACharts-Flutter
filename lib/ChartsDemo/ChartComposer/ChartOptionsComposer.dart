@@ -73,7 +73,7 @@ class ChartOptionsComposer {
 
     var aaOptions = aaChartModel.aa_toAAOptions();
 
-    aaOptions.plotOptions.series.pointIntervalSet(24 * 3600 * 1000);
+    aaOptions.plotOptions?.series?.pointIntervalSet(24 * 3600 * 1000);
 
     var aaCrosshair = new AACrosshair()
         .colorSet("#FFD700")//pure gold color
@@ -82,21 +82,21 @@ class ChartOptionsComposer {
         .zIndexSet(10)
     ;
 
-    aaOptions.xAxis.crosshairSet(aaCrosshair);
-    aaOptions.yAxis.crosshairSet(aaCrosshair);
+    aaOptions.xAxis?.crosshairSet(aaCrosshair);
+    aaOptions.yAxis?.crosshairSet(aaCrosshair);
 
-    aaOptions.yAxis.labels.format = "{value} \$";//给y轴添加单位
+    aaOptions.yAxis?.labels?.format = "{value} \$";//给y轴添加单位
 
     //https://jshare.com.cn/highcharts/hhhhf0
     aaOptions.xAxis
-        .typeSet(AAChartAxisType.datetime)
+        ?.typeSet(AAChartAxisType.datetime)
         .dateTimeLabelFormatsSet(
         new AADateTimeLabelFormats()
             .daySet("%e of %b"));
 
     //https://github.com/AAChartModel/AAChartKit-Swift/issues/306
     aaOptions.xAxis
-        .gridLineColorSet(AAColor.darkGray)
+        ?.gridLineColorSet(AAColor.darkGray)
         .gridLineWidthSet(1)
         .minorGridLineColorSet(AAColor.lightGray)
         .minorGridLineWidthSet(0.5)
@@ -104,7 +104,7 @@ class ChartOptionsComposer {
     ;
 
     aaOptions.yAxis
-        .gridLineColorSet(AAColor.darkGray)
+        ?.gridLineColorSet(AAColor.darkGray)
         .gridLineWidthSet(1)
         .minorGridLineColorSet(AAColor.lightGray)
         .minorGridLineWidthSet(0.5)
@@ -112,7 +112,7 @@ class ChartOptionsComposer {
     ;
 
     aaOptions.legend
-        .itemMarginTopSet(20)
+        ?.itemMarginTopSet(20)
         .symbolRadiusSet(10)//图标圆角
         .symbolHeightSet(20)//标志高度
         .symbolWidthSet(20)//图标宽度
@@ -125,7 +125,7 @@ class ChartOptionsComposer {
         .fontWeightSet(AAChartFontWeightType.bold));
 
     //禁用图例点击事件
-    aaOptions.plotOptions.series.events = new AASeriesEvents()
+    aaOptions.plotOptions?.series?.events = new AASeriesEvents()
         .legendItemClickSet("""
           function() {
               return false;
@@ -165,7 +165,7 @@ class ChartOptionsComposer {
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    aaOptions.chart.plotBackgroundImageSet("https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2859216016,2109779587&fm=27&gp=0.jpg");
+    aaOptions.chart?.plotBackgroundImageSet("https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2859216016,2109779587&fm=27&gp=0.jpg");
 
     return aaOptions;
   }
@@ -203,11 +203,11 @@ class ChartOptionsComposer {
     var aaOptions = model.aa_toAAOptions();
 
     aaOptions.chart
-        .marginRightSet(0)
+        ?.marginRightSet(0)
         .marginTopSet(50);
 
     aaOptions.yAxis
-        .allowDecimalsSet(false)
+        ?.allowDecimalsSet(false)
         .alternateGridColorSet("#EAF4FF")
         .tickAmountSet(13)
         .gridLineWidthSet(0);
@@ -215,13 +215,13 @@ class ChartOptionsComposer {
     var categories = ["17.04","21.04","25.04","29.04","03.05","07.05","11.05", ""];
     var categoryJSArrStr = AAJSArrayConverter.JSArrayWithDartArray(categories);
 
-    aaOptions.xAxis.labels
-        .formatterSet("""
+    aaOptions.xAxis?.labels
+        ?.formatterSet("""
 
   """);
 
     aaOptions.tooltip
-        .useHTMLSet(true)
+        ?.useHTMLSet(true)
         .formatterSet("""
 
   """)
@@ -244,7 +244,7 @@ class ChartOptionsComposer {
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    aaOptions.yAxis.minSet(1000);
+    aaOptions.yAxis?.minSet(1000);
 
     return aaOptions;
   }
@@ -356,7 +356,7 @@ class ChartOptionsComposer {
     var aaOptions = aaChartModel.aa_toAAOptions();
 
     aaOptions.xAxis
-        .tickIntervalSet(3)
+        ?.tickIntervalSet(3)
         .labelsSet(new AALabels()
         .autoRotationSet([-10, -20, -30, -40, -50, -60, -70, -80, -90]));
 
@@ -383,8 +383,8 @@ class ChartOptionsComposer {
     //
     //    * 关于 `pointPadding`
     //https://api.highcharts.com.cn/highcharts#plotOptions.column.pointPadding
-    aaOptions.plotOptions.column
-        .groupPaddingSet(0.05)//Padding between each column or bar, in x axis units. default：0.1.
+    aaOptions.plotOptions?.column
+        ?.groupPaddingSet(0.05)//Padding between each column or bar, in x axis units. default：0.1.
         .pointPaddingSet(0);//Padding between each value groups, in x axis units. default：0.2.;
 
     return aaOptions;
@@ -408,7 +408,7 @@ class ChartOptionsComposer {
         .endAngleSet(150));
 
     aaOptions.yAxis
-        .gridLineColorSet(AAColor.white)
+        ?.gridLineColorSet(AAColor.white)
         .plotBandsSet([
       new AAPlotBandsElement()
           .fromSet(0)
@@ -441,7 +441,7 @@ class ChartOptionsComposer {
         .endAngleSet(150));
 
     aaOptions.yAxis
-        .gridLineColorSet(AAColor.white)
+        ?.gridLineColorSet(AAColor.white)
         .plotBandsSet([
       new AAPlotBandsElement()
           .fromSet(0)
@@ -502,7 +502,7 @@ class ChartOptionsComposer {
           .colorSet("#acf08f"),
     ];
 
-    aaOptions.yAxis.plotBandsSet(aaPlotBandsArr);
+    aaOptions.yAxis?.plotBandsSet(aaPlotBandsArr);
 
     return aaOptions;
   }
@@ -586,7 +586,7 @@ class ChartOptionsComposer {
           .styleSet(aaStyle)),
     ];
 
-    aaOptions.yAxis.plotLinesSet(aaPlotLinesArr);
+    aaOptions.yAxis?.plotLinesSet(aaPlotLinesArr);
 
     return aaOptions;
   }
@@ -631,12 +631,12 @@ class ChartOptionsComposer {
     themeMap["display"] = "none";
 
     aaOptions.chart
-        .resetZoomButtonSet(new AAResetZoomButton()
+        ?.resetZoomButtonSet(new AAResetZoomButton()
         .themeSet(themeMap)
     );//隐藏图表缩放后的默认显示的缩放按钮;
 
     aaOptions.tooltip
-        .useHTMLSet(true)
+        ?.useHTMLSet(true)
         .formatterSet("""
     function () {
     return ' 🌕 🌖 🌗 🌘 🌑 🌒 🌓 🌔 <br/> '
@@ -701,7 +701,7 @@ class ChartOptionsComposer {
 
     var aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.xAxis
-        .crosshairSet(new AACrosshair()
+        ?.crosshairSet(new AACrosshair()
         .dashStyleSet(AAChartLineDashStyleType.longDashDot)
         .colorSet(AAColor.red)
         .widthSet(1));
@@ -739,7 +739,7 @@ class ChartOptionsComposer {
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    aaOptions.xAxis.labels.useHTMLSet(true);
+    aaOptions.xAxis?.labels?.useHTMLSet(true);
 
     return aaOptions;
   }
@@ -775,7 +775,7 @@ class ChartOptionsComposer {
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    aaOptions.xAxis.labels.useHTMLSet(true);
+    aaOptions.xAxis?.labels?.useHTMLSet(true);
 
     return aaOptions;
   }
@@ -811,8 +811,8 @@ class ChartOptionsComposer {
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    aaOptions.plotOptions.areaspline.dataLabels
-        .enabledSet(true)
+    aaOptions.plotOptions?.areaspline?.dataLabels
+        ?.enabledSet(true)
         .styleSet(new AAStyle()
         .colorSet(AAColor.white)
         .fontSizeSet(14)
@@ -831,7 +831,7 @@ class ChartOptionsComposer {
         .colorSet(AAColor.white);//轴文字颜色;
 
     aaOptions.xAxis
-        .tickWidthSet(2)//X轴刻度线宽度
+        ?.tickWidthSet(2)//X轴刻度线宽度
         .lineWidthSet(1.5)//X轴轴线宽度
         .lineColorSet(AAColor.white)//X轴轴线颜色
         .crosshairSet(aaCrosshair)
@@ -839,7 +839,7 @@ class ChartOptionsComposer {
         .styleSet(aaStyle));
 
     aaOptions.yAxis
-        .oppositeSet(true)
+        ?.oppositeSet(true)
         .tickWidthSet(2)
         .lineWidthSet(1.5)//Y轴轴线颜色
         .lineColorSet(AAColor.white)//Y轴轴线颜色
@@ -898,7 +898,7 @@ class ChartOptionsComposer {
       ,
     ];
 
-    aaOptions.xAxis.plotBandsSet(aaPlotBandsArr);
+    aaOptions.xAxis?.plotBandsSet(aaPlotBandsArr);
 
     return aaOptions;
   }
@@ -1171,7 +1171,7 @@ class ChartOptionsComposer {
       ,23200,24450,25250,7500
     ];
 
-    var rateValuesArr = new List();
+    List rateValuesArr = [];
 
     for (var i = 0; i < 32; i++) {
       var goalValue = goalValuesArr[i];
@@ -1475,7 +1475,7 @@ class ChartOptionsComposer {
 
     var aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
-        .sharedSet(true)
+        ?.sharedSet(true)
         .useHTMLSet(true)
         .headerFormatSet("<small>{point.key}</small><table>")
         .pointFormatSet("<tr><td style=\\\"{series.color}\\\">{series.name}: </td>"
@@ -1504,13 +1504,13 @@ class ChartOptionsComposer {
     var aaOptions = aaChartModel.aa_toAAOptions();
 
     aaOptions.yAxis
-        .oppositeSet(true)
+        ?.oppositeSet(true)
         .gridLineDashStyleSet(AAChartLineDashStyleType.shortDashDot)
         .gridLineWidthSet(3)
         .gridLineColorSet(AAColor.lightGray);
 
     aaOptions.xAxis
-        .gridLineDashStyleSet(AAChartLineDashStyleType.shortDashDotDot)
+        ?.gridLineDashStyleSet(AAChartLineDashStyleType.shortDashDotDot)
         .gridLineWidthSet(3)
         .gridLineColorSet(AAColor.gray);
 
@@ -1547,13 +1547,13 @@ class ChartOptionsComposer {
     """;
 
     aaOptions.yAxis
-        .tickPositionsSet([0, 25, 50, 75, 100])
+        ?.tickPositionsSet([0, 25, 50, 75, 100])
         .gridLineColorSet("#DDDDDD")
         .gridLineWidthSet(2.0)
         .gridLineDashStyleSet(AAChartLineDashStyleType.dash);
 
     aaOptions.xAxis
-        .lineColorSet("#5BCCC8")
+        ?.lineColorSet("#5BCCC8")
         .lineWidthSet(5)
         .gridLineColorSet(AAColor.red)
         .gridLineWidthSet(3)
@@ -1561,8 +1561,8 @@ class ChartOptionsComposer {
         .tickPositionsSet([0,1,2,0])
     ;
 
-    aaOptions.xAxis.labels
-        .formatterSet(xAxisLabelsFormatter)
+    aaOptions.xAxis?.labels
+        ?.formatterSet(xAxisLabelsFormatter)
     ;
 
     return aaOptions;
@@ -1623,8 +1623,8 @@ class ChartOptionsComposer {
     //    * 关于 `pointPadding`
     //https://api.highcharts.com.cn/highcharts#plotOptions.column.pointPadding;
 
-    aaOptions.plotOptions.columnrange
-        .groupingSet(false)
+    aaOptions.plotOptions?.columnrange
+        ?.groupingSet(false)
         .groupPaddingSet(0.003)
     ;
 
@@ -1657,7 +1657,7 @@ class ChartOptionsComposer {
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    aaOptions.xAxis.labels.useHTML = true;
+    aaOptions.xAxis?.labels?.useHTML = true;
 
     return aaOptions;
   }
@@ -1689,7 +1689,7 @@ class ChartOptionsComposer {
     var aaOptions = aaChartModel.aa_toAAOptions();
 
     aaOptions.xAxis
-        .tickIntervalSet(1)
+        ?.tickIntervalSet(1)
         .lineWidthSet(0)//避免多边形外环之外有额外套了一层无用の外环
         .gridLineColorSet(AAColor.rgbaColor(30, 144, 255, 0.6))
         .crosshairSet(
@@ -1699,7 +1699,7 @@ class ChartOptionsComposer {
             .dashStyleSet(AAChartLineDashStyleType.longDashDotDot));
 
     aaOptions.yAxis
-        .gridLineInterpolationSet("polygon")
+        ?.gridLineInterpolationSet("polygon")
         .lineWidthSet(0)
         .gridLineColorSet(AAColor.rgbaColor(30, 144, 255, 1.0))
         .crosshairSet(
@@ -1734,7 +1734,7 @@ class ChartOptionsComposer {
     ];
 
     var aaYAxis = aaOptions.yAxis;
-    aaYAxis.plotBands = aaPlotBandsArr;
+    aaYAxis?.plotBands = aaPlotBandsArr;
 
     return aaOptions;
   }
@@ -1742,7 +1742,7 @@ class ChartOptionsComposer {
   //四边形雷达图
   static AAOptions configureQuadrangleRadarChart() {
     var aaOptions = configureTriangleRadarChart();
-    aaOptions.yAxis.plotBands = [
+    aaOptions.yAxis?.plotBands = [
       new AAPlotBandsElement()
           .fromSet(0)
           .toSet(5)
@@ -1765,10 +1765,10 @@ class ChartOptionsComposer {
           .colorSet(AAColor.rgbaColor(255, 0, 0, 0.2)),
     ];
 
-    aaOptions.xAxis.gridLineColor = AAColor.rgbaColor(255, 0, 0, 0.6);
-    aaOptions.yAxis.gridLineColor = AAColor.rgbaColor(255, 0, 0, 1.0);
+    aaOptions.xAxis?.gridLineColor = AAColor.rgbaColor(255, 0, 0, 0.6);
+    aaOptions.yAxis?.gridLineColor = AAColor.rgbaColor(255, 0, 0, 1.0);
 
-    AASeriesElement element = aaOptions.series[0];
+    AASeriesElement element = aaOptions.series?[0];
     element
         .dataSet([17.0, 16.9, 12.5, 14.5,])
         .dataLabelsSet(
@@ -1781,7 +1781,7 @@ class ChartOptionsComposer {
   //五边形雷达图
   static AAOptions configurePentagonRadarChart() {
     var aaOptions = configureTriangleRadarChart();
-    aaOptions.yAxis.plotBands = [
+    aaOptions.yAxis?.plotBands = [
       new AAPlotBandsElement()
           .fromSet(0)
           .toSet(5)
@@ -1804,10 +1804,10 @@ class ChartOptionsComposer {
           .colorSet(AAColor.rgbaColor(255, 215, 0, 0.2)),
     ];
 
-    aaOptions.xAxis.gridLineColor = AAColor.rgbaColor(255, 215, 0, 0.6);
-    aaOptions.yAxis.gridLineColor = AAColor.rgbaColor(255, 215, 0, 1.0);
+    aaOptions.xAxis?.gridLineColor = AAColor.rgbaColor(255, 215, 0, 0.6);
+    aaOptions.yAxis?.gridLineColor = AAColor.rgbaColor(255, 215, 0, 1.0);
 
-    AASeriesElement element = aaOptions.series[0];
+    AASeriesElement element = aaOptions.series?[0];
     element
         .dataSet([17.0, 16.9, 12.5, 14.5, 18.2,])
         .dataLabelsSet(
@@ -1820,7 +1820,7 @@ class ChartOptionsComposer {
   //六边形雷达图
   static AAOptions configureHexagonRadarChart() {
     var aaOptions = configureTriangleRadarChart();
-    aaOptions.yAxis.plotBands = [
+    aaOptions.yAxis?.plotBands = [
       new AAPlotBandsElement()
           .fromSet(0)
           .toSet(5)
@@ -1843,10 +1843,10 @@ class ChartOptionsComposer {
           .colorSet(AAColor.rgbaColor(50, 205, 50, 0.2)),
     ];
 
-    aaOptions.xAxis.gridLineColor = AAColor.rgbaColor(50, 205, 50, 0.6);
-    aaOptions.yAxis.gridLineColor = AAColor.rgbaColor(50, 205, 50, 1.0);
+    aaOptions.xAxis?.gridLineColor = AAColor.rgbaColor(50, 205, 50, 0.6);
+    aaOptions.yAxis?.gridLineColor = AAColor.rgbaColor(50, 205, 50, 1.0);
 
-    AASeriesElement element = aaOptions.series[0];
+    AASeriesElement element = aaOptions.series?[0];
     element
         .dataSet([17.0, 16.9, 12.5, 14.5, 18.2, 21.5,])
         .dataLabelsSet(
@@ -1859,7 +1859,7 @@ class ChartOptionsComposer {
   //🕸蜘蛛网状雷达图
   static AAOptions configureSpiderWebRadarChart() {
     var aaOptions = configureTriangleRadarChart();
-    aaOptions.yAxis.plotBands = [
+    aaOptions.yAxis?.plotBands = [
       new AAPlotBandsElement()
           .fromSet(0)
           .toSet(5)
@@ -1882,10 +1882,10 @@ class ChartOptionsComposer {
           .colorSet(AAColor.rgbaColor(138, 43, 226, 0.2)),
     ];
 
-    aaOptions.xAxis.gridLineColor = AAColor.rgbaColor(138, 43, 226,  0.6);
-    aaOptions.yAxis.gridLineColor = AAColor.rgbaColor(138, 43, 226,  1.0);
+    aaOptions.xAxis?.gridLineColor = AAColor.rgbaColor(138, 43, 226,  0.6);
+    aaOptions.yAxis?.gridLineColor = AAColor.rgbaColor(138, 43, 226,  1.0);
 
-    AASeriesElement element = aaOptions.series[0];
+    AASeriesElement element = aaOptions.series?[0];
     element
         .dataSet([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24])
         .dataLabelsSet(
@@ -2073,7 +2073,7 @@ class ChartOptionsComposer {
   static AAOptions configureComplicatedCustomAreasplineChart2() {
     var aaOptions = configureComplicatedCustomAreasplineChart();
 
-    aaOptions.chart.backgroundColor = AAGradientColor.linearGradient1(
+    aaOptions.chart?.backgroundColor = AAGradientColor.linearGradient1(
         AALinearGradientDirection.toTop,
         AAColor.rgbaColor(113, 180, 185, 1.0),
         AAColor.rgbaColor(115, 183, 166, 1.0)
@@ -2335,7 +2335,7 @@ class ChartOptionsComposer {
     //坐标轴显示在对立面后，x 轴是在上方显示，y 轴是在右方显示（即坐标轴会显示在对立面）。
     //该配置一般是用于多坐标轴区分展示，另外在 Highstock 中，y 轴默认是在对立面显示の。
     //默认是：false.
-    aaOptions.yAxis.oppositeSet(true);
+    aaOptions.yAxis?.oppositeSet(true);
 
     return aaOptions;
   }
@@ -2379,8 +2379,8 @@ class ChartOptionsComposer {
 
     var aaOptions = aaChartModel.aa_toAAOptions();
 
-    aaOptions.plotOptions.pie
-        .startAngleSet(-90)
+    aaOptions.plotOptions?.pie
+        ?.startAngleSet(-90)
         .endAngleSet(90);
 
     return aaOptions;
@@ -2424,14 +2424,14 @@ class ChartOptionsComposer {
     var aaOptions = aaChartModel.aa_toAAOptions();
 
     aaOptions.tooltip
-        .useHTMLSet(true)
+        ?.useHTMLSet(true)
     // .headerFormatSet(headerFormat)
         .styleSet(AAStyle.colorSize(AAColor.white, 14))
         .backgroundColorSet("#050505")
         .borderColorSet("#050505");
 
     //禁用图例点击事件
-    aaOptions.plotOptions.series.events = new AASeriesEvents()
+    aaOptions.plotOptions?.series?.events = new AASeriesEvents()
         .legendItemClickSet("""
       function() {
         return false;
@@ -2490,7 +2490,7 @@ class ChartOptionsComposer {
 
     var aaOptions = aaChartModel.aa_toAAOptions();
     aaOptions.tooltip
-        .useHTMLSet(true)
+        ?.useHTMLSet(true)
         .headerFormatSet("狗和猫的总数为:{point.total}<br/>");
 
 
@@ -2683,7 +2683,7 @@ class ChartOptionsComposer {
     var aaOptions = aaChartModel.aa_toAAOptions();
 
     aaOptions.xAxis
-        .typeSet(AAChartAxisType.datetime)
+        ?.typeSet(AAChartAxisType.datetime)
         .dateTimeLabelFormatsSet(new AADateTimeLabelFormats()
         .monthSet("%e. %b")
         .yearSet("%b")
@@ -2808,10 +2808,10 @@ class ChartOptionsComposer {
 
     var aaOptions = aaChartModel.aa_toAAOptions();
 
-    aaOptions.tooltip.sharedSet(false);
+    aaOptions.tooltip?.sharedSet(false);
 
-    aaOptions.plotOptions.series
-        .statesSet(
+    aaOptions.plotOptions?.series
+        ?.statesSet(
         new AAStates()
             .inactiveSet(
             new AAInactive()
@@ -2850,7 +2850,7 @@ class ChartOptionsComposer {
     var aaOptions = aaChartModel.aa_toAAOptions();
 
     aaOptions.plotOptions
-        .bubbleSet(new AABubble()
+        ?.bubbleSet(new AABubble()
         .minSizeSet(0)
         .maxSizeSet(100)
         .zMinSet(0)
@@ -2873,8 +2873,8 @@ class ChartOptionsComposer {
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    aaOptions.plotOptions.series.dataLabels
-        .formatSet("{point.name}");
+    aaOptions.plotOptions?.series?.dataLabels
+        ?.formatSet("{point.name}");
 
     return aaOptions;
   }
@@ -2891,8 +2891,8 @@ class ChartOptionsComposer {
     ]);
 
     var aaOptions = aaChartModel.aa_toAAOptions();
-    aaOptions.plotOptions.series.dataLabels
-        .formatSet("{x}");
+    aaOptions.plotOptions?.series?.dataLabels
+        ?.formatSet("{x}");
 
     return aaOptions;
   }
@@ -3146,27 +3146,27 @@ class ChartOptionsComposer {
 
     ];
 
-    aaOptions.yAxis.plotLinesSet(aaPlotLinesArr);
+    aaOptions.yAxis?.plotLinesSet(aaPlotLinesArr);
 
-    aaOptions.yAxis.labels.styleSet(AAStyle.colorStr(AAColor.black));
-    aaOptions.xAxis.labels.styleSet(AAStyle.colorStr(AAColor.black));
+    aaOptions.yAxis?.labels?.styleSet(AAStyle.colorStr(AAColor.black));
+    aaOptions.xAxis?.labels?.styleSet(AAStyle.colorStr(AAColor.black));
 
-    aaOptions.xAxis.tickWidth = 0;
+    aaOptions.xAxis?.tickWidth = 0;
 
     aaOptions.yAxis
-        .tickAmountSet(20)
+        ?.tickAmountSet(20)
         .lineWidthSet(1)
         .lineColorSet(AAColor.black);
 
     aaOptions.xAxis
-        .lineWidthSet(1)
+        ?.lineWidthSet(1)
         .lineColorSet(AAColor.black)
         .minSet(10)
         .maxSet(50)
         .tickIntervalSet(5);
 
     aaOptions.legend
-        .itemMarginTopSet(10)
+        ?.itemMarginTopSet(10)
         .symbolRadiusSet(10)//图标圆角
         .symbolHeightSet(20)//标志高度
         .symbolWidthSet(20)//图标宽度

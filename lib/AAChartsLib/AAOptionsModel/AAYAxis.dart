@@ -9,226 +9,226 @@ import 'AACrosshair.dart';
 
  class AAYAxis extends AAAxis {
 
-   Object stackLabels;
-   AAYAxis stackLabelsSet(Object prop) {
+   Object? stackLabels;
+   AAYAxis stackLabelsSet(Object? prop) {
      stackLabels = prop;
      return this;
    }
    ///////////////////////////////////////////
 
-   AAYAxis allowDecimalsSet(bool prop) {
+   AAYAxis allowDecimalsSet(bool? prop) {
      allowDecimals = prop;
      return this;
    }
 
-   AAYAxis alternateGridColorSet(Object prop) {
+   AAYAxis alternateGridColorSet(Object? prop) {
      alternateGridColor = prop;
      return this;
    }
 
-   AAYAxis crosshairSet(AACrosshair prop) {
+   AAYAxis crosshairSet(AACrosshair? prop) {
      crosshair = prop;
      return this;
    }
 
-   AAYAxis titleSet(AATitle prop) {
+   AAYAxis titleSet(AATitle? prop) {
      title = prop;
      return this;
    }
 
-   AAYAxis typeSet(String prop) {
+   AAYAxis typeSet(String? prop) {
      type = prop;
      return this;
    }
 
-   AAYAxis dateTimeLabelFormatsSet(AADateTimeLabelFormats prop) {
+   AAYAxis dateTimeLabelFormatsSet(AADateTimeLabelFormats? prop) {
      dateTimeLabelFormats = prop;
      return this;
    }
 
-   AAYAxis plotBandsSet(List<AAPlotBandsElement> prop) {
+   AAYAxis plotBandsSet(List<AAPlotBandsElement>? prop) {
      plotBands = prop;
      return this;
    }
 
-   AAYAxis plotLinesSet(List<AAPlotLinesElement> prop) {
+   AAYAxis plotLinesSet(List<AAPlotLinesElement>? prop) {
      plotLines = prop;
      return this;
    }
 
-   AAYAxis categoriesSet(List<String> prop) {
+   AAYAxis categoriesSet(List<String>? prop) {
      categories = prop;
      return this;
    }
 
-   AAYAxis linkedToSet(int prop) {
+   AAYAxis linkedToSet(int? prop) {
      linkedTo = prop;
      return this;
    }
 
-   AAYAxis reversedSet(bool prop) {
+   AAYAxis reversedSet(bool? prop) {
      reversed = prop;
      return this;
    }
 
-   AAYAxis oppositeSet(bool prop) {
+   AAYAxis oppositeSet(bool? prop) {
      opposite = prop;
      return this;
    }
 
-   AAYAxis lineWidthSet(double prop) {
+   AAYAxis lineWidthSet(double? prop) {
      lineWidth = prop;
      return this;
    }
 
-   AAYAxis lineColorSet(String prop) {
+   AAYAxis lineColorSet(String? prop) {
      lineColor = prop;
      return this;
    }
 
-   AAYAxis maxSet(double prop) {
+   AAYAxis maxSet(double? prop) {
      max = prop;
      return this;
    }
 
-   AAYAxis minSet(double prop) {
+   AAYAxis minSet(double? prop) {
      min = prop;
      return this;
    }
 
-   AAYAxis minRangeSet(int prop) {
+   AAYAxis minRangeSet(int? prop) {
      minRange = prop;
      return this;
    }
 
-   AAYAxis minTickIntervalSet(int prop) {
+   AAYAxis minTickIntervalSet(int? prop) {
      minTickInterval = prop;
      return this;
    }
 
-   AAYAxis minorGridLineColorSet(String prop) {
+   AAYAxis minorGridLineColorSet(String? prop) {
      minorGridLineColor = prop;
      return this;
    }
 
-   AAYAxis minorGridLineDashStyleSet(String prop) {
+   AAYAxis minorGridLineDashStyleSet(String? prop) {
      minorGridLineDashStyle = prop;
      return this;
    }
 
-   AAYAxis minorGridLineWidthSet(double prop) {
+   AAYAxis minorGridLineWidthSet(double? prop) {
      minorGridLineWidth = prop;
      return this;
    }
 
-   AAYAxis minorTickColorSet(String prop) {
+   AAYAxis minorTickColorSet(String? prop) {
      minorTickColor = prop;
      return this;
    }
 
-   AAYAxis minorTickIntervalSet(Object prop) {
+   AAYAxis minorTickIntervalSet(Object? prop) {
      minorTickInterval = prop;
      return this;
    }
 
-   AAYAxis minorTickLengthSet(double prop) {
+   AAYAxis minorTickLengthSet(double? prop) {
      minorTickLength = prop;
      return this;
    }
 
-   AAYAxis minorTickPositionSet(String prop) {
+   AAYAxis minorTickPositionSet(String? prop) {
      minorTickPosition = prop;
      return this;
    }
 
-   AAYAxis minorTickWidthSet(double prop) {
+   AAYAxis minorTickWidthSet(double? prop) {
      minorTickWidth = prop;
      return this;
    }
 
-   AAYAxis gridLineWidthSet(double prop) {
+   AAYAxis gridLineWidthSet(double? prop) {
      gridLineWidth = prop;
      return this;
    }
 
-   AAYAxis gridLineColorSet(String prop) {
+   AAYAxis gridLineColorSet(String? prop) {
      gridLineColor = prop;
      return this;
    }
 
-   AAYAxis gridLineDashStyleSet(String prop) {
+   AAYAxis gridLineDashStyleSet(String? prop) {
      gridLineDashStyle = prop;
      return this;
    }
 
-   AAYAxis gridLineInterpolationSet(String prop) {
+   AAYAxis gridLineInterpolationSet(String? prop) {
      gridLineInterpolation = prop;
      return this;
    }
 
-   AAYAxis offSet(double prop) {
+   AAYAxis offSet(double? prop) {
      off = prop;
      return this;
    }
 
-   AAYAxis labelsSet(AALabels prop) {
+   AAYAxis labelsSet(AALabels? prop) {
      labels = prop;
      return this;
    }
 
-   AAYAxis visibleSet(bool prop) {
+   AAYAxis visibleSet(bool? prop) {
      visible = prop;
      return this;
    }
 
-   AAYAxis startOnTickSet(bool prop) {
+   AAYAxis startOnTickSet(bool? prop) {
      startOnTick = prop;
      return this;
    }
 
-   AAYAxis tickColorSet(String prop) {
+   AAYAxis tickColorSet(String? prop) {
      tickColor = prop;
      return this;
    }
 
-   AAYAxis tickAmountSet(int prop) {
+   AAYAxis tickAmountSet(int? prop) {
      tickAmount = prop;
      return this;
    }
 
-   AAYAxis tickIntervalSet(int prop) {
+   AAYAxis tickIntervalSet(int? prop) {
      tickInterval = prop;
      return this;
    }
 
-   AAYAxis tickmarkPlacementSet(String prop) {
+   AAYAxis tickmarkPlacementSet(String? prop) {
      tickmarkPlacement = prop;
      return this;
    }
 
-   AAYAxis tickWidthSet(double prop) {
+   AAYAxis tickWidthSet(double? prop) {
      tickWidth = prop;
      return this;
    }
 
-   AAYAxis tickLengthSet(double prop) {
+   AAYAxis tickLengthSet(double? prop) {
      tickLength = prop;
      return this;
    }
 
-   AAYAxis tickPositionSet(String prop) {
+   AAYAxis tickPositionSet(String? prop) {
      tickPosition = prop;
      return this;
    }
 
-   AAYAxis tickPositionsSet(List prop) {
+   AAYAxis tickPositionsSet(List? prop) {
      tickPositions = prop;
      return this;
    }
 
    Map<String, dynamic> toJson() {
     return {
-      "title": this.title == null ? null : this.title.toPureJson(),
+      "title": this.title == null ? null : this.title?.toPureJson(),
       "plotBands": this.plotBands,
       "plotLines": this.plotLines,
       "categories": this.categories,
@@ -243,7 +243,7 @@ import 'AACrosshair.dart';
       "gridLineColor": this.gridLineColor,
       "gridLineDashStyle": this.gridLineDashStyle,
       "off": this.off,
-      "labels": this.labels == null ? null : this.labels.toPureJson(),
+      "labels": this.labels == null ? null : this.labels?.toPureJson(),
       "visible": this.visible,
       "opposite": this.opposite,
       "startOnTick": this.startOnTick,

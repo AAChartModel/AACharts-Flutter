@@ -10,129 +10,129 @@ import 'AAShadow.dart';
 import 'AAStates.dart';
 
  class AASeries extends AAObject {
-   String borderColor;
-   double borderWidth;
-   double borderRadius;
-   Object borderRadiusTopLeft;
-   Object borderRadiusTopRight;
-   Object borderRadiusBottomLeft;
-   Object borderRadiusBottomRight;
-   AAMarker marker;
-   String stacking;
-   Object animation;
-   List<String> keys;
-   bool colorByPoint;//决定了图表是否给每个数据列或每个点分配一个颜色，默认值是 false， 即默认是给每个数据类分配颜色，
-   bool connectNulls;//设置折线是否断点重连
-   AASeriesEvents events;
-   AAShadow shadow;
-   AADataLabels dataLabels;
-   AAStates states;
-   int pointInterval;
-   String pointIntervalUnit;
-   Object pointPlacement;
-   double pointStart;
+   String? borderColor;
+   double? borderWidth;
+   double? borderRadius;
+   Object? borderRadiusTopLeft;
+   Object? borderRadiusTopRight;
+   Object? borderRadiusBottomLeft;
+   Object? borderRadiusBottomRight;
+   AAMarker? marker;
+   String? stacking;
+   Object? animation;
+   List<String>? keys;
+   bool? colorByPoint;//决定了图表是否给每个数据列或每个点分配一个颜色，默认值是 false， 即默认是给每个数据类分配颜色，
+   bool? connectNulls;//设置折线是否断点重连
+   AASeriesEvents? events;
+   AAShadow? shadow;
+   AADataLabels? dataLabels;
+   AAStates? states;
+   int? pointInterval;
+   String? pointIntervalUnit;
+   Object? pointPlacement;
+   double? pointStart;
 
-   AASeries borderColorSet(String prop) {
+   AASeries borderColorSet(String? prop) {
      borderColor = prop;
      return this;
    }
 
-   AASeries borderWidthSet(double prop) {
+   AASeries borderWidthSet(double? prop) {
      borderWidth = prop;
      return this;
    }
 
-   AASeries borderRadiusSet(double prop) {
+   AASeries borderRadiusSet(double? prop) {
      borderRadius = prop;
      return this;
    }
 
-   AASeries borderRadiusTopLeftSet(Object prop) {
+   AASeries borderRadiusTopLeftSet(Object? prop) {
      borderRadiusTopLeft = prop;
      return this;
    }
 
-   AASeries borderRadiusTopRightSet(Object prop) {
+   AASeries borderRadiusTopRightSet(Object? prop) {
      borderRadiusTopRight = prop;
      return this;
    }
 
-   AASeries borderRadiusBottomLeftSet(Object prop) {
+   AASeries borderRadiusBottomLeftSet(Object? prop) {
      borderRadiusBottomLeft = prop;
      return this;
    }
 
-   AASeries borderRadiusBottomRightSet(Object prop) {
+   AASeries borderRadiusBottomRightSet(Object? prop) {
      borderRadiusBottomRight = prop;
      return this;
    }
 
-   AASeries markerSet(AAMarker prop) {
+   AASeries markerSet(AAMarker? prop) {
      marker = prop;
      return this;
    }
 
-   AASeries stackingSet(String prop) {
+   AASeries stackingSet(String? prop) {
      stacking = prop;
      return this;
    }
 
-   AASeries animationSet(Object prop) {
+   AASeries animationSet(Object? prop) {
      animation = prop;
      return this;
    }
 
-   AASeries keysSet(List<String> prop) {
+   AASeries keysSet(List<String>? prop) {
    keys = prop;
    return this;
    }
 
-   AASeries colorByPointSet(bool prop) {
+   AASeries colorByPointSet(bool? prop) {
      colorByPoint = prop;
      return this;
    }
 
-   AASeries connectNullsSet(bool prop) {
+   AASeries connectNullsSet(bool? prop) {
      connectNulls = prop;
      return this;
    }
 
-   AASeries eventsSet(AASeriesEvents prop) {
+   AASeries eventsSet(AASeriesEvents? prop) {
      events = prop;
      return this;
    }
 
-   AASeries shadowSet(AAShadow prop) {
+   AASeries shadowSet(AAShadow? prop) {
      shadow = prop;
      return this;
    }
 
-   AASeries dataLabelsSet(AADataLabels prop) {
+   AASeries dataLabelsSet(AADataLabels? prop) {
      dataLabels = prop;
      return this;
    }
 
-   AASeries statesSet(AAStates prop) {
+   AASeries statesSet(AAStates? prop) {
      states = prop;
      return this;
    }
 
-   AASeries pointIntervalSet(int prop) {
+   AASeries pointIntervalSet(int? prop) {
      pointInterval = prop;
      return this;
    }
 
-   AASeries pointIntervalUnitSet(String prop) {
+   AASeries pointIntervalUnitSet(String? prop) {
      pointIntervalUnit = prop;
      return this;
    }
 
-   AASeries pointPlacementSet(Object prop) {
+   AASeries pointPlacementSet(Object? prop) {
      pointPlacement = prop;
      return this;
    }
 
-   AASeries pointStartSet(double prop) {
+   AASeries pointStartSet(double? prop) {
      pointStart = prop;
      return this;
    }
@@ -146,16 +146,16 @@ import 'AAStates.dart';
        "borderRadiusTopRight": this.borderRadiusTopRight,
        "borderRadiusBottomLeft": this.borderRadiusBottomLeft,
        "borderRadiusBottomRight": this.borderRadiusBottomRight,
-       "marker": this.marker == null ? null : this.marker.toPureJson(),
+       "marker": this.marker == null ? null : this.marker?.toPureJson(),
        "stacking": this.stacking,
        // "animation": this.animation == null ? null : this.animation.toPureJson(),
        "keys": this.keys,
        "colorByPoint": this.colorByPoint,
        "connectNulls": this.connectNulls,
-       "events": this.events == null ? null : this.events.toPureJson(),
-       "shadow": this.shadow == null ? null : this.shadow.toPureJson(),
-       "dataLabels": this.dataLabels == null ? null : this.dataLabels.toPureJson(),
-       "states": this.states == null ? null : this.states.toPureJson(),
+       "events": this.events == null ? null : this.events?.toPureJson(),
+       "shadow": this.shadow == null ? null : this.shadow?.toPureJson(),
+       "dataLabels": this.dataLabels == null ? null : this.dataLabels?.toPureJson(),
+       "states": this.states == null ? null : this.states?.toPureJson(),
        "pointInterval": this.pointInterval,
        "pointIntervalUnit": this.pointIntervalUnit,
        "pointPlacement": this.pointPlacement,
@@ -166,9 +166,12 @@ import 'AAStates.dart';
 }
 
 class AASeriesEvents extends AAObject {
-   String legendItemClick;
+   String? legendItemClick;
 
-  AASeriesEvents legendItemClickSet(String prop) {
+  AASeriesEvents legendItemClickSet(String? prop) {
+    if (prop == null) {
+      return this;
+    }
     String pureJSFunctionStr = "(" + prop + ")";
     pureJSFunctionStr = AAEasyTool.pureJavaScriptFunctionString(pureJSFunctionStr);
     legendItemClick = pureJSFunctionStr;

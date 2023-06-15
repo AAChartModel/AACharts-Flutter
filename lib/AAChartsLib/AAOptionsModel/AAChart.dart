@@ -6,99 +6,99 @@ import 'AAResetZoomButton.dart';
 import 'AAScrollablePlotArea.dart';
 
 class AAChart extends AAObject  {
-  String type;
-  Object backgroundColor;
-  String plotBackgroundImage;
-  String pinchType;
-  bool panning;
-  String panKey;
-  bool polar;
-  AAAnimation animation;
-  bool inverted;
-  List<double> margin;
-  double marginTop;
-  double marginRight;
-  double marginBottom;
-  double marginLeft;
-  AAScrollablePlotArea scrollablePlotArea;
-  AAResetZoomButton resetZoomButton;
+  String? type;
+  Object? backgroundColor;
+  String? plotBackgroundImage;
+  String? pinchType;
+  bool? panning;
+  String? panKey;
+  bool? polar;
+  AAAnimation? animation;
+  bool? inverted;
+  List<double>? margin;
+  double? marginTop;
+  double? marginRight;
+  double? marginBottom;
+  double? marginLeft;
+  AAScrollablePlotArea? scrollablePlotArea;
+  AAResetZoomButton? resetZoomButton;
 
-  AAChart typeSet(String prop) {
+  AAChart typeSet(String? prop) {
     type = prop;
     return this;
   }
 
-  AAChart backgroundColorSet(Object prop) {
+  AAChart backgroundColorSet(Object? prop) {
     backgroundColor = prop;
     return this;
   }
 
-  AAChart plotBackgroundImageSet(String prop) {
+  AAChart plotBackgroundImageSet(String? prop) {
     plotBackgroundImage = prop;
     return this;
   }
 
-  AAChart pinchTypeSet(String prop) {
+  AAChart pinchTypeSet(String? prop) {
     pinchType = prop;
     return this;
   }
 
-  AAChart panningSet(bool prop) {
+  AAChart panningSet(bool? prop) {
     panning = prop;
     return this;
   }
 
-  AAChart panKeySet(String prop) {
+  AAChart panKeySet(String? prop) {
     panKey = prop;
     return this;
   }
 
-  AAChart polarSet(bool prop) {
+  AAChart polarSet(bool? prop) {
     polar = prop;
     return this;
   }
 
-  AAChart animationSet(AAAnimation prop) {
+  AAChart animationSet(AAAnimation? prop) {
     animation = prop;
     return this;
   }
 
-  AAChart invertedSet(bool prop) {
+  AAChart invertedSet(bool? prop) {
     inverted = prop;
     return this;
   }
 
-  AAChart marginSet(List<double> prop) {
+  AAChart marginSet(List<double>? prop) {
     margin = prop;
     return this;
   }
 
-  AAChart marginTopSet(double prop) {
+  AAChart marginTopSet(double? prop) {
     marginTop = prop;
     return this;
   }
 
-  AAChart marginRightSet(double prop) {
+  AAChart marginRightSet(double? prop) {
     marginRight = prop;
     return this;
   }
 
-  AAChart marginBottomSet(double prop) {
+  AAChart marginBottomSet(double? prop) {
     marginBottom = prop;
     return this;
   }
 
-  AAChart marginLeftSet(double prop) {
+  AAChart marginLeftSet(double? prop) {
     marginLeft = prop;
     return this;
   }
 
-  AAChart scrollablePlotAreaSet(AAScrollablePlotArea prop) {
+  AAChart scrollablePlotAreaSet(AAScrollablePlotArea? prop) {
     scrollablePlotArea = prop;
     return this;
   }
 
-  AAChart resetZoomButtonSet(AAResetZoomButton prop) {
+  AAChart resetZoomButtonSet(AAResetZoomButton? prop) {
     resetZoomButton = prop;
     return this;
   }
@@ -112,15 +112,15 @@ class AAChart extends AAObject  {
       "panning": this.panning,
       "panKey": this.panKey,
       "polar": this.polar,
-      "animation": this.animation == null ? null : this.animation.toPureJson(),
+      "animation": this.animation == null ? null : this.animation?.toPureJson(),
       "inverted": this.inverted,
       "margin": this.margin,
       "marginTop": this.marginTop,
       "marginRight": this.marginRight,
       "marginBottom": this.marginBottom,
       "marginLeft": this.marginLeft,
-      "scrollablePlotArea": this.scrollablePlotArea == null ? null : this.scrollablePlotArea.toPureJson(),
-      "resetZoomButton": this.resetZoomButton == null ? null : this.resetZoomButton.toPureJson(),
+      "scrollablePlotArea": this.scrollablePlotArea == null ? null : this.scrollablePlotArea?.toPureJson(),
+      "resetZoomButton": this.resetZoomButton == null ? null : this.resetZoomButton?.toPureJson(),
     };
   }
 

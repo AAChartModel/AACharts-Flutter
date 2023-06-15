@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 class SpecialChartPage extends StatelessWidget {
   final String selectedType;
 
-  const SpecialChartPage({Key key, @required this.selectedType}) : super(key: key);
+  const SpecialChartPage({ Key? key, required this.selectedType}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

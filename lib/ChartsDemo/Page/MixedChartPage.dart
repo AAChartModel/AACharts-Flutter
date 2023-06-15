@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class MixedChartPage extends StatelessWidget {
   final String selectedType;
 
-  const MixedChartPage({Key key, @required this.selectedType})
+  const MixedChartPage({ Key? key, required this.selectedType})
       : super(key: key);
 
   @override
