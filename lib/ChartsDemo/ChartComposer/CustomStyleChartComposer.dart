@@ -1794,65 +1794,66 @@ class CustomStyleChartComposer {
   }
 
 
-  // static AAChartModel configureSpecialStyleColumnForNegativeDataMixedPositiveData() {
-  //   var categoriesArr = [
-  //     "立春", "雨水", "惊蛰", "春分", "清明", "谷雨", "立夏", "小满", "芒种", "夏至", "小暑", "大暑",
-  //     "立秋", "处暑", "白露", "秋分", "寒露", "霜降", "立冬", "小雪", "大雪", "冬至", "小寒", "大寒"
-  //   ];
-  //
-  //   var dataArr = [
-  //     -70, -69, -25, -145, -182, -215, -52, -265, -233, -453, -139, -96,
-  //     70, 69, 25, 145, 182, 215, 52, 265, 233, 453, 139, 96,
-  //   ];
-  //
-  //   List<Map<String, dynamic>> newDataArr = [];
-  //
-  //   dataArr.forEach((element) {
-  //     var aaDataLabels = new AADataLabels()
-  //         .enabledSet(true)
-  //         .verticalAlignSet(AAChartVerticalAlignType.middle)
-  //         .xSet(0)
-  //         .ySet(-10);
-  //
-  //     var dataElementValue = element.toDouble();
-  //     if (dataElementValue < 0) {
-  //       var negativeDataElement = new AADataElement()
-  //           .ySet((-dataElementValue))
-  //           .colorSet(AAColor.green)
-  //           .dataLabelsSet(aaDataLabels
-  //           .formatSet("-{y} 美元")
-  //           .styleSet(
-  //           new AAStyle()
-  //           .colorSet(AAColor.green)
-  //           .fontSizeSet(11)
-  //           .fontWeightSet(AAChartFontWeightType.thin)));
-  //       newDataArr.add(negativeDataElement.toPureJson());
-  //     } else {
-  //       var positiveDataElement = new AADataElement()
-  //           .ySet((dataElementValue))
-  //           .colorSet(AAColor.red)
-  //           .dataLabelsSet(aaDataLabels
-  //           .formatSet("+{y} 美元")
-  //           .styleSet(
-  //           new AAStyle()
-  //           .colorSet(AAColor.red)
-  //           .fontSizeSet(11)
-  //           .fontWeightSet(AAChartFontWeightType.thin)));
-  //       newDataArr.add(positiveDataElement.toPureJson());
-  //     }
-  //
-  //     return new AAChartModel()
-  //         .chartTypeSet(AAChartType.column)
-  //         .categoriesSet(categoriesArr)
-  //         .tooltipEnabledSet(false)
-  //         .yAxisVisibleSet(false)
-  //         .seriesSet([
-  //       new AASeriesElement()
-  //           .nameSet("虚构数据")
-  //           .dataSet(newDataArr)
-  //     ]);
-  //   });
-  // }
+  static AAChartModel configureSpecialStyleColumnForNegativeDataMixedPositiveData() {
+    var categoriesArr = [
+      "立春", "雨水", "惊蛰", "春分", "清明", "谷雨", "立夏", "小满", "芒种", "夏至", "小暑", "大暑",
+      "立秋", "处暑", "白露", "秋分", "寒露", "霜降", "立冬", "小雪", "大雪", "冬至", "小寒", "大寒"
+    ];
+
+    var dataArr = [
+      -70, -69, -25, -145, -182, -215, -52, -265, -233, -453, -139, -96,
+      70, 69, 25, 145, 182, 215, 52, 265, 233, 453, 139, 96,
+    ];
+
+    List<Map<String, dynamic>?> newDataArr = [];
+
+    dataArr.forEach((element) {
+      var aaDataLabels = new AADataLabels()
+          .enabledSet(true)
+          .verticalAlignSet(AAChartVerticalAlignType.middle)
+          .xSet(0)
+          .ySet(-10);
+
+      var dataElementValue = element.toDouble();
+      if (dataElementValue < 0) {
+        var negativeDataElement = new AADataElement()
+            .ySet((-dataElementValue))
+            .colorSet(AAColor.green)
+            .dataLabelsSet(aaDataLabels
+            .formatSet("-{y} 美元")
+            .styleSet(
+            new AAStyle()
+            .colorSet(AAColor.green)
+            .fontSizeSet(11)
+            .fontWeightSet(AAChartFontWeightType.thin)));
+        newDataArr.add(negativeDataElement.toPureJson());
+      } else {
+        var positiveDataElement = new AADataElement()
+            .ySet((dataElementValue))
+            .colorSet(AAColor.red)
+            .dataLabelsSet(aaDataLabels
+            .formatSet("+{y} 美元")
+            .styleSet(
+            new AAStyle()
+            .colorSet(AAColor.red)
+            .fontSizeSet(11)
+            .fontWeightSet(AAChartFontWeightType.thin)));
+        newDataArr.add(positiveDataElement.toPureJson());
+      }
+
+    });
+
+    return new AAChartModel()
+        .chartTypeSet(AAChartType.column)
+        .categoriesSet(categoriesArr)
+        .tooltipEnabledSet(false)
+        .yAxisVisibleSet(false)
+        .seriesSet([
+      new AASeriesElement()
+          .nameSet("虚构数据")
+          .dataSet(newDataArr)
+    ]);
+  }
 
 
 
