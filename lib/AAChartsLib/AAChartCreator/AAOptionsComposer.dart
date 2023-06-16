@@ -242,10 +242,12 @@ abstract class AAOptionsComposer {
           .allowDecimalsSet(aaChartModel.yAxisAllowDecimals) //是否允许显示小数
           .reversedSet(aaChartModel.yAxisReversed)
           .gridLineWidthSet(aaChartModel.yAxisGridLineWidth) //y轴网格线宽度
-          .titleSet(new AATitle()
-          .textSet(aaChartModel.yAxisTitle)
-          .styleSet(new AAStyle()
-          .colorSet(aaChartModel.axesTextColor))
+          .titleSet(
+          new AATitle()
+              .textSet(aaChartModel.yAxisTitle)
+          .styleSet(
+          new AAStyle()
+              .colorSet(aaChartModel.axesTextColor))
       ) //y 轴标题
           .lineWidthSet(aaChartModel.yAxisLineWidth) //设置 y轴轴线的宽度,为0即是隐藏 y轴轴线
           .visibleSet(aaChartModel.yAxisVisible)
