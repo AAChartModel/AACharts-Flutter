@@ -200,7 +200,7 @@ import 'AAStyle.dart';
   }
 }
 
-class AATextPath {
+class AATextPath extends AAObject {
   bool? enabled;
   Map<String, dynamic>? attributes;
   double? value;
@@ -229,7 +229,7 @@ class AATextPath {
   }
 }
 
-class AAFilter {
+class AAFilter extends AAObject {
   String? property;
   String? operator;
   double? value;

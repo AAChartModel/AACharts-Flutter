@@ -366,7 +366,7 @@ class CustomStyleChartComposer {
         .seriesSet([
       AASeriesElement()
           .nameSet("货币")
-          .dataSet([0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, aaDataElement.toJson(), 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67]),
+          .dataSet([0.38, 0.31, 0.32, 0.32, 0.64, 0.66, 0.86, aaDataElement.toPureJson(), 0.47, 0.52, 0.75, 0.52, 0.56, 0.54, 0.60, 0.46, 0.63, 0.54, 0.51, 0.58, 0.64, 0.60, 0.45, 0.36, 0.67]),
     ]);
   }
 
@@ -531,7 +531,7 @@ class CustomStyleChartComposer {
       AASeriesElement()
           .nameSet("Virtual Data")
           .lineWidthSet(6)
-          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData.toJson(), 5.2, 26.5, 23.3, 45.3, 13.9, 9.6])
+          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData.toPureJson(), 5.2, 26.5, 23.3, 45.3, 13.9, 9.6])
           .colorSet(gradientColorDic1)
     ]);
   }
@@ -554,7 +554,7 @@ class CustomStyleChartComposer {
       AASeriesElement()
           .nameSet("Virtual Data")
           .lineWidthSet(6)
-          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData.toJson(), 5.2, 26.5, 23.3, 26.5, 13.9, 9.6])
+          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData.toPureJson(), 5.2, 26.5, 23.3, 26.5, 13.9, 9.6])
           .colorSet(AAGradientColor.oceanBlue)
     ]);
   }
@@ -803,7 +803,7 @@ class CustomStyleChartComposer {
           .lineWidthSet(6)
           .colorSet(AAColor.rgbaColor(255,215,0,1))
           .fillColorSet(gradientColorDic1)// gold color, alpha: 1.0
-          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData.toJson(), 5.2, 26.5, 23.3, 45.3, 13.9, 9.6])
+          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, singleSpecialData.toPureJson(), 5.2, 26.5, 23.3, 45.3, 13.9, 9.6])
     ]);
   }
 
@@ -1598,7 +1598,7 @@ class CustomStyleChartComposer {
         new AADataElement()
             .ySet(256.0)
             .colorSet(AAColor.red)
-            .toJson()
+            .toPureJson()
       ])
           .zoneAxisSet("x")
           .zonesSet([
@@ -1645,7 +1645,7 @@ class CustomStyleChartComposer {
         AADataElement()
             .ySet(2048)
             .colorSet(AARgba(30, 144, 255, 1.0))
-            .toJson(),
+            .toPureJson(),
       ])
           .zoneAxisSet("x")
           .zonesSet([
@@ -1675,7 +1675,7 @@ class CustomStyleChartComposer {
         AADataElement()
             .ySet(2048)
             .colorSet(AARgba(255, 0, 0, 1.0))
-            .toJson(),
+            .toPureJson(),
       ])
           .zoneAxisSet("x")
           .zonesSet([
@@ -1704,7 +1704,7 @@ class CustomStyleChartComposer {
         AADataElement()
             .ySet(2048)
             .colorSet(AARgba(50, 205, 50, 1.0))
-            .toJson(),
+            .toPureJson(),
       ])
           .zoneAxisSet("x")
           .zonesSet([
@@ -1733,7 +1733,7 @@ class CustomStyleChartComposer {
         AADataElement()
             .ySet(2048)
             .colorSet(AARgba(138, 43, 226, 1.0))
-            .toJson(),
+            .toPureJson(),
       ])
           .zoneAxisSet("x")
           .zonesSet([
@@ -1826,7 +1826,7 @@ class CustomStyleChartComposer {
   //           .colorSet(AAColor.green)
   //           .fontSizeSet(11)
   //           .fontWeightSet(AAChartFontWeightType.thin)));
-  //       newDataArr.add(negativeDataElement.toJson());
+  //       newDataArr.add(negativeDataElement.toPureJson());
   //     } else {
   //       var positiveDataElement = new AADataElement()
   //           .ySet((dataElementValue))
@@ -1838,7 +1838,7 @@ class CustomStyleChartComposer {
   //           .colorSet(AAColor.red)
   //           .fontSizeSet(11)
   //           .fontWeightSet(AAChartFontWeightType.thin)));
-  //       newDataArr.add(positiveDataElement.toJson());
+  //       newDataArr.add(positiveDataElement.toPureJson());
   //     }
   //
   //     return new AAChartModel()

@@ -27,12 +27,16 @@ class AAZonesElement extends AAObject {
   }
 
     Map<String, dynamic> toJson() {
-      return {
+      var jsonMap =  {
         "value": this.value,
         "color": this.color,
         "fillColor": this.fillColor,
         "dashStyle": this.dashStyle,
       };
+
+      //将所有空值删除
+      jsonMap.removeWhere((key, value) => value == null);
+      return jsonMap;
     }
 
   }

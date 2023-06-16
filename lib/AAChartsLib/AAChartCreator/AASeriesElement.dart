@@ -272,15 +272,15 @@ class AASeriesElement extends AAObject {
       "negativeColor": this.negativeColor,
       "negativeFillColor": this.negativeFillColor,
       "dashStyle": this.dashStyle,
-      "dataLabels": this.dataLabels == null ? null : this.dataLabels?.toJson(),
-      "marker": this.marker == null ? null : this.marker?.toJson(),
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels?.toPureJson(),
+      "marker": this.marker == null ? null : this.marker?.toPureJson(),
       "step": this.step,
       "colorByPoint": this.colorByPoint,
       "allowPointSelect": this.allowPointSelect,
       "zIndex": this.zIndex,
       "innerSize": this.innerSize,
       "minSize": this.minSize,
-      "shadow": this.shadow == null ? null : this.shadow?.toJson(),
+      "shadow": this.shadow == null ? null : this.shadow?.toPureJson(),
       "zones": this.zones,
       "zoneAxis": this.zoneAxis,
       "stack": this.stack,
@@ -288,15 +288,15 @@ class AASeriesElement extends AAObject {
       "showInLegend": this.showInLegend,
       "yAxis": this.yAxis,
       "xAxis": this.xAxis,
-      "tooltip": this.tooltip == null ? null : this.tooltip?.toJson(),
+      "tooltip": this.tooltip == null ? null : this.tooltip?.toPureJson(),
       "pointPlacement": this.pointPlacement,
-      "dataSorting": this.dataSorting == null ? null : this.dataSorting?.toJson(),
+      "dataSorting": this.dataSorting == null ? null : this.dataSorting?.toPureJson(),
       "reversed": this.reversed,
     };
   }
 }
 
-class AADataSorting {
+class AADataSorting extends AAObject {
   bool? enabled;
   bool? matchByName;
   AADataSorting enabledSet(bool? prop) {
@@ -361,8 +361,8 @@ class AADataElement extends AAObject {
       "x": this.x,
       "y": this.y,
       "color": this.color,
-      "dataLabels": this.dataLabels == null ? null : this.dataLabels?.toJson(),
-      "marker": this.marker == null ? null : this.marker?.toJson(),
+      "dataLabels": this.dataLabels == null ? null : this.dataLabels?.toPureJson(),
+      "marker": this.marker == null ? null : this.marker?.toPureJson(),
     };
   }
 }

@@ -163,6 +163,9 @@ import 'AALegend.dart';
          // "touchEventEnabled": this.touchEventEnabled == null ? null : this.touchEventEnabled,
        };
 
+       //将所有的空值去掉
+        testMap.removeWhere((key, value) => value == null);
+
     return testMap;
   }
 }

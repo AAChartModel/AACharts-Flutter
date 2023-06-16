@@ -41,7 +41,7 @@ import 'AALabel.dart';
     }
 
     Map<String, dynamic> toJson() {
-    return {
+      var jsonMap = {
       "color": this.color,
       "dashStyle": this.dashStyle,
       "width": this.width,
@@ -49,6 +49,10 @@ import 'AALabel.dart';
       "zIndex": this.zIndex,
       "label": this.label == null ? null : this.label?.toPureJson(),
     };
+
+      //将所有空值删除
+      jsonMap.removeWhere((key, value) => value == null);
+      return jsonMap;
   }
 }
 

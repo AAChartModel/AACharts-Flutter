@@ -386,7 +386,7 @@ class _MyAppState extends State<Application> {
     );
 
 
-    // var testJson = aaDataLabels.toJson();
+    // var testJson = aaDataLabels.toPureJson();
     //
     // var testOptionsJson1 = ChartOptionsComposer.configureTheAAOptionsOfAreaChart().toJson();
     // var testOptionsJson2 = ChartOptionsComposer.configureAAPlotBandsForChart().toJson();

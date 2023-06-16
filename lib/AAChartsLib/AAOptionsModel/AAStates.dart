@@ -20,9 +20,17 @@ class AAStates extends AAObject {
     return this;
   }
 
+  Map<String, dynamic> toJson() {
+    return {
+      "hover": hover?.toPureJson(),
+      "select": select?.toPureJson(),
+      "inactive": inactive?.toPureJson(),
+    };
+  }
+
 }
 
- class AAHover {
+ class AAHover extends AAObject{
    bool? enabled;
    String? borderColor;
    double? brightness;
@@ -65,9 +73,21 @@ class AAStates extends AAObject {
      lineWidthPlus = prop;
      return this;
    }
+
+    Map<String, dynamic> toJson() {
+      return {
+        "enabled": enabled,
+        "borderColor": borderColor,
+        "brightness": brightness,
+        "color": color,
+        "halo": halo?.toPureJson(),
+        "lineWidth": lineWidth,
+        "lineWidthPlus": lineWidthPlus,
+      };
+    }
  }
 
- class AASelect {
+ class AASelect extends AAObject{
    bool? enabled;
    String? borderColor;
    String? color;
@@ -92,9 +112,18 @@ class AAStates extends AAObject {
      halo = prop;
      return this;
    }
+
+    Map<String, dynamic> toJson() {
+      return {
+        "enabled": enabled,
+        "borderColor": borderColor,
+        "color": color,
+        "halo": halo?.toPureJson(),
+      };
+    }
  }
 
- class AAInactive {
+ class AAInactive extends AAObject{
    bool? enabled;
    double? opacity;
 
@@ -107,15 +136,22 @@ class AAStates extends AAObject {
      opacity = prop;
      return this;
    }
+
+   Map<String, dynamic> toJson() {
+     return {
+       "enabled": enabled,
+       "opacity": opacity,
+     };
+   }
  }
 
- class AAHalo {
+ class AAHalo extends AAObject{
    Map? attributes;
    double? opacity;
    double? size;
 
    AAHalo attributesSet(AASVGAttributes? prop) {
-     attributes = prop?.toJSon();
+     attributes = prop?.toPureJson();
      return this;
    }
 
@@ -128,9 +164,17 @@ class AAStates extends AAObject {
      size = prop;
      return this;
    }
+
+   Map<String, dynamic> toJson() {
+     return {
+       "attributes": attributes,
+       "opacity": opacity,
+       "size": size,
+     };
+   }
  }
 
- class AASVGAttributes {
+ class AASVGAttributes extends AAObject{
    String? fill;
    String? stroke;
    double? strokeWidth;
@@ -150,7 +194,7 @@ class AAStates extends AAObject {
      return this;
    }
 
-   Map<String, dynamic> toJSon() {
+   Map<String, dynamic> toJson() {
      return {
        "fill": fill,
        "stroke": stroke,

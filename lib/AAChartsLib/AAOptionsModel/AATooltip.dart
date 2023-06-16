@@ -106,7 +106,7 @@ import 'AAStyle.dart';
     // }
 
     Map<String, dynamic> toJson() {
-    return {
+    var jsonMap = {
       "backgroundColor": this.backgroundColor,
       "borderColor": this.borderColor,
       "borderRadius": this.borderRadius,
@@ -123,5 +123,9 @@ import 'AAStyle.dart';
       "crosshairs": this.crosshairs,
       "valueSuffix": this.valueSuffix,
     };
+
+    //将所有空值删除
+    jsonMap.removeWhere((key, value) => value == null);
+    return jsonMap;
   }
 }
