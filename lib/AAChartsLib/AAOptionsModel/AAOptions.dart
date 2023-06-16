@@ -119,7 +119,10 @@ import 'AALegend.dart';
        } else {
          xAxisArray = [];
          this.xAxisArray?.forEach((element) {
-           xAxisArray?.add(element.toPureJson());
+           var elementJson = element.toPureJson();
+            if (elementJson != null) {
+              xAxisArray?.add(elementJson);
+            }
          });
        }
 
@@ -129,7 +132,10 @@ import 'AALegend.dart';
        } else {
          yAxisArray = [];
          this.yAxisArray?.forEach((element) {
-           yAxisArray?.add(element.toPureJson());
+           var elementJson = element.toPureJson();
+           if (elementJson != null) {
+             yAxisArray?.add(elementJson);
+           }
          });
        }
 
