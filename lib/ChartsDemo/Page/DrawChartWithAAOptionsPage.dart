@@ -1,8 +1,11 @@
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartView.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartView2.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
 import 'package:aacharts_flutter/ChartsDemo/ChartComposer/ChartOptionsComposer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 class DrawChartWithAAOptionsPage extends StatelessWidget {
   final int selectedIndex;
@@ -12,7 +15,7 @@ class DrawChartWithAAOptionsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var aaChartView = AAChartView();
+    var aaChartView = AAChartView2();
 
     var aaOptions = configureChartOptionsWithChartType(selectedIndex);
     aaChartView.aa_drawChartWithChartOptions(aaOptions);
@@ -25,7 +28,9 @@ class DrawChartWithAAOptionsPage extends StatelessWidget {
         child: Center(
           child: Hero(
               tag: 'imageHero',
-              child: aaChartView
+              child: aaChartView,
+              //调整图表视图的宽高
+              // child: Container(
           ),
         ),
       ),

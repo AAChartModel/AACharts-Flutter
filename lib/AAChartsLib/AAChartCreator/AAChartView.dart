@@ -44,7 +44,7 @@ class AAChartView extends StatelessWidget {
 
   void loadLocalFilesAndDrawChart(final AAOptions aaOptions) {
    webView = InAppWebView(
-      initialFile: "assets/AAChartView.html",
+      initialFile: "/Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html",
       initialOptions: InAppWebViewGroupOptions(
           crossPlatform: InAppWebViewOptions(
 

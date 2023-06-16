@@ -10,6 +10,7 @@ import 'package:aacharts_flutter/ChartsDemo/Page/MixedChartPage.dart';
 import 'package:aacharts_flutter/ChartsDemo/Page/SpecialChartPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 import 'dart:convert' as convert;
 
 import 'AAChartsLib/AAChartCreator/AAChartModel.dart';
@@ -297,25 +298,52 @@ class _ApplicationState extends State<Application> {
 class DetailScreen extends StatelessWidget {
   const DetailScreen({Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GestureDetector(
-        onTap: () {
-          Navigator.pop(context);
-        },
-        child: Center(
-          child: Hero(
-            tag: 'imageHero',
-            child: Image.network(
-              'https://picsum.photos/250?image=9',
-            ),
-          ),
+    var controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setBackgroundColor(const Color(0x00000000))
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onProgress: (int progress) {
+            // Update loading bar.
+          },
+          onPageStarted: (String url) {},
+          onPageFinished: (String url) {},
+          onWebResourceError: (WebResourceError error) {},
+          onNavigationRequest: (NavigationRequest request) {
+            if (request.url.startsWith('https://www.baidu.com/')) {
+              return NavigationDecision.prevent;
+            }
+            return NavigationDecision.navigate;
+          },
         ),
-      ),
+      )
+      ..loadRequest(Uri.parse('https://flutter.dev'));
+
+
+    return Scaffold(
+      // body: GestureDetector(
+      //   onTap: () {
+      //     Navigator.pop(context);
+      //   },
+      //   child: Center(
+      //     child: Hero(
+      //       tag: 'imageHero',
+      //       child: Image.network(
+      //         'https://picsum.photos/250?image=9',
+      //       ),
+      //     ),
+      //   ),
+      // ),
+      body: WebViewWidget(controller: controller),
+
     );
   }
 }
+
+
 
 class _MyAppState extends State<Application> {
 
@@ -356,6 +384,7 @@ class _MyAppState extends State<Application> {
             .colorSet(AAColor.red)
             .fontSizeSet(15)
     );
+
 
     // var testJson = aaDataLabels.toJson();
     //
