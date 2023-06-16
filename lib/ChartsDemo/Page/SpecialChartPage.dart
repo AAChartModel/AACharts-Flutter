@@ -19,6 +19,9 @@ class SpecialChartPage extends StatelessWidget {
     aaChartView.aa_drawChartWithChartModel(aaChartModel);
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('SpecialChart'),
+      ),
       body: GestureDetector(
         onTap: () {
           Navigator.pop(context);
