@@ -20,7 +20,7 @@ class SpecialChartComposer {
           .colorByPointSet(true)
     ]);
   }
-  
+
 
   static AAChartModel configurePolarColumnChart() {
     return configureBasePolarChart()
@@ -904,4 +904,101 @@ class SpecialChartComposer {
           .pointFormatSet("(误差范围: {point.low}-{point.high} mm)<br/>"))
     ]);
 }
+
+//    private func configureGaugeChart() -> AAChartModel {
+//         AAChartModel()
+//             .title("速度仪")
+//             .yAxisTitle("km/h")
+//             .yAxisMin(0)
+//             .yAxisMax(1000)
+//             .yAxisGridLineWidth(0)
+//             .series([
+//                 AASeriesElement()
+//                     .name("速度")
+//                     .type(.gauge)
+//                     .data([888])
+//                     .color(AAColor.red)
+//                     .tooltip(AATooltip()
+//                         .valueSuffix("km/h"))
+//             ])
+//     }
+
+  static AAChartModel configureGaugeChart() {
+    return AAChartModel()
+        .titleSet("SPEEDOMETER")
+        .yAxisTitleSet("km/h")
+        .yAxisMinSet(0)
+        .yAxisMaxSet(1000)
+        .yAxisGridLineWidthSet(0)
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("速度")
+          .typeSet(AAChartType.gauge)
+          .dataSet([888])
+          .colorSet(AAColor.red)
+          .tooltipSet(AATooltip()
+              .valueSuffixSet("km/h"))
+    ]);
+  }
+
+  // private func configurePolygonChart() -> AAChartModel {
+//         AAChartModel()
+//             .title("多边形图")
+//             .dataLabelsEnabled(false)
+//             .markerRadius(7)
+//             .markerSymbolStyle(.innerBlank)
+//             .series([
+//                 AASeriesElement()
+//                     .name("目标")
+//                     .type(.polygon)
+//                     .data([
+//                         [153, 42], [149, 46], [149, 55],
+//                         [152, 60], [159, 70], [170, 77],
+//                         [180, 70], [180, 60], [173, 52],
+//                         [166, 45]
+//                     ])
+//                     .lineWidth(6),
+//                 AASeriesElement()
+//                     .name("实际完成")
+//                     .type(.polygon)
+//                     .data([
+//                         [153 * 1.6, 42 * 1.6], [149 * 1.6, 46 * 1.6], [149 * 1.6, 55 * 1.6],
+//                         [152 * 1.6, 60 * 1.6], [159 * 1.6, 70 * 1.6], [170 * 1.6, 77 * 1.6],
+//                         [180 * 1.6, 70 * 1.6], [180 * 1.6, 60 * 1.6], [173 * 1.6, 52 * 1.6],
+//                         [166 * 1.6, 45 * 1.6]
+//                     ])
+//                     .lineWidth(6)
+//             ])
+//     }
+
+  static AAChartModel configurePolygonChart() {
+    return AAChartModel()
+        .titleSet("POLYGON CHART")
+        .dataLabelsEnabledSet(false)
+        .markerRadiusSet(7)
+        .markerSymbolStyleSet(AAChartSymbolStyleType.innerBlank)
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("目标")
+          .typeSet(AAChartType.polygon)
+          .dataSet([
+        [153, 42], [149, 46], [149, 55],
+        [152, 60], [159, 70], [170, 77],
+        [180, 70], [180, 60], [173, 52],
+        [166, 45]
+      ])
+          .lineWidthSet(6),
+      AASeriesElement()
+          .nameSet("实际完成")
+          .typeSet(AAChartType.polygon)
+          .dataSet([
+        [153 * 1.6, 42 * 1.6], [149 * 1.6, 46 * 1.6], [149 * 1.6, 55 * 1.6],
+        [152 * 1.6, 60 * 1.6], [159 * 1.6, 70 * 1.6], [170 * 1.6, 77 * 1.6],
+        [180 * 1.6, 70 * 1.6], [180 * 1.6, 60 * 1.6], [173 * 1.6, 52 * 1.6],
+        [166 * 1.6, 45 * 1.6]
+      ])
+          .lineWidthSet(6)
+    ]);
+  }
+
 }
