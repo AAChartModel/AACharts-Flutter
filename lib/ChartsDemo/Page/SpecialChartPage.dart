@@ -55,6 +55,10 @@ class SpecialChartPage extends StatelessWidget {
       case AAChartType.pyramid: return SpecialChartComposer.configurePyramidChart();
       case AAChartType.funnel: return SpecialChartComposer.configureFunnelChart();
       case AAChartType.errorbar: return SpecialChartComposer.configureErrorbarChart();
+      //    case .gauge : return configureGaugeChart()
+    //         case .polygon: return configurePolygonChart()
+    case AAChartType.gauge: return SpecialChartComposer.configureGaugeChart();
+    case AAChartType.polygon: return SpecialChartComposer.configurePolygonChart();
       default: return SpecialChartComposer.configureBasePolarChart();
     }
   }
