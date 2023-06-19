@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAGradientColor.dart';
@@ -1853,6 +1855,509 @@ class CustomStyleChartComposer {
           .nameSet("虚构数据")
           .dataSet(newDataArr)
     ]);
+  }
+
+  static AAChartModel configureMultiLevelStopsArrGradientColorAreasplineMixedLineChart() {
+    //         var randomNumArrA = [Any]()
+//         var randomNumArrB = [Any]()
+//         var y1 = 0.0
+//         var y2 = 0.0
+//         let Q = Int(arc4random() % 50)
+//         let range = 129
+//         for  x in 0 ..< range {
+//             y1 = sin(Double(Q) * (Double(x) * Double.pi / 180)) + Double(x) * 2.0 * 0.01
+//             y2 = cos(Double(Q) * (Double(x) * Double.pi / 180)) + Double(x) * 3.0 * 0.01
+//             randomNumArrA.append(y1)
+//             randomNumArrB.append(y2)
+//         }
+
+    //     let redStopsArr = [
+    //             [0.0, AARgba(255, 0, 0, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+    //             [0.2, AARgba(255, 0, 0, 0.2)],
+    //             [0.4, AARgba(255, 0, 0, 0.1)],
+    //             [0.6, AARgba(255, 0, 0, 0.05)],
+    //             [0.8, AARgba(255, 0, 0, 0.01)],
+    //             [1.0, AAColor.clear]
+    //         ]
+    //
+    //
+    //         let gradientRedColorDic = AAGradientColor.linearGradient(
+    //             direction: .toBottom,
+    //             stops: redStopsArr
+    //         )
+
+    //  return AAChartModel()
+    //             .chartType(.areaspline)
+    //             .stacking(.normal)
+    //             .backgroundColor(AAColor.black)
+    //             .colorsTheme(["#1e90ff","#04d69f","#ef476f","#ffd066",])
+    //             .dataLabelsEnabled(false)
+    //             .markerSymbol(.circle)
+    //             .markerRadius(5)
+    //             .markerSymbolStyle(.innerBlank)
+    //             .yAxisGridLineWidth(0.5)
+    //             .xAxisGridLineWidth(0.5)
+    //             .series([
+    //                 AASeriesElement()
+    //                     .name("2017")
+    //                     .type(.spline)
+    //                     .lineWidth(6)
+    //                     .data(randomNumArrA),
+    //                 AASeriesElement()
+    //                     .name("2018")
+    //                     .type(.spline)
+    //                     .lineWidth(6)
+    //                     .data(randomNumArrB),
+    //                 AASeriesElement()
+    //                     .name("2020")
+    //                     .fillColor(gradientRedColorDic)
+    //                     .lineWidth(6)
+    //                     .threshold(-4)
+    //                     .data(randomNumArrA),
+    //             ])
+
+    List randomNumArrA = [];
+    List randomNumArrB = [];
+    double y1 = 0.0;
+    double y2 = 0.0;
+    int Q = (new DateTime.now().millisecondsSinceEpoch % 50).toInt();
+    int range = 129;
+    for (int x = 0; x < range; x++) {
+      y1 = (sin(Q * (x * 3.141592653589793 / 180)) + x * 2.0 * 0.01);
+      y2 = (cos(Q * (x * 3.141592653589793 / 180)) + x * 3.0 * 0.01);
+      randomNumArrA.add(y1);
+      randomNumArrB.add(y2);
+    }
+
+    List redStopsArr = [
+      [0.0, AARgba(255, 0, 0, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+      [0.2, AARgba(255, 0, 0, 0.2)],
+      [0.4, AARgba(255, 0, 0, 0.1)],
+      [0.6, AARgba(255, 0, 0, 0.05)],
+      [0.8, AARgba(255, 0, 0, 0.01)],
+      [1.0, AAColor.clear]
+    ];
+
+    Map gradientRedColorDic = AAGradientColor.linearGradient2(
+        AALinearGradientDirection.toBottom,
+        redStopsArr
+    );
+
+    return AAChartModel()
+        .chartTypeSet(AAChartType.areaspline)
+        .stackingSet(AAChartStackingType.normal)
+        .backgroundColorSet(AAColor.black)
+        .colorsThemeSet(["#1e90ff","#04d69f","#ef476f","#ffd066",])
+        .dataLabelsEnabledSet(false)
+        .markerSymbolSet(AAChartSymbolType.circle)
+        .markerRadiusSet(5)
+        .markerSymbolStyleSet(AAChartSymbolStyleType.innerBlank)
+        .yAxisGridLineWidthSet(0.5)
+        .xAxisGridLineWidthSet(0.5)
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("2017")
+          .typeSet(AAChartType.spline)
+          .lineWidthSet(6)
+          .dataSet(randomNumArrA),
+      AASeriesElement()
+          .nameSet("2018")
+          .typeSet(AAChartType.spline)
+          .lineWidthSet(6)
+          .dataSet(randomNumArrB),
+      AASeriesElement()
+          .nameSet("2020")
+          .fillColorSet(gradientRedColorDic)
+          .lineWidthSet(6)
+          .thresholdSet(-4)
+          .dataSet(randomNumArrA),
+    ]);
+  }
+
+
+
+  // private func connectNullsForSingleAASeriesElement() -> AAChartModel {
+  //         let dataArr = [
+  //             0.45, NSNull(), NSNull(),
+  //             0.55, 0.58, 0.62, NSNull(), NSNull(),
+  //             0.56, 0.67, 0.50, 0.34, 0.50, NSNull(), NSNull(), NSNull(), NSNull(),
+  //             0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36, NSNull(), NSNull(), NSNull(), NSNull(), NSNull(), NSNull(), NSNull(), NSNull(),
+  //             0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53,
+  //         ] as [Any]
+  //
+  //         return AAChartModel()
+  //             .chartType(.spline)
+  //             .subtitle("虚拟数据")
+  //             .colorsTheme(["#1e90ff", "#ef476f", "#ffd066", "#04d69f"])
+  //             .yAxisTitle("摄氏度")
+  //             .dataLabelsEnabled(false)
+  //             .yAxisGridLineWidth(0)
+  //             .stacking(.normal)
+  //             .markerRadius(8)
+  //             .markerSymbolStyle(.borderBlank)
+  //             .series([
+  //                 AASeriesElement()
+  //                     .name("Do NOT Connect Nulls")
+  //                     .lineWidth(5)
+  //                     .connectNulls(false)
+  //                     .data(dataArr),
+  //                 AASeriesElement()
+  //                     .name("Connect Nulls")
+  //                     .lineWidth(5)
+  //                     .connectNulls(true)
+  //                     .data(dataArr),
+  //                 AASeriesElement()
+  //                     .name("Do NOT Connect Nulls")
+  //                     .lineWidth(5)
+  //                     .connectNulls(false)
+  //                     .data(dataArr),
+  //                 AASeriesElement()
+  //                     .name("Connect Nulls")
+  //                     .lineWidth(5)
+  //                     .connectNulls(true)
+  //                     .data(dataArr)
+  //             ])
+  //     }
+
+  static AAChartModel configureColumnChart() {
+    List dataArr = [
+      0.45, null, null,
+      0.55, 0.58, 0.62, null, null,
+      0.56, 0.67, 0.50, 0.34, 0.50, null, null, null, null,
+      0.23, 0.47, 0.46, 0.38, 0.56, 0.48, 0.36, null, null, null, null, null, null, null, null,
+      0.74, 0.66, 0.65, 0.71, 0.59, 0.65, 0.77, 0.52, 0.53, 0.58, 0.53,
+    ];
+
+    return new AAChartModel()
+        .chartTypeSet(AAChartType.column)
+        .subtitleSet("虚拟数据")
+        .colorsThemeSet(["#1e90ff", "#ef476f", "#ffd066", "#04d69f"])
+        .yAxisTitleSet("摄氏度")
+        .dataLabelsEnabledSet(false)
+        .yAxisGridLineWidthSet(0)
+        .stackingSet(AAChartStackingType.normal)
+        .markerRadiusSet(8)
+        .markerSymbolStyleSet(AAChartSymbolStyleType.borderBlank)
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("Do NOT Connect Nulls")
+          .lineWidthSet(5)
+      // .connectNulls(false)
+          .dataSet(dataArr),
+      AASeriesElement()
+          .nameSet("Connect Nulls")
+          .lineWidthSet(5)
+      // .connectNulls(true)
+          .dataSet(dataArr),
+      AASeriesElement()
+          .nameSet("Do NOT Connect Nulls")
+          .lineWidthSet(5)
+      // .connectNulls(false)
+          .dataSet(dataArr),
+      AASeriesElement()
+          .nameSet("Connect Nulls")
+          .lineWidthSet(5)
+      // .connectNulls(true)
+          .dataSet(dataArr)
+    ]);
+  }
+
+
+
+
+//         func generateRandomNumberArrayWithLength(_ length: Int,
+//                                                  randomRange: Int,
+//                                                  minNum: Int) -> [Any] {
+//             var randomNumArrA = [Any]()
+//             for _ in 0 ..< length {
+//                 let randomNum = Int(arc4random()) % randomRange + minNum
+//                 randomNumArrA.append(randomNum)
+//             }
+//             return randomNumArrA
+//         }
+
+  static List<int> generateRandomNumberArrayWithLength(int length,
+      int randomRange,
+      int minNum) {
+    List<int> randomNumArrA = [];
+    for (int i = 0; i < length; i++) {
+      int randomNum = Random().nextInt(randomRange) + minNum;
+      randomNumArrA.add(randomNum);
+    }
+    return randomNumArrA;
+  }
+
+//         func generateRandomNumberMixedNullArrayWithLength(_ length: Int,
+//                                                           randomRange: Int,
+//                                                           minNum: Int) -> [Any] {
+//             var randomNumArrA = [Any]()
+//             for x in 0 ..< length {
+//                 if (100 < x && x < 150) || (300 < x && x < 350) {
+//                     let randomNum = Int(arc4random()) % randomRange + minNum
+//                     randomNumArrA.append(randomNum)
+//                 } else {
+//                     randomNumArrA.append(NSNull())
+//                 }
+//             }
+//             return randomNumArrA
+//         }
+
+  static List<int?> generateRandomNumberMixedNullArrayWithLength(int length,
+      int randomRange,
+      int minNum) {
+    List<int?> randomNumArrA = [];
+    for (int x = 0; x < length; x++) {
+      if ((100 < x && x < 150) || (300 < x && x < 350)) {
+        int randomNum = Random().nextInt(randomRange) + minNum;
+        randomNumArrA.add(randomNum);
+      } else {
+        randomNumArrA.add(null);
+      }
+    }
+    return randomNumArrA;
+  }
+
+
+//private func lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement() -> AAChartModel {
+
+//         return AAChartModel()
+//             .chartType(.line)
+//             .backgroundColor(AAColor.black)
+//             .colorsTheme(["#1e90ff", "#04d69f", "#ef476f", "#ffd066"])
+//             .dataLabelsEnabled(false)
+//             .markerRadius(0)
+//             .series([
+//                 AASeriesElement()
+//                     .name("2017")
+//                     .lineWidth(6)
+//                     .data(generateRandomNumberMixedNullArrayWithLength(3550, randomRange: 5, minNum: 100)),
+//                 AASeriesElement()
+//                     .name("2018")
+//                     .lineWidth(6)
+//                     .data(generateRandomNumberArrayWithLength(3550, randomRange: 100, minNum: 200)),
+//                 AASeriesElement()
+//                     .name("2019")
+//                     .lineWidth(6)
+//                     .data(generateRandomNumberArrayWithLength(3550, randomRange: 150, minNum: 400)),
+//                 AASeriesElement()
+//                     .name("2020")
+//                     .lineWidth(6)
+//                     .data(generateRandomNumberArrayWithLength(3550, randomRange: 150, minNum: 600)),
+//             ])
+//     }
+
+  static AAChartModel lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement() {
+    return AAChartModel()
+        .chartTypeSet(AAChartType.line)
+        .backgroundColorSet(AAColor.black)
+        .colorsThemeSet(["#1e90ff", "#04d69f", "#ef476f", "#ffd066"])
+        .dataLabelsEnabledSet(false)
+        .markerRadiusSet(0)
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("2017")
+          .lineWidthSet(6)
+          .dataSet(generateRandomNumberMixedNullArrayWithLength(3550, 5, 100)),
+      AASeriesElement()
+          .nameSet("2018")
+          .lineWidthSet(6)
+          .dataSet(generateRandomNumberArrayWithLength(3550, 100, 200)),
+      AASeriesElement()
+          .nameSet("2019")
+          .lineWidthSet(6)
+          .dataSet(generateRandomNumberArrayWithLength(3550, 150, 400)),
+      AASeriesElement()
+          .nameSet("2020")
+          .lineWidthSet(6)
+          .dataSet(generateRandomNumberArrayWithLength(3550, 150, 600)),
+    ]);
+  }
+
+
+
+  static AAChartModel customAreasplineChartWithColorfulGradientColorZones() {
+    //      let redStopsArr = [
+    //             [0.0, AARgba(255, 0, 0, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+    //             [1.0, AAColor.clear]
+    //         ]
+    //
+    //         let greenStopsArr = [
+    //             [0.0, AARgba(0, 255, 0, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+    //             [1.0, AAColor.clear]
+    //         ]
+    //
+    //         let blueStopsArr = [
+    //             [0.0, AARgba(0, 0, 255, 1.0)],//颜色字符串设置支持十六进制类型和 rgba 类型
+    //             [1.0, AAColor.clear]
+    //         ]
+    //
+    //         let redGradientColorDic = AAGradientColor.linearGradient(direction: .toBottom, stops: redStopsArr)
+    //         let greenGradientColorDic = AAGradientColor.linearGradient(direction: .toBottom, stops: greenStopsArr)
+    //         let blueGradientColorDic = AAGradientColor.linearGradient(direction: .toBottom, stops: blueStopsArr)
+
+    List redStopsArr = [
+      [0.0, AARgba(255, 0, 0, 1.0)], //颜色字符串设置支持十六进制类型和 rgba 类型
+      [1.0, AAColor.clear]
+    ];
+
+    List greenStopsArr = [
+      [0.0, AARgba(0, 255, 0, 1.0)], //颜色字符串设置支持十六进制类型和 rgba 类型
+      [1.0, AAColor.clear]
+    ];
+
+    List blueStopsArr = [
+      [0.0, AARgba(0, 0, 255, 1.0)], //颜色字符串设置支持十六进制类型和 rgba 类型
+      [1.0, AAColor.clear]
+    ];
+
+    Map redGradientColorDic = AAGradientColor.linearGradient2(AALinearGradientDirection.toBottom, redStopsArr);
+    Map greenGradientColorDic = AAGradientColor.linearGradient2(AALinearGradientDirection.toBottom, greenStopsArr);
+    Map blueGradientColorDic = AAGradientColor.linearGradient2(AALinearGradientDirection.toBottom, blueStopsArr);
+
+    //   let singleSpecialData = AADataElement()
+    //             .marker(AAMarker()
+    //                        .radius(8)//曲线连接点半径
+    //                        .symbol(.circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+    //                        .fillColor(AAColor.white)//点的填充色(用来设置折线连接点的填充色)
+    //                        .lineWidth(5)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+    //                        //外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+    //                        .lineColor("#1E90FF")//道奇蓝
+    //                        )
+    //             .dataLabels(AADataLabels()
+    //                            .enabled(true)
+    //                            .allowOverlap(true)
+    //                            .useHTML(true)
+    //                            .backgroundColor(AARgba(65, 111, 166, 1.0))
+    //                            .borderRadius(10)
+    //                            .shape("callout")
+    //                            .format("{point.category}<br>{series.name}: {point.y} %")
+    //                            .style(AAStyle(color: AAColor.white, fontSize: 12, weight: .bold))
+    //                            .x(-80).y(5)
+    //                            .align(.center)
+    //                            .verticalAlign(.top)
+    //                            .overflow("none")
+    //                            .crop(false)
+    //                            )
+    //             .y(85.3)
+    //             .toDic()!
+
+    var singleSpecialData = AADataElement()
+        .markerSet(
+        AAMarker()
+            .radiusSet(8) //曲线连接点半径
+            .symbolSet(AAChartSymbolType.circle) //曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+            .fillColorSet(AAColor.white) //点的填充色(用来设置折线连接点的填充色)
+            .lineWidthSet(5) //外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+        //外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+            .lineColorSet("#1E90FF") //道奇蓝
+    )
+        .dataLabelsSet(
+        AADataLabels()
+            .enabledSet(true)
+            .allowOverlapSet(true)
+            .useHTMLSet(true)
+            .backgroundColorSet(AARgba(65, 111, 166, 1.0))
+            .borderRadiusSet(10)
+            .shapeSet("callout")
+            .formatSet("{point.category}<br>{series.name}: {point.y} %")
+        // .styleSet(AAStyle(color: AAColor.white, fontSize: 12, fontWeight: AAChartFontWeightType.bold))
+            .styleSet(AAStyle.colorSizeWeight(AAColor.white, 12, AAChartFontWeightType.bold))
+            .xSet(-80)
+            .ySet(5)
+            .alignSet(AAChartAlignType.center)
+            .verticalAlignSet(AAChartVerticalAlignType.top)
+            .overflowSet("none")
+            .cropSet(false)
+    )
+        .ySet(85.3)
+        .toPureJson();
+
+//let axisLabelsStyle = AAStyle(color: AAColor.white, fontSize: 12, weight: .bold)
+//
+//         return AAChartModel()
+//             .chartType(.areaspline)
+//             .backgroundColor(AAColor.black)
+//             .categories([
+//                 "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+//                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+//             ])
+//             .dataLabelsEnabled(false)
+//             .legendEnabled(false)
+//             .markerRadius(0)
+//             .xAxisLabelsStyle(axisLabelsStyle)
+//             .yAxisLabelsStyle(axisLabelsStyle)
+// //            .xAxisGridLineStyle(AALineStyle()
+// //                                    .color(AAColor.white)
+// //                                    .dashStyle(.longDashDotDot)
+// //                                    .width(0.5))
+// //            .yAxisGridLineStyle(AALineStyle()
+// //                                    .width(0))
+//             .series([
+//                 AASeriesElement()
+//                     .name("空气湿度")
+//                     .lineWidth(6)
+//                     .zoneAxis("x")
+//                     .zones([
+//                         AAZonesElement()
+//                             .value(2)
+//                             .color(AAColor.red)
+//                             .fillColor(redGradientColorDic),
+//                         AAZonesElement()
+//                             .value(5)
+//                             .color(AAColor.green)
+//                             .fillColor(greenGradientColorDic),
+//                         AAZonesElement()
+//                             .color(AAColor.blue)
+//                             .fillColor(blueGradientColorDic),
+//                     ])
+//                     .data([
+//                         56.5, 33.3, 85.3, 23.9, 29.6, 34.5, 28.2, 26.5, 15.2, 56.5, 33.3, singleSpecialData
+//                     ]),
+//             ])
+
+    var axisLabelsStyle = AAStyle.colorSizeWeight(AAColor.white, 12, AAChartFontWeightType.bold);
+
+    return AAChartModel()
+        .chartTypeSet(AAChartType.areaspline)
+        .backgroundColorSet(AAColor.black)
+        .categoriesSet([
+      "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+    ])
+        .dataLabelsEnabledSet(false)
+        .legendEnabledSet(false)
+        .markerRadiusSet(0)
+        .xAxisLabelsStyleSet(axisLabelsStyle)
+    // .yAxisLabelsStyleSet(axisLabelsStyle)
+//            .xAxisGridLineStyle(AALineStyle()
+//                                    .color(AAColor.white)
+//                                    .dashStyle(.longDashDotDot)
+//                                    .width(0.5))
+//            .yAxisGridLineStyle(AALineStyle()
+//                                    .width(0))
+        .seriesSet([
+      AASeriesElement()
+          .nameSet("空气湿度")
+          .lineWidthSet(6)
+          .zoneAxisSet("x")
+          .zonesSet([
+        AAZonesElement()
+            .valueSet(2)
+            .colorSet(AAColor.red)
+            .fillColorSet(redGradientColorDic),
+        AAZonesElement()
+            .valueSet(5)
+            .colorSet(AAColor.green)
+            .fillColorSet(greenGradientColorDic),
+        AAZonesElement()
+            .colorSet(AAColor.blue)
+            .fillColorSet(blueGradientColorDic),
+      ])
+          .dataSet([
+        56.5, 33.3, 85.3, 23.9, 29.6, 34.5, 28.2, 26.5, 15.2, 56.5, 33.3, singleSpecialData
+      ]),
+    ]);
+
   }
 
 
