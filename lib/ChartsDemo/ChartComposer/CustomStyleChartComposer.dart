@@ -2019,7 +2019,7 @@ class CustomStyleChartComposer {
   //             ])
   //     }
 
-  static AAChartModel configureColumnChart() {
+  static AAChartModel connectNullsForSingleAASeriesElement() {
     List dataArr = [
       0.45, null, null,
       0.55, 0.58, 0.62, null, null,
