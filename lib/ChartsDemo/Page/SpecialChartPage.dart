@@ -38,21 +38,24 @@ class SpecialChartPage extends StatelessWidget {
 
   AAChartModel configureChartModelWithChartType(String chartType) {
     switch (chartType) {
-      case AAChartType.column: return SpecialChartComposer.configureColumnChart();
+      case AAChartType.column: return SpecialChartComposer.configureBasePolarChart();
+      case AAChartType.bar: return SpecialChartComposer.configurePolarBarChart();
+      case AAChartType.line: return SpecialChartComposer.configurePolarLineChart();
+      case AAChartType.area: return SpecialChartComposer.configurePolarAreaChart();
+      case AAChartType.spline: return SpecialChartComposer.configureStepLineChart();
+      case AAChartType.areaspline: return SpecialChartComposer.configureStepAreaChart();
       case AAChartType.pie: return SpecialChartComposer.configurePieChart();
       case AAChartType.bubble: return SpecialChartComposer.configureBubbleChart();
       case AAChartType.scatter: return SpecialChartComposer.configureScatterChart();
       case AAChartType.arearange: return SpecialChartComposer.configureArearangeChart();
       case AAChartType.areasplinerange: return SpecialChartComposer.configureAreasplinerangeChart();
       case AAChartType.columnrange: return SpecialChartComposer.configureColumnrangeChart();
-      case AAChartType.line: return SpecialChartComposer.configureStepLineChart();
-      case AAChartType.area: return SpecialChartComposer.configureStepAreaChart();
       case AAChartType.boxplot: return SpecialChartComposer.configureBoxplotChart();
       case AAChartType.waterfall: return SpecialChartComposer.configureWaterfallChart();
       case AAChartType.pyramid: return SpecialChartComposer.configurePyramidChart();
       case AAChartType.funnel: return SpecialChartComposer.configureFunnelChart();
       case AAChartType.errorbar: return SpecialChartComposer.configureErrorbarChart();
-      default: return SpecialChartComposer.configureColumnChart();
+      default: return SpecialChartComposer.configureBasePolarChart();
     }
   }
 
