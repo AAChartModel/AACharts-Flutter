@@ -7,7 +7,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATooltip.dart';
 
 
 class SpecialChartComposer {
-  static AAChartModel configureColumnChart() {
+  static AAChartModel configureBasePolarChart() {
     return AAChartModel()
         .chartTypeSet(AAChartType.column)
         .polarSet(true)
@@ -19,6 +19,27 @@ class SpecialChartComposer {
           .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6])
           .colorByPointSet(true)
     ]);
+  }
+  
+
+  static AAChartModel configurePolarColumnChart() {
+    return configureBasePolarChart()
+        .chartTypeSet(AAChartType.column);
+  }
+
+  static AAChartModel configurePolarBarChart() {
+    return configureBasePolarChart()
+        .chartTypeSet(AAChartType.bar);
+  }
+
+  static AAChartModel configurePolarLineChart() {
+    return configureBasePolarChart()
+        .chartTypeSet(AAChartType.line);
+  }
+
+  static AAChartModel configurePolarAreaChart() {
+    return configureBasePolarChart()
+        .chartTypeSet(AAChartType.area);
   }
 
 
