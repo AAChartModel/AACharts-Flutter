@@ -93,6 +93,10 @@ class CustomStyleChartPage extends StatelessWidget {
       case 47: return CustomStyleChartComposer.customLineChartWithColorfulMarkersAndLines2();
       case 48: return CustomStyleChartComposer.drawLineChartWithPointsCoordinates2();
       case 49: return CustomStyleChartComposer.configureSpecialStyleColumnForNegativeDataMixedPositiveData();
+      case 50: return CustomStyleChartComposer.configureMultiLevelStopsArrGradientColorAreasplineMixedLineChart();
+      case 51: return CustomStyleChartComposer.connectNullsForSingleAASeriesElement();
+      case 52: return CustomStyleChartComposer.lineChartsWithLargeDifferencesInTheNumberOfDataInDifferentSeriesElement();
+      case 53: return CustomStyleChartComposer.customAreasplineChartWithColorfulGradientColorZones();
 
       default: {
         //statements;
