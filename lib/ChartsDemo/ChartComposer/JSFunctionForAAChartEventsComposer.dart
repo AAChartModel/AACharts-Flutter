@@ -1660,4 +1660,96 @@ static AAOptions customizeYAxisPlotLinesLabelBeSpecialStyle() {
     ]);
 }
 
+////https://stackoverflow.com/questions/47392848/set-ecg-paper-like-grid-intervals-highcharts-js
+// func configureECGStyleChart() -> AAOptions {
+//     return AAOptions()
+//         .title(AATitle()
+//             .text("ECG Paper Style Chart"))
+//         .chart(AAChart()
+//             .events(AAChartEvents()
+//                 .render("""
+//                     function () {
+//                         const chart = this;
+//                         const axes = chart.axes;
+//                         let showMinorTicks = true;
+//
+//                         axes.forEach((a) => {
+//                                 if (Object.keys(a.minorTicks).length === 0) {
+//                                     showMinorTicks = false;
+//                                 }
+//                         });
+//
+//                         axes.forEach((a) => {
+//                                 for (var key in a.minorTicks) {
+//                                     var mt = a.minorTicks[key].gridLine;
+//                                     showMinorTicks ? mt.show() : mt.hide();
+//                                 }
+//                         });
+//                     }
+//                     """
+//                      )))
+//         .xAxis(AAXAxis()
+//             .tickInterval(0.5)
+//             .minorTicks(true)
+//             .minorTickInterval(0.1)
+//             .gridLineWidth(1)
+//             .gridLineColor("#ff0000"))
+//         .yAxis(AAYAxis()
+//             .tickInterval(0.5)
+//             .minorTicks(true)
+//             .minorTickInterval(0.1)
+//             .gridLineWidth(1)
+//             .gridLineColor("#ff0000"))
+//         .series([
+//             AASeriesElement()
+//                 .data([1, 3, 4, 6, 1, 2, 2, 6, 1, 1, 1, 4, 6])
+//         ])
+// }
+
+//https://stackoverflow.com/questions/47392848/set-ecg-paper-like-grid-intervals-highcharts-js
+static AAOptions configureECGStyleChart() {
+    return AAOptions()
+        .titleSet(AATitle()
+            .textSet("ECG Paper Style Chart"))
+        .chartSet(AAChart()
+            .eventsSet(AAChartEvents()
+                .renderSet("""
+                            function () {
+                                const chart = this;
+                                const axes = chart.axes;
+                                let showMinorTicks = true;
+
+                                axes.forEach((a) => {
+                                        if (Object.keys(a.minorTicks).length === 0) {
+                                            showMinorTicks = false;
+                                        }
+                                });
+
+                                axes.forEach((a) => {
+                                        for (var key in a.minorTicks) {
+                                            var mt = a.minorTicks[key].gridLine;
+                                            showMinorTicks ? mt.show() : mt.hide();
+                                        }
+                                });
+                            }
+                            """
+                )))
+        .xAxisSet(AAXAxis()
+            .tickIntervalSet(0.5)
+            .minorTicksSet(true)
+            .minorTickIntervalSet(0.1)
+            .gridLineWidthSet(1)
+            .gridLineColorSet("#ff0000"))
+        .yAxisSet(AAYAxis()
+            .tickIntervalSet(0.5)
+            .minorTicksSet(true)
+            .minorTickIntervalSet(0.1)
+            .gridLineWidthSet(1)
+            .gridLineColorSet("#ff0000"))
+        .seriesSet([
+        AASeriesElement()
+            .dataSet([1, 3, 4, 6, 1, 2, 2, 6, 1, 1, 1, 4, 6])
+    ]);
+
+}
 }
