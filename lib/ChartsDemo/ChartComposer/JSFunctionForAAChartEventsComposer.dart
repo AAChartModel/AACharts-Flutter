@@ -19,6 +19,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
 
 import '../../AAChartsLib/AAChartCreator/AASeriesElement.dart';
 import '../../AAChartsLib/AAOptionsModel/AAChart.dart';
+import '../../AAChartsLib/AAOptionsModel/AAPlotLinesElement.dart';
 import '../../AAChartsLib/AAOptionsModel/AAScatter.dart';
 
 class JSFunctionForAAChartEventsComposer {
@@ -1545,6 +1546,118 @@ static AAOptions dynamicHeightGridLineAreaChart() {
             .enabledSet(false))
     ]);
 
+}
+
+////https://github.com/AAChartModel/AAChartKit-Swift-Pro/issues/3
+// //https://www.highcharts.com/forum/viewtopic.php?f=9&t=49492
+// func customizeYAxisPlotLinesLabelBeSpecialStyle() -> AAOptions {
+//     return AAOptions()
+//         .chart(AAChart()
+//             .events(AAChartEvents()
+//                 .load("""
+//                     function () {
+//                         const chart = this,
+//                           ren = chart.renderer,
+//                           plotLineLabel = chart.yAxis[0].plotLinesAndBands[0].label,
+//                           {
+//                             x: labelX,
+//                             y: labelY,
+//                             width: labelWidth,
+//                             height: labelHeight
+//                           } = plotLineLabel.getBBox(),
+//                           x = labelX + labelWidth,
+//                           y = labelY,
+//                           lh = labelHeight,
+//                           ll = 40;
+//
+//                         chart.customLabelTriangle = ren.path(['M', x - ll, y, x, y, x + lh, y + lh / 2, x, y + lh, x - ll, y + lh, 'Z']).attr({
+//                           fill: '#a9a9ff',
+//                         }).add().toFront();
+//                     }
+//                     """
+//                      )))
+//         .yAxis(AAYAxis()
+//             .visible(true)
+//             .lineWidth(2)
+//             .plotLines([
+//                 AAPlotLinesElement()
+//                     .value(6.5)
+//                     .color("#a9a9ff")
+//                     .width(2)
+//                     .dashStyle(.dash)
+//                     .label(AALabel()
+//                         .useHTML(true)
+//                         .textAlign(.center)
+//                         .x(0).y(2)
+//                         .formatter("""
+//                                    function () {
+//                                        return `<span style="padding: 2px 10px; display: block; color: white">${this.options.value}</span>`
+//                                    }
+//                                    """
+//                                   ))
+//             ]))
+//         .series([
+//             AASeriesElement()
+//                 .data([2, 5, 2, 3, 6])
+//         ])
+// }
+
+//https://github.com/AAChartModel/AAChartKit-Swift-Pro/issues/3
+//https://www.highcharts.com/forum/viewtopic.php?f=9&t=49492
+static AAOptions customizeYAxisPlotLinesLabelBeSpecialStyle() {
+    return AAOptions()
+        .chartSet(
+        AAChart()
+            .eventsSet(
+            AAChartEvents()
+                .loadSet("""
+                           function () {
+                               const chart = this,
+                                 ren = chart.renderer,
+                                 plotLineLabel = chart.yAxis[0].plotLinesAndBands[0].label,
+                                 {
+                                   x: labelX,
+                                   y: labelY,
+                                   width: labelWidth,
+                                   height: labelHeight
+                                 } = plotLineLabel.getBBox(),
+                                 x = labelX + labelWidth,
+                                 y = labelY,
+                                 lh = labelHeight,
+                                 ll = 40;
+
+                               chart.customLabelTriangle = ren.path(['M', x - ll, y, x, y, x + lh, y + lh / 2, x, y + lh, x - ll, y + lh, 'Z']).attr({
+                                 fill: '#a9a9ff',
+                               }).add().toFront();
+                           }
+                           """
+                )))
+        .yAxisSet(
+        AAYAxis()
+            .visibleSet(true)
+            .lineWidthSet(2)
+            .plotLinesSet([
+            AAPlotLinesElement()
+                .valueSet(6.5)
+                .colorSet("#a9a9ff")
+                .widthSet(2)
+                .dashStyleSet(AAChartLineDashStyleType.dash)
+                .labelSet(
+                AALabel()
+                    .useHTMLSet(true)
+                    .textAlignSet(AAChartAlignType.center)
+                    .xSet(0).ySet(2)
+                    .formatterSet("""
+                                   function () {
+                                       return `<span style="padding: 2px 10px; display: block; color: white">\${this.options.value}</span>`
+                                   }
+                                   """
+                    ))
+        ]))
+        .seriesSet([
+        AASeriesElement()
+            .dataSet([2, 5, 2, 3, 6])
+    ]);
 }
 
 }
