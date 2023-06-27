@@ -10,6 +10,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPlotBandsElement.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAPlotOptions.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AASeries.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStates.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAStyle.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATitle.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AATooltip.dart';
@@ -18,6 +19,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
 
 import '../../AAChartsLib/AAChartCreator/AASeriesElement.dart';
 import '../../AAChartsLib/AAOptionsModel/AAChart.dart';
+import '../../AAChartsLib/AAOptionsModel/AAScatter.dart';
 
 class JSFunctionForAAChartEventsComposer {
   ////https://github.com/AAChartModel/AAChartKit-Swift/issues/345
@@ -1424,7 +1426,125 @@ static AAOptions automaticallyHideTooltipAfterItIsShown() {
   );
 
   return aaOptions;
-  
+
+}
+
+////https://github.com/AAChartModel/AAChartKit/issues/1383
+//     //https://www.highcharts.com/forum/viewtopic.php?t=49409
+//     private func dynamicHeightGridLineAreaChart() -> AAOptions {
+//         return AAOptions()
+//             .title(AATitle()
+//                 .text("dynamicHeightGridLineAreaChart"))
+//             .chart(AAChart()
+//                 .type(.scatter)
+//                 .events(AAChartEvents()
+//                     .load("""
+//                           function () {
+//                              const chart = this;
+//                              const mainSeries = chart.series[0];
+//                              mainSeries.data.forEach((point, i) => {
+//                                chart.addSeries({
+//                                  data: [
+//                                    [i, 0],
+//                                    [i, point.y]
+//                                  ]
+//                                })
+//                              })
+//                              }
+//                           """
+//                     )))
+//             .plotOptions(AAPlotOptions()
+//                 .scatter(AAScatter()
+//                     .lineWidth(2)
+//                     .lineColor("#dbe751")
+//                     .dashStyle(.longDash)
+//                     .enableMouseTracking(false)
+//                     .linkedTo("main")
+//                     .states(AAStates()
+//                         .inactive(AAInactive()
+//                             .enabled(false)))
+//                     .marker(AAMarker()
+//                         .enabled(false))))
+//             .yAxis(AAYAxis()
+//                 .gridLineWidth(0))
+//             .series([
+//                 AASeriesElement()
+//                     .type(.areaspline)
+//                     .id("main")
+//                     .data([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6])
+//                     .lineWidth(6)
+//                     .color("#dbe751")
+//                     .fillOpacity(0.4)
+//                     .marker(AAMarker()
+//                         .enabled(false))
+//                 ])
+//     }
+//
+// }
+
+//https://github.com/AAChartModel/AAChartKit/issues/1383
+//https://www.highcharts.com/forum/viewtopic.php?t=49409
+static AAOptions dynamicHeightGridLineAreaChart() {
+    return AAOptions()
+        .titleSet(
+        AATitle()
+    .textSet("dynamicHeightGridLineAreaChart"))
+        .chartSet(
+        AAChart()
+    .typeSet(AAChartType.scatter)
+    .eventsSet(
+        AAChartEvents()
+            .loadSet("""
+                           function () {
+                              const chart = this;
+                              const mainSeries = chart.series[0];
+                              mainSeries.data.forEach((point, i) => {
+                                chart.addSeries({
+                                  data: [
+                                    [i, 0],
+                                    [i, point.y]
+                                  ]
+                                })
+                              })
+                              }
+                           """
+            )))
+        .plotOptionsSet(
+        AAPlotOptions()
+    .scatterSet(
+        AAScatter()
+            .lineWidthSet(2)
+            .lineColorSet("#dbe751")
+            .dashStyleSet(AAChartLineDashStyleType.longDash)
+            .enableMouseTrackingSet(false)
+            .linkedToSet("main")
+            .statesSet(
+            AAStates()
+                .inactiveSet(
+                AAInactive()
+                    .enabledSet(false)))
+            .markerSet(
+            AAMarker()
+                .enabledSet(false))))
+        .yAxisSet(
+        AAYAxis()
+    .gridLineWidthSet(0))
+        .seriesSet([
+        AASeriesElement()
+            .typeSet(AAChartType.areaspline)
+            .idSet("main")
+            .dataSet([
+          7.0, 6.9, 2.5, 14.5, 18.2, 21.5,
+          5.2, 26.5, 23.3, 45.3, 13.9, 9.6
+        ])
+        .lineWidthSet(6)
+        .colorSet("#dbe751")
+        .fillOpacitySet(0.4)
+        .markerSet(
+        AAMarker()
+            .enabledSet(false))
+    ]);
+
 }
 
 }
