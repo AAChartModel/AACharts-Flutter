@@ -2,7 +2,7 @@
  class AAEasyTool {
 
   static String pureJavaScriptFunctionString(String jsFunctionStr)  {
-    String pureJSFunctionStr = jsFunctionStr;
+    String pureJSFunctionStr = "(" + jsFunctionStr + ")";
     pureJSFunctionStr = pureJSFunctionStr.replaceAll("'", "\"");
     pureJSFunctionStr = pureJSFunctionStr.replaceAll("\0", "");
     pureJSFunctionStr = pureJSFunctionStr.replaceAll("\n", "");
