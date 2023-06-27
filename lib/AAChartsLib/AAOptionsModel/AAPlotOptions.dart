@@ -1,4 +1,5 @@
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AABubble.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAScatter.dart';
 
 import 'AAObject.dart';
 import 'AAColumn.dart';
@@ -24,6 +25,7 @@ import 'AASeries.dart';
      AAColumnrange? columnrange;
      AAArearange? arearange;
      AASeries? series;
+     AAScatter? scatter;
 
 
      AAPlotOptions columnSet(AAColumn? prop) {
@@ -80,6 +82,11 @@ import 'AASeries.dart';
         series = prop;
         return this;
     }
+
+      AAPlotOptions scatterSet(AAScatter? prop) {
+          scatter = prop;
+          return this;
+      }
 
      Map<String, dynamic> toJson() {
     return {
