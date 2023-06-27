@@ -27,6 +27,7 @@ import 'AAStates.dart';
    AAShadow? shadow;
    AADataLabels? dataLabels;
    AAStates? states;
+   AAPoint? point;
    int? pointInterval;
    String? pointIntervalUnit;
    Object? pointPlacement;
@@ -117,6 +118,11 @@ import 'AAStates.dart';
      return this;
    }
 
+   AASeries pointSet(AAPoint? prop) {
+     point = prop;
+     return this;
+   }
+
    AASeries pointIntervalSet(int? prop) {
      pointInterval = prop;
      return this;
@@ -183,5 +189,33 @@ class AASeriesEvents extends AAObject {
        "legendItemClick": this.legendItemClick,
      };
    }
+
+}
+
+class AAPoint extends AAObject {
+   AAPointEvents? events;
+
+   AAPoint eventsSet(AAPointEvents? prop) {
+     events = prop;
+     return this;
+   }
+
+}
+
+class AAPointEvents extends AAObject {
+   //   public var click: String?
+  //     public var mouseOver: String?
+  //     public var mouseOut: String?
+  //     public var remove: String?
+  //     public var select: String?
+  //     public var unselect: String?
+  //     public var update: String?
+  //     public var legendItemClick: String? // Only for pie chart
+
+  String? click;
+
+
+
+
 
 }
