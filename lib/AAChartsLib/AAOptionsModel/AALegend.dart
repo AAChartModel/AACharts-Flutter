@@ -17,6 +17,10 @@ import 'AAItemStyle.dart';
     double? x;
     double? y;
     bool? floating;
+    String? labelFormat;
+    Object? backgroundColor;
+    bool? reversed;
+    bool? shadow;
 
     AALegend layoutSet(String? prop) {
         layout = prop;
@@ -93,6 +97,26 @@ import 'AAItemStyle.dart';
       return this;
     }
 
+    AALegend labelFormatSet(String? prop) {
+      labelFormat = prop;
+      return this;
+    }
+
+    AALegend backgroundColorSet(Object? prop) {
+      backgroundColor = prop;
+      return this;
+    }
+
+    AALegend reversedSet(bool? prop) {
+      reversed = prop;
+      return this;
+    }
+
+    AALegend shadowSet(bool? prop) {
+      shadow = prop;
+      return this;
+    }
+
     Map<String, dynamic> toJson() {
     return {
       "layout": this.layout,
@@ -105,6 +129,11 @@ import 'AAItemStyle.dart';
       "itemStyle": this.itemStyle == null ? null : this.itemStyle?.toPureJson(),
       "x": this.x,
       "y": this.y,
+      "floating": this.floating,
+      "labelFormat": this.labelFormat,
+      "backgroundColor": this.backgroundColor,
+      "reversed": this.reversed,
+      "shadow": this.shadow
     };
   }
 }
