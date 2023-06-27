@@ -11,7 +11,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAZonesElement.dart'
 class AASeriesElement extends AAObject {
   String? type; //A chart type series. If the type option is not specified, it is inherited from `chart.type`.
   String? name; //The name of the series as shown in the legend, tooltip etc.
-  List? data; //An array of data points for the series
+  List<dynamic>? data; //An array of data points for the series
   dynamic? color; //The main color or the series. In line type series it applies to the line and the point markers unless otherwise specified. In bar type series it applies to the bars unless a color is specified per point. The default value is pulled from the options.colors array.
   List? colors; //The color for the parts of the graph or points that are below the threshold
   num? lineWidth; //The line width, It is only valid for line, spline, area, areaspline, arearange and arearangespline chart types
@@ -50,7 +50,12 @@ class AASeriesElement extends AAObject {
   bool? enableMouseTracking; //Enable or disable the mouse tracking for a specific series. This includes point tooltips and click events on graphs and points. For large datasets it improves performance.
   AADataSorting? dataSorting; //Enable or disable data sorting.
   bool? reversed; //Only useful for pyramid chart and funnel chart.
-
+//    public var id: String?
+//     public var connectNulls: Bool?
+//     public var enabledCrosshairs: Bool?
+  String? id;
+  bool? connectNulls; //Whether to connect a graph line across null points. default value：false.
+  bool? enabledCrosshairs;
 
   AASeriesElement typeSet(String? prop) {
     type = prop;
@@ -62,7 +67,7 @@ class AASeriesElement extends AAObject {
     return this;
   }
 
-  AASeriesElement dataSet(List? prop) {
+  AASeriesElement dataSet(List<dynamic>? prop) {
     data = prop;
     return this;
   }
@@ -257,6 +262,21 @@ class AASeriesElement extends AAObject {
     return this;
   }
 
+  AASeriesElement idSet(String? prop) {
+    id = prop;
+    return this;
+  }
+
+  AASeriesElement connectNullsSet(bool? prop) {
+    connectNulls = prop;
+    return this;
+  }
+
+  AASeriesElement enabledCrosshairsSet(bool? prop) {
+    enabledCrosshairs = prop;
+    return this;
+  }
+
   Map<String, dynamic> toJson() {
     return {
       "type": this.type,
@@ -292,6 +312,9 @@ class AASeriesElement extends AAObject {
       "pointPlacement": this.pointPlacement,
       "dataSorting": this.dataSorting == null ? null : this.dataSorting?.toPureJson(),
       "reversed": this.reversed,
+      "id": this.id,
+      "connectNulls": this.connectNulls,
+      "enabledCrosshairs": this.enabledCrosshairs,
     };
   }
 }
