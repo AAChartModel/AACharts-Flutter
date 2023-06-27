@@ -39,7 +39,7 @@ class BasicChartPage extends StatelessWidget {
   AAChartModel configureChartModelWithChartType(String chartType) {
     switch (chartType) {
 
-      default: return SpecialChartComposer.configureColumnChart();
+      default: return AAChartModel();
     }
   }
 
