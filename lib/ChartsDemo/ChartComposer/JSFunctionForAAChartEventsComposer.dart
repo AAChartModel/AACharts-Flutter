@@ -1752,4 +1752,74 @@ static AAOptions configureECGStyleChart() {
     ]);
 
 }
+
+////https://github.com/AAChartModel/AAChartKit/issues/1449
+// //https://www.highcharts.com/forum/viewtopic.php?t=28267
+// func configureTheSizeOfTheSliceOfDonutAndPieChart() -> AAOptions {
+//     return AAOptions()
+//         .title(AATitle()
+//             .text("Configure The Size Of The Slice Of Donut And Pie Chart"))
+//         .chart(AAChart()
+//             .events(AAChartEvents()
+//                 .load("""
+//                     function () {
+//                         const chart = this;
+//                         const graphic = chart.series[0].data[0].graphic;
+//                         setTimeout(function () {
+//                             const prevR = graphic.r;
+//                             graphic.attr({
+//                                 r: prevR + 50
+//                             });
+//                         }, 1001);
+//                     }
+//                     """
+//                      )))
+//         .series([
+//             AASeriesElement()
+//                 .type(AAChartType.pie)
+//                 .name("Browser share")
+//                 .data([
+//                     ["Firefox", 45.0],
+//                     ["IE", 26.8],
+//                     ["Safari", 8.5],
+//                     ["Opera", 6.2],
+//                     ["Others", 0.7]
+//                 ])
+//         ])
+// }
+
+//https://github.com/AAChartModel/AAChartKit/issues/1449
+//https://www.highcharts.com/forum/viewtopic.php?t=28267
+static AAOptions configureTheSizeOfTheSliceOfDonutAndPieChart() {
+    return AAOptions()
+        .titleSet(AATitle()
+            .textSet("Configure The Size Of The Slice Of Donut And Pie Chart"))
+        .chartSet(AAChart()
+            .eventsSet(AAChartEvents()
+                .loadSet("""
+                            function () {
+                                const chart = this;
+                                const graphic = chart.series[0].data[0].graphic;
+                                setTimeout(function () {
+                                    const prevR = graphic.r;
+                                    graphic.attr({
+                                        r: prevR + 50
+                                    });
+                                }, 1001);
+                            }
+                            """
+                )))
+        .seriesSet([
+        AASeriesElement()
+            .typeSet(AAChartType.pie)
+            .nameSet("Browser share")
+            .dataSet([
+            ["Firefox", 45.0],
+            ["IE", 26.8],
+            ["Safari", 8.5],
+            ["Opera", 6.2],
+            ["Others", 0.7]
+        ])
+    ]);
+}
 }
