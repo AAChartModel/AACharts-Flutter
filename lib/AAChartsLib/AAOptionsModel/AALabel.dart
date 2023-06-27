@@ -11,6 +11,8 @@ class AALabel extends AAObject  {
    AAStyle? style;//轴标签的 CSS 样式
    double? x;//水平偏移
    double? y;// 竖直偏移
+   String? format;
+   String? formatter;
 
    AALabel alignSet(String? prop) {
     align = prop;
@@ -57,6 +59,16 @@ class AALabel extends AAObject  {
     return this;
   }
 
+    AALabel formatSet(String? prop) {
+      format = prop;
+      return this;
+    }
+
+    AALabel formatterSet(String? prop) {
+      formatter = prop;
+      return this;
+    }
+
    Map<String, dynamic> toJson() {
      return {
        "align": this.align,
@@ -68,6 +80,9 @@ class AALabel extends AAObject  {
        "style": this.style == null ? null : this.style?.toPureJson(),
        "x": this.x,
        "y": this.y,
+       "format": this.format,
+       "formatter": this.formatter,
+
      };
    }
 
