@@ -1,5 +1,6 @@
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAColor.dart';
+import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAGradientColor.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAAxis.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AACrosshair.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AALabel.dart';
@@ -964,6 +965,150 @@ function() {
         .radiusSet(10))
   ]);
 
+}
+
+////https://github.com/AAChartModel/AAChartKit-Swift/issues/394
+//     //https://www.highcharts.com/forum/viewtopic.php?t=44985
+//     private func configureSpecialStyleMarkerOfSingleDataElementChartWithBlinkEffect() -> AAOptions {
+//         let gradientColorDic1 = AAGradientColor.linearGradient(
+//             direction: .toRight,
+//             stops: [
+//                 [0.00, "#febc0f"],//颜色字符串设置支持十六进制类型和 rgba 类型
+//                 [0.25, "#FF14d4"],
+//                 [0.50, "#0bf8f5"],
+//                 [0.75, "#F33c52"],
+//                 [1.00, "#1904dd"],
+//             ]
+//         )
+//
+//         let singleSpecialData = AADataElement()
+//             .marker(AAMarker()
+//                 .radius(8)//曲线连接点半径
+//                 .symbol(.circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+//                 .fillColor(AAColor.white)//点的填充色(用来设置折线连接点的填充色)
+//                 .lineWidth(5)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+//                 .lineColor(AAColor.red)//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+//         )
+//             .y(45.3)
+//             .toDic()!
+//
+//         let dataArr = [7.0, 6.9, 2.5, 14.5, 18.2, 26.5, 5.2, 26.5, 23.3, singleSpecialData, 13.9, 9.6] as [Any]
+//
+//         let aaChartModel = AAChartModel()
+//             .chartType(.spline)
+//             .backgroundColor("#4b2b7f")
+//             .yAxisTitle("")//设置Y轴标题
+//             .dataLabelsEnabled(false)//是否显示值
+//             .tooltipEnabled(true)
+//             .markerRadius(0)
+//             .xAxisVisible(false)
+//             .yAxisVisible(false)
+//             .series([
+//                 AASeriesElement()
+//                     .name("Virtual Data")
+//                     .lineWidth(6)
+//                     .data(dataArr)
+//                     .color(gradientColorDic1)
+//             ])
+//
+//         let selectedIndex = dataArr.count - 3
+//
+//         let aaOptions = aaChartModel.aa_toAAOptions()
+//
+//         aaOptions.chart?.events(
+//             AAChartEvents()
+//                 .load("""
+// function() {
+//         const chart = this;
+//         const point = chart.series[0].points[\(selectedIndex)];
+//         let big = true;
+//         setInterval(() => {
+//           big = !big;
+//           point.update({
+//             marker: {
+//               radius: big ? 5 : 55,
+//               fillColor: big ? "white": "red",
+//               lineWidth: big ? 5 : 15,
+//               lineColor: big ? "green": "yellow",
+//             }
+//           })
+//         }, 500)
+//       }
+// """))
+//         return aaOptions
+//     }
+
+//https://github.com/AAChartModel/AAChartKit-Swift/issues/394
+//https://www.highcharts.com/forum/viewtopic.php?t=44985
+static AAOptions configureSpecialStyleMarkerOfSingleDataElementChartWithBlinkEffect() {
+    var gradientColorDic1 = AAGradientColor.linearGradient2(
+      AALinearGradientDirection.toRight,
+      [
+        [0.00, "#febc0f"],//颜色字符串设置支持十六进制类型和 rgba 类型
+        [0.25, "#FF14d4"],
+        [0.50, "#0bf8f5"],
+        [0.75, "#F33c52"],
+        [1.00, "#1904dd"],
+      ]
+    );
+
+    var singleSpecialData = AADataElement()
+        .markerSet(
+        AAMarker()
+            .radiusSet(8)//曲线连接点半径
+            .symbolSet(AAChartSymbolType.circle)//曲线点类型："circle", "square", "diamond", "triangle","triangle-down"，默认是"circle"
+            .fillColorSet(AAColor.white)//点的填充色(用来设置折线连接点的填充色)
+            .lineWidthSet(5)//外沿线的宽度(用来设置折线连接点的轮廓描边的宽度)
+            .lineColorSet(AAColor.red)//外沿线的颜色(用来设置折线连接点的轮廓描边颜色，当值为空字符串时，默认取数据点或数据列的颜色)
+    )
+        .ySet(45.3)
+        .toPureJson()!;
+
+    var dataArr = [7.0, 6.9, 2.5, 14.5, 18.2, 26.5, 5.2, 26.5, 23.3, singleSpecialData, 13.9, 9.6];
+
+    var aaChartModel = AAChartModel()
+        .chartTypeSet(AAChartType.spline)
+        .backgroundColorSet("#4b2b7f")
+        .yAxisTitleSet("")//设置Y轴标题
+        .dataLabelsEnabledSet(false)//是否显示值
+        .tooltipEnabledSet(true)
+        .markerRadiusSet(0)
+        .xAxisVisibleSet(false)
+        .yAxisVisibleSet(false)
+        .seriesSet([
+            AASeriesElement()
+                .nameSet("Virtual Data")
+                .lineWidthSet(6)
+                .dataSet(dataArr)
+                .colorSet(gradientColorDic1)
+        ]);
+
+    var selectedIndex = dataArr.length - 3;
+
+    var aaOptions = aaChartModel.aa_toAAOptions();
+
+    aaOptions.chart
+        ?.eventsSet(
+        AAChartEvents()
+            .loadSet("""
+function() {
+        const chart = this;
+        const point = chart.series[0].points[$selectedIndex];
+        let big = true;
+        setInterval(() => {
+          big = !big;
+          point.update({
+            marker: {
+              radius: big ? 5 : 55,
+              fillColor: big ? "white": "red",
+              lineWidth: big ? 5 : 15,
+              lineColor: big ? "green": "yellow",
+            }
+          })
+        }, 500)
+      }
+"""));
+    return aaOptions;
 }
 
 }
