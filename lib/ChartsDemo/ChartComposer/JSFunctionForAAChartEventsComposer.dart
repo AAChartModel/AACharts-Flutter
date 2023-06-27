@@ -894,4 +894,76 @@ static AAOptions advancedTimeLineChart() {
     return dateSeconds;
   }
 
+  // //https://github.com/AAChartModel/AAChartKit-Swift/issues/394
+//     //https://www.highcharts.com/forum/viewtopic.php?t=44985
+//     func configureBlinkMarkerChart() -> AAOptions {
+//         let dataArr = [7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6]
+//         let selectedIndex = dataArr.count - 1
+//
+//         return AAOptions()
+//             .chart(AAChart()
+//                 .events(AAChartEvents()
+//                     .load("""
+// function() {
+//         const chart = this;
+//         const point = chart.series[0].points[\(selectedIndex)];
+//         let big = true;
+//         setInterval(() => {
+//           big = !big;
+//           point.update({
+//             marker: {
+//               radius: big ? 5 : 15
+//             }
+//           })
+//         }, 500)
+//       }
+// """)))
+//             .series([
+//                 AASeriesElement()
+//                     .data(dataArr)
+//                     .marker(AAMarker()
+//                         .lineColor(AAColor.red)
+//                         .lineWidth(3)
+//                         .radius(10))
+//             ])
+//     }
+
+//https://github.com/AAChartModel/AAChartKit-Swift/issues/394
+//https://www.highcharts.com/forum/viewtopic.php?t=44985
+static AAOptions configureBlinkMarkerChart() {
+  var dataArr = [7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2, 26.5, 23.3, 45.3, 13.9, 9.6];
+  var selectedIndex = dataArr.length - 1;
+
+  return AAOptions()
+      .chartSet(
+      AAChart()
+      .eventsSet(
+          AAChartEvents()
+      .loadSet("""
+function() {
+        const chart = this;
+        const point = chart.series[0].points[$selectedIndex];
+        let big = true;
+        setInterval(() => {
+          big = !big;
+          point.update({
+            marker: {
+              radius: big ? 5 : 15
+            }
+          })
+        }, 500)
+      }
+""")))
+      .seriesSet([
+    AASeriesElement()
+        .dataSet(dataArr)
+        .markerSet(
+        AAMarker()
+        .lineColorSet(AAColor.red)
+        .lineWidthSet(3)
+        .radiusSet(10))
+  ]);
+
+}
+
 }
