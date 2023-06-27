@@ -34,6 +34,7 @@ class AAAxis extends AAObject {
   double? min;//坐标轴最小值（设置为0就不会有负数）
   int? minRange;
   int? minTickInterval; //The minimum tick interval allowed in axis values. For example on zooming in on an axis with daily data, this can be used to prevent the axis from showing hours. Defaults to the closest distance between two points on the axis.
+  bool? minorTicks;
   String? minorGridLineColor; //Color of the minor, secondary grid lines.
   String? minorGridLineDashStyle; //The dash or dot style of the minor grid lines.
   double? minorGridLineWidth; //Width of the minor, secondary grid lines.
@@ -55,7 +56,7 @@ class AAAxis extends AAObject {
   bool? startOnTick; //Whether to force the axis to start on a tick. Use this option with the minPadding option to control the axis start. 默认是：false.
   String? tickColor; //坐标轴轴线下方刻度线颜色
   int? tickAmount; //坐标轴刻度的数量
-  int? tickInterval;//坐标轴刻度点间隔数(设置每隔几个点显示一个 坐标轴的内容:
+  num? tickInterval;//坐标轴刻度点间隔数(设置每隔几个点显示一个 坐标轴的内容:
   String? tickmarkPlacement; //本参数只对分类轴有效。 当值为 on 时刻度线将在分类上方显示；当值为 between 时，刻度线将在两个分类中间显示。当 tickInterval 为 1 时，默认是 between，其他情况默认是 on。 默认是：null.
   double? tickWidth;//坐标轴刻度线的宽度，设置为 0 时则不显示刻度线
   double? tickLength;//坐标轴刻度线的长度。 默认是：10.
