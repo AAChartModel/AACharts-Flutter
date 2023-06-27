@@ -106,6 +106,11 @@ import 'AACrosshair.dart';
      return this;
    }
 
+   AAYAxis minorTicksSet(bool? prop) {
+     minorTicks = prop;
+     return this;
+   }
+
    AAYAxis minorGridLineColorSet(String? prop) {
      minorGridLineColor = prop;
      return this;
@@ -196,7 +201,7 @@ import 'AACrosshair.dart';
      return this;
    }
 
-   AAYAxis tickIntervalSet(int? prop) {
+   AAYAxis tickIntervalSet(num? prop) {
      tickInterval = prop;
      return this;
    }
