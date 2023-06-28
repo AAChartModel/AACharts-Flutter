@@ -201,4 +201,124 @@ class JSFunctionForAAAxisComposer {
     return aaOptions;
   }
 
+  ////Stupid method
+//     private func customAreaChartXAxisLabelsTextUnitSuffix1() -> AAOptions {
+//         let gradientColorDic1 = AAGradientColor.linearGradient(
+//             direction: .toTop,
+//             startColor: "#7052f4",
+//             endColor: "#00b0ff"
+//         )
+//
+//         let aaChartModel = AAChartModel()
+//             .chartType(.area)
+//             .title("Custom X Axis Labels Text")
+//             .subtitle("By Using JavaScript Formatter Function")
+//             .markerSymbolStyle(.borderBlank)
+//             .yAxisGridLineWidth(0)
+//             .series([
+//                 AASeriesElement()
+//                     .lineWidth(1.5)
+//                     .color("#00b0ff")
+//                     .fillColor(gradientColorDic1)
+//                     .name("2018")
+//                     .data([
+//                         1.51, 6.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
+//                         4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.51, 12.7, 0.94, 1.44,
+//                         18.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46,
+//                         3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.33, 4.68, 1.31, 1.10, 13.9, 1.10, 1.16, 1.67,
+//                         2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3, 3.32, 3.07, 3.92, 3.05,
+//                         2.18, 3.24,3.23, 3.15, 2.90, 1.81, 2.11, 2.43, 5.59, 3.09, 4.09, 6.14, 5.33, 6.05,
+//                         5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.48,
+//                     ])
+//             ])
+//
+//         let aaOptions = aaChartModel.aa_toAAOptions()
+//         aaOptions.xAxis?.labels?
+//                 .formatter("""
+//                            function () {
+//                                const xValue = this.value;
+//                                if (xValue%10 == 0) {
+//                                    return xValue + " sec"
+//                                } else {
+//                                    return "";
+//                                }
+//                            }
+// """
+//                 )
+//
+//         return aaOptions
+//     }
+
+//Stupid method
+static AAOptions customAreaChartXAxisLabelsTextUnitSuffix1() {
+  var gradientColorDic1 = AAGradientColor.linearGradient1(
+      AALinearGradientDirection.toTop,
+       "#7052f4",
+      "#00b0ff"
+  );
+
+  var aaChartModel = AAChartModel()
+      .chartTypeSet(AAChartType.area)
+      .titleSet("Custom X Axis Labels Text")
+      .subtitleSet("By Using JavaScript Formatter Function")
+      .markerSymbolStyleSet(AAChartSymbolStyleType.borderBlank)
+      .yAxisGridLineWidthSet(0)
+      .seriesSet([
+    AASeriesElement()
+        .lineWidthSet(1.5)
+        .colorSet("#00b0ff")
+        .fillColorSet(gradientColorDic1)
+        .nameSet("2018")
+        .dataSet([
+      1.51, 6.7, 0.94, 1.44, 1.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10,
+      4.17, 3.85, 4.17, 3.46, 3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.51, 12.7, 0.94, 1.44,
+      18.6, 1.63, 1.56, 1.91, 2.45, 3.87, 3.24, 4.90, 4.61, 4.10, 4.17, 3.85, 4.17, 3.46,
+      3.46, 3.55, 3.50, 4.13, 2.58, 2.28,1.33, 4.68, 1.31, 1.10, 13.9, 1.10, 1.16, 1.67,
+      2.64, 2.86, 3.00, 3.21, 4.14, 4.07, 3.68, 3.11, 3.41, 3, 3.32, 3.07, 3.92, 3.05,
+      2.18, 3.24,3.23, 3.15, 2.90, 1.81, 2.11, 2.43, 5.59, 3.09, 4.09, 6.14, 5.33, 6.05,
+      5.71, 6.22, 6.56, 4.75, 5.27, 6.02, 5.48,
+    ])
+  ]);
+
+  var aaOptions = aaChartModel.aa_toAAOptions();
+  aaOptions.xAxis?.labels
+      ?.formatterSet("""
+                 function () {
+                     const xValue = this.value;
+                     if (xValue%10 == 0) {
+                         return xValue + " sec"
+                     } else {
+                         return "";
+                     }
+                 }
+"""
+      );
+
+  return aaOptions;
+}
+
+////Smart method
+//     private func customAreaChartXAxisLabelsTextUnitSuffix2() -> AAOptions {
+//         let aaOptions = customAreaChartXAxisLabelsTextUnitSuffix1()
+//         aaOptions.xAxis?
+//                 .labels(AALabels()
+//                 .step(10)
+//                 .format("{value} sec"))
+//
+//         return aaOptions
+//     }
+
+//Smart method
+static AAOptions customAreaChartXAxisLabelsTextUnitSuffix2() {
+  var aaOptions = customAreaChartXAxisLabelsTextUnitSuffix1();
+  aaOptions.xAxis
+      ?.labelsSet(
+  AALabels()
+      .stepSet(10)
+      .formatSet("{value} sec")
+  );
+
+  return aaOptions;
+}
+
 }
