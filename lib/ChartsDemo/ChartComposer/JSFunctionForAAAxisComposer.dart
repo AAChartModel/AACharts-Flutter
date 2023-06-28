@@ -19,6 +19,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
 
 import '../../AAChartsLib/AAChartCreator/AASeriesElement.dart';
 import '../../AAChartsLib/AAOptionsModel/AAChart.dart';
+import '../../AAChartsLib/AAOptionsModel/AAItemStyle.dart';
 import '../../AAChartsLib/AAOptionsModel/AAOptions.dart';
 import '../../AAChartsLib/AAOptionsModel/AAOptions.dart';
 import '../../AAChartsLib/AAOptionsModel/AAPlotLinesElement.dart';
@@ -1172,5 +1173,191 @@ static customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters() {
 
     return aaOptions;
 
+}
+
+////https://github.com/AAChartModel/AAChartKit/issues/852 自定义蜘蛛🕷图样式
+//     private func customSpiderChartStyle() -> AAOptions {
+//         let categoryArr = [
+//             "周转天数(天)",
+//             "订单满足率",
+//             "订单履约时效",
+//             "动销率",
+//             "畅销商品缺货率",
+//             "高库存金额占比",
+//             "不动销金额占比",
+//             "停采金额占比",
+//         ]
+//         let categoryJSArrStr = categoryArr.aa_toJSArray()
+//
+//         let xAxisLabelsFormatter = """
+//                                    function () {
+//                                    return \(categoryJSArrStr)[this.value];
+//                                    }
+//                                    """;
+//
+//         let aaChartModel = AAChartModel()
+//                 .chartType(.line)//图表类型
+//                 .title("健康体检表")//图表主标题
+//                 .colorsTheme(["#fe117c", "#ffc069",])//设置主体颜色数组
+//                 .yAxisLineWidth(0)
+//                 .yAxisGridLineWidth(1)//y轴横向分割线宽度为0(即是隐藏分割线)
+//                 .yAxisTickPositions([0, 5, 10, 15, 20, 25, 30, 35])
+//                 .markerRadius(5)
+//                 .markerSymbol(.circle)
+//                 .polar(true)
+//                 .series([
+//                     AASeriesElement()
+//                             .name("本月得分")
+//                             .data([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5,]),
+//                     AASeriesElement()
+//                             .name("上月得分")
+//                             .data([0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, ]),
+//                 ])
+//
+//         let aaOptions = aaChartModel.aa_toAAOptions()
+//
+//         aaOptions.chart?
+//                 .marginLeft(80)
+//                 .marginRight(80)
+//
+//         aaOptions.xAxis?
+//                 .lineWidth(0)//避免多边形外环之外有额外套了一层无用的外环
+//                 .labels?
+//                 .style(AAStyle(color: AAColor.black))
+//                 .formatter(xAxisLabelsFormatter)
+//
+//         aaOptions.yAxis?
+//                 .gridLineInterpolation("polygon")//设置蜘蛛网🕸图表的网线为多边形
+//                 .labels(AALabels()
+//                         .style(AAStyle()
+//                                 .color(AAColor.black)))
+//
+//         //设定图例项的CSS样式。只支持有关文本的CSS样式设定。
+//         /* 默认是：{
+//          "color": "#333333",
+//          "cursor": "pointer",
+//          "fontSize": "12px",
+//          "fontWeight": "bold"
+//          }
+//          */
+//         let aaItemStyle = AAItemStyle()
+//                 .color(AAColor.gray)//字体颜色
+//                 .cursor("pointer")//(在移动端这个属性没什么意义,其实不用设置)指定鼠标滑过数据列时鼠标的形状。当绑定了数据列点击事件时，可以将此参数设置为 "pointer"，用来提醒用户改数据列是可以点击的。
+//                 .fontSize(14)//字体大小
+//                 .fontWeight(.thin)//字体为细体字
+//
+//
+//         aaOptions.legend?
+//                 .enabled(true)
+//                 .align(.center)//设置图例位于水平方向上的右侧
+//                 .layout(.horizontal)//设置图例排列方式为垂直排布
+//                 .verticalAlign(.top)//设置图例位于竖直方向上的顶部
+//                 .itemStyle(aaItemStyle)
+//
+//
+//         return aaOptions
+//     }
+
+  //https://github.com/AAChartModel/AAChartKit/issues/852 自定义蜘蛛🕷图样式
+  static AAOptions customSpiderChartStyle() {
+    var categoryArr = [
+      "周转天数(天)",
+      "订单满足率",
+      "订单履约时效",
+      "动销率",
+      "畅销商品缺货率",
+      "高库存金额占比",
+      "不动销金额占比",
+      "停采金额占比",
+    ];
+
+    // var categoryJSArrStr = categoryArr.aa_toJSArray();
+    var categoryJSArrStr = javaScriptArrayStringWithJavaArray(categoryArr);
+
+    var xAxisLabelsFormatter = """
+    function () {
+    return $categoryJSArrStr[this.value];
+    }
+    """;
+
+    var aaChartModel = AAChartModel()
+        .chartTypeSet(AAChartType.line)//图表类型
+        .titleSet("健康体检表")//图表主标题
+        .colorsThemeSet(["#fe117c", "#ffc069",])//设置主体颜色数组
+        .yAxisLineWidthSet(0)
+        .yAxisGridLineWidthSet(1)//y轴横向分割线宽度为0(即是隐藏分割线)
+        // .yAxisTickPositionsSet([0, 5, 10, 15, 20, 25, 30, 35])
+        .markerRadiusSet(5)
+        .markerSymbolSet(AAChartSymbolType.circle)
+        .polarSet(true)
+        .seriesSet([
+          AASeriesElement()
+              .nameSet("本月得分")
+              .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5,]),
+          AASeriesElement()
+              .nameSet("上月得分")
+              .dataSet([0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, ]),
+        ]);
+
+    var aaOptions = aaChartModel.aa_toAAOptions();
+
+    aaOptions.chart
+        ?.marginLeftSet(80)
+        .marginRightSet(80);
+
+    aaOptions.xAxis
+        ?.lineWidthSet(0)//避免多边形外环之外有额外套了一层无用的外环
+        .labels
+        ?.styleSet(AAStyle.colorStr(AAColor.black))
+        .formatterSet(xAxisLabelsFormatter);
+
+    aaOptions.yAxis
+        ?.gridLineInterpolationSet("polygon")//设置蜘蛛网🕸图表的网线为多边形
+        .labelsSet(AALabels()
+            .styleSet(AAStyle()
+                .colorSet(AAColor.black)));
+
+    //设定图例项的CSS样式。只支持有关文本的CSS样式设定。
+    /* 默认是：{
+     "color": "#333333",
+     "cursor": "pointer",
+     "fontSize": "12px",
+     "fontWeight": "bold"
+     }
+     */
+
+    var aaItemStyle = AAItemStyle()
+        .colorSet(AAColor.gray)//字体颜色
+        .cursorSet("pointer")//(在移动端这个属性没什么意义,其实不用设置)指定鼠标滑过数据列时鼠标的形状。当绑定了数据列点击事件时，可以将此参数设置为 "pointer"，用来提醒用户改数据列是可以点击的。
+        .fontSizeSet(14)//字体大小
+        .fontWeightSet(AAChartFontWeightType.thin);//字体为细体字
+
+
+    aaOptions.legend
+        ?.enabledSet(true)
+        .alignSet(AAChartAlignType.center)//设置图例位于水平方向上的右侧
+        .layoutSet(AAChartLayoutType.horizontal)//设置图例排列方式为垂直排布
+        .verticalAlignSet(AAChartVerticalAlignType.top)//设置图例位于竖直方向上的顶部
+        .itemStyleSet(aaItemStyle);
+
+    return aaOptions;
+
+
+}
+
+//  private fun javaScriptArrayStringWithJavaArray(javaArray: Array<String>): String {
+//         val originalJsArrStr = StringBuilder()
+//         for (element: Any in javaArray) {
+//             originalJsArrStr.append("'").append(element.toString()).append("',")
+//         }
+//         return "[$originalJsArrStr]"
+//     }
+
+static String javaScriptArrayStringWithJavaArray(List<String> javaArray) {
+  var originalJsArrStr = StringBuffer();
+  for (var element in javaArray) {
+    originalJsArrStr.write("'$element',");
+  }
+  return "[${originalJsArrStr.toString()}]";
 }
 }
