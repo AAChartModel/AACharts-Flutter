@@ -54,7 +54,6 @@ abstract class AAOptionsComposer {
     AATooltip aaTooltip = new AATooltip()
         .enabledSet(aaChartModel.tooltipEnabled) //启用浮动提示框
         .sharedSet(true) //多组数据共享一个浮动提示框
-        .crosshairsSet(true) //启用准星线
         .valueSuffixSet(aaChartModel.tooltipValueSuffix) //浮动提示框的单位名称后缀
         ;
 
