@@ -1416,7 +1416,7 @@ static customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters() {
     //单组 series 图表, 获取选中的点的索引是 this.point.index ,多组并且共享提示框,则是this.points[0].index
     var dataLabelsFormatter = """
                               function () {
-                              return this.y + \(unitJSArrStr)[this.point.index];
+                              return this.y + $unitJSArrStr[this.point.index];
                               }
                               """;
     
@@ -1442,6 +1442,194 @@ static customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters() {
 //         }
 //         return "[$originalJsArrStr]"
 //     }
+
+  //// Refer to GitHub issue: https://github.com/AAChartModel/AAChartKit/issues/938
+  //     // Refer to online chart sample: https://www.highcharts.com/demo/column-comparison
+  //     private func customXAxisLabelsBeImages() -> AAOptions {
+  //         let nameArr = [
+  //             "South Korea",
+  //             "Japan",
+  //             "Australia",
+  //             "Germany",
+  //             "Russia",
+  //             "China",
+  //             "Great Britain",
+  //             "United States"
+  //         ]
+  //
+  //         let colorArr = [
+  //             "rgb(201, 36, 39)",
+  //             "rgb(201, 36, 39)",
+  //             "rgb(0, 82, 180)",
+  //             "rgb(0, 0, 0)",
+  //             "rgb(240, 240, 240)",
+  //             "rgb(255, 217, 68)",
+  //             "rgb(0, 82, 180)",
+  //             "rgb(215, 0, 38)"
+  //         ]
+  //
+  //
+  //         let imageLinkFlagArr = [
+  //             "197582",
+  //             "197604",
+  //             "197507",
+  //             "197571",
+  //             "197408",
+  //             "197375",
+  //             "197374",
+  //             "197484"
+  //         ]
+  //
+  //         let aaChartModel = AAChartModel()
+  //                 .chartType(.column)
+  //                 .title("Custom X Axis Labels Be Images")
+  //                 .subtitle("use HTML")
+  //                 .categories(nameArr)
+  //                 .colorsTheme(colorArr)
+  //                 .borderRadius(5)
+  //                 .series([
+  //                     AASeriesElement()
+  //                             .name("AD 2020")
+  //                             .data([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5])
+  //                             .colorByPoint(true)
+  //                 ])
+  //
+  //         let imageLinkFlagJSArrStr = imageLinkFlagArr.aa_toJSArray()
+  //         let xLabelsFormatter = """
+  //                                function () {
+  //                                    let imageFlag = \(imageLinkFlagJSArrStr)[this.pos];
+  //                                    let imageLink = "<span><img src=\"https://image.flaticon.com/icons/svg/197/" + imageFlag + ".svg\" style=\"width: 30px; height: 30px;\"/><br></span>";
+  //                                    return imageLink;
+  //                                }
+  //                                """
+  //
+  //         //    https://api.highcharts.com.cn/highcharts#xAxis.labels.formatter
+  //         let aaOptions = aaChartModel.aa_toAAOptions()
+  //         aaOptions.xAxis?.labels?
+  //                 .useHTML(true)
+  //                 .formatter(xLabelsFormatter)
+  //
+  //
+  //         aaOptions.plotOptions?.column?.groupPadding(0.005)
+  //
+  //         //Custom tooltip style
+  //         let tooltipFormatter = """
+  //                                function () {
+  //                                    let imageFlag = \(imageLinkFlagJSArrStr)[this.point.index];
+  //                                    let imageLink = "<span><img src=\"https://image.flaticon.com/icons/svg/197/" + imageFlag + ".svg\" style=\"width: 30px; height: 30px;\"/><br></span>";
+  //                                    return imageLink
+  //                                    + " 🌕 🌖 🌗 🌘 🌑 🌒 🌓 🌔 <br/> "
+  //                                    + " Support JavaScript Function Just Right Now !!! <br/> "
+  //                                    + " The Gold Price For <b>2020 "
+  //                                    +  this.x
+  //                                    + " </b> Is <b> "
+  //                                    +  this.y
+  //                                    + " </b> Dollars ";
+  //                                }
+  //                                """
+  //
+  //         aaOptions.tooltip?
+  //                 .shared(false)
+  //                 .useHTML(true)
+  //                 .formatter(tooltipFormatter)
+  //
+  //         return aaOptions
+  //     }
+
+  // Refer to GitHub issue: https://github.com/AAChartModel/AAChartKit/issues/938
+  // Refer to online chart sample: https://www.highcharts.com/demo/column-comparison
+  static AAOptions customXAxisLabelsBeImages() {
+    var nameArr = [
+      "South Korea",
+      "Japan",
+      "Australia",
+      "Germany",
+      "Russia",
+      "China",
+      "Great Britain",
+      "United States"
+    ];
+
+    var colorArr = [
+      "rgb(201, 36, 39)",
+      "rgb(201, 36, 39)",
+      "rgb(0, 82, 180)",
+      "rgb(0, 0, 0)",
+      "rgb(240, 240, 240)",
+      "rgb(255, 217, 68)",
+      "rgb(0, 82, 180)",
+      "rgb(215, 0, 38)"
+    ];
+
+
+    var imageLinkFlagArr = [
+      "197582",
+      "197604",
+      "197507",
+      "197571",
+      "197408",
+      "197375",
+      "197374",
+      "197484"
+    ];
+
+    var aaChartModel = AAChartModel()
+    .chartTypeSet(AAChartType.column)
+    .titleSet("Custom X Axis Labels Be Images")
+    .subtitleSet("use HTML")
+    .categoriesSet(nameArr)
+    .colorsThemeSet(colorArr)
+    .borderRadiusSet(5)
+    .seriesSet([
+      AASeriesElement()
+      .nameSet("AD 2020")
+      .dataSet([7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5])
+      .colorByPointSet(true)
+    ]);
+
+    var imageLinkFlagJSArrStr = javaScriptArrayStringWithJavaArray(imageLinkFlagArr);
+    var xLabelsFormatter = """
+    function () {
+    let imageFlag = $imageLinkFlagJSArrStr[this.pos];
+    let imageLink = "<span><img src=\"https://image.flaticon.com/icons/svg/197/" + imageFlag + ".svg\" style=\"width: 30px; height: 30px;\"/><br></span>";
+    return imageLink;
+    }
+    """;
+
+    //    https://api.highcharts.com.cn/highcharts#xAxis.labels.formatter
+    var aaOptions = aaChartModel.aa_toAAOptions();
+    aaOptions.xAxis?.labels
+    ?.useHTMLSet(true)
+    .formatterSet(xLabelsFormatter);
+
+
+    aaOptions.plotOptions?.column?.groupPaddingSet(0.005);
+
+    //Custom tooltip style
+    var tooltipFormatter = """
+      function () {
+                                   let imageFlag = $imageLinkFlagJSArrStr[this.point.index];
+                                   let imageLink = "<span><img src=\"https://image.flaticon.com/icons/svg/197/" + imageFlag + ".svg\" style=\"width: 30px; height: 30px;\"/><br></span>";
+                                   return imageLink
+                                   + " 🌕 🌖 🌗 🌘 🌑 🌒 🌓 🌔 <br/> "
+                                   + " Support JavaScript Function Just Right Now !!! <br/> "
+                                   + " The Gold Price For <b>2020 "
+                                   +  this.x
+                                   + " </b> Is <b> "
+                                   +  this.y
+                                   + " </b> Dollars ";
+                               }
+""";
+
+    aaOptions.tooltip
+    ?.sharedSet(false)
+    .useHTMLSet(true)
+    .formatterSet(tooltipFormatter);
+
+    return aaOptions;
+    
+    
+  }
 
 static String javaScriptArrayStringWithJavaArray(List<String> javaArray) {
   var originalJsArrStr = StringBuffer();
