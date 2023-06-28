@@ -27,7 +27,7 @@ import '../../AAChartsLib/AAOptionsModel/AAOptions.dart';
 import '../../AAChartsLib/AAOptionsModel/AAPlotLinesElement.dart';
 import '../../AAChartsLib/AAOptionsModel/AAScatter.dart';
 
-class JSFunctionForAATooltipComposer {
+class JSFunctionForAATooltipComposer2 {
 
   ////https://github.com/AAChartModel/AAChartKit-Swift/issues/365
   //     //https://api.highcharts.com/highcharts/tooltip.formatter
