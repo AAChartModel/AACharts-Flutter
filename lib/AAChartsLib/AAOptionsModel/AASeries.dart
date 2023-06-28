@@ -203,19 +203,82 @@ class AAPoint extends AAObject {
 }
 
 class AAPointEvents extends AAObject {
-   //   public var click: String?
-  //     public var mouseOver: String?
-  //     public var mouseOut: String?
-  //     public var remove: String?
-  //     public var select: String?
-  //     public var unselect: String?
-  //     public var update: String?
-  //     public var legendItemClick: String? // Only for pie chart
-
   String? click;
+  String? mouseOver;
+  String? mouseOut;
+  String? remove;
+  String? select;
+  String? unselect;
+  String? update;
+  String? legendItemClick; // Only for pie chart
 
+  AAPointEvents clickSet(String? prop) {
+    if (prop != null) {
+      click = AAEasyTool.pureJavaScriptFunctionString(prop);
+    }
+    return this;
+  }
 
+  AAPointEvents mouseOverSet(String? prop) {
+    if (prop != null) {
+      mouseOver = AAEasyTool.pureJavaScriptFunctionString(prop);
+    }
+    return this;
+  }
 
+  AAPointEvents mouseOutSet(String? prop) {
+    if (prop != null) {
+      mouseOut = AAEasyTool.pureJavaScriptFunctionString(prop);
+    }
+    return this;
+  }
 
+  AAPointEvents removeSet(String? prop) {
+    if (prop != null) {
+      remove = AAEasyTool.pureJavaScriptFunctionString(prop);
+    }
+    return this;
+  }
+
+  AAPointEvents selectSet(String? prop) {
+    if (prop != null) {
+      select = AAEasyTool.pureJavaScriptFunctionString(prop);
+    }
+    return this;
+  }
+
+  AAPointEvents unselectSet(String? prop) {
+    if (prop != null) {
+      unselect = AAEasyTool.pureJavaScriptFunctionString(prop);
+    }
+    return this;
+  }
+
+  AAPointEvents updateSet(String? prop) {
+    if (prop != null) {
+      update = AAEasyTool.pureJavaScriptFunctionString(prop);
+    }
+    return this;
+  }
+
+  AAPointEvents legendItemClickSet(String? prop) {
+    if (prop != null) {
+      legendItemClick = AAEasyTool.pureJavaScriptFunctionString(prop);
+    }
+    return this;
+  }
+
+   Map<String, dynamic> toJson() {
+     return {
+       "click": this.click,
+       "mouseOver": this.mouseOver,
+       "mouseOut": this.mouseOut,
+       "remove": this.remove,
+       "select": this.select,
+       "unselect": this.unselect,
+       "update": this.update,
+       "legendItemClick": this.legendItemClick,
+     };
+   }
 
 }
