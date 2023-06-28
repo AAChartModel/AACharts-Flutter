@@ -1,5 +1,6 @@
 import 'package:aacharts_flutter/AAChartsLib/AATools/AAEasyTool.dart';
 
+import 'AAAxis.dart';
 import 'AAObject.dart';
 import 'AAStyle.dart';
 
@@ -17,8 +18,16 @@ import 'AAStyle.dart';
     String? footerFormat;
     int? valueDecimals;
     bool? shared;
-    bool? crosshairs;
+    String? valuePrefix;
     String? valueSuffix;
+    bool? followPointer;
+    bool? followTouchMove;//https://api.highcharts.com.cn/highcharts#chart.panning
+    bool? shadow;
+    double? padding;
+    String? pointFormatter;
+    String? positioner;
+    AADateTimeLabelFormats? dateTimeLabelFormats;
+    bool? split;
 
      AATooltip backgroundColorSet(Object? prop) {
         backgroundColor = prop;
@@ -87,15 +96,55 @@ import 'AAStyle.dart';
         return this;
     }
 
-     AATooltip crosshairsSet(bool? prop) {
-        crosshairs = prop;
-        return this;
+    AATooltip valuePrefixSet(String? prop) {
+      valuePrefix = prop;
+      return this;
     }
 
      AATooltip valueSuffixSet(String? prop) {
         valueSuffix = prop;
         return this;
     }
+
+      AATooltip followPointerSet(bool? prop) {
+          followPointer = prop;
+          return this;
+      }
+
+      AATooltip followTouchMoveSet(bool? prop) {
+          followTouchMove = prop;
+          return this;
+      }
+
+      AATooltip shadowSet(bool? prop) {
+          shadow = prop;
+          return this;
+      }
+
+      AATooltip paddingSet(double? prop) {
+          padding = prop;
+          return this;
+      }
+
+      AATooltip pointFormatterSet(String? prop) {
+          pointFormatter = prop;
+          return this;
+      }
+
+      AATooltip positionerSet(String? prop) {
+          positioner = prop;
+          return this;
+      }
+
+      AATooltip dateTimeLabelFormatsSet(AADateTimeLabelFormats? prop) {
+          dateTimeLabelFormats = prop;
+          return this;
+      }
+
+      AATooltip splitSet(bool? prop) {
+          split = prop;
+          return this;
+      }
 
     //  AATooltip() {
     //     enabled = true;
@@ -118,8 +167,16 @@ import 'AAStyle.dart';
       "footerFormat": this.footerFormat,
       "valueDecimals": this.valueDecimals,
       "shared": this.shared,
-      "crosshairs": this.crosshairs,
+      "valuePrefix": this.valuePrefix,
       "valueSuffix": this.valueSuffix,
+      "followPointer": this.followPointer,
+      "followTouchMove": this.followTouchMove,
+      "shadow": this.shadow,
+      "padding": this.padding,
+      "pointFormatter": this.pointFormatter,
+      "positioner": this.positioner,
+      "dateTimeLabelFormats": this.dateTimeLabelFormats,
+      "split": this.split,
     };
 
     //将所有空值删除
