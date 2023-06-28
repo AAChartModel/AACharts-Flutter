@@ -19,6 +19,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAYAxis.dart';
 
 import '../../AAChartsLib/AAChartCreator/AASeriesElement.dart';
 import '../../AAChartsLib/AAOptionsModel/AAChart.dart';
+import '../../AAChartsLib/AAOptionsModel/AADataLabels.dart';
 import '../../AAChartsLib/AAOptionsModel/AAItemStyle.dart';
 import '../../AAChartsLib/AAOptionsModel/AAOptions.dart';
 import '../../AAChartsLib/AAOptionsModel/AAOptions.dart';
@@ -1344,6 +1345,95 @@ static customColumnChartXAxisLabelsTextByInterceptTheFirstFourCharacters() {
 
 
 }
+
+//// Refer to the issue https://github.com/AAChartModel/AAChartKit/issues/589
+//     private func customizeEveryDataLabelSinglelyByDataLabelsFormatter() -> AAOptions  {
+//         let aaChartModel = AAChartModel()
+//                 .chartType(.areaspline)//图表类型
+//                 .dataLabelsEnabled(true)
+//                 .tooltipEnabled(false)
+//                 .colorsTheme([AAGradientColor.fizzyPeach])
+//                 .markerRadius(0)
+//                 .legendEnabled(false)
+//                 .categories(["美国🇺🇸","欧洲🇪🇺","中国🇨🇳","日本🇯🇵","韩国🇰🇷","越南🇻🇳","中国香港🇭🇰",])
+//                 .series([
+//                     AASeriesElement()
+//                             .data([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2])
+//                 ])
+//
+//         let aaOptions = aaChartModel.aa_toAAOptions()
+//         aaOptions.yAxis?.gridLineDashStyle = AAChartLineDashStyleType.longDash.rawValue//设置Y轴的网格线样式为 AAChartLineDashStyleTypeLongDash
+//
+//         aaOptions.tooltip?.shared = true
+//
+//
+//         let unitArr = ["美元", "欧元", "人民币", "日元", "韩元", "越南盾", "港币", ]
+//         let unitJSArrStr = unitArr.aa_toJSArray()
+//         //单组 series 图表, 获取选中的点的索引是 this.point.index ,多组并且共享提示框,则是this.points[0].index
+//         let dataLabelsFormatter = """
+//                                   function () {
+//                                   return this.y + \(unitJSArrStr)[this.point.index];
+//                                   }
+//                                   """
+//
+//         let aaDataLabels = AADataLabels()
+//                 .style(AAStyle(color: AAColor.red, fontSize: 10, weight: .bold))
+//                 .formatter(dataLabelsFormatter)
+//                 .backgroundColor(AAColor.white)// white color
+//                 .borderColor(AAColor.red)// red color
+//                 .borderRadius(1.5)
+//                 .borderWidth(1.3)
+//                 .x(3).y(-20)
+//                 .verticalAlign(.middle)
+//
+//         aaOptions.plotOptions?.series?.dataLabels = aaDataLabels
+//
+//         return aaOptions
+//     }
+  
+  // Refer to the issue https://github.com/AAChartModel/AAChartKit/issues/589
+  static AAOptions customizeEveryDataLabelSinglelyByDataLabelsFormatter() {
+    var aaChartModel = AAChartModel()
+        .chartTypeSet(AAChartType.areaspline)//图表类型
+        .dataLabelsEnabledSet(true)
+        .tooltipEnabledSet(false)
+        .colorsThemeSet([AAGradientColor.fizzyPeach])
+        .markerRadiusSet(0)
+        .legendEnabledSet(false)
+        .categoriesSet(["美国🇺🇸", "欧洲🇪🇺", "中国🇨🇳", "日本🇯🇵", "韩国🇰🇷", "越南🇻🇳", "中国香港🇭🇰", ])
+        .seriesSet([
+      AASeriesElement()
+          .dataSet([7.0, 6.9, 2.5, 14.5, 18.2, 21.5, 5.2])
+    ]);
+    
+    var aaOptions = aaChartModel.aa_toAAOptions();
+    aaOptions.yAxis?.gridLineDashStyle = AAChartLineDashStyleType.longDash;//设置Y轴的网格线样式为 AAChartLineDashStyleTypeLongDash
+    
+    aaOptions.tooltip?.shared = true;
+    
+    var unitArr = ["美元", "欧元", "人民币", "日元", "韩元", "越南盾", "港币", ];
+    var unitJSArrStr = javaScriptArrayStringWithJavaArray(unitArr);
+    //单组 series 图表, 获取选中的点的索引是 this.point.index ,多组并且共享提示框,则是this.points[0].index
+    var dataLabelsFormatter = """
+                              function () {
+                              return this.y + \(unitJSArrStr)[this.point.index];
+                              }
+                              """;
+    
+    var aaDataLabels = AADataLabels()
+        .styleSet(AAStyle.colorSizeWeight(AAColor.red, 10, AAChartFontWeightType.bold))
+        // .formatterSet(dataLabelsFormatter)
+        .backgroundColorSet(AAColor.white)// white color
+        .borderColorSet(AAColor.red)// red color
+        .borderRadiusSet(1.5)
+        .borderWidthSet(1.3)
+        .xSet(3).ySet(-20)
+        .verticalAlignSet(AAChartVerticalAlignType.middle);
+
+    aaOptions.plotOptions?.series?.dataLabels = aaDataLabels;
+
+    return aaOptions;
+  }
 
 //  private fun javaScriptArrayStringWithJavaArray(javaArray: Array<String>): String {
 //         val originalJsArrStr = StringBuilder()
