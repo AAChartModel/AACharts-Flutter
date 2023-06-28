@@ -156,11 +156,12 @@ static disableLegendClickEventForPieChart() {
       AAPoint()
           .eventsSet(
           AAPointEvents()
-
-
-
-      )
-    );
+              .legendItemClickSet("""
+                    function() {
+                      return false;
+                    }
+        """)
+    ));
 
     return aaOptions;
 }
