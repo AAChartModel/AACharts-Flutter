@@ -46,7 +46,7 @@ class AAAxis extends AAObject {
   String? minorTickPosition; //The position of the minor tick marks relative to the axis line. Can be one of inside and outside. Defaults to outside.
   double? minorTickWidth; //The pixel width of the minor tick mark.
 
-  double? gridLineWidth; //坐标轴网格线宽度
+  num? gridLineWidth; //坐标轴网格线宽度
   String? gridLineColor; //坐标轴网格线颜色
   String? gridLineDashStyle; //坐标轴网格线样式
   String? gridLineInterpolation;
