@@ -151,7 +151,7 @@ import 'AACrosshair.dart';
      return this;
    }
 
-   AAYAxis gridLineWidthSet(double? prop) {
+   AAYAxis gridLineWidthSet(num? prop) {
      gridLineWidth = prop;
      return this;
    }
