@@ -166,7 +166,7 @@ class AAChartModel {
   double? yAxisMin;
   double? yAxisMax;
   bool? yAxisAllowDecimals;
-  double? yAxisGridLineWidth; //y 轴网格线的宽度
+  num? yAxisGridLineWidth; //y 轴网格线的宽度
   bool? tooltipEnabled; //是否显示浮动提示框(默认显示)
   String? tooltipValueSuffix; //浮动提示框单位后缀
   bool? tooltipCrosshairs; //是否显示准星线(默认显示)
@@ -329,7 +329,7 @@ class AAChartModel {
     return this;
   }
 
-  AAChartModel yAxisGridLineWidthSet(double? prop) {
+  AAChartModel yAxisGridLineWidthSet(num? prop) {
     yAxisGridLineWidth = prop;
     return this;
   }
