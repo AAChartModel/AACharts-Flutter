@@ -1,6 +1,7 @@
 
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartView.dart';
 import 'package:aacharts_flutter/ChartsDemo/ChartComposer/CustomStyleChartComposer.dart';
+import 'package:aacharts_flutter/ChartsDemo/Page/JSFunctionForAAChartEventsPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -126,6 +127,21 @@ class ChildListViewPage extends StatelessWidget {
   "Negative Color Mixed Areaspline chart---基准线以下异色混合曲线填充图",
   "Aerasplinerange Mixed Columnrange Mixed Line Chart---曲线面积范围混合柱形范围混合折线图"
   ],
+    /*JS Function For AAChartEvents*/
+    [
+      "setCrosshairAndTooltipToTheDefaultPositionAfterLoadingChart---图表加载完成后设置 crosshair 和 tooltip 到默认位置",
+      "generalDrawingChart---普通绘图",
+      "advancedTimeLineChart---高级时间轴绘图",
+      "configureBlinkMarkerChart---配置闪烁特效的 marker 图表",
+      "configureSpecialStyleMarkerOfSingleDataElementChartWithBlinkEffect---配置闪烁特效的 marker 图表2",
+      "configureScatterChartWithBlinkEffect---配置闪烁特效的散点图",
+      "automaticallyHideTooltipAfterItIsShown---在浮动提示框显示后自动隐藏",
+      "dynamicHeightGridLineAreaChart---动态高度的网格线区域填充图",
+      "customizeYAxisPlotLinesLabelBeSpecialStyle---自定义 Y 轴轴线上面的标签文字特殊样式",
+      "configureECGStyleChart---配置心电图样式的图表",
+      "configureTheSizeOfTheSliceOfDonutAndPieChart---配置环形图和饼图的扇区大小",
+      "configurePlotBackgroundClickEvent---配置绘图区的点击事件",
+    ],
 ];
 
   List<List<String>>  chartTypeArr = [
@@ -181,6 +197,9 @@ class ChildListViewPage extends StatelessWidget {
   "NegativeColorMixedAreasplineChart",
   "AerasplinerangeMixedColumnrangeMixedLineChart"
   ],
+
+    [//Empty Array,just for holding place
+    ],
   ];
 
   @override
@@ -202,15 +221,19 @@ class ChildListViewPage extends StatelessWidget {
               // return MixedChartPage(selectedType:  chartTypesArr[index]);
               // return SpecialChartPage(selectedType: chartTypesArr[index]);
               // return CustomStyleChartPage(selectedIndex: index);
-              String chartType = chartTypesSonArr[index];
               if (this.selectedIndex == 0) {
+                String chartType = chartTypesSonArr[index];
                 return BasicChartPage(selectedType: chartType);
               } else if (this.selectedIndex == 1) {
+                String chartType = chartTypesSonArr[index];
                 return SpecialChartPage(selectedType: chartType);
               } else if (this.selectedIndex == 2) {
                 return CustomStyleChartPage(selectedIndex: index);
               } else if (this.selectedIndex == 3) {
+                String chartType = chartTypesSonArr[index];
                 return MixedChartPage(selectedType:  chartType);
+              } else if (this.selectedIndex == 4) {
+                return JSFunctionForAAChartEventsPage(selectedIndex:  index);
               }
               return ChildListViewPage(selectedIndex: index);
             }));

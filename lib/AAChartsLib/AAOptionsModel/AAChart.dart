@@ -199,4 +199,14 @@ class AAChartEvents extends AAObject {
     return this;
   }
 
-}
+  // Map<String, dynamic> toJson() {
+  //   return {
+  //     "click": this.click,
+  //     "load": this.load,
+  //     "redraw": this.redraw,
+  //     "render": this.render,
+  //     "selection": this.selection,
+  //   };
+  // }
+
+  }

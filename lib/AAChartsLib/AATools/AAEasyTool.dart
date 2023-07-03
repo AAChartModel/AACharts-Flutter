@@ -3,12 +3,14 @@
 
   static String pureJavaScriptFunctionString(String jsFunctionStr)  {
     String pureJSFunctionStr = "(" + jsFunctionStr + ")";
+    // String pureJSFunctionStr = jsFunctionStr;
+
     pureJSFunctionStr = pureJSFunctionStr.replaceAll("'", "\"");
     pureJSFunctionStr = pureJSFunctionStr.replaceAll("\0", "");
     pureJSFunctionStr = pureJSFunctionStr.replaceAll("\n", "");
     pureJSFunctionStr = pureJSFunctionStr.replaceAll("\\", "\\\\");
     pureJSFunctionStr = pureJSFunctionStr.replaceAll("\"", "\\\"");
-//        pureJSFunctionStr = pureJSFunctionStr.replaceAll("\'", "\\\'");
+    pureJSFunctionStr = pureJSFunctionStr.replaceAll("\'", "\\\'");
     pureJSFunctionStr = pureJSFunctionStr.replaceAll("\n", "\\n");
     pureJSFunctionStr = pureJSFunctionStr.replaceAll("\r", "\\r");
     pureJSFunctionStr = pureJSFunctionStr.replaceAll("\f", "\\f");
