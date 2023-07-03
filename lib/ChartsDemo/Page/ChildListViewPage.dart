@@ -3,6 +3,7 @@ import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartView.dart';
 import 'package:aacharts_flutter/ChartsDemo/ChartComposer/CustomStyleChartComposer.dart';
 import 'package:aacharts_flutter/ChartsDemo/Page/DrawChartWithAAOptionsPage.dart';
 import 'package:aacharts_flutter/ChartsDemo/Page/JSFunctionForAAChartEventsPage.dart';
+import 'package:aacharts_flutter/ChartsDemo/Page/JSFunctionForAATooltipPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -199,6 +200,19 @@ class ChildListViewPage extends StatelessWidget {
       "configurePieChartWithSpecialStyleLegend---自定义饼图的 legend 为特殊样式",
       "disableAnimationForChart---禁用图表渲染动画"
     ],
+    /*JavaScript Formatter Function */
+    [
+      "customAreaChartTooltipStyleWithSimpleFormatString---简单字符串拼接",
+      "customAreaChartTooltipStyleWithDifferentUnitSuffix---自定义不同单位后缀",
+      "customAreaChartTooltipStyleWithColorfulHtmlLabels---自定义多彩颜色文字",
+      "customLineChartTooltipStyleWhenValueBeZeroDoNotShow---值为0时,在tooltip中不显示",
+      "customBoxplotTooltipContent---自定义箱线图の浮动提示框头部内容",
+      "customStackedAndGroupedColumnChartTooltip---自定义分组堆积柱状图tooltip内容",
+      "custom Arearange Chart Tooltip---自定义面积范围图浮动提示框",
+      "customLineChartOriginalPointPositionByConfiguringXAxisFormatterAndTooltipFormatter---调整折线图の X 轴左边距",
+      "customTooltipWhichDataSourceComeFromOutSideRatherThanSeries---通过来自外部の数据源来自定义 tooltip (而非常规の来自图表の series)",
+      "customAreasplineChartTooltipStyleByDivWithCSS---通过自定义 div 的 css 样式来自定义复杂效果的 tooltip 浮动提示框",
+    ],
 ];
 
   List<List<String>>  chartTypeArr = [
@@ -259,6 +273,8 @@ class ChildListViewPage extends StatelessWidget {
     ],
     [//Empty Array,just for holding place
     ],
+    [//Empty Array,just for holding place
+    ],
   ];
 
   @override
@@ -272,7 +288,7 @@ class ChildListViewPage extends StatelessWidget {
     var listView = ListView.separated(
       itemCount: chartTypeTitleSonArr.length,
       itemBuilder: (BuildContext context, int index) {
-        return ListTile(title: Text(chartTypeTitleSonArr[index]),
+        return Material(child:ListTile(title: Text(chartTypeTitleSonArr[index]),
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
               // return DrawChartWithAAOptionsPage(selectedIndex: index);
@@ -295,12 +311,14 @@ class ChildListViewPage extends StatelessWidget {
                 return JSFunctionForAAChartEventsPage(selectedIndex:  index);
               } else if (this.selectedIndex == 5) {
                 return DrawChartWithAAOptionsPage(selectedIndex:  index);
+              } else if (this.selectedIndex == 6) {
+                return JSFunctionForAATooltipPage(selectedIndex:  index);
               }
               return ChildListViewPage(selectedIndex: index);
             }));
 
           }, // Handle your onTap here.
-        );
+        ));
       },
       //分割器构造器
       separatorBuilder: (BuildContext context, int index) {
