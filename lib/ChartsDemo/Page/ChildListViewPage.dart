@@ -1,6 +1,7 @@
 
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartView.dart';
 import 'package:aacharts_flutter/ChartsDemo/ChartComposer/CustomStyleChartComposer.dart';
+import 'package:aacharts_flutter/ChartsDemo/Page/DrawChartWithAAOptionsPage.dart';
 import 'package:aacharts_flutter/ChartsDemo/Page/JSFunctionForAAChartEventsPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -142,6 +143,62 @@ class ChildListViewPage extends StatelessWidget {
       "configureTheSizeOfTheSliceOfDonutAndPieChart---配置环形图和饼图的扇区大小",
       "configurePlotBackgroundClickEvent---配置绘图区的点击事件",
     ],
+    /*Draw Chart with AAOptions*/
+    [
+      "configureLegendStyle",
+      "Custom Chart  Sample Two",
+      "Custom Chart  Sample three",
+      "Custom Chart  Sample 4",
+      "customAreaChartYAxisLabelsAndGridLineStyle---自定义曲线填充图图的 Y 轴 的 Labels 和 网格线样式",
+      "Adjust Y Axis Min value",
+      "Mirror Chart",
+      "Adjust The XAxis Labels",
+      "Adjust GroupPadding Between Columns",
+      "configureAAPlotBandsForChart || 值域颜色分割带🎀",
+      "configureAAPlotLinesForChart || 值域颜色分割线🧶",
+      "customAATooltipWithJSFuntion",
+      "customXAxisCrosshairStyle",
+      "configureXAxisLabelsFontColorWithHTMLString",
+      "configureXAxisLabelsFontColorAndFontSizeWithHTMLString",
+      "configure_DataLabels_XAXis_YAxis_Legend_Style",
+      "configureXAxisPlotBand",
+      "configureDoubleYAxisChartOptions",
+      "configureTripleYAxesMixedChart || 三重 Y 轴混合图",
+      "Double Y Axes And Column Line Mixed Chart || 双 Y 轴柱形曲线混合图",
+      "Double Y Axes Market Depth Chart || 双 Y 轴市场深度图",
+      "custom Area Chart Tooltip Style Like HTML Table || 自定义区域填充图浮动提示框为 HTML 表格样式",
+      "custom Axes Grid Line Style || 自定义 X 轴和 Y 轴网格线の样式",
+      "custom Radar Chart Style || 自定义雷达图样式",
+      "customColumnrangeChartStyle---自定义柱形范围图样式",
+      "self customXAxisLabelsBeImages---自定义曲线面积图 X 轴 labels 为一组图片🖼",
+      "Triangle Radar Chart With PlotBands---带有颜色标志带の三角形雷达图",
+      "Quadrangle Radar Chart With PlotBands---带有颜色标志带の四角形雷达图",
+      "Pentagon Radar Chart With PlotBands---带有颜色标志带の五角形雷达图",
+      "Hexagon Radar Char With PlotBands----带有颜色标志带の六角形雷达图",
+      "Spider Web Radar Chart With PlotBands----带有颜色标志带の🕸蜘蛛网状雷达图",
+
+      "configureComplicatedCustomAreasplineChart---复杂自定义曲线填充图 1",
+      "configureComplicatedCustomAreasplineChart2---复杂自定义曲线填充图 2",
+      "configureComplicatedCustomAreasplineChart3---复杂自定义曲线填充图 3",
+      "yAxisOnTheRightSideChart---y轴在右侧的图表",
+      "doubleLayerHalfPieChart---双层嵌套的玉阕图",
+      "customAreasplineChartTooltipContentWithHeaderFormat---通过 tooltip 的 headerFormat 属性来自定义 曲线填充图的 tooltip",
+      "customAreaChartTooltipStyleWithTotalValueHeader---浮动提示框 header 显示总值信息",
+      "configureYAxisLabelsNumericSymbolsMagnitudeOfAerasplineChart---自定义 Y 轴的 Labels 国际单位符基数及国际单位符",
+      "timeDataWithIrregularIntervalsChart---X 轴时间不连续的折线图",
+      "logarithmicAxisLineChart---对数轴折线图📈",
+      "logarithmicAxisScatterChart---对数轴散点图",
+
+      "Disable Mixed Chart Inactive Animation Effect----禁用混合图表的 inactive 动画效果",
+      "Adjust Bubble Chart Min And Max----调整气泡图的 min 和 max 相关属性",
+      "customLineChartDataLabelsFormat---自定义曲线图的 DataLabels 的 format 属性",
+      "customLineChartDataLabelsFormat2---自定义曲线图的 DataLabels 的 format 属性2(更简易方法)",
+      "complicatedScatterChart---复杂的自定义散点图",
+      "customColumnrangeChartGroupStyleAndSeriesStatesHoverColor---自定义柱形范围图的 group 样式和手指掠过图表 series 元素时的柱形颜色",
+      "configureBoxplotChartWithSpecialStyle---自定义盒须图特殊样式",
+      "configurePieChartWithSpecialStyleLegend---自定义饼图的 legend 为特殊样式",
+      "disableAnimationForChart---禁用图表渲染动画"
+    ],
 ];
 
   List<List<String>>  chartTypeArr = [
@@ -200,6 +257,8 @@ class ChildListViewPage extends StatelessWidget {
 
     [//Empty Array,just for holding place
     ],
+    [//Empty Array,just for holding place
+    ],
   ];
 
   @override
@@ -234,6 +293,8 @@ class ChildListViewPage extends StatelessWidget {
                 return MixedChartPage(selectedType:  chartType);
               } else if (this.selectedIndex == 4) {
                 return JSFunctionForAAChartEventsPage(selectedIndex:  index);
+              } else if (this.selectedIndex == 5) {
+                return DrawChartWithAAOptionsPage(selectedIndex:  index);
               }
               return ChildListViewPage(selectedIndex: index);
             }));
