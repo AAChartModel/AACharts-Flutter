@@ -14,7 +14,7 @@ class SpecialChartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var aaChartView = AAChartView2();
+    var aaChartView = AAChartView();
 
     var aaChartModel = configureChartModelWithChartType(selectedType);
     aaChartView.aa_drawChartWithChartModel(aaChartModel);

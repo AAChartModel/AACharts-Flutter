@@ -8,6 +8,8 @@ import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:flutter/services.dart' show rootBundle;
+
 
 class AAChartView extends StatelessWidget {
   InAppWebViewController? webViewController;
@@ -42,10 +44,12 @@ class AAChartView extends StatelessWidget {
     //debug print
   }
 
-  void loadLocalFilesAndDrawChart(final AAOptions aaOptions) {
+  Future<void> loadLocalFilesAndDrawChart(final AAOptions aaOptions) async {
    webView = InAppWebView(
-      initialFile: "/Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html",
-      initialOptions: InAppWebViewGroupOptions(
+      // initialFile: "/Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html",
+     initialUrlRequest: URLRequest(
+         url: Uri.parse("file:///Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html")),
+     initialOptions: InAppWebViewGroupOptions(
           crossPlatform: InAppWebViewOptions(
 
           )
@@ -77,7 +81,13 @@ class AAChartView extends StatelessWidget {
       },
     );
 
+   await webViewController?.loadUrl(
+     urlRequest: URLRequest(url: Uri.parse('/Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html')),
+   );
+
+
   }
+
 
    void aa_refreshChartWithChartOptions(AAOptions chartOptions) {
     configureChartOptionsAndDrawChart(chartOptions);

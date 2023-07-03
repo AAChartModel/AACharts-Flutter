@@ -92,6 +92,8 @@ class AAChartView2 extends StatelessWidget {
         ),
       )
       ..loadFile('/Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html')
+
+
     ;
 
     // webView = InAppWebView(

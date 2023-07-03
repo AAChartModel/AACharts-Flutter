@@ -44,7 +44,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - AAChartView.html/
+    - assets/AAChartView.html
 #    - images/AAChartView.js
 
 
