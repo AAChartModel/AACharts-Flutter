@@ -336,10 +336,7 @@ class ChildListViewPage extends StatelessWidget {
           Navigator.pop(context);
         },
         child: Center(
-          child: Hero(
-              tag: 'imageHero',
-              child: listView
-          ),
+          child: listView,
         ),
       ),
     );
