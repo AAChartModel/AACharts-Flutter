@@ -21,6 +21,9 @@ class DrawChartWithAAOptionsPage extends StatelessWidget {
     aaChartView.aa_drawChartWithChartOptions(aaOptions);
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('DrawChartWithAAOptions'),
+      ),
       body: GestureDetector(
         onTap: () {
           Navigator.pop(context);
