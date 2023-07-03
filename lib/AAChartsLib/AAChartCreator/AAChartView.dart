@@ -81,9 +81,14 @@ class AAChartView extends StatelessWidget {
       },
     );
 
-   await webViewController?.loadUrl(
-     urlRequest: URLRequest(url: Uri.parse('/Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html')),
+   webViewController?.addJavaScriptHandler(
+     handlerName: 'handleError',
+     callback: (args) {
+       // Handle the error in Dart
+       print('JavaScript error: ${args[0]}');
+     },
    );
+
 
 
   }
@@ -108,7 +113,13 @@ class AAChartView extends StatelessWidget {
    }
 
    void safeEvaluateJavaScriptString(String javaScriptString) {
-     webViewController?.evaluateJavascript(source: javaScriptString);
+     webViewController?.evaluateJavascript(source: javaScriptString).then((result) {
+       // JavaScript execution succeeded
+     }).catchError((error) {
+       // JavaScript execution failed, capture the NSError information
+       print('JavaScript error: ${error.message}');
+     });
+
    }
 
   String getPrettyJSONString(jsonObject){
