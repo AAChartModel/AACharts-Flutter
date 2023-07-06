@@ -30,11 +30,12 @@ class BasicChartPage extends StatelessWidget {
           Navigator.pop(context);
         },
         child: Column(
-          mainAxisSize: MainAxisSize.min,
           children: <Widget>[
+            Text("Stacking Type Selection"),
             SegmentedControlExample(),
-            Text('Craft beautiful UIs'),
+            Text("Corners Style Type Selection"),
             SegmentedControlExample1(),
+            MyStatefulWidget(),
           ],
         ),
       ),
@@ -89,7 +90,7 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
         ),
         "Percent stacking": Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Text('"Percent stacking"'),
+          child: Text("Percent stacking"),
         ),
       },
     );
@@ -144,6 +145,108 @@ class _SegmentedControlExampleState1 extends State<SegmentedControlExample1> {
           child: Text("▼ ▼ ▼"),
         ),
       },
+    );
+  }
+}
+
+/// stateful widget that the main application instantiates
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({Key? key}) : super(key: key);
+
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+/// private State class that goes with MyStatefulWidget
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  bool isSwitched = false;
+  bool isSwitched1 = false;
+  bool isSwitched2 = false;
+  bool isSwitched3 = false;
+  bool isSwitched4 = false;
+  bool isSwitched5 = false;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Spacer(),
+
+        Column(
+          children: <Widget>[
+            Switch(
+              value: isSwitched,
+              onChanged: (value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            Text("xReversed"),
+          ],
+        ),
+        Spacer(),
+
+        Column(
+          children: <Widget>[
+            Switch(
+              value: isSwitched,
+              onChanged: (value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            Text("yReversed"),
+          ],
+        ),
+        Spacer(),
+
+        Column(
+          children: <Widget>[
+            Switch(
+              value: isSwitched,
+              onChanged: (value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            Text("xInverted"),
+          ],
+        ),
+        Spacer(),
+
+        Column(
+          children: <Widget>[
+            Switch(
+              value: isSwitched,
+              onChanged: (value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            Text("polarization"),
+          ],
+        ),
+        Spacer(),
+
+        Column(
+          children: <Widget>[
+            Switch(
+              value: isSwitched,
+              onChanged: (value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            Text("dataShow"),
+          ],
+        ),
+        Spacer(),
+
+      ],
     );
   }
 }
