@@ -14,10 +14,12 @@ class BasicChartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var aaChartView = AAChartView2();
+    // var aaChartView = AAChartView2();
+    //
+    // var aaChartModel = configureChartModelWithChartType(selectedType);
+    // aaChartView.aa_drawChartWithChartModel(aaChartModel);
 
-    var aaChartModel = configureChartModelWithChartType(selectedType);
-    aaChartView.aa_drawChartWithChartModel(aaChartModel);
+
 
     return Scaffold(
       appBar: AppBar(
@@ -27,11 +29,13 @@ class BasicChartPage extends StatelessWidget {
         onTap: () {
           Navigator.pop(context);
         },
-        child: Center(
-          child: Hero(
-              tag: 'imageHero',
-              child: aaChartView
-          ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            SegmentedControlExample(),
+            Text('Craft beautiful UIs'),
+            SegmentedControlExample(),
+          ],
         ),
       ),
     );
@@ -45,3 +49,73 @@ class BasicChartPage extends StatelessWidget {
   }
 
 }
+
+/// Flutter code sample for [CupertinoSegmentedControl].
+
+enum Sky { midnight, viridian, cerulean }
+
+Map<Sky, Color> skyColors = <Sky, Color>{
+  Sky.midnight: const Color(0xff191970),
+  Sky.viridian: const Color(0xff40826d),
+  Sky.cerulean: const Color(0xff007ba7),
+};
+
+void main() => runApp(const SegmentedControlApp());
+
+class SegmentedControlApp extends StatelessWidget {
+  const SegmentedControlApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const CupertinoApp(
+      theme: CupertinoThemeData(brightness: Brightness.light),
+      home: SegmentedControlExample(),
+    );
+  }
+}
+
+class SegmentedControlExample extends StatefulWidget {
+  const SegmentedControlExample({super.key});
+
+  @override
+  State<SegmentedControlExample> createState() =>
+      _SegmentedControlExampleState();
+}
+
+class _SegmentedControlExampleState extends State<SegmentedControlExample> {
+  Sky _selectedSegment = Sky.midnight;
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoSegmentedControl<Sky>(
+      selectedColor: skyColors[_selectedSegment],
+      // Provide horizontal padding around the children.
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      // This represents a currently selected segmented control.
+      groupValue: _selectedSegment,
+      // Callback that sets the selected segmented control.
+      onValueChanged: (Sky value) {
+        setState(() {
+          _selectedSegment = value;
+        });
+      },
+      children: const <Sky, Widget>{
+        Sky.midnight: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text('Midnight'),
+        ),
+        Sky.viridian: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text('Viridian'),
+        ),
+        Sky.cerulean: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text('Cerulean'),
+        ),
+      },
+    );
+  }
+}
+
+
+
