@@ -33,8 +33,12 @@ class BasicChartPage extends StatelessWidget {
           children: <Widget>[
             Text("Stacking Type Selection"),
             SegmentedControlExample(),
+            Text("          "),
+
             Text("Corners Style Type Selection"),
             SegmentedControlExample1(),
+            Text("          "),
+
             MyStatefulWidget(),
           ],
         ),
@@ -81,15 +85,15 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
       },
       children: const <String, Widget>{
         "No stacking": Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 10),
           child: Text('No stacking'),
         ),
         "Normal stacking": Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 10),
           child: Text('Normal stacking'),
         ),
         "Percent stacking": Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 10),
           child: Text("Percent stacking"),
         ),
       },
@@ -125,23 +129,23 @@ class _SegmentedControlExampleState1 extends State<SegmentedControlExample1> {
       },
       children: const <String, Widget>{
         "◉ ◉ ◉": Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 15),
           child: Text("◉ ◉ ◉"),
         ),
         "■ ■ ■": Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 15),
           child: Text("■ ■ ■"),
         ),
         "◆ ◆ ◆": Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 15),
           child: Text("◆ ◆ ◆"),
         ),
         "▲ ▲ ▲": Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 15),
           child: Text("▲ ▲ ▲"),
         ),
         "▼ ▼ ▼": Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 15),
           child: Text("▼ ▼ ▼"),
         ),
       },
