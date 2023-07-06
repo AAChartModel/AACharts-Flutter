@@ -54,12 +54,6 @@ class BasicChartPage extends StatelessWidget {
 
 enum Sky { midnight, viridian, cerulean }
 
-Map<Sky, Color> skyColors = <Sky, Color>{
-  Sky.midnight: const Color(0xff191970),
-  Sky.viridian: const Color(0xff40826d),
-  Sky.cerulean: const Color(0xff007ba7),
-};
-
 void main() => runApp(const SegmentedControlApp());
 
 class SegmentedControlApp extends StatelessWidget {
@@ -88,8 +82,8 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
   @override
   Widget build(BuildContext context) {
     return CupertinoSegmentedControl<Sky>(
-      selectedColor: skyColors[_selectedSegment],
-      // Provide horizontal padding around the children.
+      selectedColor: Colors.red.withOpacity(1),
+      unselectedColor: Colors.white.withOpacity(1),      // Provide horizontal padding around the children.
       padding: const EdgeInsets.symmetric(horizontal: 12),
       // This represents a currently selected segmented control.
       groupValue: _selectedSegment,
