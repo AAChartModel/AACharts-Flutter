@@ -181,7 +181,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 });
               },
             ),
-            Text("xReversed"),
+            Text("X Reversed"),
           ],
         ),
         Spacer(),
@@ -189,14 +189,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         Column(
           children: <Widget>[
             Switch(
-              value: isSwitched,
+              value: isSwitched1,
               onChanged: (value) {
                 setState(() {
-                  isSwitched = value;
+                  isSwitched1 = value;
                 });
               },
             ),
-            Text("yReversed"),
+            Text("Y Reversed"),
           ],
         ),
         Spacer(),
@@ -204,14 +204,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         Column(
           children: <Widget>[
             Switch(
-              value: isSwitched,
+              value: isSwitched2,
               onChanged: (value) {
                 setState(() {
-                  isSwitched = value;
+                  isSwitched2 = value;
                 });
               },
             ),
-            Text("xInverted"),
+            Text("X Inverted"),
           ],
         ),
         Spacer(),
@@ -219,14 +219,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         Column(
           children: <Widget>[
             Switch(
-              value: isSwitched,
+              value: isSwitched3,
               onChanged: (value) {
                 setState(() {
-                  isSwitched = value;
+                  isSwitched3 = value;
                 });
               },
             ),
-            Text("polarization"),
+            Text("Polarization"),
           ],
         ),
         Spacer(),
@@ -234,14 +234,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         Column(
           children: <Widget>[
             Switch(
-              value: isSwitched,
+              value: isSwitched4,
               onChanged: (value) {
                 setState(() {
-                  isSwitched = value;
+                  isSwitched4 = value;
                 });
               },
             ),
-            Text("dataShow"),
+            Text("Data Show"),
           ],
         ),
         Spacer(),
