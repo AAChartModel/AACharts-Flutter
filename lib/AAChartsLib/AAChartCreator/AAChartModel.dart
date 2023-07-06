@@ -413,30 +413,30 @@ class AAChartModel {
     return AAOptionsComposer.configureChartOptions(this);
   }
 
-  // AAChartModel() {
-  //    title                 = "";
-  //    backgroundColor       = "#ffffff";
-  //    axisColor             = "#000000";
-  //    // animationType         = AAChartAnimationType.bounce as int;
-  //    animationDuration     = 800;//以毫秒为单位
-  //    chartType             = AAChartType.column;
-  //    stacking              = AAChartStackingType.none;
-  //    zoomType              = AAChartZoomType.none;//默认禁用手势缩放
-  //    colorsTheme           = ["#1e90ff","#ef476f","#ffd066","#04d69f","#25547c",];
-  //    dataLabelsEnabled     = true;
-  //    tooltipEnabled        = true;
-  //    tooltipCrosshairs     = true;
-  //    xAxisLabelsEnabled    = true;
-  //    xAxisVisible          = true;// X 轴默认可见
-  //    yAxisVisible          = true;// Y 轴默认可见
-  //    yAxisLabelsEnabled    = true;
-  //    yAxisLineWidth        = 0;
-  //    yAxisGridLineWidth    = 0.6;
-  //    legendEnabled         = true;
-  //    legendLayout          = AAChartLayoutType.horizontal;
-  //    legendAlign           = AAChartAlignType.center;
-  //    legendVerticalAlign   = AAChartVerticalAlignType.bottom;
-  //    borderRadius          = 0; //柱状图长条图头部圆角半径可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
-  //    markerRadius          = 5; //折线连接点的半径长度,如果设置默认值为0,那么这样就相当于不显示了
-  // }
+  AAChartModel() {
+     title                 = "";
+     backgroundColor       = "#ffffff";
+     axisColor             = "#000000";
+     // animationType         = AAChartAnimationType.bounce as int;
+     animationDuration     = 800;//以毫秒为单位
+     chartType             = AAChartType.column;
+     stacking              = AAChartStackingType.none;
+     zoomType              = AAChartZoomType.none;//默认禁用手势缩放
+     colorsTheme           = ["#1e90ff","#ef476f","#ffd066","#04d69f","#25547c",];
+     dataLabelsEnabled     = true;
+     tooltipEnabled        = true;
+     tooltipCrosshairs     = true;
+     xAxisLabelsEnabled    = true;
+     xAxisVisible          = true;// X 轴默认可见
+     yAxisVisible          = true;// Y 轴默认可见
+     yAxisLabelsEnabled    = true;
+     yAxisLineWidth        = 0;
+     yAxisGridLineWidth    = 0.6;
+     legendEnabled         = true;
+     legendLayout          = AAChartLayoutType.horizontal;
+     legendAlign           = AAChartAlignType.center;
+     legendVerticalAlign   = AAChartVerticalAlignType.bottom;
+     borderRadius          = 0; //柱状图长条图头部圆角半径可用于设置头部的形状,仅对条形图,柱状图有效,设置为1000时,柱形图或者条形图头部为楔形)
+     markerRadius          = 5; //折线连接点的半径长度,如果设置默认值为0,那么这样就相当于不显示了
+  }
 }
