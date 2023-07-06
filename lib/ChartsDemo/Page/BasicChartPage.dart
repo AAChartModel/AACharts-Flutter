@@ -34,7 +34,7 @@ class BasicChartPage extends StatelessWidget {
           children: <Widget>[
             SegmentedControlExample(),
             Text('Craft beautiful UIs'),
-            SegmentedControlExample(),
+            SegmentedControlExample1(),
           ],
         ),
       ),
@@ -52,21 +52,6 @@ class BasicChartPage extends StatelessWidget {
 
 /// Flutter code sample for [CupertinoSegmentedControl].
 
-enum Sky { midnight, viridian, cerulean }
-
-void main() => runApp(const SegmentedControlApp());
-
-class SegmentedControlApp extends StatelessWidget {
-  const SegmentedControlApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const CupertinoApp(
-      theme: CupertinoThemeData(brightness: Brightness.light),
-      home: SegmentedControlExample(),
-    );
-  }
-}
 
 class SegmentedControlExample extends StatefulWidget {
   const SegmentedControlExample({super.key});
@@ -77,34 +62,86 @@ class SegmentedControlExample extends StatefulWidget {
 }
 
 class _SegmentedControlExampleState extends State<SegmentedControlExample> {
-  Sky _selectedSegment = Sky.midnight;
+  String _selectedSegment = "No stacking";
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoSegmentedControl<Sky>(
+    return CupertinoSegmentedControl<String>(
       selectedColor: Colors.red.withOpacity(1),
       unselectedColor: Colors.white.withOpacity(1),      // Provide horizontal padding around the children.
       padding: const EdgeInsets.symmetric(horizontal: 12),
       // This represents a currently selected segmented control.
       groupValue: _selectedSegment,
       // Callback that sets the selected segmented control.
-      onValueChanged: (Sky value) {
+      onValueChanged: (String value) {
         setState(() {
           _selectedSegment = value;
         });
       },
-      children: const <Sky, Widget>{
-        Sky.midnight: Padding(
+      children: const <String, Widget>{
+        "No stacking": Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Text('Midnight'),
+          child: Text('No stacking'),
         ),
-        Sky.viridian: Padding(
+        "Normal stacking": Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Text('Viridian'),
+          child: Text('Normal stacking'),
         ),
-        Sky.cerulean: Padding(
+        "Percent stacking": Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
-          child: Text('Cerulean'),
+          child: Text('"Percent stacking"'),
+        ),
+      },
+    );
+  }
+}
+
+
+class SegmentedControlExample1 extends StatefulWidget {
+  const SegmentedControlExample1({super.key});
+
+  @override
+  State<SegmentedControlExample1> createState() =>
+      _SegmentedControlExampleState1();
+}
+
+class _SegmentedControlExampleState1 extends State<SegmentedControlExample1> {
+  String _selectedSegment = "◉ ◉ ◉";
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoSegmentedControl<String>(
+      selectedColor: Colors.green.withOpacity(1),
+      unselectedColor: Colors.white.withOpacity(1),      // Provide horizontal padding around the children.
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      // This represents a currently selected segmented control.
+      groupValue: _selectedSegment,
+      // Callback that sets the selected segmented control.
+      onValueChanged: (String value) {
+        setState(() {
+          _selectedSegment = value;
+        });
+      },
+      children: const <String, Widget>{
+        "◉ ◉ ◉": Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text("◉ ◉ ◉"),
+        ),
+        "■ ■ ■": Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text("■ ■ ■"),
+        ),
+        "◆ ◆ ◆": Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text("◆ ◆ ◆"),
+        ),
+        "▲ ▲ ▲": Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text("▲ ▲ ▲"),
+        ),
+        "▼ ▼ ▼": Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text("▼ ▼ ▼"),
         ),
       },
     );
