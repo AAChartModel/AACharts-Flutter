@@ -35,6 +35,12 @@ class BasicChartPage extends StatelessWidget {
         },
         child: Column(
           children: <Widget>[
+            Container(
+                width: size.width, // set the desired width
+                height: size.height - 350, // set the desired height
+                child: aaChartView
+            )
+            ,
             Text("Stacking Type Selection"),
             SegmentedControlExample(),
             Text("          "),
@@ -45,11 +51,6 @@ class BasicChartPage extends StatelessWidget {
 
             MyStatefulWidget(),
 
-            Container(
-              width: size.width, // set the desired width
-              height: size.height - 350, // set the desired height
-              child: aaChartView
-            )
 
 
           ],
