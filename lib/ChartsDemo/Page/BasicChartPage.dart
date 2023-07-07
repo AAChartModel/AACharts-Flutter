@@ -8,7 +8,7 @@ import 'package:aacharts_flutter/ChartsDemo/ChartComposer/SpecialChartComposer.d
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-var aaChartView = AAChartView();
+var aaChartView = AAChartView2();
 var aaChartModel = AAChartModel();
 
 void refreshChartView() {
@@ -45,11 +45,21 @@ class BasicChartPage extends StatelessWidget {
                 child: aaChartView
             )
             ,
-            Text("Stacking Type Selection"),
+            Text("Stacking Type Selection",
+              style: TextStyle(
+              fontSize: 15,
+              color: Colors.grey,
+            ),),
+            //添加一个红色的 Text
+
             SegmentedControlExample(),
             Text("          "),
 
-            Text("Corners Style Type Selection"),
+            Text("Corners Style Type Selection",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.grey,
+              ),),
             SegmentedControlExample1(),
             Text("          "),
 
@@ -60,6 +70,8 @@ class BasicChartPage extends StatelessWidget {
           ],
         ),
       ),
+      //设置背景色为 #4b2b7f 这样的十六进制字符串
+      backgroundColor: Color(0xff4b2b7f),
     );
   }
 
@@ -234,7 +246,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 });
               },
             ),
-            Text("X Reversed"),
+            Text("X Reversed",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.grey,
+              ),),
           ],
         ),
         Spacer(),
@@ -256,7 +272,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 });
               },
             ),
-            Text("Y Reversed"),
+            Text("Y Reversed",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.grey,
+              ),),
           ],
         ),
         Spacer(),
@@ -278,7 +298,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 });
               },
             ),
-            Text("X Inverted"),
+            Text("X Inverted",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.grey,
+              ),),
           ],
         ),
         Spacer(),
@@ -300,7 +324,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 });
               },
             ),
-            Text("Polarization"),
+            Text("Polarization",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.grey,
+              ),),
           ],
         ),
         Spacer(),
@@ -322,7 +350,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 });
               },
             ),
-            Text("Data Show"),
+            Text("Data Show",
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.grey,
+              ),),
           ],
         ),
         Spacer(),
