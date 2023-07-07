@@ -82,56 +82,24 @@ class AAChartView2 extends StatelessWidget {
     webViewController
       ..setNavigationDelegate(
         NavigationDelegate(
-          onProgress: (int progress) {
-            // Update loading bar.
-            if (progress == 100) {
-              configureChartOptionsAndDrawChart(aaOptions);
-            }
-            this.progress = progress / 100;
-            // });
-          },
+          // onProgress: (int progress) {
+          //   // Update loading bar.
+          //   if (progress == 100) {
+          //     configureChartOptionsAndDrawChart(aaOptions);
+          //   }
+          //   this.progress = progress / 100;
+          //   // });
+          // },
           onPageStarted: (String url) {},
-          onPageFinished: (String url) {},
+          onPageFinished: (String url) {
+            configureChartOptionsAndDrawChart(aaOptions);
+
+          },
           onWebResourceError: (WebResourceError error) {},
         ),
       )
       ..loadFile('/Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html')
     ;
-
-    // webView = InAppWebView(
-   //    initialFile: "/Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html",
-   //    initialOptions: InAppWebViewGroupOptions(
-   //        crossPlatform: InAppWebViewOptions(
-   //
-   //        )
-   //    ),
-   //    onWebViewCreated: (InAppWebViewController controller) {
-   //      webViewController = controller;
-   //    },
-   //    onLoadStart: (controller, url) {
-   //      // setState(() {
-   //      this.url = url as String;
-   //      // });
-   //    },
-   //    onLoadStop: (controller, url) {
-   //      // setState(() {
-   //      this.url = url as String;
-   //      configureChartOptionsAndDrawChart(aaOptions);
-   //      var result =  controller.evaluateJavascript(source: "1 + 1");
-   //      print(result.runtimeType); // int
-   //      print(result); // 2
-   //      // });
-   //    },
-   //    onProgressChanged: (controller, progress) {
-   //      // setState(() {
-   //      if (progress == 100) {
-   //        configureChartOptionsAndDrawChart(aaOptions);
-   //      }
-   //      this.progress = progress / 100;
-   //      // });
-   //    },
-   //  );
-
   }
 
    void aa_refreshChartWithChartOptions(AAOptions chartOptions) {
