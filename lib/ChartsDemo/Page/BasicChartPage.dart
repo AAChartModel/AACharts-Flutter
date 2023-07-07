@@ -23,18 +23,11 @@ class BasicChartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    // var aaChartView = AAChartView2();
-
-      // var aaChartView = AAChartView();
-
       aaChartModel = configureChartModelWithChartType(selectedType);
       aaChartView.aa_drawChartWithChartModel(aaChartModel);
 
-
     //获取屏幕的宽高
     final size = MediaQuery.of(context).size;
-
 
     return Scaffold(
       appBar: AppBar(
@@ -159,6 +152,20 @@ class _SegmentedControlExampleState1 extends State<SegmentedControlExample1> {
       onValueChanged: (String value) {
         setState(() {
           _selectedSegment = value;
+
+          if (value == "◉ ◉ ◉") {
+            aaChartModel.markerSymbol = AAChartSymbolType.circle;
+          } else if (value == "■ ■ ■") {
+            aaChartModel.markerSymbol = AAChartSymbolType.square;
+          } else if (value == "◆ ◆ ◆") {
+            aaChartModel.markerSymbol = AAChartSymbolType.diamond;
+          } else if (value == "▲ ▲ ▲") {
+            aaChartModel.markerSymbol = AAChartSymbolType.triangle;
+          } else if (value == "▼ ▼ ▼") {
+            aaChartModel.markerSymbol = AAChartSymbolType.triangleDown;
+          }
+
+          refreshChartView();
         });
       },
       children: const <String, Widget>{
@@ -217,6 +224,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 setState(() {
                   isSwitched = value;
 
+                  if (value == true) {
+                    aaChartModel.xAxisReversed = true;
+                  } else {
+                    aaChartModel.xAxisReversed = false;
+                  }
+                  refreshChartView();
+
                 });
               },
             ),
@@ -232,6 +246,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               onChanged: (value) {
                 setState(() {
                   isSwitched1 = value;
+
+                  if (value == true) {
+                    aaChartModel.yAxisReversed = true;
+                  } else {
+                    aaChartModel.yAxisReversed = false;
+                  }
+                  refreshChartView();
                 });
               },
             ),
@@ -247,6 +268,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               onChanged: (value) {
                 setState(() {
                   isSwitched2 = value;
+
+                  if (value == true) {
+                    aaChartModel.inverted = true;
+                  } else {
+                    aaChartModel.inverted = false;
+                  }
+                  refreshChartView();
                 });
               },
             ),
@@ -262,6 +290,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               onChanged: (value) {
                 setState(() {
                   isSwitched3 = value;
+
+                  if (value == true) {
+                    aaChartModel.polar = true;
+                  } else {
+                    aaChartModel.polar = false;
+                  }
+                  refreshChartView();
                 });
               },
             ),
@@ -277,6 +312,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               onChanged: (value) {
                 setState(() {
                   isSwitched4 = value;
+
+                  if (value == true) {
+                    aaChartModel.dataLabelsEnabled = true;
+                  } else {
+                    aaChartModel.dataLabelsEnabled = false;
+                  }
+                  refreshChartView();
                 });
               },
             ),
