@@ -45,10 +45,15 @@ class AAChartView extends StatelessWidget {
   }
 
   Future<void> loadLocalFilesAndDrawChart(final AAOptions aaOptions) async {
-   webView = InAppWebView(
-      // initialFile: "/Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html",
-     initialUrlRequest: URLRequest(
-         url: Uri.parse("file:///Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html")),
+    // String fileHtmlContents = await rootBundle.loadString("assets/AAChartView.html");
+    // Uri url = Uri.dataFromString(fileHtmlContents,
+    //     mimeType: 'text/html', encoding: Encoding.getByName('utf-8'));
+    webView = InAppWebView(
+      initialUrlRequest: URLRequest(
+          url: Uri.parse("file:///Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html")),
+     // initialUrlRequest: URLRequest(
+     //     url: url
+     // ),
      initialOptions: InAppWebViewGroupOptions(
           crossPlatform: InAppWebViewOptions(
 
