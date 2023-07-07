@@ -1,14 +1,17 @@
 
 import 'dart:convert';
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAOptionsComposer.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:path/path.dart';
 
 class AAChartView2 extends StatelessWidget {
   var webViewController = WebViewController()
@@ -35,12 +38,17 @@ class AAChartView2 extends StatelessWidget {
 
 
 
-  // InAppWebViewController? webViewController;
-  InAppWebView? webView;
   String url = "";
   double progress = 0;
 
   String? optionsJson;
+
+  Future<void> loadLocalAAChartViewHtml() async {
+    String fileHtmlContents = await rootBundle.loadString("assets/AAChartView.html");
+    webViewController.loadRequest(Uri.dataFromString(fileHtmlContents,
+        mimeType: 'text/html', encoding: Encoding.getByName('utf-8'))
+    );
+  }
 
 
   void aa_drawChartWithChartModel(AAChartModel aaChartModel) {
@@ -68,7 +76,9 @@ class AAChartView2 extends StatelessWidget {
     //debug print
   }
 
-  void loadLocalFilesAndDrawChart(final AAOptions aaOptions) {
+
+  Future<void> loadLocalFilesAndDrawChart(final AAOptions aaOptions) async {
+
     webViewController
       ..setNavigationDelegate(
         NavigationDelegate(
@@ -83,17 +93,9 @@ class AAChartView2 extends StatelessWidget {
           onPageStarted: (String url) {},
           onPageFinished: (String url) {},
           onWebResourceError: (WebResourceError error) {},
-          onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://www.baidu.com/')) {
-              return NavigationDecision.prevent;
-            }
-            return NavigationDecision.navigate;
-          },
         ),
       )
       ..loadFile('/Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html')
-
-
     ;
 
     // webView = InAppWebView(
@@ -162,6 +164,8 @@ class AAChartView2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // loadLocalAAChartViewHtml();
+
     return Scaffold(
       body: WebViewWidget(controller: webViewController),
     );
