@@ -69,19 +69,19 @@ class AAChartView extends StatelessWidget {
       },
       onLoadStop: (controller, url) {
         // setState(() {
-        this.url = url as String;
+        // this.url = url as String;
         configureChartOptionsAndDrawChart(aaOptions);
-        var result =  controller.evaluateJavascript(source: "1 + 1");
-        print(result.runtimeType); // int
-        print(result); // 2
+        // var result =  controller.evaluateJavascript(source: "1 + 1");
+        // print(result.runtimeType); // int
+        // print(result); // 2
         // });
       },
       onProgressChanged: (controller, progress) {
         // setState(() {
-        if (progress == 100) {
-          configureChartOptionsAndDrawChart(aaOptions);
-        }
-        this.progress = progress / 100;
+        // if (progress == 100) {
+        //   configureChartOptionsAndDrawChart(aaOptions);
+        // }
+        // this.progress = progress / 100;
         // });
       },
     );
