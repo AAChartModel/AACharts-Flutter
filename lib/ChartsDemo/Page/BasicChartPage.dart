@@ -8,6 +8,14 @@ import 'package:aacharts_flutter/ChartsDemo/ChartComposer/SpecialChartComposer.d
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+var aaChartView = AAChartView();
+var aaChartModel = AAChartModel();
+
+void refreshChartView() {
+  aaChartView.aa_drawChartWithChartModel(aaChartModel);
+}
+
+
 class BasicChartPage extends StatelessWidget {
   final String selectedType;
 
@@ -16,10 +24,12 @@ class BasicChartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var aaChartView = AAChartView2();
+    // var aaChartView = AAChartView2();
 
-    var aaChartModel = configureChartModelWithChartType(selectedType);
-    aaChartView.aa_drawChartWithChartModel(aaChartModel);
+      // var aaChartView = AAChartView();
+
+      aaChartModel = configureChartModelWithChartType(selectedType);
+      aaChartView.aa_drawChartWithChartModel(aaChartModel);
 
 
     //获取屏幕的宽高
@@ -95,6 +105,16 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
       onValueChanged: (String value) {
         setState(() {
           _selectedSegment = value;
+
+          if (value == "No stacking") {
+            aaChartModel.stacking = AAChartStackingType.none;
+          } else if (value == "Normal stacking") {
+            aaChartModel.stacking = AAChartStackingType.normal;
+          } else if (value == "Percent stacking") {
+            aaChartModel.stacking = AAChartStackingType.percent;
+          }
+
+          refreshChartView();
         });
       },
       children: const <String, Widget>{
@@ -196,6 +216,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               onChanged: (value) {
                 setState(() {
                   isSwitched = value;
+
                 });
               },
             ),
