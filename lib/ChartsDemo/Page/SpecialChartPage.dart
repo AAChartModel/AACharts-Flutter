@@ -74,7 +74,7 @@ class SpecialChartPage extends StatelessWidget {
       AAChartType.polygon,
     ];
     var aaChartModel = configureChartModelWithChartType(specialTypeChartArr[selectedChartIndex % specialTypeChartArr.length]);
-    aaChartView.aa_drawChartWithChartModel(aaChartModel);
+    aaChartView.aa_refreshChartWithChartModel(aaChartModel);
   }
 
   AAChartModel configureChartModelWithChartType(String chartType) {

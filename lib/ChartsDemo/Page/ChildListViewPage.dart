@@ -306,7 +306,7 @@ class ChildListViewPage extends StatelessWidget {
                 return CustomStyleChartPage(selectedIndex: index);
               } else if (this.selectedIndex == 3) {
                 String chartType = chartTypesSonArr[index];
-                return MixedChartPage(selectedType:  chartType);
+                return MixedChartPage(selectedType:  chartType, selectedIndex: index);
               } else if (this.selectedIndex == 4) {
                 return JSFunctionForAAChartEventsPage(selectedIndex:  index);
               } else if (this.selectedIndex == 5) {

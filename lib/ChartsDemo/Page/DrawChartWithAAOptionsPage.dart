@@ -54,7 +54,7 @@ class DrawChartWithAAOptionsPage extends StatelessWidget {
   void drawNextSampleChart() {
     selectedChartIndex = selectedChartIndex + 1;
     var aaChartModel = chartConfigurationWithSelectedIndex(selectedChartIndex);
-    aaChartView.aa_drawChartWithChartOptions(aaChartModel);
+    aaChartView.aa_refreshChartWithChartOptions(aaChartModel);
   }
 
   AAOptions chartConfigurationWithSelectedIndex(int selectedIndex) {

@@ -57,7 +57,7 @@ class CustomStyleChartPage extends StatelessWidget {
   void drawNextSampleChart() {
     selectedChartIndex = selectedChartIndex + 1;
     var aaChartModel = chartConfigurationWithSelectedIndex(selectedChartIndex);
-    aaChartView.aa_drawChartWithChartModel(aaChartModel);
+    aaChartView.aa_refreshChartWithChartModel(aaChartModel);
   }
 
   AAChartModel chartConfigurationWithSelectedIndex(int selectedIndex) {

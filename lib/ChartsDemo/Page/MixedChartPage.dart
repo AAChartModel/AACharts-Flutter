@@ -6,10 +6,13 @@ import 'package:flutter/material.dart';
 
 import '../../AAChartsLib/AAChartCreator/AAChartView2.dart';
 
+var aaChartView = AAChartView2();
+var selectedChartIndex = 0;
 class MixedChartPage extends StatelessWidget {
   final String selectedType;
+  final int selectedIndex;
 
-  const MixedChartPage({ Key? key, required this.selectedType})
+  const MixedChartPage({ Key? key, required this.selectedType, required this.selectedIndex})
       : super(key: key);
 
   @override
@@ -33,6 +36,40 @@ class MixedChartPage extends StatelessWidget {
       "Aerasplinerange Mixed Columnrange Mixed Line Chart---曲线面积范围混合柱形范围混合折线图"
     ];
 
+    var aaChartModel = configureChartModelWithChartType(selectedType);
+    aaChartView.aa_drawChartWithChartModel(aaChartModel);
+
+    selectedChartIndex = selectedIndex;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('MixedChart'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.arrow_forward),
+            onPressed: () {
+              // Add your onPressed code here!
+              drawNextSampleChart();
+            },
+          ),
+        ],
+      ),
+      body: GestureDetector(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Center(
+          child: Hero(
+              tag: 'imageHero',
+              child: aaChartView
+          ),
+        ),
+      ),
+    );
+  }
+
+  void drawNextSampleChart() {
+    selectedChartIndex = selectedChartIndex + 1;
     /*Mixed Chart*/
     List chartTypesArr = [
       "arearangeMixedLine",
@@ -50,28 +87,8 @@ class MixedChartPage extends StatelessWidget {
       "NegativeColorMixedAreasplineChart",
       "AerasplinerangeMixedColumnrangeMixedLineChart"
     ];
-
-    var aaChartView = AAChartView2();
-
-    var aaChartModel = configureChartModelWithChartType(selectedType);
-    aaChartView.aa_drawChartWithChartModel(aaChartModel);
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('SpecialChart'),
-      ),
-      body: GestureDetector(
-        onTap: () {
-          Navigator.pop(context);
-        },
-        child: Center(
-          child: Hero(
-              tag: 'imageHero',
-              child: aaChartView
-          ),
-        ),
-      ),
-    );
+    var aaChartModel = configureChartModelWithChartType(chartTypesArr[selectedChartIndex % chartTypesArr.length]);
+    aaChartView.aa_refreshChartWithChartModel(aaChartModel);
   }
 
   AAChartModel configureChartModelWithChartType(String chartType) {
