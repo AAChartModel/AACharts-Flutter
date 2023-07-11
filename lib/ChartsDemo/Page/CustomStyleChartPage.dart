@@ -10,7 +10,7 @@ import 'package:aacharts_flutter/ChartsDemo/ChartComposer/CustomStyleChartCompos
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-var aaChartView = AAChartView2();
+var aaChartView = AAChartView();
 var selectedChartIndex = 0;
 
 class CustomStyleChartPage extends StatelessWidget {
