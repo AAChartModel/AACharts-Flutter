@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../AAChartsLib/AAChartCreator/AAChartView2.dart';
 
-var aaChartView = AAChartView2();
+var aaChartView = AAChartView();
 var selectedChartIndex = 0;
 class MixedChartPage extends StatelessWidget {
   final String selectedType;
