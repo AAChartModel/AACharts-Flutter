@@ -138,7 +138,7 @@ class AAChartView2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // loadLocalAAChartViewHtml();
-    loadLocalAAChartViewHtml();
+    // loadLocalAAChartViewHtml();
 
     return Scaffold(
       body: WebViewWidget(controller: webViewController),
