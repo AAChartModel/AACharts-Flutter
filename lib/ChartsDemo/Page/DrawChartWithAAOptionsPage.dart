@@ -6,6 +6,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter/services.dart' show rootBundle;
+var aaChartView = AAChartView2();
+var selectedChartIndex = 0;
 
 class DrawChartWithAAOptionsPage extends StatelessWidget {
   final int selectedIndex;
@@ -15,14 +17,23 @@ class DrawChartWithAAOptionsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var aaChartView = AAChartView2();
-
-    var aaOptions = configureChartOptionsWithChartType(selectedIndex);
+    var aaOptions = chartConfigurationWithSelectedIndex(selectedIndex);
     aaChartView.aa_drawChartWithChartOptions(aaOptions);
+
+    selectedChartIndex = selectedIndex;
 
     return Scaffold(
       appBar: AppBar(
         title: Text('DrawChartWithAAOptions'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.arrow_forward),
+            onPressed: () {
+              // Add your onPressed code here!
+              drawNextSampleChart();
+            },
+          ),
+        ],
       ),
       body: GestureDetector(
         onTap: () {
@@ -40,8 +51,13 @@ class DrawChartWithAAOptionsPage extends StatelessWidget {
     );
   }
 
+  void drawNextSampleChart() {
+    selectedChartIndex = selectedChartIndex + 1;
+    var aaChartModel = chartConfigurationWithSelectedIndex(selectedChartIndex);
+    aaChartView.aa_drawChartWithChartOptions(aaChartModel);
+  }
 
-  AAOptions configureChartOptionsWithChartType(int selectedIndex) {
+  AAOptions chartConfigurationWithSelectedIndex(int selectedIndex) {
     switch(selectedIndex) {
       case  0: return ChartOptionsComposer.configureLegendStyle();
       case  1: return ChartOptionsComposer.simpleGaugeChart();
