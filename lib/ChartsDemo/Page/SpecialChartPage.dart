@@ -6,22 +6,33 @@ import 'package:aacharts_flutter/ChartsDemo/ChartComposer/SpecialChartComposer.d
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+var aaChartView = AAChartView2();
+var selectedChartIndex = 0;
 class SpecialChartPage extends StatelessWidget {
   final String selectedType;
+  final int selectedIndex;
 
-  const SpecialChartPage({ Key? key, required this.selectedType}) : super(key: key);
+  const SpecialChartPage({ Key? key, required this.selectedType, required this.selectedIndex}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-    var aaChartView = AAChartView();
-
     var aaChartModel = configureChartModelWithChartType(selectedType);
     aaChartView.aa_drawChartWithChartModel(aaChartModel);
+
+    selectedChartIndex = selectedIndex;
 
     return Scaffold(
       appBar: AppBar(
         title: Text('SpecialChart'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.arrow_forward),
+            onPressed: () {
+              // Add your onPressed code here!
+              drawNextSampleChart();
+            },
+          ),
+        ],
       ),
       body: GestureDetector(
         onTap: () {
@@ -35,6 +46,35 @@ class SpecialChartPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void drawNextSampleChart() {
+    selectedChartIndex = selectedChartIndex + 1;
+    /*Special Types chart*/
+    var specialTypeChartArr =
+    [
+      AAChartType.column,
+      AAChartType.bar,
+      AAChartType.line,
+      AAChartType.area,
+      AAChartType.spline,
+      AAChartType.areaspline,
+      AAChartType.pie,
+      AAChartType.bubble,
+      AAChartType.scatter,
+      AAChartType.arearange,
+      AAChartType.areasplinerange,
+      AAChartType.columnrange,
+      AAChartType.boxplot,
+      AAChartType.waterfall,
+      AAChartType.pyramid,
+      AAChartType.funnel,
+      AAChartType.errorbar,
+      AAChartType.gauge,
+      AAChartType.polygon,
+    ];
+    var aaChartModel = configureChartModelWithChartType(specialTypeChartArr[selectedChartIndex % specialTypeChartArr.length]);
+    aaChartView.aa_drawChartWithChartModel(aaChartModel);
   }
 
   AAChartModel configureChartModelWithChartType(String chartType) {
@@ -56,10 +96,8 @@ class SpecialChartPage extends StatelessWidget {
       case AAChartType.pyramid: return SpecialChartComposer.configurePyramidChart();
       case AAChartType.funnel: return SpecialChartComposer.configureFunnelChart();
       case AAChartType.errorbar: return SpecialChartComposer.configureErrorbarChart();
-      //    case .gauge : return configureGaugeChart()
-    //         case .polygon: return configurePolygonChart()
-    case AAChartType.gauge: return SpecialChartComposer.configureGaugeChart();
-    case AAChartType.polygon: return SpecialChartComposer.configurePolygonChart();
+      case AAChartType.gauge: return SpecialChartComposer.configureGaugeChart();
+      case AAChartType.polygon: return SpecialChartComposer.configurePolygonChart();
       default: return SpecialChartComposer.configureBasePolarChart();
     }
   }
