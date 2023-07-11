@@ -10,21 +10,35 @@ import 'package:aacharts_flutter/ChartsDemo/ChartComposer/CustomStyleChartCompos
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+var aaChartView = AAChartView2();
+var selectedChartIndex = 0;
+
 class CustomStyleChartPage extends StatelessWidget {
   final int selectedIndex;
+
 
   const CustomStyleChartPage({ Key? key,  required this.selectedIndex}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-   var aaChartView = AAChartView();
 
     var aaChartModel = chartConfigurationWithSelectedIndex(selectedIndex);
     aaChartView.aa_drawChartWithChartModel(aaChartModel);
 
+   selectedChartIndex = selectedIndex;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('CustomStyleChart'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.arrow_forward),
+            onPressed: () {
+              // Add your onPressed code here!
+              drawNextSampleChart();
+            },
+          ),
+        ],
       ),
       body: GestureDetector(
         onTap: () {
@@ -40,6 +54,11 @@ class CustomStyleChartPage extends StatelessWidget {
     );
   }
 
+  void drawNextSampleChart() {
+    selectedChartIndex = selectedChartIndex + 1;
+    var aaChartModel = chartConfigurationWithSelectedIndex(selectedChartIndex);
+    aaChartView.aa_drawChartWithChartModel(aaChartModel);
+  }
 
   AAChartModel chartConfigurationWithSelectedIndex(int selectedIndex) {
     switch(selectedIndex) {
