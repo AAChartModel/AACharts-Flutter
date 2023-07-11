@@ -30,6 +30,11 @@ class AAChartView extends StatelessWidget {
     this.aa_drawChartWithChartOptions(aaOptions);
   }
 
+  void aa_refreshChartWithChartModel(AAChartModel aaChartModel) {
+    AAOptions aaOptions = AAOptionsComposer.configureChartOptions(aaChartModel);
+    configureChartOptionsAndDrawChart(aaOptions);
+  }
+
   void aa_drawChartWithChartOptions(AAOptions chartOptions) {
     if (this.optionsJson != null) {
       this.aa_refreshChartWithChartOptions(chartOptions);
