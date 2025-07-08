@@ -300,7 +300,8 @@ class ChildListViewPage extends StatelessWidget {
               // return CustomStyleChartPage(selectedIndex: index);
               if (this.selectedIndex == 0) {
                 var modelsArr = AAChartModelProvider.getAllSpecialChartModels();
-                return ChartSamplesTableViewPage(chartModels: modelsArr);
+                var mixedChartModelArr = AAChartModelProvider.getAllMixedChartModels();
+                return ChartSamplesTableViewPage(chartModels: modelsArr + mixedChartModelArr);
 
                 String chartType = chartTypesSonArr[index];
                 return BasicChartPage(selectedType: chartType);

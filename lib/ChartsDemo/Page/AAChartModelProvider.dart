@@ -1,5 +1,6 @@
 import '../../AAChartsLib/AAChartCreator/AAChartModel.dart';
 import '../ChartComposer/SpecialChartComposer.dart';
+import '../ChartComposer/MixedChartComposer.dart';
 
 class AAChartModelProvider {
   static List<AAChartModel> getAllSpecialChartModels() {
@@ -27,4 +28,22 @@ class AAChartModelProvider {
     ];
   }
 
+  static List<AAChartModel> getAllMixedChartModels() {
+    return [
+      MixedChartComposer.configureArearangeMixedLineChart(),
+      MixedChartComposer.configureColumnrangeMixedLineChart(),
+      MixedChartComposer.configureStackingColumnMixedLineChart(),
+      MixedChartComposer.configureDashStyleTypeMixedChart(),
+      MixedChartComposer.configureNegativeColorMixedChart(),
+      MixedChartComposer.configureScatterMixedLineChart(),
+      MixedChartComposer.configureNegativeColorMixedBubbleChart(),
+      MixedChartComposer.configurePolygonMixedScatterChart(),
+      MixedChartComposer.configurePolarMixedChart(),
+      MixedChartComposer.configureColumnMixedScatterChart(),
+      MixedChartComposer.configurePieMixedLineMixedColumnChart(),
+      MixedChartComposer.configureLineChartWithShadow(),
+      MixedChartComposer.configureNegativeColorMixedAreasplineChart(),
+      MixedChartComposer.configureAerasplinerangeMixedColumnrangeMixedLineChart(),
+    ];
+  }
 }
