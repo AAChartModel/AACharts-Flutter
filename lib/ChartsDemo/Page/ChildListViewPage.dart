@@ -8,7 +8,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../AAChartsLib/AAChartCreator/AAChartModel.dart';
+import 'AAChartModelProvider.dart';
 import 'BasicChartPage.dart';
+import 'ChartSamplesTableViewPage.dart';
 import 'CustomStyleChartPage.dart';
 import 'MixedChartPage.dart';
 import 'SpecialChartPage.dart';
@@ -297,6 +299,9 @@ class ChildListViewPage extends StatelessWidget {
               // return SpecialChartPage(selectedType: chartTypesArr[index]);
               // return CustomStyleChartPage(selectedIndex: index);
               if (this.selectedIndex == 0) {
+                var modelsArr = AAChartModelProvider.getAllSpecialChartModels();
+                return ChartSamplesTableViewPage(chartModels: modelsArr);
+
                 String chartType = chartTypesSonArr[index];
                 return BasicChartPage(selectedType: chartType);
               } else if (this.selectedIndex == 1) {
