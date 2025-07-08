@@ -50,17 +50,28 @@ class _ChartCellState extends State<ChartCell> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.all(8),
+      elevation: 6,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(18),
+      ),
+      color: Colors.white,
+      shadowColor: Colors.blueGrey.withOpacity(0.2),
+      margin: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 8),
-            SizedBox(
-              height: 220,
-              child: _chartView,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: Container(
+                color: Colors.blueGrey[50],
+                height: 220,
+                child: _chartView,
+              ),
             ),
+            // 可根据需要添加副标题或描述
+            // Text('副标题或描述', style: TextStyle(fontSize: 14, color: Colors.blueGrey[400])),
           ],
         ),
       ),
