@@ -7,13 +7,13 @@ import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAOptionsComposer.da
 import 'package:aacharts_flutter/AAChartsLib/AAOptionsModel/AAOptions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+// import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 
 class AAChartView extends StatelessWidget {
-  InAppWebViewController? webViewController;
-  InAppWebView? webView;
+  // InAppWebViewController? webViewController;
+  // InAppWebView? webView;
   String url = "";
   double progress = 0;
 
@@ -49,13 +49,17 @@ class AAChartView extends StatelessWidget {
     //debug print
   }
 
+
+
   Future<void> loadLocalFilesAndDrawChart(final AAOptions aaOptions) async {
     // String fileHtmlContents = await rootBundle.loadString("assets/AAChartView.html");
     // Uri url = Uri.dataFromString(fileHtmlContents,
     //     mimeType: 'text/html', encoding: Encoding.getByName('utf-8'));
+
+    /**
     webView = InAppWebView(
       initialUrlRequest: URLRequest(
-          url: Uri.parse("file:///Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html")),
+          url: WebUri("file:///Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html")),
      // initialUrlRequest: URLRequest(
      //     url: url
      // ),
@@ -99,7 +103,7 @@ class AAChartView extends StatelessWidget {
      },
    );
 
-
+*/
 
   }
 
@@ -123,12 +127,12 @@ class AAChartView extends StatelessWidget {
    }
 
    void safeEvaluateJavaScriptString(String javaScriptString) {
-     webViewController?.evaluateJavascript(source: javaScriptString).then((result) {
-       // JavaScript execution succeeded
-     }).catchError((error) {
-       // JavaScript execution failed, capture the NSError information
-       print('JavaScript error: ${error.message}');
-     });
+     // webViewController?.evaluateJavascript(source: javaScriptString).then((result) {
+     //   // JavaScript execution succeeded
+     // }).catchError((error) {
+     //   // JavaScript execution failed, capture the NSError information
+     //   print('JavaScript error: ${error.message}');
+     // });
 
    }
 
@@ -155,14 +159,14 @@ class AAChartView extends StatelessWidget {
                 child: progress < 1.0
                     ? LinearProgressIndicator(value: progress)
                     : Container()),
-            Expanded(
-              child: Container(
-                margin: const EdgeInsets.all(10.0),
-                decoration:
-                BoxDecoration(border: Border.all(color: Colors.blueAccent)),
-                child: webView
-              ),
-            ),
+            // Expanded(
+            //   child: Container(
+            //     margin: const EdgeInsets.all(10.0),
+            //     decoration:
+            //     BoxDecoration(border: Border.all(color: Colors.blueAccent)),
+            //     child: webView
+            //   ),
+            // ),
             ButtonBar(
               alignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -177,13 +181,13 @@ class AAChartView extends StatelessWidget {
                 ElevatedButton(
                   child: Icon(Icons.arrow_forward),
                   onPressed: () {
-                    webViewController?.goForward();
+                    // webViewController?.goForward();
                   },
                 ),
                 ElevatedButton(
                   child: Icon(Icons.refresh),
                   onPressed: () {
-                    webViewController?.reload();
+                    // webViewController?.reload();
                   },
                 ),
               ],
