@@ -103,7 +103,8 @@ class AAChartView2 extends StatelessWidget {
           onWebResourceError: (WebResourceError error) {},
         ),
       )
-      ..loadFile('/Users/admin/Documents/GitHub/AACharts-Flutter/assets/AAChartView.html')
+      ..loadRequest(Uri.dataFromString(await rootBundle.loadString("assets/AAChartView.html"),
+          mimeType: 'text/html', encoding: Encoding.getByName('utf-8')))
     ;
   }
 
@@ -113,7 +114,6 @@ class AAChartView2 extends StatelessWidget {
 
    void configureChartOptionsAndDrawChart(AAOptions chartOptions) {
     String javaScriptStr = configurePureOptionsJsonStr(chartOptions);
-
     this.safeEvaluateJavaScriptString(javaScriptStr);
   }
 
@@ -121,13 +121,15 @@ class AAChartView2 extends StatelessWidget {
      Map<String, dynamic>? aaOptionsJsonMap = chartOptions.toPureJson();
      String aaOptionsJsonStr = jsonEncode(aaOptionsJsonMap);
      this.optionsJson = aaOptionsJsonStr;
-     String javaScriptStr = "loadTheHighChartView('$aaOptionsJsonStr')";
+     String javaScriptStr = "try { loadTheHighChartView('$aaOptionsJsonStr'); } catch(e) { console.error('JS Exception:', e); }";
      return javaScriptStr;
    }
 
-   void safeEvaluateJavaScriptString(String javaScriptString) {
-     webViewController.runJavaScript(javaScriptString);
-   }
+  void safeEvaluateJavaScriptString(String javaScriptString) {
+    webViewController.runJavaScript(javaScriptString).catchError((error) {
+      print("[JS Error]: $error");
+    });
+  }
 
   String getPrettyJSONString(jsonObject){
     var encoder = new JsonEncoder.withIndent("     ");
@@ -137,9 +139,7 @@ class AAChartView2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // loadLocalAAChartViewHtml();
-    // loadLocalAAChartViewHtml();
-
+    loadLocalAAChartViewHtml();
     return Scaffold(
       body: WebViewWidget(controller: webViewController),
     );
