@@ -98,25 +98,35 @@ class _AAChartView3State extends State<AAChartView3> {
   }
 
   Future<void> _loadHighchartsLibrary() async {
+    // 全局只加载一次，利用 window 变量做标记
+    final win = js.context;
+    if (win['_AAHighchartsLoaded'] == true) {
+      _isHighchartsLoaded = true;
+      return;
+    }
     // 检查Highcharts是否已加载
     if (js.context['Highcharts'] == null) {
-      // 动态加载Highcharts库
       final script = html.ScriptElement()
-        ..src = 'https://code.highcharts.com/highcharts.js'
+        ..src = '/assets/AAHighcharts.js'
         ..async = true;
       html.document.head!.append(script);
-      // 等待库加载完成
       await _waitForHighcharts();
     }
-    // 检查 highcharts-more.js 是否已加载（即 polarChart 方法是否存在）
     if (js.context['Highcharts'] == null || js.context['Highcharts']['polarChart'] == null) {
       final moreScript = html.ScriptElement()
-        ..src = 'https://code.highcharts.com/highcharts-more.js'
+        ..src = '/assets/AAHighcharts-More.js'
         ..async = true;
       html.document.head!.append(moreScript);
-      // 等待 highcharts-more 加载
       await _waitForHighchartsMore();
     }
+    if (js.context['Highcharts'] == null || js.context['Highcharts']['seriesTypes'] == null || js.context['Highcharts']['seriesTypes']['funnel'] == null) {
+      final funnelScript = html.ScriptElement()
+        ..src = '/assets/AAFunnel.js'
+        ..async = true;
+      html.document.head!.append(funnelScript);
+      await Future.delayed(const Duration(milliseconds: 200));
+    }
+    win['_AAHighchartsLoaded'] = true;
     _isHighchartsLoaded = true;
   }
 
