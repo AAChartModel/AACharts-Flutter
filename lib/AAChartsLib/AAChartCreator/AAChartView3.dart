@@ -104,11 +104,18 @@ class _AAChartView3State extends State<AAChartView3> {
       final script = html.ScriptElement()
         ..src = 'https://code.highcharts.com/highcharts.js'
         ..async = true;
-
       html.document.head!.append(script);
-
       // 等待库加载完成
       await _waitForHighcharts();
+    }
+    // 检查 highcharts-more.js 是否已加载（即 polarChart 方法是否存在）
+    if (js.context['Highcharts'] == null || js.context['Highcharts']['polarChart'] == null) {
+      final moreScript = html.ScriptElement()
+        ..src = 'https://code.highcharts.com/highcharts-more.js'
+        ..async = true;
+      html.document.head!.append(moreScript);
+      // 等待 highcharts-more 加载
+      await _waitForHighchartsMore();
     }
     _isHighchartsLoaded = true;
   }
@@ -121,6 +128,18 @@ class _AAChartView3State extends State<AAChartView3> {
     }
     if (js.context['Highcharts'] == null) {
       print('Failed to load Highcharts library');
+    }
+  }
+
+  Future<void> _waitForHighchartsMore() async {
+    int attempts = 0;
+    // 检查 Highcharts 中是否有 polarChart 方法（highcharts-more.js 加载后才有）
+    while ((js.context['Highcharts'] == null || js.context['Highcharts']['polarChart'] == null) && attempts < 100) {
+      await Future.delayed(const Duration(milliseconds: 100));
+      attempts++;
+    }
+    if (js.context['Highcharts'] == null || js.context['Highcharts']['polarChart'] == null) {
+      print('Failed to load Highcharts More library');
     }
   }
 
