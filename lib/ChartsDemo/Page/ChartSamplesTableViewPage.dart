@@ -1,9 +1,10 @@
-import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
-import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartView2.dart';
 import 'package:aacharts_flutter/ChartsDemo/ChartComposer/SpecialChartComposer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:aacharts_flutter/ChartsDemo/Page/SpecialChartPage.dart';
+
+import '../../AAChartsLib/AAChartCreator/AAChartModel.dart';
+import '../../AAChartsLib/AAChartCreator/AAChartView3.dart';
 
 class ChartSamplesTableViewPage extends StatelessWidget {
   final List<AAChartModel> chartModels;
@@ -36,14 +37,20 @@ class ChartCell extends StatefulWidget {
 }
 
 class _ChartCellState extends State<ChartCell> {
-  late AAChartView2 _chartView;
+  late AAChartView3Controller _controller;
+  late AAChartView3 _chartView;
 
   @override
   void initState() {
     super.initState();
-    _chartView = AAChartView2();
+    _controller = AAChartView3Controller();
+    _chartView = AAChartView3(controller: _controller);
+
+    // 延迟调用以确保图表初始化完成
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _chartView.aa_drawChartWithChartModel(widget.chartModel);
+      Future.delayed(const Duration(milliseconds: 1000), () {
+        _controller.aa_drawChartWithChartModel(widget.chartModel);
+      });
     });
   }
 
