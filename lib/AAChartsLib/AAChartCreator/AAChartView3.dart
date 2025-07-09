@@ -36,8 +36,9 @@ class AAChartView3Controller {
 
 class AAChartView3 extends StatefulWidget {
   final AAChartView3Controller? controller;
+  final String containerId; // 新增
 
-  const AAChartView3({Key? key, this.controller}) : super(key: key);
+  const AAChartView3({Key? key, this.controller, required this.containerId}) : super(key: key);
 
   @override
   State<AAChartView3> createState() => _AAChartView3State();
@@ -61,7 +62,7 @@ class AAChartView3 extends StatefulWidget {
 }
 
 class _AAChartView3State extends State<AAChartView3> {
-  final String _chartContainerId = 'chart-container-${DateTime.now().millisecondsSinceEpoch}';
+  late final String _chartContainerId;
   html.DivElement? _chartContainer;
   String? optionsJson;
   bool _isInitialized = false;
@@ -70,6 +71,7 @@ class _AAChartView3State extends State<AAChartView3> {
   @override
   void initState() {
     super.initState();
+    _chartContainerId = widget.containerId; // 使用传入的id
     widget.controller?._setState(this);
     _initializeChart();
   }

@@ -22,6 +22,7 @@ class ChartSamplesTableViewPage extends StatelessWidget {
         itemBuilder: (context, index) {
           return ChartCell(
             chartModel: chartModels[index],
+            cellId: 'chart_cell_$index', // 传递唯一且稳定的id
           );
         },
       ),
@@ -31,7 +32,8 @@ class ChartSamplesTableViewPage extends StatelessWidget {
 
 class ChartCell extends StatefulWidget {
   final AAChartModel chartModel;
-  const ChartCell({Key? key, required this.chartModel}) : super(key: key);
+  final String cellId; // 新增
+  const ChartCell({Key? key, required this.chartModel, required this.cellId}) : super(key: key);
   @override
   State<ChartCell> createState() => _ChartCellState();
 }
@@ -44,7 +46,7 @@ class _ChartCellState extends State<ChartCell> {
   void initState() {
     super.initState();
     _controller = AAChartView3Controller();
-    _chartView = AAChartView3(controller: _controller);
+    _chartView = AAChartView3(controller: _controller, containerId: widget.cellId); // 传递id
 
     // 延迟调用以确保图表初始化完成
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -73,7 +75,8 @@ class _ChartCellState extends State<ChartCell> {
               borderRadius: BorderRadius.circular(12),
               child: Container(
                 color: Colors.blueGrey[50],
-                height: 220,
+                height: 400,
+                width: double.infinity, // 保证宽度100%填充
                 child: _chartView,
               ),
             ),
