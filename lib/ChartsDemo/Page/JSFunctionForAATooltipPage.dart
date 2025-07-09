@@ -1,5 +1,4 @@
 
-import 'dart:ffi';
 
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartView.dart';
