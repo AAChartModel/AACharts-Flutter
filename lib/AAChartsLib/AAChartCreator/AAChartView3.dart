@@ -98,36 +98,106 @@ class _AAChartView3State extends State<AAChartView3> {
   }
 
   Future<void> _loadHighchartsLibrary() async {
-    // 全局只加载一次，利用 window 变量做标记
+    // Load libs once globally and reuse across chart views.
     final win = js.context;
     if (win['_AAHighchartsLoaded'] == true) {
       _isHighchartsLoaded = true;
       return;
     }
-    // 检查Highcharts是否已加载
-    if (js.context['Highcharts'] == null) {
-      final script = html.ScriptElement()
-        ..src = '/assets/AAHighcharts.js'
-        ..async = true;
-      html.document.head!.append(script);
+
+    await _ensureHighchartsCoreLoaded(win);
+    await _ensureHighchartsMoreLoaded(win);
+    await _ensureFunnelLoaded(win);
+
+    final isLoaded = _isHighchartsReady();
+    win['_AAHighchartsLoaded'] = isLoaded;
+    _isHighchartsLoaded = isLoaded;
+  }
+
+  Future<void> _ensureHighchartsCoreLoaded(js.JsObject win) async {
+    if (js.context['Highcharts'] != null) {
+      return;
+    }
+    if (win['_AAHighchartsLoading'] == true) {
       await _waitForHighcharts();
+      return;
     }
-    if (js.context['Highcharts'] == null || js.context['Highcharts']['polarChart'] == null) {
-      final moreScript = html.ScriptElement()
-        ..src = '/assets/AAHighcharts-More.js'
-        ..async = true;
-      html.document.head!.append(moreScript);
+
+    win['_AAHighchartsLoading'] = true;
+    try {
+      _appendScriptOnce('/assets/AAHighcharts.js');
+      await _waitForHighcharts();
+    } finally {
+      win['_AAHighchartsLoading'] = false;
+    }
+  }
+
+  Future<void> _ensureHighchartsMoreLoaded(js.JsObject win) async {
+    if (_isHighchartsMoreReady()) {
+      return;
+    }
+    if (win['_AAHighchartsMoreLoading'] == true) {
       await _waitForHighchartsMore();
+      return;
     }
-    if (js.context['Highcharts'] == null || js.context['Highcharts']['seriesTypes'] == null || js.context['Highcharts']['seriesTypes']['funnel'] == null) {
-      final funnelScript = html.ScriptElement()
-        ..src = '/assets/AAFunnel.js'
-        ..async = true;
-      html.document.head!.append(funnelScript);
-      await Future.delayed(const Duration(milliseconds: 200));
+
+    win['_AAHighchartsMoreLoading'] = true;
+    try {
+      _appendScriptOnce('/assets/AAHighcharts-More.js');
+      await _waitForHighchartsMore();
+    } finally {
+      win['_AAHighchartsMoreLoading'] = false;
     }
-    win['_AAHighchartsLoaded'] = true;
-    _isHighchartsLoaded = true;
+  }
+
+  Future<void> _ensureFunnelLoaded(js.JsObject win) async {
+    if (_isFunnelReady()) {
+      return;
+    }
+    if (win['_AAFunnelLoading'] == true) {
+      await _waitForFunnel();
+      return;
+    }
+
+    win['_AAFunnelLoading'] = true;
+    try {
+      _appendScriptOnce('/assets/AAFunnel.js');
+      await _waitForFunnel();
+    } finally {
+      win['_AAFunnelLoading'] = false;
+    }
+  }
+
+  void _appendScriptOnce(String src) {
+    final scripts = html.document.querySelectorAll('script');
+    for (final script in scripts) {
+      if (script is html.ScriptElement) {
+        final existingSrc = script.src;
+        if (existingSrc == src || existingSrc.endsWith(src)) {
+          return;
+        }
+      }
+    }
+
+    final script = html.ScriptElement()
+      ..src = src
+      ..async = true;
+    html.document.head?.append(script);
+  }
+
+  bool _isHighchartsMoreReady() {
+    return js.context['Highcharts'] != null &&
+        js.context['Highcharts']['polarChart'] != null;
+  }
+
+  bool _isFunnelReady() {
+    return js.context['Highcharts'] != null &&
+        js.context['Highcharts']['seriesTypes'] != null &&
+        js.context['Highcharts']['seriesTypes']['funnel'] != null;
+  }
+
+  bool _isHighchartsReady() {
+    return js.context['Highcharts'] != null;
   }
 
   Future<void> _waitForHighcharts() async {
@@ -143,13 +213,23 @@ class _AAChartView3State extends State<AAChartView3> {
 
   Future<void> _waitForHighchartsMore() async {
     int attempts = 0;
-    // 检查 Highcharts 中是否有 polarChart 方法（highcharts-more.js 加载后才有）
-    while ((js.context['Highcharts'] == null || js.context['Highcharts']['polarChart'] == null) && attempts < 100) {
+    while (!_isHighchartsMoreReady() && attempts < 100) {
       await Future.delayed(const Duration(milliseconds: 100));
       attempts++;
     }
-    if (js.context['Highcharts'] == null || js.context['Highcharts']['polarChart'] == null) {
+    if (!_isHighchartsMoreReady()) {
       print('Failed to load Highcharts More library');
+    }
+  }
+
+  Future<void> _waitForFunnel() async {
+    int attempts = 0;
+    while (!_isFunnelReady() && attempts < 100) {
+      await Future.delayed(const Duration(milliseconds: 100));
+      attempts++;
+    }
+    if (!_isFunnelReady()) {
+      print('Failed to load Funnel library');
     }
   }
 
