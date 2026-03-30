@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'ChartsDemo/Page/ChildListViewPage.dart';
-
 
 void main() => runApp(const Application());
 
@@ -32,7 +30,8 @@ class Application extends StatelessWidget {
           color: Colors.white,
           elevation: 2,
           shadowColor: Colors.black.withValues(alpha: 0.08),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         ),
         dividerColor: Colors.grey.withValues(alpha: 0.15),
         listTileTheme: const ListTileThemeData(
@@ -57,7 +56,8 @@ class Application extends StatelessWidget {
           color: const Color(0xFF1E1E2E),
           elevation: 4,
           shadowColor: Colors.black.withValues(alpha: 0.3),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         ),
         dividerColor: Colors.white.withValues(alpha: 0.08),
         listTileTheme: const ListTileThemeData(
@@ -79,7 +79,8 @@ class _HomePage extends StatelessWidget {
     _SectionItem('Mixed Chart', '混合图形', Icons.stacked_line_chart_rounded),
     _SectionItem('AAChartEvents', 'JSFunction 自定义事件', Icons.touch_app_rounded),
     _SectionItem('AAOptions', '通过 Options 绘图', Icons.tune_rounded),
-    _SectionItem('AATooltip', 'JSFunction 自定义 Tooltip', Icons.chat_bubble_outline_rounded),
+    _SectionItem('AATooltip', 'JSFunction 自定义 Tooltip',
+        Icons.chat_bubble_outline_rounded),
   ];
 
   @override
@@ -102,12 +103,15 @@ class _HomePage extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(14),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (_) => ChildListViewPage(selectedIndex: index),
-                  ));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => ChildListViewPage(selectedIndex: index),
+                      ));
                 },
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
                   child: Row(
                     children: [
                       Container(
@@ -115,8 +119,10 @@ class _HomePage extends StatelessWidget {
                         height: 44,
                         decoration: BoxDecoration(
                           color: isDark
-                              ? Application._primaryColor.withValues(alpha: 0.15)
-                              : Application._primaryColor.withValues(alpha: 0.08),
+                              ? Application._primaryColor
+                                  .withValues(alpha: 0.15)
+                              : Application._primaryColor
+                                  .withValues(alpha: 0.08),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Icon(
@@ -132,16 +138,24 @@ class _HomePage extends StatelessWidget {
                           children: [
                             Text(
                               section.title,
-                              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                fontWeight: FontWeight.w600,
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                  ),
                             ),
                             const SizedBox(height: 3),
                             Text(
                               section.subtitle,
-                              style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                color: isDark ? Colors.white54 : Colors.grey[500],
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(
+                                    color: isDark
+                                        ? Colors.white54
+                                        : Colors.grey[500],
+                                  ),
                             ),
                           ],
                         ),
@@ -168,9 +182,3 @@ class _SectionItem {
   final IconData icon;
   const _SectionItem(this.title, this.subtitle, this.icon);
 }
-
-
-
-
-
-

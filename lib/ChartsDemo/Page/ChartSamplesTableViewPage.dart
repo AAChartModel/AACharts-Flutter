@@ -9,7 +9,10 @@ import '../../AAChartsLib/AAChartCreator/AAChartView3.dart';
 class ChartSamplesTableViewPage extends StatelessWidget {
   final List<AAChartModel> chartModels;
 
-  ChartSamplesTableViewPage({Key? key, required this.chartModels,}) : super(key: key);
+  ChartSamplesTableViewPage({
+    Key? key,
+    required this.chartModels,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class ChartSamplesTableViewPage extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 300, // 每个cell最大宽度300
-          mainAxisExtent: 400,     // 每个cell高度400
+          mainAxisExtent: 400, // 每个cell高度400
           crossAxisSpacing: 12,
           mainAxisSpacing: 12,
         ),
@@ -40,7 +43,8 @@ class ChartSamplesTableViewPage extends StatelessWidget {
 class ChartCell extends StatefulWidget {
   final AAChartModel chartModel;
   final String cellId; // 新增
-  const ChartCell({Key? key, required this.chartModel, required this.cellId}) : super(key: key);
+  const ChartCell({Key? key, required this.chartModel, required this.cellId})
+      : super(key: key);
   @override
   State<ChartCell> createState() => _ChartCellState();
 }
@@ -53,7 +57,8 @@ class _ChartCellState extends State<ChartCell> {
   void initState() {
     super.initState();
     _controller = AAChartView3Controller();
-    _chartView = AAChartView3(controller: _controller, containerId: widget.cellId); // 传递id
+    _chartView = AAChartView3(
+        controller: _controller, containerId: widget.cellId); // 传递id
 
     // 延迟调用以确保图表初始化完成
     WidgetsBinding.instance.addPostFrameCallback((_) {

@@ -1,4 +1,3 @@
-
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartModel.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartView.dart';
 import 'package:aacharts_flutter/AAChartsLib/AAChartCreator/AAChartView2.dart';
@@ -15,16 +14,16 @@ void refreshChartView() {
   aaChartView.aa_drawChartWithChartModel(aaChartModel);
 }
 
-
 class BasicChartPage extends StatelessWidget {
   final String selectedType;
 
-  const BasicChartPage({ Key? key, required this.selectedType}) : super(key: key);
+  const BasicChartPage({Key? key, required this.selectedType})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-      aaChartModel = configureChartModelWithChartType(selectedType);
-      aaChartView.aa_drawChartWithChartModel(aaChartModel);
+    aaChartModel = configureChartModelWithChartType(selectedType);
+    aaChartView.aa_drawChartWithChartModel(aaChartModel);
 
     //获取屏幕的宽高
     final size = MediaQuery.of(context).size;
@@ -44,31 +43,30 @@ class BasicChartPage extends StatelessWidget {
             Container(
                 width: size.width, // set the desired width
                 height: size.height - 350, // set the desired height
-                child: aaChartView
-            )
-            ,
-            Text("Stacking Type Selection",
+                child: aaChartView),
+            Text(
+              "Stacking Type Selection",
               style: TextStyle(
-              fontSize: 15,
-              color: isDark ? Colors.grey[400] : Colors.grey,
-            ),),
+                fontSize: 15,
+                color: isDark ? Colors.grey[400] : Colors.grey,
+              ),
+            ),
             //添加一个红色的 Text
 
             SegmentedControlExample(),
             Text("          "),
 
-            Text("Corners Style Type Selection",
+            Text(
+              "Corners Style Type Selection",
               style: TextStyle(
                 fontSize: 15,
                 color: isDark ? Colors.grey[400] : Colors.grey,
-              ),),
+              ),
+            ),
             SegmentedControlExample1(),
             Text("          "),
 
             MyStatefulWidget(),
-
-
-
           ],
         ),
       ),
@@ -79,15 +77,13 @@ class BasicChartPage extends StatelessWidget {
 
   AAChartModel configureChartModelWithChartType(String chartType) {
     switch (chartType) {
-
-      default: return BasicChartComposer.configureAreaChart();
+      default:
+        return BasicChartComposer.configureAreaChart();
     }
   }
-
 }
 
 /// Flutter code sample for [CupertinoSegmentedControl].
-
 
 class SegmentedControlExample extends StatefulWidget {
   const SegmentedControlExample({super.key});
@@ -104,7 +100,8 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
   Widget build(BuildContext context) {
     return CupertinoSegmentedControl<String>(
       selectedColor: Colors.red.withOpacity(1),
-      unselectedColor: Colors.white.withOpacity(1),      // Provide horizontal padding around the children.
+      unselectedColor: Colors.white
+          .withOpacity(1), // Provide horizontal padding around the children.
       padding: const EdgeInsets.symmetric(horizontal: 12),
       // This represents a currently selected segmented control.
       groupValue: _selectedSegment,
@@ -142,7 +139,6 @@ class _SegmentedControlExampleState extends State<SegmentedControlExample> {
   }
 }
 
-
 class SegmentedControlExample1 extends StatefulWidget {
   const SegmentedControlExample1({super.key});
 
@@ -158,7 +154,8 @@ class _SegmentedControlExampleState1 extends State<SegmentedControlExample1> {
   Widget build(BuildContext context) {
     return CupertinoSegmentedControl<String>(
       selectedColor: Colors.green.withOpacity(1),
-      unselectedColor: Colors.white.withOpacity(1),      // Provide horizontal padding around the children.
+      unselectedColor: Colors.white
+          .withOpacity(1), // Provide horizontal padding around the children.
       padding: const EdgeInsets.symmetric(horizontal: 12),
       // This represents a currently selected segmented control.
       groupValue: _selectedSegment,
@@ -229,7 +226,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return Row(
       children: <Widget>[
         Spacer(),
-
         Column(
           children: <Widget>[
             Switch(
@@ -244,19 +240,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                     aaChartModel.xAxisReversed = false;
                   }
                   refreshChartView();
-
                 });
               },
             ),
-            Text("X Reversed",
+            Text(
+              "X Reversed",
               style: TextStyle(
                 fontSize: 15,
                 color: Colors.grey,
-              ),),
+              ),
+            ),
           ],
         ),
         Spacer(),
-
         Column(
           children: <Widget>[
             Switch(
@@ -274,15 +270,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 });
               },
             ),
-            Text("Y Reversed",
+            Text(
+              "Y Reversed",
               style: TextStyle(
                 fontSize: 15,
                 color: Colors.grey,
-              ),),
+              ),
+            ),
           ],
         ),
         Spacer(),
-
         Column(
           children: <Widget>[
             Switch(
@@ -300,15 +297,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 });
               },
             ),
-            Text("X Inverted",
+            Text(
+              "X Inverted",
               style: TextStyle(
                 fontSize: 15,
                 color: Colors.grey,
-              ),),
+              ),
+            ),
           ],
         ),
         Spacer(),
-
         Column(
           children: <Widget>[
             Switch(
@@ -326,15 +324,16 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 });
               },
             ),
-            Text("Polarization",
+            Text(
+              "Polarization",
               style: TextStyle(
                 fontSize: 15,
                 color: Colors.grey,
-              ),),
+              ),
+            ),
           ],
         ),
         Spacer(),
-
         Column(
           children: <Widget>[
             Switch(
@@ -352,19 +351,17 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 });
               },
             ),
-            Text("Data Show",
+            Text(
+              "Data Show",
               style: TextStyle(
                 fontSize: 15,
                 color: Colors.grey,
-              ),),
+              ),
+            ),
           ],
         ),
         Spacer(),
-
       ],
     );
   }
 }
-
-
-
