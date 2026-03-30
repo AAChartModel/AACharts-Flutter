@@ -65,34 +65,27 @@ class _ChartCellState extends State<ChartCell> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return SizedBox(
       width: 300,
       height: 400,
       child: Card(
-        elevation: 6,
+        elevation: isDark ? 4 : 6,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18),
         ),
-        color: Colors.white,
-        shadowColor: Colors.blueGrey.withOpacity(0.2),
+        color: Theme.of(context).cardTheme.color,
+        shadowColor: isDark
+            ? Colors.black.withValues(alpha: 0.4)
+            : Colors.blueGrey.withValues(alpha: 0.2),
         margin: EdgeInsets.zero,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Container(
-                  color: Colors.blueGrey[50],
-                  width: 300,
-                  height: 400,
-                  child: _chartView,
-                ),
-              ),
-              // 可根据需要添加副标题或描述
-              // Text('副标题或描述', style: TextStyle(fontSize: 14, color: Colors.blueGrey[400])),
-            ],
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(18),
+          child: Container(
+            color: isDark ? const Color(0xFF1E1E2E) : Colors.blueGrey[50],
+            width: 300,
+            height: 400,
+            child: _chartView,
           ),
         ),
       ),

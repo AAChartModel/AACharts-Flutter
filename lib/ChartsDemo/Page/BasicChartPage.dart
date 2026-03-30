@@ -29,6 +29,8 @@ class BasicChartPage extends StatelessWidget {
     //获取屏幕的宽高
     final size = MediaQuery.of(context).size;
 
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('BasicChart'),
@@ -48,7 +50,7 @@ class BasicChartPage extends StatelessWidget {
             Text("Stacking Type Selection",
               style: TextStyle(
               fontSize: 15,
-              color: Colors.grey,
+              color: isDark ? Colors.grey[400] : Colors.grey,
             ),),
             //添加一个红色的 Text
 
@@ -58,7 +60,7 @@ class BasicChartPage extends StatelessWidget {
             Text("Corners Style Type Selection",
               style: TextStyle(
                 fontSize: 15,
-                color: Colors.grey,
+                color: isDark ? Colors.grey[400] : Colors.grey,
               ),),
             SegmentedControlExample1(),
             Text("          "),

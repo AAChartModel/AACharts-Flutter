@@ -20,6 +20,16 @@ class ChildListViewPage extends StatelessWidget {
 
    ChildListViewPage({ Key? key,  required this.selectedIndex}) : super(key: key);
 
+  static const List<String> _sectionNames = [
+    'Basic Type Chart',
+    'Special Type Chart',
+    'Custom Style Chart',
+    'Mixed Chart',
+    'AAChartEvents',
+    'AAOptions',
+    'AATooltip',
+  ];
+
 
   List<List<String>> chartTypeTitleArr = [
   /*Basic types chart*/
@@ -281,69 +291,96 @@ class ChildListViewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //下划线widget预定义以供复用。
-    Widget divider1 = Divider(color: Colors.blue);
-    Widget divider2 = Divider(color: Colors.green);
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     List<String> chartTypeTitleSonArr = chartTypeTitleArr[this.selectedIndex];
     List<String> chartTypesSonArr = chartTypeArr[this.selectedIndex];
 
-    var listView = ListView.separated(
-      itemCount: chartTypeTitleSonArr.length,
-      itemBuilder: (BuildContext context, int index) {
-        return Material(child:ListTile(title: Text(chartTypeTitleSonArr[index]),
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              // return DrawChartWithAAOptionsPage(selectedIndex: index);
-              // return JSFormatterPage(selectedIndex: index);
-              // return MixedChartPage(selectedType:  chartTypesArr[index]);
-              // return SpecialChartPage(selectedType: chartTypesArr[index]);
-              // return CustomStyleChartPage(selectedIndex: index);
-              if (this.selectedIndex == 0) {
-                var modelsArr = AAChartModelProvider.getAllSpecialChartModels();
-                var mixedChartModelArr = AAChartModelProvider.getAllMixedChartModels();
-                return ChartSamplesTableViewPage(chartModels: modelsArr + mixedChartModelArr);
-
-                String chartType = chartTypesSonArr[index];
-                return BasicChartPage(selectedType: chartType);
-              } else if (this.selectedIndex == 1) {
-                String chartType = chartTypesSonArr[index];
-                return SpecialChartPage(selectedType: chartType, selectedIndex: index);
-              } else if (this.selectedIndex == 2) {
-                return CustomStyleChartPage(selectedIndex: index);
-              } else if (this.selectedIndex == 3) {
-                String chartType = chartTypesSonArr[index];
-                return MixedChartPage(selectedType:  chartType, selectedIndex: index);
-              } else if (this.selectedIndex == 4) {
-                return JSFunctionForAAChartEventsPage(selectedIndex:  index);
-              } else if (this.selectedIndex == 5) {
-                return DrawChartWithAAOptionsPage(selectedIndex:  index);
-              } else if (this.selectedIndex == 6) {
-                return JSFunctionForAATooltipPage(selectedIndex:  index);
-              }
-              return ChildListViewPage(selectedIndex: index);
-            }));
-
-          }, // Handle your onTap here.
-        ));
-      },
-      //分割器构造器
-      separatorBuilder: (BuildContext context, int index) {
-        return index%2==0?divider1:divider2;
-      },
-    );
-
+    final sectionTitle = (selectedIndex >= 0 && selectedIndex < _sectionNames.length)
+        ? _sectionNames[selectedIndex]
+        : 'Charts';
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('My App'),
+        title: Text(sectionTitle),
       ),
-      body: GestureDetector(
-        onTap: () {
-          Navigator.pop(context);
+      body: ListView.separated(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        itemCount: chartTypeTitleSonArr.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Card(
+            child: InkWell(
+              borderRadius: BorderRadius.circular(14),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  if (this.selectedIndex == 0) {
+                    var modelsArr = AAChartModelProvider.getAllSpecialChartModels();
+                    var mixedChartModelArr = AAChartModelProvider.getAllMixedChartModels();
+                    return ChartSamplesTableViewPage(chartModels: modelsArr + mixedChartModelArr);
+                  } else if (this.selectedIndex == 1) {
+                    String chartType = chartTypesSonArr[index];
+                    return SpecialChartPage(selectedType: chartType, selectedIndex: index);
+                  } else if (this.selectedIndex == 2) {
+                    return CustomStyleChartPage(selectedIndex: index);
+                  } else if (this.selectedIndex == 3) {
+                    String chartType = chartTypesSonArr[index];
+                    return MixedChartPage(selectedType: chartType, selectedIndex: index);
+                  } else if (this.selectedIndex == 4) {
+                    return JSFunctionForAAChartEventsPage(selectedIndex: index);
+                  } else if (this.selectedIndex == 5) {
+                    return DrawChartWithAAOptionsPage(selectedIndex: index);
+                  } else if (this.selectedIndex == 6) {
+                    return JSFunctionForAATooltipPage(selectedIndex: index);
+                  }
+                  return ChildListViewPage(selectedIndex: index);
+                }));
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? const Color(0xFF1E90FF).withValues(alpha: 0.15)
+                            : const Color(0xFF1E90FF).withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Center(
+                        child: Text(
+                          '${index + 1}',
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.w700,
+                            color: const Color(0xFF1E90FF),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 14),
+                    Expanded(
+                      child: Text(
+                        chartTypeTitleSonArr[index],
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Icon(
+                      Icons.chevron_right_rounded,
+                      color: isDark ? Colors.white30 : Colors.grey[400],
+                      size: 20,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
         },
-        child: Center(
-          child: listView,
-        ),
+        separatorBuilder: (BuildContext context, int index) {
+          return const SizedBox(height: 2);
+        },
       ),
     );
   }
